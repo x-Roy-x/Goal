@@ -1,0 +1,150 @@
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/CortexM0/ARM_GCC_541/Debug/ble_client.o : C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC_IRQ.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC_intClock.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_HAL_PVT.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_STACK_PVT.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_Stack.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGap.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGatt.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattClient.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattDb.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattServer.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackHostMain.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackL2cap.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_bless_isr.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_custom.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_eventHandler.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_gatt.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Clock_1.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Clock_2.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyDMA.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyFlash.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyLFClk.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyLib.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Debouncer_Clock.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/MQ_9.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/MQ_9_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/RTC.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Status_LED.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Status_LED_aliases.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Update.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Update_Int.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_armcc.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_compiler.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_gcc.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/core_cm0.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyPm.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cydisabledsheets.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyfitter.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cypins.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cytypes.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/project.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/adc_smartboy.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_applications.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_client.c C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_client.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/buttons.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/defaults.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/goal_devices.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/lcd_smartboy.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/protocol.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/rtc_smartboy.h C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/smartboy.h 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC_IRQ.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/ADC_intClock.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_HAL_PVT.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_STACK_PVT.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_Stack.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGap.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGatt.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattClient.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattDb.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackGattServer.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackHostMain.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_StackL2cap.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_bless_isr.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_custom.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_eventHandler.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/BLE_gatt.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Back_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Down_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Ok_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Button_Up_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Clock_1.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Clock_2.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyDMA.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Debouncer_Clock.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD_LCDPort.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/LCD_LCDPort_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/MQ_9.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/MQ_9_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/RTC.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Status_LED.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Status_LED_aliases.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Update.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/Timer_Update_Int.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/Generated_Source/PSoC4/project.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/adc_smartboy.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_applications.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_client.c : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/ble_client.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/buttons.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/defaults.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/goal_devices.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/lcd_smartboy.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/protocol.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/rtc_smartboy.h : 
+
+C:/My/Bipboy/bipboy/BipBoyWorkspace/SmartBoy.cydsn/smartboy.h : 
+

@@ -1,0 +1,1049 @@
+--
+--	Conversion of GOAL-MASTER.v to vh2:
+--
+--	Cypress Semiconductor - WARP Version 6.3 IR 41
+--	Sun Feb 24 16:00:11 2019
+--
+
+USE cypress.cypress.all;
+USE cypress.rtlpkg.all;
+ENTITY top_RTL IS
+ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
+END top_RTL;
+--------------------------------------------------------
+ARCHITECTURE R_T_L OF top_RTL IS
+SIGNAL \I2C_Master:Net_847\ : bit;
+SIGNAL \I2C_Master:select_s_wire\ : bit;
+SIGNAL \I2C_Master:rx_wire\ : bit;
+SIGNAL \I2C_Master:Net_1257\ : bit;
+SIGNAL \I2C_Master:uncfg_rx_irq\ : bit;
+SIGNAL \I2C_Master:Net_1170\ : bit;
+SIGNAL \I2C_Master:sclk_s_wire\ : bit;
+SIGNAL \I2C_Master:mosi_s_wire\ : bit;
+SIGNAL \I2C_Master:miso_m_wire\ : bit;
+SIGNAL \I2C_Master:tmpOE__sda_net_0\ : bit;
+SIGNAL zero : bit;
+SIGNAL \I2C_Master:tmpFB_0__sda_net_0\ : bit;
+SIGNAL Net_21 : bit;
+TERMINAL \I2C_Master:tmpSIOVREF__sda_net_0\ : bit;
+SIGNAL one : bit;
+SIGNAL \I2C_Master:tmpINTERRUPT_0__sda_net_0\ : bit;
+SIGNAL \I2C_Master:tmpOE__scl_net_0\ : bit;
+SIGNAL \I2C_Master:tmpFB_0__scl_net_0\ : bit;
+SIGNAL Net_20 : bit;
+TERMINAL \I2C_Master:tmpSIOVREF__scl_net_0\ : bit;
+SIGNAL \I2C_Master:tmpINTERRUPT_0__scl_net_0\ : bit;
+SIGNAL \I2C_Master:Net_1099\ : bit;
+SIGNAL \I2C_Master:Net_1258\ : bit;
+SIGNAL Net_3 : bit;
+SIGNAL \I2C_Master:cts_wire\ : bit;
+SIGNAL \I2C_Master:tx_wire\ : bit;
+SIGNAL \I2C_Master:rts_wire\ : bit;
+SIGNAL \I2C_Master:mosi_m_wire\ : bit;
+SIGNAL \I2C_Master:select_m_wire_3\ : bit;
+SIGNAL \I2C_Master:select_m_wire_2\ : bit;
+SIGNAL \I2C_Master:select_m_wire_1\ : bit;
+SIGNAL \I2C_Master:select_m_wire_0\ : bit;
+SIGNAL \I2C_Master:sclk_m_wire\ : bit;
+SIGNAL \I2C_Master:miso_s_wire\ : bit;
+SIGNAL Net_6 : bit;
+SIGNAL Net_5 : bit;
+SIGNAL \I2C_Master:Net_1028\ : bit;
+SIGNAL Net_2 : bit;
+SIGNAL Net_11 : bit;
+SIGNAL Net_12 : bit;
+SIGNAL Net_13 : bit;
+SIGNAL Net_14 : bit;
+SIGNAL Net_15 : bit;
+SIGNAL Net_16 : bit;
+SIGNAL Net_17 : bit;
+SIGNAL Net_19 : bit;
+SIGNAL Net_22 : bit;
+SIGNAL tmpOE__LED_Conect_net_0 : bit;
+SIGNAL tmpFB_0__LED_Conect_net_0 : bit;
+SIGNAL tmpIO_0__LED_Conect_net_0 : bit;
+TERMINAL tmpSIOVREF__LED_Conect_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__LED_Conect_net_0 : bit;
+SIGNAL \ADC:Net_120\ : bit;
+TERMINAL \ADC:Net_2\ : bit;
+TERMINAL \ADC:Net_13\ : bit;
+TERMINAL \ADC:Net_121\ : bit;
+TERMINAL \ADC:Net_122\ : bit;
+TERMINAL \ADC:Net_341\ : bit;
+TERMINAL \ADC:Net_324\ : bit;
+TERMINAL \ADC:Net_84\ : bit;
+TERMINAL \ADC:Net_86\ : bit;
+TERMINAL \ADC:Net_15\ : bit;
+TERMINAL \ADC:dedicated_io_bus_1\ : bit;
+TERMINAL \ADC:dedicated_io_bus_0\ : bit;
+TERMINAL \ADC:Net_150\ : bit;
+TERMINAL \ADC:Net_132\ : bit;
+SIGNAL \ADC:Net_317\ : bit;
+SIGNAL \ADC:Net_316\ : bit;
+SIGNAL \ADC:Net_95\ : bit;
+SIGNAL \ADC:Net_94\ : bit;
+SIGNAL \ADC:Net_323\ : bit;
+SIGNAL \ADC:Net_322\ : bit;
+SIGNAL \ADC:Net_321\ : bit;
+SIGNAL \ADC:Net_93\ : bit;
+SIGNAL \ADC:Net_318\ : bit;
+SIGNAL \ADC:Net_319\ : bit;
+SIGNAL \ADC:Net_354\ : bit;
+SIGNAL \ADC:Net_320_15\ : bit;
+SIGNAL \ADC:Net_320_14\ : bit;
+SIGNAL \ADC:Net_320_13\ : bit;
+SIGNAL \ADC:Net_320_12\ : bit;
+SIGNAL \ADC:Net_320_11\ : bit;
+SIGNAL \ADC:Net_320_10\ : bit;
+SIGNAL \ADC:Net_320_9\ : bit;
+SIGNAL \ADC:Net_320_8\ : bit;
+SIGNAL \ADC:Net_320_7\ : bit;
+SIGNAL \ADC:Net_320_6\ : bit;
+SIGNAL \ADC:Net_320_5\ : bit;
+SIGNAL \ADC:Net_320_4\ : bit;
+SIGNAL \ADC:Net_320_3\ : bit;
+SIGNAL \ADC:Net_320_2\ : bit;
+SIGNAL \ADC:Net_320_1\ : bit;
+SIGNAL \ADC:Net_320_0\ : bit;
+SIGNAL \ADC:Net_92\ : bit;
+SIGNAL \ADC:Net_1423\ : bit;
+TERMINAL \ADC:Net_314\ : bit;
+TERMINAL \ADC:Net_352\ : bit;
+SIGNAL \ADC:Net_44\ : bit;
+SIGNAL \ADC:Net_46\ : bit;
+SIGNAL \ADC:Net_47\ : bit;
+SIGNAL \ADC:Net_48\ : bit;
+SIGNAL \ADC:Net_57\ : bit;
+SIGNAL \ADC:Net_56\ : bit;
+SIGNAL \ADC:Net_55\ : bit;
+SIGNAL \ADC:Net_54\ : bit;
+SIGNAL \ADC:Net_147\ : bit;
+SIGNAL \ADC:Net_146\ : bit;
+SIGNAL \ADC:tmpOE__AdcInput_net_0\ : bit;
+SIGNAL \ADC:tmpFB_0__AdcInput_net_0\ : bit;
+SIGNAL \ADC:tmpIO_0__AdcInput_net_0\ : bit;
+TERMINAL \ADC:tmpSIOVREF__AdcInput_net_0\ : bit;
+SIGNAL \ADC:tmpINTERRUPT_0__AdcInput_net_0\ : bit;
+SIGNAL \UART:Net_847\ : bit;
+SIGNAL \UART:select_s_wire\ : bit;
+SIGNAL \UART:rx_wire\ : bit;
+SIGNAL \UART:Net_1268\ : bit;
+SIGNAL \UART:Net_1257\ : bit;
+SIGNAL \UART:uncfg_rx_irq\ : bit;
+SIGNAL \UART:Net_1170\ : bit;
+SIGNAL \UART:sclk_s_wire\ : bit;
+SIGNAL \UART:mosi_s_wire\ : bit;
+SIGNAL \UART:miso_m_wire\ : bit;
+SIGNAL \UART:tmpOE__tx_net_0\ : bit;
+SIGNAL \UART:tx_wire\ : bit;
+SIGNAL \UART:tmpFB_0__tx_net_0\ : bit;
+SIGNAL \UART:tmpIO_0__tx_net_0\ : bit;
+TERMINAL \UART:tmpSIOVREF__tx_net_0\ : bit;
+SIGNAL \UART:tmpINTERRUPT_0__tx_net_0\ : bit;
+SIGNAL \UART:Net_1099\ : bit;
+SIGNAL \UART:Net_1258\ : bit;
+SIGNAL \UART:tmpOE__rx_net_0\ : bit;
+SIGNAL \UART:tmpIO_0__rx_net_0\ : bit;
+TERMINAL \UART:tmpSIOVREF__rx_net_0\ : bit;
+SIGNAL \UART:tmpINTERRUPT_0__rx_net_0\ : bit;
+SIGNAL \UART:cts_wire\ : bit;
+SIGNAL Net_85 : bit;
+SIGNAL \UART:rts_wire\ : bit;
+SIGNAL \UART:mosi_m_wire\ : bit;
+SIGNAL \UART:select_m_wire_3\ : bit;
+SIGNAL \UART:select_m_wire_2\ : bit;
+SIGNAL \UART:select_m_wire_1\ : bit;
+SIGNAL \UART:select_m_wire_0\ : bit;
+SIGNAL \UART:sclk_m_wire\ : bit;
+SIGNAL \UART:miso_s_wire\ : bit;
+SIGNAL Net_102 : bit;
+SIGNAL Net_103 : bit;
+SIGNAL Net_88 : bit;
+SIGNAL Net_87 : bit;
+SIGNAL \UART:Net_1028\ : bit;
+SIGNAL Net_84 : bit;
+SIGNAL Net_93 : bit;
+SIGNAL Net_94 : bit;
+SIGNAL Net_95 : bit;
+SIGNAL Net_96 : bit;
+SIGNAL Net_97 : bit;
+SIGNAL Net_98 : bit;
+SIGNAL Net_99 : bit;
+SIGNAL Net_101 : bit;
+SIGNAL Net_104 : bit;
+SIGNAL tmpOE__Servo_net_0 : bit;
+SIGNAL Net_114 : bit;
+SIGNAL tmpFB_0__Servo_net_0 : bit;
+SIGNAL tmpIO_0__Servo_net_0 : bit;
+TERMINAL tmpSIOVREF__Servo_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Servo_net_0 : bit;
+SIGNAL Net_144 : bit;
+SIGNAL \PWM_Servo:Net_81\ : bit;
+SIGNAL \PWM_Servo:Net_75\ : bit;
+SIGNAL \PWM_Servo:Net_69\ : bit;
+SIGNAL \PWM_Servo:Net_66\ : bit;
+SIGNAL \PWM_Servo:Net_82\ : bit;
+SIGNAL \PWM_Servo:Net_72\ : bit;
+SIGNAL Net_141 : bit;
+SIGNAL Net_140 : bit;
+SIGNAL Net_142 : bit;
+SIGNAL Net_143 : bit;
+SIGNAL Net_139 : bit;
+SIGNAL tmpOE__Button_net_0 : bit;
+SIGNAL tmpFB_0__Button_net_0 : bit;
+SIGNAL tmpIO_0__Button_net_0 : bit;
+TERMINAL tmpSIOVREF__Button_net_0 : bit;
+SIGNAL Net_70 : bit;
+SIGNAL Net_132 : bit;
+SIGNAL \PWM_Buzzer:Net_81\ : bit;
+SIGNAL \PWM_Buzzer:Net_75\ : bit;
+SIGNAL \PWM_Buzzer:Net_69\ : bit;
+SIGNAL \PWM_Buzzer:Net_66\ : bit;
+SIGNAL \PWM_Buzzer:Net_82\ : bit;
+SIGNAL \PWM_Buzzer:Net_72\ : bit;
+SIGNAL Net_129 : bit;
+SIGNAL Net_128 : bit;
+SIGNAL Net_130 : bit;
+SIGNAL Net_131 : bit;
+SIGNAL Net_57 : bit;
+SIGNAL Net_127 : bit;
+SIGNAL tmpOE__Buzzer_net_0 : bit;
+SIGNAL tmpFB_0__Buzzer_net_0 : bit;
+SIGNAL tmpIO_0__Buzzer_net_0 : bit;
+TERMINAL tmpSIOVREF__Buzzer_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Buzzer_net_0 : bit;
+BEGIN
+
+zero <=  ('0') ;
+
+one <=  ('1') ;
+
+\I2C_Master:SCBCLK\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"7c22e3c5-da93-4267-9ea2-622856a53add/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"645161290.322581",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>\I2C_Master:Net_847\,
+		dig_domain_out=>open);
+\I2C_Master:sda\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"7c22e3c5-da93-4267-9ea2-622856a53add/5382e105-1382-4a2e-b9f4-3bb2feba71e0",
+		drive_mode=>"100",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"B",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(\I2C_Master:tmpFB_0__sda_net_0\),
+		analog=>(open),
+		io=>Net_21,
+		siovref=>(\I2C_Master:tmpSIOVREF__sda_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>\I2C_Master:tmpINTERRUPT_0__sda_net_0\);
+\I2C_Master:scl\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"7c22e3c5-da93-4267-9ea2-622856a53add/22863ebe-a37b-476f-b252-6e49a8c00b12",
+		drive_mode=>"100",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"B",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(\I2C_Master:tmpFB_0__scl_net_0\),
+		analog=>(open),
+		io=>Net_20,
+		siovref=>(\I2C_Master:tmpSIOVREF__scl_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>\I2C_Master:tmpINTERRUPT_0__scl_net_0\);
+\I2C_Master:SCB_IRQ\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_3);
+\I2C_Master:SCB\:cy_m0s8_scb_v2_0
+	GENERIC MAP(cy_registers=>"",
+		scb_mode=>0)
+	PORT MAP(clock=>\I2C_Master:Net_847\,
+		interrupt=>Net_3,
+		rx=>zero,
+		tx=>\I2C_Master:tx_wire\,
+		cts=>zero,
+		rts=>\I2C_Master:rts_wire\,
+		mosi_m=>\I2C_Master:mosi_m_wire\,
+		miso_m=>zero,
+		select_m=>(\I2C_Master:select_m_wire_3\, \I2C_Master:select_m_wire_2\, \I2C_Master:select_m_wire_1\, \I2C_Master:select_m_wire_0\),
+		sclk_m=>\I2C_Master:sclk_m_wire\,
+		mosi_s=>zero,
+		miso_s=>\I2C_Master:miso_s_wire\,
+		select_s=>zero,
+		sclk_s=>zero,
+		scl=>Net_20,
+		sda=>Net_21,
+		tx_req=>Net_6,
+		rx_req=>Net_5);
+LED_Conect:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__LED_Conect_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__LED_Conect_net_0),
+		siovref=>(tmpSIOVREF__LED_Conect_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__LED_Conect_net_0);
+\ADC:ISR\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>\ADC:Net_120\);
+\ADC:CSD\:cy_psoc4_csd2_v1_30
+	GENERIC MAP(cy_registers=>"",
+		sensors_count=>1,
+		rx_count=>1,
+		tx_count=>1,
+		shield_count=>1,
+		adc_channel_count=>1,
+		dedicated_io_count=>2,
+		ganged_csx=>'0',
+		sense_as_shield=>'0',
+		shield_as_sense=>'0',
+		is_capsense=>'0',
+		is_mutual=>'0',
+		is_cmod_charge=>'0',
+		is_csh_charge=>'0')
+	PORT MAP(sense=>\ADC:Net_2\,
+		rx=>\ADC:Net_13\,
+		tx=>\ADC:Net_121\,
+		shield=>\ADC:Net_122\,
+		amuxa=>\ADC:Net_341\,
+		amuxb=>\ADC:Net_324\,
+		csh=>\ADC:Net_84\,
+		cmod=>\ADC:Net_86\,
+		shield_pad=>\ADC:Net_15\,
+		dedicated_io=>(\ADC:dedicated_io_bus_1\, \ADC:dedicated_io_bus_0\),
+		vref_ext=>\ADC:Net_150\,
+		adc_channel=>\ADC:Net_132\,
+		sense_out=>\ADC:Net_317\,
+		sample_out=>\ADC:Net_316\,
+		sense_in=>zero,
+		sample_in=>zero,
+		csh_tank_en=>\ADC:Net_323\,
+		cmod_en=>\ADC:Net_322\,
+		hscmp=>\ADC:Net_321\,
+		start=>zero,
+		sampling=>\ADC:Net_318\,
+		adc_on=>\ADC:Net_319\,
+		tr_adc_done=>\ADC:Net_354\,
+		count=>(\ADC:Net_320_15\, \ADC:Net_320_14\, \ADC:Net_320_13\, \ADC:Net_320_12\,
+			\ADC:Net_320_11\, \ADC:Net_320_10\, \ADC:Net_320_9\, \ADC:Net_320_8\,
+			\ADC:Net_320_7\, \ADC:Net_320_6\, \ADC:Net_320_5\, \ADC:Net_320_4\,
+			\ADC:Net_320_3\, \ADC:Net_320_2\, \ADC:Net_320_1\, \ADC:Net_320_0\),
+		count_val_sel=>zero,
+		clk=>\ADC:Net_1423\,
+		irq=>\ADC:Net_120\);
+\ADC:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ADC:Net_314\,
+		signal2=>\ADC:Net_15\);
+\ADC:IDACComp\:cy_psoc4_csidac2_v1_0
+	GENERIC MAP(cy_registers=>"",
+		leg3_needed=>'1')
+	PORT MAP(iout=>\ADC:Net_352\,
+		en_a=>zero,
+		en_b=>zero,
+		en_c=>zero,
+		pol=>zero);
+\ADC:ModClk\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"541e183b-3086-455f-8885-33d99f623d44/a8285cdc-5e81-40c0-8036-58ea5f8c1102",
+		source_clock_id=>"413DE2EF-D9F2-4233-A808-DFAF137FD877",
+		divisor=>255,
+		period=>"0",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>\ADC:Net_1423\,
+		dig_domain_out=>open);
+\ADC:AdcInput\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"541e183b-3086-455f-8885-33d99f623d44/30182841-2754-4aee-9532-9ff02059dfef",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"NONCONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"Ch0",
+		pin_mode=>"A",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'1',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(\ADC:tmpFB_0__AdcInput_net_0\),
+		analog=>\ADC:Net_132\,
+		io=>(\ADC:tmpIO_0__AdcInput_net_0\),
+		siovref=>(\ADC:tmpSIOVREF__AdcInput_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>\ADC:tmpINTERRUPT_0__AdcInput_net_0\);
+\ADC:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ADC:Net_150\);
+\ADC:cy_analog_virtualmux_2_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ADC:Net_352\,
+		signal2=>\ADC:Net_324\);
+\UART:SCBCLK\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"723379629.62963",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>\UART:Net_847\,
+		dig_domain_out=>open);
+\UART:tx\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc",
+		drive_mode=>"110",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"B",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>\UART:tx_wire\,
+		fb=>(\UART:tmpFB_0__tx_net_0\),
+		analog=>(open),
+		io=>(\UART:tmpIO_0__tx_net_0\),
+		siovref=>(\UART:tmpSIOVREF__tx_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>\UART:tmpINTERRUPT_0__tx_net_0\);
+\UART:rx\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/78e33e5d-45ea-4b75-88d5-73274e8a7ce4",
+		drive_mode=>"001",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>\UART:rx_wire\,
+		analog=>(open),
+		io=>(\UART:tmpIO_0__rx_net_0\),
+		siovref=>(\UART:tmpSIOVREF__rx_net_0\),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>\UART:tmpINTERRUPT_0__rx_net_0\);
+\UART:SCB\:cy_m0s8_scb_v2_0
+	GENERIC MAP(cy_registers=>"",
+		scb_mode=>2)
+	PORT MAP(clock=>\UART:Net_847\,
+		interrupt=>Net_85,
+		rx=>\UART:rx_wire\,
+		tx=>\UART:tx_wire\,
+		cts=>zero,
+		rts=>\UART:rts_wire\,
+		mosi_m=>\UART:mosi_m_wire\,
+		miso_m=>zero,
+		select_m=>(\UART:select_m_wire_3\, \UART:select_m_wire_2\, \UART:select_m_wire_1\, \UART:select_m_wire_0\),
+		sclk_m=>\UART:sclk_m_wire\,
+		mosi_s=>zero,
+		miso_s=>\UART:miso_s_wire\,
+		select_s=>zero,
+		sclk_s=>zero,
+		scl=>Net_102,
+		sda=>Net_103,
+		tx_req=>Net_88,
+		rx_req=>Net_87);
+Servo:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"66498268-e5b9-4430-a81e-e08d98dc24c8",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>Net_114,
+		fb=>(tmpFB_0__Servo_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Servo_net_0),
+		siovref=>(tmpSIOVREF__Servo_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__Servo_net_0);
+Clock_Servo:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"d143ec72-ec09-4e78-bbb6-cd4aca980e4b",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"500000000000",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_144,
+		dig_domain_out=>open);
+\PWM_Servo:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_144,
+		capture=>zero,
+		count=>one,
+		reload=>zero,
+		stop=>zero,
+		start=>zero,
+		underflow=>Net_141,
+		overflow=>Net_140,
+		compare_match=>Net_142,
+		line_out=>Net_114,
+		line_out_compl=>Net_143,
+		interrupt=>Net_139);
+Button:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
+		drive_mode=>"010",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"10",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Button_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Button_net_0),
+		siovref=>(tmpSIOVREF__Button_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>Net_70);
+Button_INT:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_70);
+Clock_Buzzer:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"63ea1ee4-0c4c-449d-943a-aa631948e1d0",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"2624671916010.5",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_132,
+		dig_domain_out=>open);
+\PWM_Buzzer:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_132,
+		capture=>zero,
+		count=>one,
+		reload=>zero,
+		stop=>zero,
+		start=>zero,
+		underflow=>Net_129,
+		overflow=>Net_128,
+		compare_match=>Net_130,
+		line_out=>Net_131,
+		line_out_compl=>Net_57,
+		interrupt=>Net_127);
+Buzzer:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"d25cc075-6ee8-4f7b-909c-5077c42d4da8",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>Net_57,
+		fb=>(tmpFB_0__Buzzer_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Buzzer_net_0),
+		siovref=>(tmpSIOVREF__Buzzer_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>one,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>one,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__Buzzer_net_0);
+
+END R_T_L;

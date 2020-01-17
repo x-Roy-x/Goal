@@ -1,0 +1,490 @@
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"protocol.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.protocol_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	protocol_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	protocol_init, %function
+  25              	protocol_init:
+  26              	.LFB33:
+  27              		.file 1 "protocol.c"
+   1:protocol.c    **** #include "goal.h"
+   2:protocol.c    **** 
+   3:protocol.c    **** void protocol_init(void) {
+  28              		.loc 1 3 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   4:protocol.c    ****     I2C_Master_Start();
+  36              		.loc 1 4 0
+  37 0002 FFF7FEFF 		bl	I2C_Master_Start
+  38              	.LVL0:
+   5:protocol.c    ****     PWM_Buzzer_Start();
+  39              		.loc 1 5 0
+  40 0006 FFF7FEFF 		bl	PWM_Buzzer_Start
+  41              	.LVL1:
+   6:protocol.c    ****     PWM_Servo_Start();
+  42              		.loc 1 6 0
+  43 000a FFF7FEFF 		bl	PWM_Servo_Start
+  44              	.LVL2:
+   7:protocol.c    ****     ADC_Start();
+  45              		.loc 1 7 0
+  46 000e FFF7FEFF 		bl	ADC_Start
+  47              	.LVL3:
+   8:protocol.c    ****     Button_INT_StartEx(button_handler);
+  48              		.loc 1 8 0
+  49 0012 0248     		ldr	r0, .L2
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 2
+
+
+  50 0014 FFF7FEFF 		bl	Button_INT_StartEx
+  51              	.LVL4:
+   9:protocol.c    **** }
+  52              		.loc 1 9 0
+  53              		@ sp needed
+  54 0018 10BD     		pop	{r4, pc}
+  55              	.L3:
+  56 001a C046     		.align	2
+  57              	.L2:
+  58 001c 00000000 		.word	button_handler
+  59              		.cfi_endproc
+  60              	.LFE33:
+  61              		.size	protocol_init, .-protocol_init
+  62              		.text
+  63              	.Letext0:
+  64              		.file 2 "Generated_Source\\PSoC4/I2C_Master.h"
+  65              		.file 3 "Generated_Source\\PSoC4/PWM_Buzzer.h"
+  66              		.file 4 "Generated_Source\\PSoC4/PWM_Servo.h"
+  67              		.file 5 "Generated_Source\\PSoC4/ADC_Adc.h"
+  68              		.file 6 "Generated_Source\\PSoC4/Button_INT.h"
+  69              		.section	.debug_info,"",%progbits
+  70              	.Ldebug_info0:
+  71 0000 07010000 		.4byte	0x107
+  72 0004 0400     		.2byte	0x4
+  73 0006 00000000 		.4byte	.Ldebug_abbrev0
+  74 000a 04       		.byte	0x4
+  75 000b 01       		.uleb128 0x1
+  76 000c 97000000 		.4byte	.LASF19
+  77 0010 0C       		.byte	0xc
+  78 0011 3B000000 		.4byte	.LASF20
+  79 0015 46000000 		.4byte	.LASF21
+  80 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  81 001d 00000000 		.4byte	0
+  82 0021 00000000 		.4byte	.Ldebug_line0
+  83 0025 02       		.uleb128 0x2
+  84 0026 01       		.byte	0x1
+  85 0027 06       		.byte	0x6
+  86 0028 9A010000 		.4byte	.LASF0
+  87 002c 02       		.uleb128 0x2
+  88 002d 01       		.byte	0x1
+  89 002e 08       		.byte	0x8
+  90 002f 1B000000 		.4byte	.LASF1
+  91 0033 02       		.uleb128 0x2
+  92 0034 02       		.byte	0x2
+  93 0035 05       		.byte	0x5
+  94 0036 C2010000 		.4byte	.LASF2
+  95 003a 02       		.uleb128 0x2
+  96 003b 02       		.byte	0x2
+  97 003c 07       		.byte	0x7
+  98 003d 87010000 		.4byte	.LASF3
+  99 0041 02       		.uleb128 0x2
+ 100 0042 04       		.byte	0x4
+ 101 0043 05       		.byte	0x5
+ 102 0044 64010000 		.4byte	.LASF4
+ 103 0048 02       		.uleb128 0x2
+ 104 0049 04       		.byte	0x4
+ 105 004a 07       		.byte	0x7
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 3
+
+
+ 106 004b 29000000 		.4byte	.LASF5
+ 107 004f 02       		.uleb128 0x2
+ 108 0050 08       		.byte	0x8
+ 109 0051 05       		.byte	0x5
+ 110 0052 00000000 		.4byte	.LASF6
+ 111 0056 02       		.uleb128 0x2
+ 112 0057 08       		.byte	0x8
+ 113 0058 07       		.byte	0x7
+ 114 0059 80000000 		.4byte	.LASF7
+ 115 005d 03       		.uleb128 0x3
+ 116 005e 04       		.byte	0x4
+ 117 005f 05       		.byte	0x5
+ 118 0060 696E7400 		.ascii	"int\000"
+ 119 0064 02       		.uleb128 0x2
+ 120 0065 04       		.byte	0x4
+ 121 0066 07       		.byte	0x7
+ 122 0067 0E000000 		.4byte	.LASF8
+ 123 006b 02       		.uleb128 0x2
+ 124 006c 04       		.byte	0x4
+ 125 006d 04       		.byte	0x4
+ 126 006e B2010000 		.4byte	.LASF9
+ 127 0072 02       		.uleb128 0x2
+ 128 0073 08       		.byte	0x8
+ 129 0074 04       		.byte	0x4
+ 130 0075 5D010000 		.4byte	.LASF10
+ 131 0079 02       		.uleb128 0x2
+ 132 007a 01       		.byte	0x1
+ 133 007b 08       		.byte	0x8
+ 134 007c 29010000 		.4byte	.LASF11
+ 135 0080 02       		.uleb128 0x2
+ 136 0081 08       		.byte	0x8
+ 137 0082 04       		.byte	0x4
+ 138 0083 A6010000 		.4byte	.LASF12
+ 139 0087 02       		.uleb128 0x2
+ 140 0088 04       		.byte	0x4
+ 141 0089 07       		.byte	0x7
+ 142 008a 7E010000 		.4byte	.LASF13
+ 143 008e 04       		.uleb128 0x4
+ 144 008f 3E010000 		.4byte	.LASF22
+ 145 0093 01       		.byte	0x1
+ 146 0094 03       		.byte	0x3
+ 147 0095 00000000 		.4byte	.LFB33
+ 148 0099 20000000 		.4byte	.LFE33-.LFB33
+ 149 009d 01       		.uleb128 0x1
+ 150 009e 9C       		.byte	0x9c
+ 151 009f D1000000 		.4byte	0xd1
+ 152 00a3 05       		.uleb128 0x5
+ 153 00a4 06000000 		.4byte	.LVL0
+ 154 00a8 D1000000 		.4byte	0xd1
+ 155 00ac 05       		.uleb128 0x5
+ 156 00ad 0A000000 		.4byte	.LVL1
+ 157 00b1 DC000000 		.4byte	0xdc
+ 158 00b5 05       		.uleb128 0x5
+ 159 00b6 0E000000 		.4byte	.LVL2
+ 160 00ba E8000000 		.4byte	0xe8
+ 161 00be 05       		.uleb128 0x5
+ 162 00bf 12000000 		.4byte	.LVL3
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 4
+
+
+ 163 00c3 F4000000 		.4byte	0xf4
+ 164 00c7 05       		.uleb128 0x5
+ 165 00c8 18000000 		.4byte	.LVL4
+ 166 00cc FF000000 		.4byte	0xff
+ 167 00d0 00       		.byte	0
+ 168 00d1 06       		.uleb128 0x6
+ 169 00d2 4C010000 		.4byte	.LASF14
+ 170 00d6 4C010000 		.4byte	.LASF14
+ 171 00da 02       		.byte	0x2
+ 172 00db 72       		.byte	0x72
+ 173 00dc 07       		.uleb128 0x7
+ 174 00dd 6D010000 		.4byte	.LASF15
+ 175 00e1 6D010000 		.4byte	.LASF15
+ 176 00e5 03       		.byte	0x3
+ 177 00e6 3201     		.2byte	0x132
+ 178 00e8 07       		.uleb128 0x7
+ 179 00e9 2E010000 		.4byte	.LASF16
+ 180 00ed 2E010000 		.4byte	.LASF16
+ 181 00f1 04       		.byte	0x4
+ 182 00f2 3201     		.2byte	0x132
+ 183 00f4 06       		.uleb128 0x6
+ 184 00f5 B8010000 		.4byte	.LASF17
+ 185 00f9 B8010000 		.4byte	.LASF17
+ 186 00fd 05       		.byte	0x5
+ 187 00fe 3A       		.byte	0x3a
+ 188 00ff 06       		.uleb128 0x6
+ 189 0100 CC010000 		.4byte	.LASF18
+ 190 0104 CC010000 		.4byte	.LASF18
+ 191 0108 06       		.byte	0x6
+ 192 0109 18       		.byte	0x18
+ 193 010a 00       		.byte	0
+ 194              		.section	.debug_abbrev,"",%progbits
+ 195              	.Ldebug_abbrev0:
+ 196 0000 01       		.uleb128 0x1
+ 197 0001 11       		.uleb128 0x11
+ 198 0002 01       		.byte	0x1
+ 199 0003 25       		.uleb128 0x25
+ 200 0004 0E       		.uleb128 0xe
+ 201 0005 13       		.uleb128 0x13
+ 202 0006 0B       		.uleb128 0xb
+ 203 0007 03       		.uleb128 0x3
+ 204 0008 0E       		.uleb128 0xe
+ 205 0009 1B       		.uleb128 0x1b
+ 206 000a 0E       		.uleb128 0xe
+ 207 000b 55       		.uleb128 0x55
+ 208 000c 17       		.uleb128 0x17
+ 209 000d 11       		.uleb128 0x11
+ 210 000e 01       		.uleb128 0x1
+ 211 000f 10       		.uleb128 0x10
+ 212 0010 17       		.uleb128 0x17
+ 213 0011 00       		.byte	0
+ 214 0012 00       		.byte	0
+ 215 0013 02       		.uleb128 0x2
+ 216 0014 24       		.uleb128 0x24
+ 217 0015 00       		.byte	0
+ 218 0016 0B       		.uleb128 0xb
+ 219 0017 0B       		.uleb128 0xb
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 5
+
+
+ 220 0018 3E       		.uleb128 0x3e
+ 221 0019 0B       		.uleb128 0xb
+ 222 001a 03       		.uleb128 0x3
+ 223 001b 0E       		.uleb128 0xe
+ 224 001c 00       		.byte	0
+ 225 001d 00       		.byte	0
+ 226 001e 03       		.uleb128 0x3
+ 227 001f 24       		.uleb128 0x24
+ 228 0020 00       		.byte	0
+ 229 0021 0B       		.uleb128 0xb
+ 230 0022 0B       		.uleb128 0xb
+ 231 0023 3E       		.uleb128 0x3e
+ 232 0024 0B       		.uleb128 0xb
+ 233 0025 03       		.uleb128 0x3
+ 234 0026 08       		.uleb128 0x8
+ 235 0027 00       		.byte	0
+ 236 0028 00       		.byte	0
+ 237 0029 04       		.uleb128 0x4
+ 238 002a 2E       		.uleb128 0x2e
+ 239 002b 01       		.byte	0x1
+ 240 002c 3F       		.uleb128 0x3f
+ 241 002d 19       		.uleb128 0x19
+ 242 002e 03       		.uleb128 0x3
+ 243 002f 0E       		.uleb128 0xe
+ 244 0030 3A       		.uleb128 0x3a
+ 245 0031 0B       		.uleb128 0xb
+ 246 0032 3B       		.uleb128 0x3b
+ 247 0033 0B       		.uleb128 0xb
+ 248 0034 27       		.uleb128 0x27
+ 249 0035 19       		.uleb128 0x19
+ 250 0036 11       		.uleb128 0x11
+ 251 0037 01       		.uleb128 0x1
+ 252 0038 12       		.uleb128 0x12
+ 253 0039 06       		.uleb128 0x6
+ 254 003a 40       		.uleb128 0x40
+ 255 003b 18       		.uleb128 0x18
+ 256 003c 9742     		.uleb128 0x2117
+ 257 003e 19       		.uleb128 0x19
+ 258 003f 01       		.uleb128 0x1
+ 259 0040 13       		.uleb128 0x13
+ 260 0041 00       		.byte	0
+ 261 0042 00       		.byte	0
+ 262 0043 05       		.uleb128 0x5
+ 263 0044 898201   		.uleb128 0x4109
+ 264 0047 00       		.byte	0
+ 265 0048 11       		.uleb128 0x11
+ 266 0049 01       		.uleb128 0x1
+ 267 004a 31       		.uleb128 0x31
+ 268 004b 13       		.uleb128 0x13
+ 269 004c 00       		.byte	0
+ 270 004d 00       		.byte	0
+ 271 004e 06       		.uleb128 0x6
+ 272 004f 2E       		.uleb128 0x2e
+ 273 0050 00       		.byte	0
+ 274 0051 3F       		.uleb128 0x3f
+ 275 0052 19       		.uleb128 0x19
+ 276 0053 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 6
+
+
+ 277 0054 19       		.uleb128 0x19
+ 278 0055 6E       		.uleb128 0x6e
+ 279 0056 0E       		.uleb128 0xe
+ 280 0057 03       		.uleb128 0x3
+ 281 0058 0E       		.uleb128 0xe
+ 282 0059 3A       		.uleb128 0x3a
+ 283 005a 0B       		.uleb128 0xb
+ 284 005b 3B       		.uleb128 0x3b
+ 285 005c 0B       		.uleb128 0xb
+ 286 005d 00       		.byte	0
+ 287 005e 00       		.byte	0
+ 288 005f 07       		.uleb128 0x7
+ 289 0060 2E       		.uleb128 0x2e
+ 290 0061 00       		.byte	0
+ 291 0062 3F       		.uleb128 0x3f
+ 292 0063 19       		.uleb128 0x19
+ 293 0064 3C       		.uleb128 0x3c
+ 294 0065 19       		.uleb128 0x19
+ 295 0066 6E       		.uleb128 0x6e
+ 296 0067 0E       		.uleb128 0xe
+ 297 0068 03       		.uleb128 0x3
+ 298 0069 0E       		.uleb128 0xe
+ 299 006a 3A       		.uleb128 0x3a
+ 300 006b 0B       		.uleb128 0xb
+ 301 006c 3B       		.uleb128 0x3b
+ 302 006d 05       		.uleb128 0x5
+ 303 006e 00       		.byte	0
+ 304 006f 00       		.byte	0
+ 305 0070 00       		.byte	0
+ 306              		.section	.debug_aranges,"",%progbits
+ 307 0000 1C000000 		.4byte	0x1c
+ 308 0004 0200     		.2byte	0x2
+ 309 0006 00000000 		.4byte	.Ldebug_info0
+ 310 000a 04       		.byte	0x4
+ 311 000b 00       		.byte	0
+ 312 000c 0000     		.2byte	0
+ 313 000e 0000     		.2byte	0
+ 314 0010 00000000 		.4byte	.LFB33
+ 315 0014 20000000 		.4byte	.LFE33-.LFB33
+ 316 0018 00000000 		.4byte	0
+ 317 001c 00000000 		.4byte	0
+ 318              		.section	.debug_ranges,"",%progbits
+ 319              	.Ldebug_ranges0:
+ 320 0000 00000000 		.4byte	.LFB33
+ 321 0004 20000000 		.4byte	.LFE33
+ 322 0008 00000000 		.4byte	0
+ 323 000c 00000000 		.4byte	0
+ 324              		.section	.debug_line,"",%progbits
+ 325              	.Ldebug_line0:
+ 326 0000 9D000000 		.section	.debug_str,"MS",%progbits,1
+ 326      02008400 
+ 326      00000201 
+ 326      FB0E0D00 
+ 326      01010101 
+ 327              	.LASF6:
+ 328 0000 6C6F6E67 		.ascii	"long long int\000"
+ 328      206C6F6E 
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 7
+
+
+ 328      6720696E 
+ 328      7400
+ 329              	.LASF8:
+ 330 000e 756E7369 		.ascii	"unsigned int\000"
+ 330      676E6564 
+ 330      20696E74 
+ 330      00
+ 331              	.LASF1:
+ 332 001b 756E7369 		.ascii	"unsigned char\000"
+ 332      676E6564 
+ 332      20636861 
+ 332      7200
+ 333              	.LASF5:
+ 334 0029 6C6F6E67 		.ascii	"long unsigned int\000"
+ 334      20756E73 
+ 334      69676E65 
+ 334      6420696E 
+ 334      7400
+ 335              	.LASF20:
+ 336 003b 70726F74 		.ascii	"protocol.c\000"
+ 336      6F636F6C 
+ 336      2E6300
+ 337              	.LASF21:
+ 338 0046 443A5C50 		.ascii	"D:\\Programming\\PSoC\\GitGoalKitchen\\Goal\\GOAL-M"
+ 338      726F6772 
+ 338      616D6D69 
+ 338      6E675C50 
+ 338      536F435C 
+ 339 0074 41535445 		.ascii	"ASTER.cydsn\000"
+ 339      522E6379 
+ 339      64736E00 
+ 340              	.LASF7:
+ 341 0080 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 341      206C6F6E 
+ 341      6720756E 
+ 341      7369676E 
+ 341      65642069 
+ 342              	.LASF19:
+ 343 0097 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 343      43313120 
+ 343      352E342E 
+ 343      31203230 
+ 343      31363036 
+ 344 00ca 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 344      20726576 
+ 344      6973696F 
+ 344      6E203233 
+ 344      37373135 
+ 345 00fd 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 345      67202D66 
+ 345      66756E63 
+ 345      74696F6E 
+ 345      2D736563 
+ 346              	.LASF11:
+ 347 0129 63686172 		.ascii	"char\000"
+ 347      00
+ 348              	.LASF16:
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 8
+
+
+ 349 012e 50574D5F 		.ascii	"PWM_Servo_Start\000"
+ 349      53657276 
+ 349      6F5F5374 
+ 349      61727400 
+ 350              	.LASF22:
+ 351 013e 70726F74 		.ascii	"protocol_init\000"
+ 351      6F636F6C 
+ 351      5F696E69 
+ 351      7400
+ 352              	.LASF14:
+ 353 014c 4932435F 		.ascii	"I2C_Master_Start\000"
+ 353      4D617374 
+ 353      65725F53 
+ 353      74617274 
+ 353      00
+ 354              	.LASF10:
+ 355 015d 646F7562 		.ascii	"double\000"
+ 355      6C6500
+ 356              	.LASF4:
+ 357 0164 6C6F6E67 		.ascii	"long int\000"
+ 357      20696E74 
+ 357      00
+ 358              	.LASF15:
+ 359 016d 50574D5F 		.ascii	"PWM_Buzzer_Start\000"
+ 359      42757A7A 
+ 359      65725F53 
+ 359      74617274 
+ 359      00
+ 360              	.LASF13:
+ 361 017e 73697A65 		.ascii	"sizetype\000"
+ 361      74797065 
+ 361      00
+ 362              	.LASF3:
+ 363 0187 73686F72 		.ascii	"short unsigned int\000"
+ 363      7420756E 
+ 363      7369676E 
+ 363      65642069 
+ 363      6E7400
+ 364              	.LASF0:
+ 365 019a 7369676E 		.ascii	"signed char\000"
+ 365      65642063 
+ 365      68617200 
+ 366              	.LASF12:
+ 367 01a6 6C6F6E67 		.ascii	"long double\000"
+ 367      20646F75 
+ 367      626C6500 
+ 368              	.LASF9:
+ 369 01b2 666C6F61 		.ascii	"float\000"
+ 369      7400
+ 370              	.LASF17:
+ 371 01b8 4144435F 		.ascii	"ADC_Start\000"
+ 371      53746172 
+ 371      7400
+ 372              	.LASF2:
+ 373 01c2 73686F72 		.ascii	"short int\000"
+ 373      7420696E 
+ 373      7400
+ARM GAS  C:\Users\ADMIN\AppData\Local\Temp\ccwcPDQ1.s 			page 9
+
+
+ 374              	.LASF18:
+ 375 01cc 42757474 		.ascii	"Button_INT_StartEx\000"
+ 375      6F6E5F49 
+ 375      4E545F53 
+ 375      74617274 
+ 375      457800
+ 376              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

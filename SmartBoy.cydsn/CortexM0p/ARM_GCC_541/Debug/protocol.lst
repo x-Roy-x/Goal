@@ -1,0 +1,494 @@
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"protocol.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.protocol_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	protocol_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	protocol_init, %function
+  25              	protocol_init:
+  26              	.LFB34:
+  27              		.file 1 "protocol.c"
+   1:protocol.c    **** #include "bipboy.h"
+   2:protocol.c    **** 
+   3:protocol.c    **** void protocol_init(void) {
+  28              		.loc 1 3 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   4:protocol.c    ****     adc_init();
+  36              		.loc 1 4 0
+  37 0002 FFF7FEFF 		bl	adc_init
+  38              	.LVL0:
+   5:protocol.c    ****     lcd_init();
+  39              		.loc 1 5 0
+  40 0006 FFF7FEFF 		bl	lcd_init
+  41              	.LVL1:
+   6:protocol.c    ****     Button_Back_Int_StartEx(Button_Back_Int_Handler);
+  42              		.loc 1 6 0
+  43 000a 0648     		ldr	r0, .L2
+  44 000c FFF7FEFF 		bl	Button_Back_Int_StartEx
+  45              	.LVL2:
+   7:protocol.c    ****     Button_Ok_Int_StartEx(Button_Ok_Int_Handler);
+  46              		.loc 1 7 0
+  47 0010 0548     		ldr	r0, .L2+4
+  48 0012 FFF7FEFF 		bl	Button_Ok_Int_StartEx
+  49              	.LVL3:
+   8:protocol.c    ****     Button_Up_Int_StartEx(Button_Up_Int_Handler);
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 2
+
+
+  50              		.loc 1 8 0
+  51 0016 0548     		ldr	r0, .L2+8
+  52 0018 FFF7FEFF 		bl	Button_Up_Int_StartEx
+  53              	.LVL4:
+   9:protocol.c    ****     Button_Down_Int_StartEx(Button_Down_Int_Handler);
+  54              		.loc 1 9 0
+  55 001c 0448     		ldr	r0, .L2+12
+  56 001e FFF7FEFF 		bl	Button_Down_Int_StartEx
+  57              	.LVL5:
+  10:protocol.c    **** }...
+  58              		.loc 1 10 0
+  59              		@ sp needed
+  60 0022 10BD     		pop	{r4, pc}
+  61              	.L3:
+  62              		.align	2
+  63              	.L2:
+  64 0024 00000000 		.word	Button_Back_Int_Handler
+  65 0028 00000000 		.word	Button_Ok_Int_Handler
+  66 002c 00000000 		.word	Button_Up_Int_Handler
+  67 0030 00000000 		.word	Button_Down_Int_Handler
+  68              		.cfi_endproc
+  69              	.LFE34:
+  70              		.size	protocol_init, .-protocol_init
+  71              		.text
+  72              	.Letext0:
+  73              		.file 2 "adc_bipboy.h"
+  74              		.file 3 "lcd_bipboy.h"
+  75              		.file 4 "Generated_Source\\PSoC4/Button_Back_Int.h"
+  76              		.file 5 "Generated_Source\\PSoC4/Button_Ok_Int.h"
+  77              		.file 6 "Generated_Source\\PSoC4/Button_Up_Int.h"
+  78              		.file 7 "Generated_Source\\PSoC4/Button_Down_Int.h"
+  79              		.section	.debug_info,"",%progbits
+  80              	.Ldebug_info0:
+  81 0000 19010000 		.4byte	0x119
+  82 0004 0400     		.2byte	0x4
+  83 0006 00000000 		.4byte	.Ldebug_abbrev0
+  84 000a 04       		.byte	0x4
+  85 000b 01       		.uleb128 0x1
+  86 000c A9000000 		.4byte	.LASF20
+  87 0010 0C       		.byte	0xc
+  88 0011 7E000000 		.4byte	.LASF21
+  89 0015 74010000 		.4byte	.LASF22
+  90 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  91 001d 00000000 		.4byte	0
+  92 0021 00000000 		.4byte	.Ldebug_line0
+  93 0025 02       		.uleb128 0x2
+  94 0026 01       		.byte	0x1
+  95 0027 06       		.byte	0x6
+  96 0028 A2010000 		.4byte	.LASF0
+  97 002c 02       		.uleb128 0x2
+  98 002d 01       		.byte	0x1
+  99 002e 08       		.byte	0x8
+ 100 002f 46000000 		.4byte	.LASF1
+ 101 0033 02       		.uleb128 0x2
+ 102 0034 02       		.byte	0x2
+ 103 0035 05       		.byte	0x5
+ 104 0036 DF010000 		.4byte	.LASF2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 3
+
+
+ 105 003a 02       		.uleb128 0x2
+ 106 003b 02       		.byte	0x2
+ 107 003c 07       		.byte	0x7
+ 108 003d 0E000000 		.4byte	.LASF3
+ 109 0041 02       		.uleb128 0x2
+ 110 0042 04       		.byte	0x4
+ 111 0043 05       		.byte	0x5
+ 112 0044 55010000 		.4byte	.LASF4
+ 113 0048 02       		.uleb128 0x2
+ 114 0049 04       		.byte	0x4
+ 115 004a 07       		.byte	0x7
+ 116 004b 6C000000 		.4byte	.LASF5
+ 117 004f 02       		.uleb128 0x2
+ 118 0050 08       		.byte	0x8
+ 119 0051 05       		.byte	0x5
+ 120 0052 00000000 		.4byte	.LASF6
+ 121 0056 02       		.uleb128 0x2
+ 122 0057 08       		.byte	0x8
+ 123 0058 07       		.byte	0x7
+ 124 0059 92000000 		.4byte	.LASF7
+ 125 005d 03       		.uleb128 0x3
+ 126 005e 04       		.byte	0x4
+ 127 005f 05       		.byte	0x5
+ 128 0060 696E7400 		.ascii	"int\000"
+ 129 0064 02       		.uleb128 0x2
+ 130 0065 04       		.byte	0x4
+ 131 0066 07       		.byte	0x7
+ 132 0067 39000000 		.4byte	.LASF8
+ 133 006b 02       		.uleb128 0x2
+ 134 006c 04       		.byte	0x4
+ 135 006d 04       		.byte	0x4
+ 136 006e C3010000 		.4byte	.LASF9
+ 137 0072 02       		.uleb128 0x2
+ 138 0073 08       		.byte	0x8
+ 139 0074 04       		.byte	0x4
+ 140 0075 4E010000 		.4byte	.LASF10
+ 141 0079 02       		.uleb128 0x2
+ 142 007a 01       		.byte	0x1
+ 143 007b 08       		.byte	0x8
+ 144 007c 3B010000 		.4byte	.LASF11
+ 145 0080 02       		.uleb128 0x2
+ 146 0081 08       		.byte	0x8
+ 147 0082 04       		.byte	0x4
+ 148 0083 AE010000 		.4byte	.LASF12
+ 149 0087 02       		.uleb128 0x2
+ 150 0088 04       		.byte	0x4
+ 151 0089 07       		.byte	0x7
+ 152 008a E9010000 		.4byte	.LASF13
+ 153 008e 04       		.uleb128 0x4
+ 154 008f 40010000 		.4byte	.LASF23
+ 155 0093 01       		.byte	0x1
+ 156 0094 03       		.byte	0x3
+ 157 0095 00000000 		.4byte	.LFB34
+ 158 0099 34000000 		.4byte	.LFE34-.LFB34
+ 159 009d 01       		.uleb128 0x1
+ 160 009e 9C       		.byte	0x9c
+ 161 009f DA000000 		.4byte	0xda
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 4
+
+
+ 162 00a3 05       		.uleb128 0x5
+ 163 00a4 06000000 		.4byte	.LVL0
+ 164 00a8 DA000000 		.4byte	0xda
+ 165 00ac 05       		.uleb128 0x5
+ 166 00ad 0A000000 		.4byte	.LVL1
+ 167 00b1 E5000000 		.4byte	0xe5
+ 168 00b5 05       		.uleb128 0x5
+ 169 00b6 10000000 		.4byte	.LVL2
+ 170 00ba F0000000 		.4byte	0xf0
+ 171 00be 05       		.uleb128 0x5
+ 172 00bf 16000000 		.4byte	.LVL3
+ 173 00c3 FB000000 		.4byte	0xfb
+ 174 00c7 05       		.uleb128 0x5
+ 175 00c8 1C000000 		.4byte	.LVL4
+ 176 00cc 06010000 		.4byte	0x106
+ 177 00d0 05       		.uleb128 0x5
+ 178 00d1 22000000 		.4byte	.LVL5
+ 179 00d5 11010000 		.4byte	0x111
+ 180 00d9 00       		.byte	0
+ 181 00da 06       		.uleb128 0x6
+ 182 00db 89000000 		.4byte	.LASF14
+ 183 00df 89000000 		.4byte	.LASF14
+ 184 00e3 02       		.byte	0x2
+ 185 00e4 07       		.byte	0x7
+ 186 00e5 06       		.uleb128 0x6
+ 187 00e6 BA010000 		.4byte	.LASF15
+ 188 00ea BA010000 		.4byte	.LASF15
+ 189 00ee 03       		.byte	0x3
+ 190 00ef 04       		.byte	0x4
+ 191 00f0 06       		.uleb128 0x6
+ 192 00f1 54000000 		.4byte	.LASF16
+ 193 00f5 54000000 		.4byte	.LASF16
+ 194 00f9 04       		.byte	0x4
+ 195 00fa 18       		.byte	0x18
+ 196 00fb 06       		.uleb128 0x6
+ 197 00fc 5E010000 		.4byte	.LASF17
+ 198 0100 5E010000 		.4byte	.LASF17
+ 199 0104 05       		.byte	0x5
+ 200 0105 18       		.byte	0x18
+ 201 0106 06       		.uleb128 0x6
+ 202 0107 C9010000 		.4byte	.LASF18
+ 203 010b C9010000 		.4byte	.LASF18
+ 204 010f 06       		.byte	0x6
+ 205 0110 18       		.byte	0x18
+ 206 0111 06       		.uleb128 0x6
+ 207 0112 21000000 		.4byte	.LASF19
+ 208 0116 21000000 		.4byte	.LASF19
+ 209 011a 07       		.byte	0x7
+ 210 011b 18       		.byte	0x18
+ 211 011c 00       		.byte	0
+ 212              		.section	.debug_abbrev,"",%progbits
+ 213              	.Ldebug_abbrev0:
+ 214 0000 01       		.uleb128 0x1
+ 215 0001 11       		.uleb128 0x11
+ 216 0002 01       		.byte	0x1
+ 217 0003 25       		.uleb128 0x25
+ 218 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 5
+
+
+ 219 0005 13       		.uleb128 0x13
+ 220 0006 0B       		.uleb128 0xb
+ 221 0007 03       		.uleb128 0x3
+ 222 0008 0E       		.uleb128 0xe
+ 223 0009 1B       		.uleb128 0x1b
+ 224 000a 0E       		.uleb128 0xe
+ 225 000b 55       		.uleb128 0x55
+ 226 000c 17       		.uleb128 0x17
+ 227 000d 11       		.uleb128 0x11
+ 228 000e 01       		.uleb128 0x1
+ 229 000f 10       		.uleb128 0x10
+ 230 0010 17       		.uleb128 0x17
+ 231 0011 00       		.byte	0
+ 232 0012 00       		.byte	0
+ 233 0013 02       		.uleb128 0x2
+ 234 0014 24       		.uleb128 0x24
+ 235 0015 00       		.byte	0
+ 236 0016 0B       		.uleb128 0xb
+ 237 0017 0B       		.uleb128 0xb
+ 238 0018 3E       		.uleb128 0x3e
+ 239 0019 0B       		.uleb128 0xb
+ 240 001a 03       		.uleb128 0x3
+ 241 001b 0E       		.uleb128 0xe
+ 242 001c 00       		.byte	0
+ 243 001d 00       		.byte	0
+ 244 001e 03       		.uleb128 0x3
+ 245 001f 24       		.uleb128 0x24
+ 246 0020 00       		.byte	0
+ 247 0021 0B       		.uleb128 0xb
+ 248 0022 0B       		.uleb128 0xb
+ 249 0023 3E       		.uleb128 0x3e
+ 250 0024 0B       		.uleb128 0xb
+ 251 0025 03       		.uleb128 0x3
+ 252 0026 08       		.uleb128 0x8
+ 253 0027 00       		.byte	0
+ 254 0028 00       		.byte	0
+ 255 0029 04       		.uleb128 0x4
+ 256 002a 2E       		.uleb128 0x2e
+ 257 002b 01       		.byte	0x1
+ 258 002c 3F       		.uleb128 0x3f
+ 259 002d 19       		.uleb128 0x19
+ 260 002e 03       		.uleb128 0x3
+ 261 002f 0E       		.uleb128 0xe
+ 262 0030 3A       		.uleb128 0x3a
+ 263 0031 0B       		.uleb128 0xb
+ 264 0032 3B       		.uleb128 0x3b
+ 265 0033 0B       		.uleb128 0xb
+ 266 0034 27       		.uleb128 0x27
+ 267 0035 19       		.uleb128 0x19
+ 268 0036 11       		.uleb128 0x11
+ 269 0037 01       		.uleb128 0x1
+ 270 0038 12       		.uleb128 0x12
+ 271 0039 06       		.uleb128 0x6
+ 272 003a 40       		.uleb128 0x40
+ 273 003b 18       		.uleb128 0x18
+ 274 003c 9742     		.uleb128 0x2117
+ 275 003e 19       		.uleb128 0x19
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 6
+
+
+ 276 003f 01       		.uleb128 0x1
+ 277 0040 13       		.uleb128 0x13
+ 278 0041 00       		.byte	0
+ 279 0042 00       		.byte	0
+ 280 0043 05       		.uleb128 0x5
+ 281 0044 898201   		.uleb128 0x4109
+ 282 0047 00       		.byte	0
+ 283 0048 11       		.uleb128 0x11
+ 284 0049 01       		.uleb128 0x1
+ 285 004a 31       		.uleb128 0x31
+ 286 004b 13       		.uleb128 0x13
+ 287 004c 00       		.byte	0
+ 288 004d 00       		.byte	0
+ 289 004e 06       		.uleb128 0x6
+ 290 004f 2E       		.uleb128 0x2e
+ 291 0050 00       		.byte	0
+ 292 0051 3F       		.uleb128 0x3f
+ 293 0052 19       		.uleb128 0x19
+ 294 0053 3C       		.uleb128 0x3c
+ 295 0054 19       		.uleb128 0x19
+ 296 0055 6E       		.uleb128 0x6e
+ 297 0056 0E       		.uleb128 0xe
+ 298 0057 03       		.uleb128 0x3
+ 299 0058 0E       		.uleb128 0xe
+ 300 0059 3A       		.uleb128 0x3a
+ 301 005a 0B       		.uleb128 0xb
+ 302 005b 3B       		.uleb128 0x3b
+ 303 005c 0B       		.uleb128 0xb
+ 304 005d 00       		.byte	0
+ 305 005e 00       		.byte	0
+ 306 005f 00       		.byte	0
+ 307              		.section	.debug_aranges,"",%progbits
+ 308 0000 1C000000 		.4byte	0x1c
+ 309 0004 0200     		.2byte	0x2
+ 310 0006 00000000 		.4byte	.Ldebug_info0
+ 311 000a 04       		.byte	0x4
+ 312 000b 00       		.byte	0
+ 313 000c 0000     		.2byte	0
+ 314 000e 0000     		.2byte	0
+ 315 0010 00000000 		.4byte	.LFB34
+ 316 0014 34000000 		.4byte	.LFE34-.LFB34
+ 317 0018 00000000 		.4byte	0
+ 318 001c 00000000 		.4byte	0
+ 319              		.section	.debug_ranges,"",%progbits
+ 320              	.Ldebug_ranges0:
+ 321 0000 00000000 		.4byte	.LFB34
+ 322 0004 34000000 		.4byte	.LFE34
+ 323 0008 00000000 		.4byte	0
+ 324 000c 00000000 		.4byte	0
+ 325              		.section	.debug_line,"",%progbits
+ 326              	.Ldebug_line0:
+ 327 0000 C2000000 		.section	.debug_str,"MS",%progbits,1
+ 327      0200A800 
+ 327      00000201 
+ 327      FB0E0D00 
+ 327      01010101 
+ 328              	.LASF6:
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 7
+
+
+ 329 0000 6C6F6E67 		.ascii	"long long int\000"
+ 329      206C6F6E 
+ 329      6720696E 
+ 329      7400
+ 330              	.LASF3:
+ 331 000e 73686F72 		.ascii	"short unsigned int\000"
+ 331      7420756E 
+ 331      7369676E 
+ 331      65642069 
+ 331      6E7400
+ 332              	.LASF19:
+ 333 0021 42757474 		.ascii	"Button_Down_Int_StartEx\000"
+ 333      6F6E5F44 
+ 333      6F776E5F 
+ 333      496E745F 
+ 333      53746172 
+ 334              	.LASF8:
+ 335 0039 756E7369 		.ascii	"unsigned int\000"
+ 335      676E6564 
+ 335      20696E74 
+ 335      00
+ 336              	.LASF1:
+ 337 0046 756E7369 		.ascii	"unsigned char\000"
+ 337      676E6564 
+ 337      20636861 
+ 337      7200
+ 338              	.LASF16:
+ 339 0054 42757474 		.ascii	"Button_Back_Int_StartEx\000"
+ 339      6F6E5F42 
+ 339      61636B5F 
+ 339      496E745F 
+ 339      53746172 
+ 340              	.LASF5:
+ 341 006c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 341      20756E73 
+ 341      69676E65 
+ 341      6420696E 
+ 341      7400
+ 342              	.LASF21:
+ 343 007e 70726F74 		.ascii	"protocol.c\000"
+ 343      6F636F6C 
+ 343      2E6300
+ 344              	.LASF14:
+ 345 0089 6164635F 		.ascii	"adc_init\000"
+ 345      696E6974 
+ 345      00
+ 346              	.LASF7:
+ 347 0092 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 347      206C6F6E 
+ 347      6720756E 
+ 347      7369676E 
+ 347      65642069 
+ 348              	.LASF20:
+ 349 00a9 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 349      43313120 
+ 349      352E342E 
+ 349      31203230 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 8
+
+
+ 349      31363036 
+ 350 00dc 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 350      20726576 
+ 350      6973696F 
+ 350      6E203233 
+ 350      37373135 
+ 351 010f 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 351      67202D66 
+ 351      66756E63 
+ 351      74696F6E 
+ 351      2D736563 
+ 352              	.LASF11:
+ 353 013b 63686172 		.ascii	"char\000"
+ 353      00
+ 354              	.LASF23:
+ 355 0140 70726F74 		.ascii	"protocol_init\000"
+ 355      6F636F6C 
+ 355      5F696E69 
+ 355      7400
+ 356              	.LASF10:
+ 357 014e 646F7562 		.ascii	"double\000"
+ 357      6C6500
+ 358              	.LASF4:
+ 359 0155 6C6F6E67 		.ascii	"long int\000"
+ 359      20696E74 
+ 359      00
+ 360              	.LASF17:
+ 361 015e 42757474 		.ascii	"Button_Ok_Int_StartEx\000"
+ 361      6F6E5F4F 
+ 361      6B5F496E 
+ 361      745F5374 
+ 361      61727445 
+ 362              	.LASF22:
+ 363 0174 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\lcd.cydsn\000"
+ 363      795C4269 
+ 363      70626F79 
+ 363      5C626970 
+ 363      626F795C 
+ 364              	.LASF0:
+ 365 01a2 7369676E 		.ascii	"signed char\000"
+ 365      65642063 
+ 365      68617200 
+ 366              	.LASF12:
+ 367 01ae 6C6F6E67 		.ascii	"long double\000"
+ 367      20646F75 
+ 367      626C6500 
+ 368              	.LASF15:
+ 369 01ba 6C63645F 		.ascii	"lcd_init\000"
+ 369      696E6974 
+ 369      00
+ 370              	.LASF9:
+ 371 01c3 666C6F61 		.ascii	"float\000"
+ 371      7400
+ 372              	.LASF18:
+ 373 01c9 42757474 		.ascii	"Button_Up_Int_StartEx\000"
+ 373      6F6E5F55 
+ 373      705F496E 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccbJDiya.s 			page 9
+
+
+ 373      745F5374 
+ 373      61727445 
+ 374              	.LASF2:
+ 375 01df 73686F72 		.ascii	"short int\000"
+ 375      7420696E 
+ 375      7400
+ 376              	.LASF13:
+ 377 01e9 73697A65 		.ascii	"sizetype\000"
+ 377      74797065 
+ 377      00
+ 378              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,138 @@
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/CortexM0p/ARM_GCC_541/Debug/buttons.o : D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Adc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Configuration.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_ISR.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Sensing.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Structure.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_INT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLib.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_BOOT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_EZI2C.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PINS.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCBCLK.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCB_IRQ.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_BOOT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PINS.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus_psoc4.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyPm.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cypins.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cytypes.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/project.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/buttons.c D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/buttons.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/defaults.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/goal.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/i2c_goal.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/protocol.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/sensors.h 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Adc.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Configuration.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_ISR.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Sensing.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Structure.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_INT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Buzzer.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Servo.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_BOOT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_EZI2C.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C_PVT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PINS.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PVT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCBCLK.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCB_IRQ.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Buzzer.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Servo.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_BOOT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PINS.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PVT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus_psoc4.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/buttons.c : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/buttons.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/defaults.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/goal.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/i2c_goal.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/protocol.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/sensors.h : 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/CortexM0p/ARM_GCC_541/Debug/sensors.o : D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Adc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Configuration.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_ISR.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Sensing.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/ADC_Structure.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_INT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Button_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Buzzer_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Clock_Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyFlash.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/CyLib.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_BOOT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_EZI2C.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_I2C_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PINS.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCBCLK.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_SCB_IRQ.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_scl_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/I2C_Master_sda_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/LED_Conect_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Buzzer.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/PWM_Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/Servo_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_BOOT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PINS.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_armcc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_compiler.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cmsis_gcc.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/core_cm0plus_psoc4.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyPm.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cy_em_eeprom.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cypins.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/cytypes.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/Generated_Source/PSoC4/project.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/buttons.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/defaults.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/goal.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/i2c_goal.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/protocol.h D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/sensors.c D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/sensors.h 
+
+D:/Programming/PSoC/GitGoalKitchen/Goal/GOAL-MASTER.cydsn/sensors.c : 
+

@@ -1,0 +1,2968 @@
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"rtc_bipboy.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.rtc_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	rtc_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	rtc_init, %function
+  25              	rtc_init:
+  26              	.LFB62:
+  27              		.file 1 "rtc_bipboy.c"
+   1:rtc_bipboy.c  **** #include "bipboy.h"
+   2:rtc_bipboy.c  **** 
+   3:rtc_bipboy.c  **** struct Time Time;
+   4:rtc_bipboy.c  **** struct Date Date;
+   5:rtc_bipboy.c  **** 
+   6:rtc_bipboy.c  **** int8 hour;
+   7:rtc_bipboy.c  **** int8 minute;
+   8:rtc_bipboy.c  **** int8 second;
+   9:rtc_bipboy.c  **** 
+  10:rtc_bipboy.c  **** int8 day;
+  11:rtc_bipboy.c  **** int8 month = 1;
+  12:rtc_bipboy.c  **** int16 year;
+  13:rtc_bipboy.c  **** 
+  14:rtc_bipboy.c  **** uint32 timeHrMinSec = TIME_HR_MIN_SEC;
+  15:rtc_bipboy.c  **** uint32 dateMonthDayYear = DATE_MONTH_DAY_YEAR;
+  16:rtc_bipboy.c  **** 
+  17:rtc_bipboy.c  **** void rtc_init(void) {
+  28              		.loc 1 17 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  18:rtc_bipboy.c  ****     /* Starts SysTick component */
+  19:rtc_bipboy.c  ****     CySysTickStart();
+  36              		.loc 1 19 0
+  37 0002 FFF7FEFF 		bl	CySysTickStart
+  38              	.LVL0:
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 2
+
+
+  20:rtc_bipboy.c  **** 
+  21:rtc_bipboy.c  ****     /* Configure SysTick timer to generate interrupt every 100 ms */
+  22:rtc_bipboy.c  ****     CySysTickSetReload(SYSTICK_RELOAD);
+  39              		.loc 1 22 0
+  40 0006 0F48     		ldr	r0, .L6
+  41 0008 FFF7FEFF 		bl	CySysTickSetReload
+  42              	.LVL1:
+  43              	.LBB2:
+  23:rtc_bipboy.c  ****     
+  24:rtc_bipboy.c  ****     /* Find unused callback slot. */
+  25:rtc_bipboy.c  ****     for (uint32 i = 0u; i < CY_SYS_SYST_NUM_OF_CALLBACKS; ++i) {
+  44              		.loc 1 25 0
+  45 000c 0024     		movs	r4, #0
+  46 000e 0AE0     		b	.L2
+  47              	.LVL2:
+  48              	.L5:
+  26:rtc_bipboy.c  ****         if (CySysTickGetCallback(i) == NULL) {
+  49              		.loc 1 26 0
+  50 0010 2000     		movs	r0, r4
+  51 0012 FFF7FEFF 		bl	CySysTickGetCallback
+  52              	.LVL3:
+  53 0016 0028     		cmp	r0, #0
+  54 0018 04D1     		bne	.L3
+  27:rtc_bipboy.c  ****             /* Set callback */
+  28:rtc_bipboy.c  ****             CySysTickSetCallback(i, SysTickIsrHandler);
+  55              		.loc 1 28 0
+  56 001a 0B49     		ldr	r1, .L6+4
+  57 001c 2000     		movs	r0, r4
+  58 001e FFF7FEFF 		bl	CySysTickSetCallback
+  59              	.LVL4:
+  29:rtc_bipboy.c  ****             break;
+  60              		.loc 1 29 0
+  61 0022 02E0     		b	.L4
+  62              	.L3:
+  25:rtc_bipboy.c  ****         if (CySysTickGetCallback(i) == NULL) {
+  63              		.loc 1 25 0 discriminator 2
+  64 0024 0134     		adds	r4, r4, #1
+  65              	.LVL5:
+  66              	.L2:
+  25:rtc_bipboy.c  ****         if (CySysTickGetCallback(i) == NULL) {
+  67              		.loc 1 25 0 is_stmt 0 discriminator 1
+  68 0026 042C     		cmp	r4, #4
+  69 0028 F2D9     		bls	.L5
+  70              	.L4:
+  71              	.LBE2:
+  30:rtc_bipboy.c  ****         }
+  31:rtc_bipboy.c  ****     }
+  32:rtc_bipboy.c  ****     
+  33:rtc_bipboy.c  ****     /* Starts RTC component */
+  34:rtc_bipboy.c  ****     RTC_Start();
+  72              		.loc 1 34 0 is_stmt 1
+  73 002a FFF7FEFF 		bl	RTC_Start
+  74              	.LVL6:
+  35:rtc_bipboy.c  **** 
+  36:rtc_bipboy.c  ****     /* Set Date and Time */
+  37:rtc_bipboy.c  ****     RTC_SetDateAndTime(timeHrMinSec, dateMonthDayYear);
+  75              		.loc 1 37 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 3
+
+
+  76 002e 074B     		ldr	r3, .L6+8
+  77 0030 1968     		ldr	r1, [r3]
+  78 0032 074B     		ldr	r3, .L6+12
+  79 0034 1868     		ldr	r0, [r3]
+  80 0036 FFF7FEFF 		bl	RTC_SetDateAndTime
+  81              	.LVL7:
+  38:rtc_bipboy.c  ****     
+  39:rtc_bipboy.c  ****     /* Set RTC time update period */
+  40:rtc_bipboy.c  ****     RTC_SetPeriod(1u, SYSTICK_EACH_1_HZ);
+  82              		.loc 1 40 0
+  83 003a 0A21     		movs	r1, #10
+  84 003c 0120     		movs	r0, #1
+  85 003e FFF7FEFF 		bl	RTC_SetPeriod
+  86              	.LVL8:
+  41:rtc_bipboy.c  **** }
+  87              		.loc 1 41 0
+  88              		@ sp needed
+  89              	.LVL9:
+  90 0042 10BD     		pop	{r4, pc}
+  91              	.L7:
+  92              		.align	2
+  93              	.L6:
+  94 0044 009F2400 		.word	2400000
+  95 0048 00000000 		.word	SysTickIsrHandler
+  96 004c 00000000 		.word	.LANCHOR0
+  97 0050 00000000 		.word	.LANCHOR1
+  98              		.cfi_endproc
+  99              	.LFE62:
+ 100              		.size	rtc_init, .-rtc_init
+ 101              		.section	.text.rtc_update_dynamic_screen,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	rtc_update_dynamic_screen
+ 104              		.code	16
+ 105              		.thumb_func
+ 106              		.type	rtc_update_dynamic_screen, %function
+ 107              	rtc_update_dynamic_screen:
+ 108              	.LFB64:
+  42:rtc_bipboy.c  **** 
+  43:rtc_bipboy.c  **** uint8 counter;
+  44:rtc_bipboy.c  **** 
+  45:rtc_bipboy.c  **** CY_ISR(SysTickIsrHandler) {
+  46:rtc_bipboy.c  ****     RTC_Update();
+  47:rtc_bipboy.c  ****     
+  48:rtc_bipboy.c  ****     rtc_update_dynamic_screen();   
+  49:rtc_bipboy.c  **** }
+  50:rtc_bipboy.c  **** 
+  51:rtc_bipboy.c  **** void rtc_update_dynamic_screen(void) {
+ 109              		.loc 1 51 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 0000 10B5     		push	{r4, lr}
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 4, -8
+ 116              		.cfi_offset 14, -4
+  52:rtc_bipboy.c  ****     uint8 activeScreen = get_active_screen();
+ 117              		.loc 1 52 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 4
+
+
+ 118 0002 FFF7FEFF 		bl	get_active_screen
+ 119              	.LVL10:
+  53:rtc_bipboy.c  ****     
+  54:rtc_bipboy.c  ****     switch(activeScreen) {
+ 120              		.loc 1 54 0
+ 121 0006 0028     		cmp	r0, #0
+ 122 0008 01D1     		bne	.L8
+  55:rtc_bipboy.c  ****         case MAIN_SCREEN:
+  56:rtc_bipboy.c  ****             lcd_main_screen();
+ 123              		.loc 1 56 0
+ 124 000a FFF7FEFF 		bl	lcd_main_screen
+ 125              	.LVL11:
+ 126              	.L8:
+  57:rtc_bipboy.c  ****             break;
+  58:rtc_bipboy.c  ****         
+  59:rtc_bipboy.c  ****     }
+  60:rtc_bipboy.c  **** }
+ 127              		.loc 1 60 0
+ 128              		@ sp needed
+ 129 000e 10BD     		pop	{r4, pc}
+ 130              		.cfi_endproc
+ 131              	.LFE64:
+ 132              		.size	rtc_update_dynamic_screen, .-rtc_update_dynamic_screen
+ 133              		.section	.text.SysTickIsrHandler,"ax",%progbits
+ 134              		.align	2
+ 135              		.global	SysTickIsrHandler
+ 136              		.code	16
+ 137              		.thumb_func
+ 138              		.type	SysTickIsrHandler, %function
+ 139              	SysTickIsrHandler:
+ 140              	.LFB63:
+  45:rtc_bipboy.c  ****     RTC_Update();
+ 141              		.loc 1 45 0
+ 142              		.cfi_startproc
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145 0000 10B5     		push	{r4, lr}
+ 146              		.cfi_def_cfa_offset 8
+ 147              		.cfi_offset 4, -8
+ 148              		.cfi_offset 14, -4
+  46:rtc_bipboy.c  ****     
+ 149              		.loc 1 46 0
+ 150 0002 FFF7FEFF 		bl	RTC_Update
+ 151              	.LVL12:
+  48:rtc_bipboy.c  **** }
+ 152              		.loc 1 48 0
+ 153 0006 FFF7FEFF 		bl	rtc_update_dynamic_screen
+ 154              	.LVL13:
+  49:rtc_bipboy.c  **** 
+ 155              		.loc 1 49 0
+ 156              		@ sp needed
+ 157 000a 10BD     		pop	{r4, pc}
+ 158              		.cfi_endproc
+ 159              	.LFE63:
+ 160              		.size	SysTickIsrHandler, .-SysTickIsrHandler
+ 161              		.section	.text.set_time,"ax",%progbits
+ 162              		.align	2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 5
+
+
+ 163              		.global	set_time
+ 164              		.code	16
+ 165              		.thumb_func
+ 166              		.type	set_time, %function
+ 167              	set_time:
+ 168              	.LFB65:
+  61:rtc_bipboy.c  **** 
+  62:rtc_bipboy.c  **** void set_time(void) {
+ 169              		.loc 1 62 0
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173 0000 10B5     		push	{r4, lr}
+ 174              		.cfi_def_cfa_offset 8
+ 175              		.cfi_offset 4, -8
+ 176              		.cfi_offset 14, -4
+  63:rtc_bipboy.c  ****     uint8 position = get_counter_ok_back();
+ 177              		.loc 1 63 0
+ 178 0002 FFF7FEFF 		bl	get_counter_ok_back
+ 179              	.LVL14:
+ 180 0006 0400     		movs	r4, r0
+ 181              	.LVL15:
+  64:rtc_bipboy.c  ****     uint8 offset = get_counter_up_down();
+ 182              		.loc 1 64 0
+ 183 0008 FFF7FEFF 		bl	get_counter_up_down
+ 184              	.LVL16:
+ 185 000c C0B2     		uxtb	r0, r0
+ 186              	.LVL17:
+  65:rtc_bipboy.c  ****     
+  66:rtc_bipboy.c  ****     if(position == 1 && offset == 0) {
+ 187              		.loc 1 66 0
+ 188 000e 012C     		cmp	r4, #1
+ 189 0010 11D1     		bne	.L13
+ 190              		.loc 1 66 0 is_stmt 0 discriminator 1
+ 191 0012 0028     		cmp	r0, #0
+ 192 0014 0FD1     		bne	.L13
+  67:rtc_bipboy.c  ****         hour = Time.hour;
+ 193              		.loc 1 67 0 is_stmt 1
+ 194 0016 444B     		ldr	r3, .L23
+ 195 0018 0020     		movs	r0, #0
+ 196              	.LVL18:
+ 197 001a 1856     		ldrsb	r0, [r3, r0]
+ 198 001c 434A     		ldr	r2, .L23+4
+ 199 001e 1070     		strb	r0, [r2]
+  68:rtc_bipboy.c  ****         Time.minute = minute;
+ 200              		.loc 1 68 0
+ 201 0020 434A     		ldr	r2, .L23+8
+ 202 0022 1278     		ldrb	r2, [r2]
+ 203 0024 5A70     		strb	r2, [r3, #1]
+  69:rtc_bipboy.c  ****         minute = Time.minute;
+  70:rtc_bipboy.c  ****         second = Time.second;
+ 204              		.loc 1 70 0
+ 205 0026 9A78     		ldrb	r2, [r3, #2]
+ 206 0028 424B     		ldr	r3, .L23+12
+ 207 002a 1A70     		strb	r2, [r3]
+  71:rtc_bipboy.c  ****         set_counter_up_down(hour + 2);
+ 208              		.loc 1 71 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 6
+
+
+ 209 002c 0230     		adds	r0, r0, #2
+ 210 002e 00B2     		sxth	r0, r0
+ 211 0030 FFF7FEFF 		bl	set_counter_up_down
+ 212              	.LVL19:
+ 213 0034 2CE0     		b	.L14
+ 214              	.LVL20:
+ 215              	.L13:
+  72:rtc_bipboy.c  ****     } else if(position == 2 && offset == 0) {
+ 216              		.loc 1 72 0
+ 217 0036 022C     		cmp	r4, #2
+ 218 0038 11D1     		bne	.L15
+ 219              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 220 003a 0028     		cmp	r0, #0
+ 221 003c 0FD1     		bne	.L15
+  73:rtc_bipboy.c  ****         Time.hour = hour;
+ 222              		.loc 1 73 0 is_stmt 1
+ 223 003e 3A4B     		ldr	r3, .L23
+ 224 0040 3A4A     		ldr	r2, .L23+4
+ 225 0042 1278     		ldrb	r2, [r2]
+ 226 0044 1A70     		strb	r2, [r3]
+  74:rtc_bipboy.c  ****         minute = Time.minute;
+ 227              		.loc 1 74 0
+ 228 0046 0120     		movs	r0, #1
+ 229              	.LVL21:
+ 230 0048 1856     		ldrsb	r0, [r3, r0]
+ 231 004a 394A     		ldr	r2, .L23+8
+ 232 004c 1070     		strb	r0, [r2]
+  75:rtc_bipboy.c  ****         Time.second = second;
+ 233              		.loc 1 75 0
+ 234 004e 394A     		ldr	r2, .L23+12
+ 235 0050 1278     		ldrb	r2, [r2]
+ 236 0052 9A70     		strb	r2, [r3, #2]
+  76:rtc_bipboy.c  ****         set_counter_up_down(minute + 2);
+ 237              		.loc 1 76 0
+ 238 0054 0230     		adds	r0, r0, #2
+ 239 0056 00B2     		sxth	r0, r0
+ 240 0058 FFF7FEFF 		bl	set_counter_up_down
+ 241              	.LVL22:
+ 242 005c 18E0     		b	.L14
+ 243              	.LVL23:
+ 244              	.L15:
+  77:rtc_bipboy.c  ****     } else if(position == 3 && offset == 0) {
+ 245              		.loc 1 77 0
+ 246 005e 032C     		cmp	r4, #3
+ 247 0060 0ED1     		bne	.L16
+ 248              		.loc 1 77 0 is_stmt 0 discriminator 1
+ 249 0062 0028     		cmp	r0, #0
+ 250 0064 0CD1     		bne	.L16
+  78:rtc_bipboy.c  ****         Time.minute = minute;
+ 251              		.loc 1 78 0 is_stmt 1
+ 252 0066 304B     		ldr	r3, .L23
+ 253 0068 314A     		ldr	r2, .L23+8
+ 254 006a 1278     		ldrb	r2, [r2]
+ 255 006c 5A70     		strb	r2, [r3, #1]
+  79:rtc_bipboy.c  ****         second = Time.second;
+ 256              		.loc 1 79 0
+ 257 006e 0220     		movs	r0, #2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 7
+
+
+ 258              	.LVL24:
+ 259 0070 1856     		ldrsb	r0, [r3, r0]
+ 260 0072 304B     		ldr	r3, .L23+12
+ 261 0074 1870     		strb	r0, [r3]
+  80:rtc_bipboy.c  ****         set_counter_up_down(second + 2);
+ 262              		.loc 1 80 0
+ 263 0076 0230     		adds	r0, r0, #2
+ 264 0078 00B2     		sxth	r0, r0
+ 265 007a FFF7FEFF 		bl	set_counter_up_down
+ 266              	.LVL25:
+ 267 007e 07E0     		b	.L14
+ 268              	.LVL26:
+ 269              	.L16:
+  81:rtc_bipboy.c  ****     } else if(position == 4 && offset == 0) {
+ 270              		.loc 1 81 0
+ 271 0080 042C     		cmp	r4, #4
+ 272 0082 05D1     		bne	.L14
+ 273              		.loc 1 81 0 is_stmt 0 discriminator 1
+ 274 0084 0028     		cmp	r0, #0
+ 275 0086 03D1     		bne	.L14
+  82:rtc_bipboy.c  ****         Time.second = second;
+ 276              		.loc 1 82 0 is_stmt 1
+ 277 0088 2A4B     		ldr	r3, .L23+12
+ 278 008a 1A78     		ldrb	r2, [r3]
+ 279 008c 264B     		ldr	r3, .L23
+ 280 008e 9A70     		strb	r2, [r3, #2]
+ 281              	.LVL27:
+ 282              	.L14:
+  83:rtc_bipboy.c  **** 
+  84:rtc_bipboy.c  ****     }
+  85:rtc_bipboy.c  ****     
+  86:rtc_bipboy.c  ****     offset = get_counter_up_down();
+ 283              		.loc 1 86 0
+ 284 0090 FFF7FEFF 		bl	get_counter_up_down
+ 285              	.LVL28:
+ 286 0094 C0B2     		uxtb	r0, r0
+ 287              	.LVL29:
+  87:rtc_bipboy.c  ****     
+  88:rtc_bipboy.c  ****     if(position == 1) {
+ 288              		.loc 1 88 0
+ 289 0096 012C     		cmp	r4, #1
+ 290 0098 15D1     		bne	.L17
+  89:rtc_bipboy.c  ****         hour = offset - 2;
+ 291              		.loc 1 89 0
+ 292 009a 0238     		subs	r0, r0, #2
+ 293              	.LVL30:
+ 294 009c 40B2     		sxtb	r0, r0
+ 295              	.LVL31:
+ 296 009e 234B     		ldr	r3, .L23+4
+ 297 00a0 1870     		strb	r0, [r3]
+  90:rtc_bipboy.c  ****         if(hour > 23) {
+ 298              		.loc 1 90 0
+ 299 00a2 1728     		cmp	r0, #23
+ 300 00a4 06DD     		ble	.L18
+  91:rtc_bipboy.c  ****             set_counter_up_down(0 + 2);
+ 301              		.loc 1 91 0
+ 302 00a6 0220     		movs	r0, #2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 8
+
+
+ 303 00a8 FFF7FEFF 		bl	set_counter_up_down
+ 304              	.LVL32:
+  92:rtc_bipboy.c  ****             hour = 0;
+ 305              		.loc 1 92 0
+ 306 00ac 0022     		movs	r2, #0
+ 307 00ae 1F4B     		ldr	r3, .L23+4
+ 308 00b0 1A70     		strb	r2, [r3]
+ 309 00b2 37E0     		b	.L12
+ 310              	.L18:
+  93:rtc_bipboy.c  ****         } else if(hour < 0) {
+ 311              		.loc 1 93 0
+ 312 00b4 0028     		cmp	r0, #0
+ 313 00b6 35DA     		bge	.L12
+  94:rtc_bipboy.c  ****             set_counter_up_down(23 + 2);
+ 314              		.loc 1 94 0
+ 315 00b8 1920     		movs	r0, #25
+ 316 00ba FFF7FEFF 		bl	set_counter_up_down
+ 317              	.LVL33:
+  95:rtc_bipboy.c  ****             hour = 23;
+ 318              		.loc 1 95 0
+ 319 00be 1722     		movs	r2, #23
+ 320 00c0 1A4B     		ldr	r3, .L23+4
+ 321 00c2 1A70     		strb	r2, [r3]
+ 322 00c4 2EE0     		b	.L12
+ 323              	.LVL34:
+ 324              	.L17:
+  96:rtc_bipboy.c  ****         }
+  97:rtc_bipboy.c  ****     } else if(position == 2) {
+ 325              		.loc 1 97 0
+ 326 00c6 022C     		cmp	r4, #2
+ 327 00c8 15D1     		bne	.L20
+  98:rtc_bipboy.c  ****         minute = offset - 2;
+ 328              		.loc 1 98 0
+ 329 00ca 0238     		subs	r0, r0, #2
+ 330              	.LVL35:
+ 331 00cc 40B2     		sxtb	r0, r0
+ 332              	.LVL36:
+ 333 00ce 184B     		ldr	r3, .L23+8
+ 334 00d0 1870     		strb	r0, [r3]
+  99:rtc_bipboy.c  ****         if(minute > 59) {
+ 335              		.loc 1 99 0
+ 336 00d2 3B28     		cmp	r0, #59
+ 337 00d4 06DD     		ble	.L21
+ 100:rtc_bipboy.c  ****             set_counter_up_down(0 + 2);
+ 338              		.loc 1 100 0
+ 339 00d6 0220     		movs	r0, #2
+ 340 00d8 FFF7FEFF 		bl	set_counter_up_down
+ 341              	.LVL37:
+ 101:rtc_bipboy.c  ****             minute = 0;
+ 342              		.loc 1 101 0
+ 343 00dc 0022     		movs	r2, #0
+ 344 00de 144B     		ldr	r3, .L23+8
+ 345 00e0 1A70     		strb	r2, [r3]
+ 346 00e2 1FE0     		b	.L12
+ 347              	.L21:
+ 102:rtc_bipboy.c  ****         } else if(minute < 0) {
+ 348              		.loc 1 102 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 9
+
+
+ 349 00e4 0028     		cmp	r0, #0
+ 350 00e6 1DDA     		bge	.L12
+ 103:rtc_bipboy.c  ****             set_counter_up_down(59 + 2);
+ 351              		.loc 1 103 0
+ 352 00e8 3D20     		movs	r0, #61
+ 353 00ea FFF7FEFF 		bl	set_counter_up_down
+ 354              	.LVL38:
+ 104:rtc_bipboy.c  ****             minute = 59;
+ 355              		.loc 1 104 0
+ 356 00ee 3B22     		movs	r2, #59
+ 357 00f0 0F4B     		ldr	r3, .L23+8
+ 358 00f2 1A70     		strb	r2, [r3]
+ 359 00f4 16E0     		b	.L12
+ 360              	.LVL39:
+ 361              	.L20:
+ 105:rtc_bipboy.c  ****         }
+ 106:rtc_bipboy.c  ****     } else if(position == 3) {
+ 362              		.loc 1 106 0
+ 363 00f6 032C     		cmp	r4, #3
+ 364 00f8 14D1     		bne	.L12
+ 107:rtc_bipboy.c  ****         second = offset - 2;
+ 365              		.loc 1 107 0
+ 366 00fa 0238     		subs	r0, r0, #2
+ 367              	.LVL40:
+ 368 00fc 40B2     		sxtb	r0, r0
+ 369              	.LVL41:
+ 370 00fe 0D4B     		ldr	r3, .L23+12
+ 371 0100 1870     		strb	r0, [r3]
+ 108:rtc_bipboy.c  ****         if(second > 59) {
+ 372              		.loc 1 108 0
+ 373 0102 3B28     		cmp	r0, #59
+ 374 0104 06DD     		ble	.L22
+ 109:rtc_bipboy.c  ****             set_counter_up_down(0 + 2);
+ 375              		.loc 1 109 0
+ 376 0106 0220     		movs	r0, #2
+ 377 0108 FFF7FEFF 		bl	set_counter_up_down
+ 378              	.LVL42:
+ 110:rtc_bipboy.c  ****             second = 0;
+ 379              		.loc 1 110 0
+ 380 010c 0022     		movs	r2, #0
+ 381 010e 094B     		ldr	r3, .L23+12
+ 382 0110 1A70     		strb	r2, [r3]
+ 383 0112 07E0     		b	.L12
+ 384              	.L22:
+ 111:rtc_bipboy.c  ****         } else if(second < 0) {
+ 385              		.loc 1 111 0
+ 386 0114 0028     		cmp	r0, #0
+ 387 0116 05DA     		bge	.L12
+ 112:rtc_bipboy.c  ****             set_counter_up_down(59 + 2);
+ 388              		.loc 1 112 0
+ 389 0118 3D20     		movs	r0, #61
+ 390 011a FFF7FEFF 		bl	set_counter_up_down
+ 391              	.LVL43:
+ 113:rtc_bipboy.c  ****             second = 59;
+ 392              		.loc 1 113 0
+ 393 011e 3B22     		movs	r2, #59
+ 394 0120 044B     		ldr	r3, .L23+12
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 10
+
+
+ 395 0122 1A70     		strb	r2, [r3]
+ 396              	.L12:
+ 114:rtc_bipboy.c  ****         }
+ 115:rtc_bipboy.c  ****     }
+ 116:rtc_bipboy.c  **** }
+ 397              		.loc 1 116 0
+ 398              		@ sp needed
+ 399              	.LVL44:
+ 400 0124 10BD     		pop	{r4, pc}
+ 401              	.L24:
+ 402 0126 C046     		.align	2
+ 403              	.L23:
+ 404 0128 00000000 		.word	Time
+ 405 012c 00000000 		.word	hour
+ 406 0130 00000000 		.word	minute
+ 407 0134 00000000 		.word	second
+ 408              		.cfi_endproc
+ 409              	.LFE65:
+ 410              		.size	set_time, .-set_time
+ 411              		.section	.text.set_date,"ax",%progbits
+ 412              		.align	2
+ 413              		.global	set_date
+ 414              		.code	16
+ 415              		.thumb_func
+ 416              		.type	set_date, %function
+ 417              	set_date:
+ 418              	.LFB66:
+ 117:rtc_bipboy.c  **** 
+ 118:rtc_bipboy.c  **** void set_date(void) {
+ 419              		.loc 1 118 0
+ 420              		.cfi_startproc
+ 421              		@ args = 0, pretend = 0, frame = 0
+ 422              		@ frame_needed = 0, uses_anonymous_args = 0
+ 423 0000 10B5     		push	{r4, lr}
+ 424              		.cfi_def_cfa_offset 8
+ 425              		.cfi_offset 4, -8
+ 426              		.cfi_offset 14, -4
+ 119:rtc_bipboy.c  ****     uint8 position = get_counter_ok_back();
+ 427              		.loc 1 119 0
+ 428 0002 FFF7FEFF 		bl	get_counter_ok_back
+ 429              	.LVL45:
+ 430 0006 0400     		movs	r4, r0
+ 431              	.LVL46:
+ 120:rtc_bipboy.c  ****     uint16 offset = get_counter_up_down();
+ 432              		.loc 1 120 0
+ 433 0008 FFF7FEFF 		bl	get_counter_up_down
+ 434              	.LVL47:
+ 435 000c 80B2     		uxth	r0, r0
+ 436              	.LVL48:
+ 121:rtc_bipboy.c  ****     
+ 122:rtc_bipboy.c  ****     if(position == 1 && offset == 0) {
+ 437              		.loc 1 122 0
+ 438 000e 012C     		cmp	r4, #1
+ 439 0010 11D1     		bne	.L26
+ 440              		.loc 1 122 0 is_stmt 0 discriminator 1
+ 441 0012 0028     		cmp	r0, #0
+ 442 0014 0FD1     		bne	.L26
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 11
+
+
+ 123:rtc_bipboy.c  ****         day = Date.day;
+ 443              		.loc 1 123 0 is_stmt 1
+ 444 0016 444B     		ldr	r3, .L36
+ 445 0018 0020     		movs	r0, #0
+ 446              	.LVL49:
+ 447 001a 1856     		ldrsb	r0, [r3, r0]
+ 448 001c 434A     		ldr	r2, .L36+4
+ 449 001e 1070     		strb	r0, [r2]
+ 124:rtc_bipboy.c  ****         Date.month = month;
+ 450              		.loc 1 124 0
+ 451 0020 434A     		ldr	r2, .L36+8
+ 452 0022 1279     		ldrb	r2, [r2, #4]
+ 453 0024 5A70     		strb	r2, [r3, #1]
+ 125:rtc_bipboy.c  ****         month = Date.month;
+ 126:rtc_bipboy.c  ****         year = Date.year;
+ 454              		.loc 1 126 0
+ 455 0026 5A88     		ldrh	r2, [r3, #2]
+ 456 0028 424B     		ldr	r3, .L36+12
+ 457 002a 1A80     		strh	r2, [r3]
+ 127:rtc_bipboy.c  ****         set_counter_up_down(day + 2);
+ 458              		.loc 1 127 0
+ 459 002c 0230     		adds	r0, r0, #2
+ 460 002e 00B2     		sxth	r0, r0
+ 461 0030 FFF7FEFF 		bl	set_counter_up_down
+ 462              	.LVL50:
+ 463 0034 2BE0     		b	.L27
+ 464              	.LVL51:
+ 465              	.L26:
+ 128:rtc_bipboy.c  ****     } else if(position == 2 && offset == 0) {
+ 466              		.loc 1 128 0
+ 467 0036 022C     		cmp	r4, #2
+ 468 0038 11D1     		bne	.L28
+ 469              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 470 003a 0028     		cmp	r0, #0
+ 471 003c 0FD1     		bne	.L28
+ 129:rtc_bipboy.c  ****         Date.day = day;
+ 472              		.loc 1 129 0 is_stmt 1
+ 473 003e 3A4B     		ldr	r3, .L36
+ 474 0040 3A4A     		ldr	r2, .L36+4
+ 475 0042 1278     		ldrb	r2, [r2]
+ 476 0044 1A70     		strb	r2, [r3]
+ 130:rtc_bipboy.c  ****         month = Date.month;
+ 477              		.loc 1 130 0
+ 478 0046 0120     		movs	r0, #1
+ 479              	.LVL52:
+ 480 0048 1856     		ldrsb	r0, [r3, r0]
+ 481 004a 394A     		ldr	r2, .L36+8
+ 482 004c 1071     		strb	r0, [r2, #4]
+ 131:rtc_bipboy.c  ****         Date.year = year;
+ 483              		.loc 1 131 0
+ 484 004e 394A     		ldr	r2, .L36+12
+ 485 0050 1288     		ldrh	r2, [r2]
+ 486 0052 5A80     		strh	r2, [r3, #2]
+ 132:rtc_bipboy.c  ****         set_counter_up_down(month + 2);
+ 487              		.loc 1 132 0
+ 488 0054 0230     		adds	r0, r0, #2
+ 489 0056 00B2     		sxth	r0, r0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 12
+
+
+ 490 0058 FFF7FEFF 		bl	set_counter_up_down
+ 491              	.LVL53:
+ 492 005c 17E0     		b	.L27
+ 493              	.LVL54:
+ 494              	.L28:
+ 133:rtc_bipboy.c  ****     } else if(position == 3 && offset == 0) {
+ 495              		.loc 1 133 0
+ 496 005e 032C     		cmp	r4, #3
+ 497 0060 0DD1     		bne	.L29
+ 498              		.loc 1 133 0 is_stmt 0 discriminator 1
+ 499 0062 0028     		cmp	r0, #0
+ 500 0064 0BD1     		bne	.L29
+ 134:rtc_bipboy.c  ****         Date.month = month;
+ 501              		.loc 1 134 0 is_stmt 1
+ 502 0066 304B     		ldr	r3, .L36
+ 503 0068 314A     		ldr	r2, .L36+8
+ 504 006a 1279     		ldrb	r2, [r2, #4]
+ 505 006c 5A70     		strb	r2, [r3, #1]
+ 135:rtc_bipboy.c  ****         year = Date.year;
+ 506              		.loc 1 135 0
+ 507 006e 5888     		ldrh	r0, [r3, #2]
+ 508              	.LVL55:
+ 509 0070 304B     		ldr	r3, .L36+12
+ 510 0072 1880     		strh	r0, [r3]
+ 136:rtc_bipboy.c  ****         set_counter_up_down(year + 2);
+ 511              		.loc 1 136 0
+ 512 0074 0230     		adds	r0, r0, #2
+ 513 0076 00B2     		sxth	r0, r0
+ 514 0078 FFF7FEFF 		bl	set_counter_up_down
+ 515              	.LVL56:
+ 516 007c 07E0     		b	.L27
+ 517              	.LVL57:
+ 518              	.L29:
+ 137:rtc_bipboy.c  ****     } else if(position == 4 && offset == 0) {
+ 519              		.loc 1 137 0
+ 520 007e 042C     		cmp	r4, #4
+ 521 0080 05D1     		bne	.L27
+ 522              		.loc 1 137 0 is_stmt 0 discriminator 1
+ 523 0082 0028     		cmp	r0, #0
+ 524 0084 03D1     		bne	.L27
+ 138:rtc_bipboy.c  ****         Date.year = year;
+ 525              		.loc 1 138 0 is_stmt 1
+ 526 0086 2B4B     		ldr	r3, .L36+12
+ 527 0088 1A88     		ldrh	r2, [r3]
+ 528 008a 274B     		ldr	r3, .L36
+ 529 008c 5A80     		strh	r2, [r3, #2]
+ 530              	.LVL58:
+ 531              	.L27:
+ 139:rtc_bipboy.c  **** 
+ 140:rtc_bipboy.c  ****     }
+ 141:rtc_bipboy.c  ****     
+ 142:rtc_bipboy.c  ****     offset = get_counter_up_down();
+ 532              		.loc 1 142 0
+ 533 008e FFF7FEFF 		bl	get_counter_up_down
+ 534              	.LVL59:
+ 535 0092 83B2     		uxth	r3, r0
+ 536              	.LVL60:
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 13
+
+
+ 143:rtc_bipboy.c  ****     
+ 144:rtc_bipboy.c  ****     if(position == 1) {
+ 537              		.loc 1 144 0
+ 538 0094 012C     		cmp	r4, #1
+ 539 0096 15D1     		bne	.L30
+ 145:rtc_bipboy.c  ****         day = offset - 2;
+ 540              		.loc 1 145 0
+ 541 0098 0238     		subs	r0, r0, #2
+ 542 009a 40B2     		sxtb	r0, r0
+ 543 009c 234B     		ldr	r3, .L36+4
+ 544              	.LVL61:
+ 545 009e 1870     		strb	r0, [r3]
+ 146:rtc_bipboy.c  ****         if(day > 31) {
+ 546              		.loc 1 146 0
+ 547 00a0 1F28     		cmp	r0, #31
+ 548 00a2 06DD     		ble	.L31
+ 147:rtc_bipboy.c  ****             set_counter_up_down(1 + 2);
+ 549              		.loc 1 147 0
+ 550 00a4 0320     		movs	r0, #3
+ 551 00a6 FFF7FEFF 		bl	set_counter_up_down
+ 552              	.LVL62:
+ 148:rtc_bipboy.c  ****             day = 1;
+ 553              		.loc 1 148 0
+ 554 00aa 0122     		movs	r2, #1
+ 555 00ac 1F4B     		ldr	r3, .L36+4
+ 556 00ae 1A70     		strb	r2, [r3]
+ 557 00b0 39E0     		b	.L25
+ 558              	.L31:
+ 149:rtc_bipboy.c  ****         } else if(day < 1) {
+ 559              		.loc 1 149 0
+ 560 00b2 0028     		cmp	r0, #0
+ 561 00b4 37DC     		bgt	.L25
+ 150:rtc_bipboy.c  ****             set_counter_up_down(31 + 2);
+ 562              		.loc 1 150 0
+ 563 00b6 2120     		movs	r0, #33
+ 564 00b8 FFF7FEFF 		bl	set_counter_up_down
+ 565              	.LVL63:
+ 151:rtc_bipboy.c  ****             day = 31;
+ 566              		.loc 1 151 0
+ 567 00bc 1F22     		movs	r2, #31
+ 568 00be 1B4B     		ldr	r3, .L36+4
+ 569 00c0 1A70     		strb	r2, [r3]
+ 570 00c2 30E0     		b	.L25
+ 571              	.LVL64:
+ 572              	.L30:
+ 152:rtc_bipboy.c  ****         }
+ 153:rtc_bipboy.c  ****     } else if(position == 2) {
+ 573              		.loc 1 153 0
+ 574 00c4 022C     		cmp	r4, #2
+ 575 00c6 15D1     		bne	.L33
+ 154:rtc_bipboy.c  ****         month = offset - 2;
+ 576              		.loc 1 154 0
+ 577 00c8 0238     		subs	r0, r0, #2
+ 578 00ca 40B2     		sxtb	r0, r0
+ 579 00cc 184B     		ldr	r3, .L36+8
+ 580              	.LVL65:
+ 581 00ce 1871     		strb	r0, [r3, #4]
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 14
+
+
+ 155:rtc_bipboy.c  ****         if(month > 12) {
+ 582              		.loc 1 155 0
+ 583 00d0 0C28     		cmp	r0, #12
+ 584 00d2 06DD     		ble	.L34
+ 156:rtc_bipboy.c  ****             set_counter_up_down(1 + 2);
+ 585              		.loc 1 156 0
+ 586 00d4 0320     		movs	r0, #3
+ 587 00d6 FFF7FEFF 		bl	set_counter_up_down
+ 588              	.LVL66:
+ 157:rtc_bipboy.c  ****             month = 1;
+ 589              		.loc 1 157 0
+ 590 00da 0122     		movs	r2, #1
+ 591 00dc 144B     		ldr	r3, .L36+8
+ 592 00de 1A71     		strb	r2, [r3, #4]
+ 593 00e0 21E0     		b	.L25
+ 594              	.L34:
+ 158:rtc_bipboy.c  ****         } else if(month < 1) {
+ 595              		.loc 1 158 0
+ 596 00e2 0028     		cmp	r0, #0
+ 597 00e4 1FDC     		bgt	.L25
+ 159:rtc_bipboy.c  ****             set_counter_up_down(12 + 2);
+ 598              		.loc 1 159 0
+ 599 00e6 0E20     		movs	r0, #14
+ 600 00e8 FFF7FEFF 		bl	set_counter_up_down
+ 601              	.LVL67:
+ 160:rtc_bipboy.c  ****             month = 12;
+ 602              		.loc 1 160 0
+ 603 00ec 0C22     		movs	r2, #12
+ 604 00ee 104B     		ldr	r3, .L36+8
+ 605 00f0 1A71     		strb	r2, [r3, #4]
+ 606 00f2 18E0     		b	.L25
+ 607              	.LVL68:
+ 608              	.L33:
+ 161:rtc_bipboy.c  ****         }
+ 162:rtc_bipboy.c  ****     } else if(position == 3) {
+ 609              		.loc 1 162 0
+ 610 00f4 032C     		cmp	r4, #3
+ 611 00f6 16D1     		bne	.L25
+ 163:rtc_bipboy.c  ****         year = offset - 2;
+ 612              		.loc 1 163 0
+ 613 00f8 023B     		subs	r3, r3, #2
+ 614              	.LVL69:
+ 615 00fa 1BB2     		sxth	r3, r3
+ 616              	.LVL70:
+ 617 00fc 0D4A     		ldr	r2, .L36+12
+ 618 00fe 1380     		strh	r3, [r2]
+ 164:rtc_bipboy.c  ****         if(year > 2050) {
+ 619              		.loc 1 164 0
+ 620 0100 0D4A     		ldr	r2, .L36+16
+ 621 0102 9342     		cmp	r3, r2
+ 622 0104 06DD     		ble	.L35
+ 165:rtc_bipboy.c  ****             set_counter_up_down(2019 + 2);
+ 623              		.loc 1 165 0
+ 624 0106 0D48     		ldr	r0, .L36+20
+ 625              	.LVL71:
+ 626 0108 FFF7FEFF 		bl	set_counter_up_down
+ 627              	.LVL72:
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 15
+
+
+ 166:rtc_bipboy.c  ****             year = 2019;
+ 628              		.loc 1 166 0
+ 629 010c 0C4A     		ldr	r2, .L36+24
+ 630 010e 094B     		ldr	r3, .L36+12
+ 631 0110 1A80     		strh	r2, [r3]
+ 632 0112 08E0     		b	.L25
+ 633              	.LVL73:
+ 634              	.L35:
+ 167:rtc_bipboy.c  ****         } else if(year < 2019) {
+ 635              		.loc 1 167 0
+ 636 0114 0B4A     		ldr	r2, .L36+28
+ 637 0116 9342     		cmp	r3, r2
+ 638 0118 05DC     		bgt	.L25
+ 168:rtc_bipboy.c  ****             set_counter_up_down(2050 + 2);
+ 639              		.loc 1 168 0
+ 640 011a 0B48     		ldr	r0, .L36+32
+ 641              	.LVL74:
+ 642 011c FFF7FEFF 		bl	set_counter_up_down
+ 643              	.LVL75:
+ 169:rtc_bipboy.c  ****             year = 2050;
+ 644              		.loc 1 169 0
+ 645 0120 054A     		ldr	r2, .L36+16
+ 646 0122 044B     		ldr	r3, .L36+12
+ 647 0124 1A80     		strh	r2, [r3]
+ 648              	.L25:
+ 170:rtc_bipboy.c  ****         }
+ 171:rtc_bipboy.c  ****     }
+ 172:rtc_bipboy.c  **** }
+ 649              		.loc 1 172 0
+ 650              		@ sp needed
+ 651              	.LVL76:
+ 652 0126 10BD     		pop	{r4, pc}
+ 653              	.L37:
+ 654              		.align	2
+ 655              	.L36:
+ 656 0128 00000000 		.word	Date
+ 657 012c 00000000 		.word	day
+ 658 0130 00000000 		.word	.LANCHOR0
+ 659 0134 00000000 		.word	year
+ 660 0138 02080000 		.word	2050
+ 661 013c E5070000 		.word	2021
+ 662 0140 E3070000 		.word	2019
+ 663 0144 E2070000 		.word	2018
+ 664 0148 04080000 		.word	2052
+ 665              		.cfi_endproc
+ 666              	.LFE66:
+ 667              		.size	set_date, .-set_date
+ 668              		.section	.text.get_hour,"ax",%progbits
+ 669              		.align	2
+ 670              		.global	get_hour
+ 671              		.code	16
+ 672              		.thumb_func
+ 673              		.type	get_hour, %function
+ 674              	get_hour:
+ 675              	.LFB67:
+ 173:rtc_bipboy.c  **** 
+ 174:rtc_bipboy.c  **** int8 get_hour(void) {
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 16
+
+
+ 676              		.loc 1 174 0
+ 677              		.cfi_startproc
+ 678              		@ args = 0, pretend = 0, frame = 0
+ 679              		@ frame_needed = 0, uses_anonymous_args = 0
+ 680              		@ link register save eliminated.
+ 175:rtc_bipboy.c  ****     return hour;
+ 681              		.loc 1 175 0
+ 682 0000 014B     		ldr	r3, .L39
+ 683 0002 0020     		movs	r0, #0
+ 684 0004 1856     		ldrsb	r0, [r3, r0]
+ 176:rtc_bipboy.c  **** }
+ 685              		.loc 1 176 0
+ 686              		@ sp needed
+ 687 0006 7047     		bx	lr
+ 688              	.L40:
+ 689              		.align	2
+ 690              	.L39:
+ 691 0008 00000000 		.word	hour
+ 692              		.cfi_endproc
+ 693              	.LFE67:
+ 694              		.size	get_hour, .-get_hour
+ 695              		.section	.text.get_minute,"ax",%progbits
+ 696              		.align	2
+ 697              		.global	get_minute
+ 698              		.code	16
+ 699              		.thumb_func
+ 700              		.type	get_minute, %function
+ 701              	get_minute:
+ 702              	.LFB68:
+ 177:rtc_bipboy.c  **** 
+ 178:rtc_bipboy.c  **** int8 get_minute(void) {
+ 703              		.loc 1 178 0
+ 704              		.cfi_startproc
+ 705              		@ args = 0, pretend = 0, frame = 0
+ 706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 707              		@ link register save eliminated.
+ 179:rtc_bipboy.c  ****     return minute;
+ 708              		.loc 1 179 0
+ 709 0000 014B     		ldr	r3, .L42
+ 710 0002 0020     		movs	r0, #0
+ 711 0004 1856     		ldrsb	r0, [r3, r0]
+ 180:rtc_bipboy.c  **** }
+ 712              		.loc 1 180 0
+ 713              		@ sp needed
+ 714 0006 7047     		bx	lr
+ 715              	.L43:
+ 716              		.align	2
+ 717              	.L42:
+ 718 0008 00000000 		.word	minute
+ 719              		.cfi_endproc
+ 720              	.LFE68:
+ 721              		.size	get_minute, .-get_minute
+ 722              		.section	.text.get_second,"ax",%progbits
+ 723              		.align	2
+ 724              		.global	get_second
+ 725              		.code	16
+ 726              		.thumb_func
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 17
+
+
+ 727              		.type	get_second, %function
+ 728              	get_second:
+ 729              	.LFB69:
+ 181:rtc_bipboy.c  **** 
+ 182:rtc_bipboy.c  **** int8 get_second(void) {
+ 730              		.loc 1 182 0
+ 731              		.cfi_startproc
+ 732              		@ args = 0, pretend = 0, frame = 0
+ 733              		@ frame_needed = 0, uses_anonymous_args = 0
+ 734              		@ link register save eliminated.
+ 183:rtc_bipboy.c  ****     return second;
+ 735              		.loc 1 183 0
+ 736 0000 014B     		ldr	r3, .L45
+ 737 0002 0020     		movs	r0, #0
+ 738 0004 1856     		ldrsb	r0, [r3, r0]
+ 184:rtc_bipboy.c  **** }
+ 739              		.loc 1 184 0
+ 740              		@ sp needed
+ 741 0006 7047     		bx	lr
+ 742              	.L46:
+ 743              		.align	2
+ 744              	.L45:
+ 745 0008 00000000 		.word	second
+ 746              		.cfi_endproc
+ 747              	.LFE69:
+ 748              		.size	get_second, .-get_second
+ 749              		.section	.text.get_day,"ax",%progbits
+ 750              		.align	2
+ 751              		.global	get_day
+ 752              		.code	16
+ 753              		.thumb_func
+ 754              		.type	get_day, %function
+ 755              	get_day:
+ 756              	.LFB70:
+ 185:rtc_bipboy.c  **** 
+ 186:rtc_bipboy.c  **** int8 get_day(void) {
+ 757              		.loc 1 186 0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 0
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              		@ link register save eliminated.
+ 187:rtc_bipboy.c  ****     return day;
+ 762              		.loc 1 187 0
+ 763 0000 014B     		ldr	r3, .L48
+ 764 0002 0020     		movs	r0, #0
+ 765 0004 1856     		ldrsb	r0, [r3, r0]
+ 188:rtc_bipboy.c  **** }
+ 766              		.loc 1 188 0
+ 767              		@ sp needed
+ 768 0006 7047     		bx	lr
+ 769              	.L49:
+ 770              		.align	2
+ 771              	.L48:
+ 772 0008 00000000 		.word	day
+ 773              		.cfi_endproc
+ 774              	.LFE70:
+ 775              		.size	get_day, .-get_day
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 18
+
+
+ 776              		.section	.text.get_month,"ax",%progbits
+ 777              		.align	2
+ 778              		.global	get_month
+ 779              		.code	16
+ 780              		.thumb_func
+ 781              		.type	get_month, %function
+ 782              	get_month:
+ 783              	.LFB71:
+ 189:rtc_bipboy.c  **** 
+ 190:rtc_bipboy.c  **** int8 get_month(void) {
+ 784              		.loc 1 190 0
+ 785              		.cfi_startproc
+ 786              		@ args = 0, pretend = 0, frame = 0
+ 787              		@ frame_needed = 0, uses_anonymous_args = 0
+ 788              		@ link register save eliminated.
+ 191:rtc_bipboy.c  ****     return month;
+ 789              		.loc 1 191 0
+ 790 0000 014B     		ldr	r3, .L51
+ 791 0002 0420     		movs	r0, #4
+ 792 0004 1856     		ldrsb	r0, [r3, r0]
+ 192:rtc_bipboy.c  **** }
+ 793              		.loc 1 192 0
+ 794              		@ sp needed
+ 795 0006 7047     		bx	lr
+ 796              	.L52:
+ 797              		.align	2
+ 798              	.L51:
+ 799 0008 00000000 		.word	.LANCHOR0
+ 800              		.cfi_endproc
+ 801              	.LFE71:
+ 802              		.size	get_month, .-get_month
+ 803              		.section	.text.get_year,"ax",%progbits
+ 804              		.align	2
+ 805              		.global	get_year
+ 806              		.code	16
+ 807              		.thumb_func
+ 808              		.type	get_year, %function
+ 809              	get_year:
+ 810              	.LFB72:
+ 193:rtc_bipboy.c  **** 
+ 194:rtc_bipboy.c  **** int16 get_year(void) {
+ 811              		.loc 1 194 0
+ 812              		.cfi_startproc
+ 813              		@ args = 0, pretend = 0, frame = 0
+ 814              		@ frame_needed = 0, uses_anonymous_args = 0
+ 815              		@ link register save eliminated.
+ 195:rtc_bipboy.c  ****     return year;
+ 816              		.loc 1 195 0
+ 817 0000 014B     		ldr	r3, .L54
+ 818 0002 0020     		movs	r0, #0
+ 819 0004 185E     		ldrsh	r0, [r3, r0]
+ 196:rtc_bipboy.c  **** }
+ 820              		.loc 1 196 0
+ 821              		@ sp needed
+ 822 0006 7047     		bx	lr
+ 823              	.L55:
+ 824              		.align	2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 19
+
+
+ 825              	.L54:
+ 826 0008 00000000 		.word	year
+ 827              		.cfi_endproc
+ 828              	.LFE72:
+ 829              		.size	get_year, .-get_year
+ 830              		.section	.text.rtc_update_time,"ax",%progbits
+ 831              		.align	2
+ 832              		.global	rtc_update_time
+ 833              		.code	16
+ 834              		.thumb_func
+ 835              		.type	rtc_update_time, %function
+ 836              	rtc_update_time:
+ 837              	.LFB73:
+ 197:rtc_bipboy.c  **** 
+ 198:rtc_bipboy.c  **** void rtc_update_time(void) {
+ 838              		.loc 1 198 0
+ 839              		.cfi_startproc
+ 840              		@ args = 0, pretend = 0, frame = 0
+ 841              		@ frame_needed = 0, uses_anonymous_args = 0
+ 842 0000 10B5     		push	{r4, lr}
+ 843              		.cfi_def_cfa_offset 8
+ 844              		.cfi_offset 4, -8
+ 845              		.cfi_offset 14, -4
+ 199:rtc_bipboy.c  ****     timeHrMinSec = ((uint32)(Time.hour << RTC_HOURS_OFFSET) | 
+ 846              		.loc 1 199 0
+ 847 0002 074A     		ldr	r2, .L57
+ 848 0004 1078     		ldrb	r0, [r2]
+ 849 0006 0004     		lsls	r0, r0, #16
+ 200:rtc_bipboy.c  ****                     (uint32)(Time.minute << RTC_MINUTES_OFFSET) |
+ 850              		.loc 1 200 0
+ 851 0008 5378     		ldrb	r3, [r2, #1]
+ 852 000a 1B02     		lsls	r3, r3, #8
+ 199:rtc_bipboy.c  ****     timeHrMinSec = ((uint32)(Time.hour << RTC_HOURS_OFFSET) | 
+ 853              		.loc 1 199 0
+ 854 000c 1843     		orrs	r0, r3
+ 201:rtc_bipboy.c  ****                              Time.second);
+ 855              		.loc 1 201 0
+ 856 000e 9378     		ldrb	r3, [r2, #2]
+ 200:rtc_bipboy.c  ****                     (uint32)(Time.minute << RTC_MINUTES_OFFSET) |
+ 857              		.loc 1 200 0
+ 858 0010 1843     		orrs	r0, r3
+ 199:rtc_bipboy.c  ****     timeHrMinSec = ((uint32)(Time.hour << RTC_HOURS_OFFSET) | 
+ 859              		.loc 1 199 0
+ 860 0012 044B     		ldr	r3, .L57+4
+ 861 0014 1860     		str	r0, [r3]
+ 202:rtc_bipboy.c  ****     RTC_SetDateAndTime(timeHrMinSec, dateMonthDayYear);    
+ 862              		.loc 1 202 0
+ 863 0016 044B     		ldr	r3, .L57+8
+ 864 0018 1968     		ldr	r1, [r3]
+ 865 001a FFF7FEFF 		bl	RTC_SetDateAndTime
+ 866              	.LVL77:
+ 203:rtc_bipboy.c  **** }
+ 867              		.loc 1 203 0
+ 868              		@ sp needed
+ 869 001e 10BD     		pop	{r4, pc}
+ 870              	.L58:
+ 871              		.align	2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 20
+
+
+ 872              	.L57:
+ 873 0020 00000000 		.word	Time
+ 874 0024 00000000 		.word	.LANCHOR1
+ 875 0028 00000000 		.word	.LANCHOR0
+ 876              		.cfi_endproc
+ 877              	.LFE73:
+ 878              		.size	rtc_update_time, .-rtc_update_time
+ 879              		.section	.text.rtc_update_date,"ax",%progbits
+ 880              		.align	2
+ 881              		.global	rtc_update_date
+ 882              		.code	16
+ 883              		.thumb_func
+ 884              		.type	rtc_update_date, %function
+ 885              	rtc_update_date:
+ 886              	.LFB74:
+ 204:rtc_bipboy.c  **** 
+ 205:rtc_bipboy.c  **** void rtc_update_date(void) {
+ 887              		.loc 1 205 0
+ 888              		.cfi_startproc
+ 889              		@ args = 0, pretend = 0, frame = 0
+ 890              		@ frame_needed = 0, uses_anonymous_args = 0
+ 891 0000 10B5     		push	{r4, lr}
+ 892              		.cfi_def_cfa_offset 8
+ 893              		.cfi_offset 4, -8
+ 894              		.cfi_offset 14, -4
+ 206:rtc_bipboy.c  ****     dateMonthDayYear = ((uint32)(Date.month << RTC_MONTH_OFFSET)   |
+ 895              		.loc 1 206 0
+ 896 0002 074A     		ldr	r2, .L60
+ 897 0004 5178     		ldrb	r1, [r2, #1]
+ 898 0006 0906     		lsls	r1, r1, #24
+ 207:rtc_bipboy.c  ****                         (uint32)(Date.day << RTC_DAY_OFFSET)       |
+ 899              		.loc 1 207 0
+ 900 0008 1378     		ldrb	r3, [r2]
+ 901 000a 1B04     		lsls	r3, r3, #16
+ 206:rtc_bipboy.c  ****     dateMonthDayYear = ((uint32)(Date.month << RTC_MONTH_OFFSET)   |
+ 902              		.loc 1 206 0
+ 903 000c 1943     		orrs	r1, r3
+ 208:rtc_bipboy.c  ****                         Date.year);
+ 904              		.loc 1 208 0
+ 905 000e 5388     		ldrh	r3, [r2, #2]
+ 207:rtc_bipboy.c  ****                         (uint32)(Date.day << RTC_DAY_OFFSET)       |
+ 906              		.loc 1 207 0
+ 907 0010 1943     		orrs	r1, r3
+ 206:rtc_bipboy.c  ****     dateMonthDayYear = ((uint32)(Date.month << RTC_MONTH_OFFSET)   |
+ 908              		.loc 1 206 0
+ 909 0012 044B     		ldr	r3, .L60+4
+ 910 0014 1960     		str	r1, [r3]
+ 209:rtc_bipboy.c  ****     RTC_SetDateAndTime(timeHrMinSec, dateMonthDayYear);
+ 911              		.loc 1 209 0
+ 912 0016 044B     		ldr	r3, .L60+8
+ 913 0018 1868     		ldr	r0, [r3]
+ 914 001a FFF7FEFF 		bl	RTC_SetDateAndTime
+ 915              	.LVL78:
+ 210:rtc_bipboy.c  **** }
+ 916              		.loc 1 210 0
+ 917              		@ sp needed
+ 918 001e 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 21
+
+
+ 919              	.L61:
+ 920              		.align	2
+ 921              	.L60:
+ 922 0020 00000000 		.word	Date
+ 923 0024 00000000 		.word	.LANCHOR0
+ 924 0028 00000000 		.word	.LANCHOR1
+ 925              		.cfi_endproc
+ 926              	.LFE74:
+ 927              		.size	rtc_update_date, .-rtc_update_date
+ 928              		.section	.text.set_current_time,"ax",%progbits
+ 929              		.align	2
+ 930              		.global	set_current_time
+ 931              		.code	16
+ 932              		.thumb_func
+ 933              		.type	set_current_time, %function
+ 934              	set_current_time:
+ 935              	.LFB75:
+ 211:rtc_bipboy.c  **** 
+ 212:rtc_bipboy.c  **** void set_current_time(void) {
+ 936              		.loc 1 212 0
+ 937              		.cfi_startproc
+ 938              		@ args = 0, pretend = 0, frame = 0
+ 939              		@ frame_needed = 0, uses_anonymous_args = 0
+ 940              		@ link register save eliminated.
+ 213:rtc_bipboy.c  ****     Time.hour = 0;
+ 941              		.loc 1 213 0
+ 942 0000 024B     		ldr	r3, .L63
+ 943 0002 0022     		movs	r2, #0
+ 944 0004 1A70     		strb	r2, [r3]
+ 214:rtc_bipboy.c  ****     Time.minute = 0;
+ 945              		.loc 1 214 0
+ 946 0006 5A70     		strb	r2, [r3, #1]
+ 215:rtc_bipboy.c  ****     Time.second = 0; 
+ 947              		.loc 1 215 0
+ 948 0008 9A70     		strb	r2, [r3, #2]
+ 216:rtc_bipboy.c  **** }
+ 949              		.loc 1 216 0
+ 950              		@ sp needed
+ 951 000a 7047     		bx	lr
+ 952              	.L64:
+ 953              		.align	2
+ 954              	.L63:
+ 955 000c 00000000 		.word	Time
+ 956              		.cfi_endproc
+ 957              	.LFE75:
+ 958              		.size	set_current_time, .-set_current_time
+ 959              		.section	.text.set_current_date,"ax",%progbits
+ 960              		.align	2
+ 961              		.global	set_current_date
+ 962              		.code	16
+ 963              		.thumb_func
+ 964              		.type	set_current_date, %function
+ 965              	set_current_date:
+ 966              	.LFB76:
+ 217:rtc_bipboy.c  **** 
+ 218:rtc_bipboy.c  **** void set_current_date(void) {
+ 967              		.loc 1 218 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 22
+
+
+ 968              		.cfi_startproc
+ 969              		@ args = 0, pretend = 0, frame = 0
+ 970              		@ frame_needed = 0, uses_anonymous_args = 0
+ 971              		@ link register save eliminated.
+ 219:rtc_bipboy.c  ****     Date.day = 1;
+ 972              		.loc 1 219 0
+ 973 0000 034B     		ldr	r3, .L66
+ 974 0002 0122     		movs	r2, #1
+ 975 0004 1A70     		strb	r2, [r3]
+ 220:rtc_bipboy.c  ****     Date.month = 1;
+ 976              		.loc 1 220 0
+ 977 0006 5A70     		strb	r2, [r3, #1]
+ 221:rtc_bipboy.c  ****     Date.year = 2019;
+ 978              		.loc 1 221 0
+ 979 0008 024A     		ldr	r2, .L66+4
+ 980 000a 5A80     		strh	r2, [r3, #2]
+ 222:rtc_bipboy.c  **** }...
+ 981              		.loc 1 222 0
+ 982              		@ sp needed
+ 983 000c 7047     		bx	lr
+ 984              	.L67:
+ 985 000e C046     		.align	2
+ 986              	.L66:
+ 987 0010 00000000 		.word	Date
+ 988 0014 E3070000 		.word	2019
+ 989              		.cfi_endproc
+ 990              	.LFE76:
+ 991              		.size	set_current_date, .-set_current_date
+ 992              		.comm	counter,1,1
+ 993              		.global	dateMonthDayYear
+ 994              		.global	timeHrMinSec
+ 995              		.comm	year,2,2
+ 996              		.global	month
+ 997              		.comm	day,1,1
+ 998              		.comm	second,1,1
+ 999              		.comm	minute,1,1
+ 1000              		.comm	hour,1,1
+ 1001              		.comm	Date,4,4
+ 1002              		.comm	Time,3,4
+ 1003              		.data
+ 1004              		.align	2
+ 1005              		.set	.LANCHOR0,. + 0
+ 1006              		.type	dateMonthDayYear, %object
+ 1007              		.size	dateMonthDayYear, 4
+ 1008              	dateMonthDayYear:
+ 1009 0000 19200101 		.word	16850969
+ 1010              		.type	month, %object
+ 1011              		.size	month, 1
+ 1012              	month:
+ 1013 0004 01       		.byte	1
+ 1014              		.bss
+ 1015              		.align	2
+ 1016              		.set	.LANCHOR1,. + 0
+ 1017              		.type	timeHrMinSec, %object
+ 1018              		.size	timeHrMinSec, 4
+ 1019              	timeHrMinSec:
+ 1020 0000 00000000 		.space	4
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 23
+
+
+ 1021              		.text
+ 1022              	.Letext0:
+ 1023              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 1024              		.file 3 "rtc_bipboy.h"
+ 1025              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+ 1026              		.file 5 "Generated_Source\\PSoC4/RTC.h"
+ 1027              		.file 6 "lcd_bipboy.h"
+ 1028              		.file 7 "buttons.h"
+ 1029              		.section	.debug_info,"",%progbits
+ 1030              	.Ldebug_info0:
+ 1031 0000 11060000 		.4byte	0x611
+ 1032 0004 0400     		.2byte	0x4
+ 1033 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1034 000a 04       		.byte	0x4
+ 1035 000b 01       		.uleb128 0x1
+ 1036 000c 7C000000 		.4byte	.LASF60
+ 1037 0010 0C       		.byte	0xc
+ 1038 0011 49010000 		.4byte	.LASF61
+ 1039 0015 23030000 		.4byte	.LASF62
+ 1040 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1041 001d 00000000 		.4byte	0
+ 1042 0021 00000000 		.4byte	.Ldebug_line0
+ 1043 0025 02       		.uleb128 0x2
+ 1044 0026 01       		.byte	0x1
+ 1045 0027 06       		.byte	0x6
+ 1046 0028 E9010000 		.4byte	.LASF0
+ 1047 002c 02       		.uleb128 0x2
+ 1048 002d 01       		.byte	0x1
+ 1049 002e 08       		.byte	0x8
+ 1050 002f C8010000 		.4byte	.LASF1
+ 1051 0033 02       		.uleb128 0x2
+ 1052 0034 02       		.byte	0x2
+ 1053 0035 05       		.byte	0x5
+ 1054 0036 33000000 		.4byte	.LASF2
+ 1055 003a 02       		.uleb128 0x2
+ 1056 003b 02       		.byte	0x2
+ 1057 003c 07       		.byte	0x7
+ 1058 003d 4E020000 		.4byte	.LASF3
+ 1059 0041 02       		.uleb128 0x2
+ 1060 0042 04       		.byte	0x4
+ 1061 0043 05       		.byte	0x5
+ 1062 0044 71010000 		.4byte	.LASF4
+ 1063 0048 02       		.uleb128 0x2
+ 1064 0049 04       		.byte	0x4
+ 1065 004a 07       		.byte	0x7
+ 1066 004b C6020000 		.4byte	.LASF5
+ 1067 004f 02       		.uleb128 0x2
+ 1068 0050 08       		.byte	0x8
+ 1069 0051 05       		.byte	0x5
+ 1070 0052 36010000 		.4byte	.LASF6
+ 1071 0056 02       		.uleb128 0x2
+ 1072 0057 08       		.byte	0x8
+ 1073 0058 07       		.byte	0x7
+ 1074 0059 FC010000 		.4byte	.LASF7
+ 1075 005d 03       		.uleb128 0x3
+ 1076 005e 04       		.byte	0x4
+ 1077 005f 05       		.byte	0x5
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 24
+
+
+ 1078 0060 696E7400 		.ascii	"int\000"
+ 1079 0064 02       		.uleb128 0x2
+ 1080 0065 04       		.byte	0x4
+ 1081 0066 07       		.byte	0x7
+ 1082 0067 13020000 		.4byte	.LASF8
+ 1083 006b 04       		.uleb128 0x4
+ 1084 006c 10010000 		.4byte	.LASF9
+ 1085 0070 02       		.byte	0x2
+ 1086 0071 E401     		.2byte	0x1e4
+ 1087 0073 2C000000 		.4byte	0x2c
+ 1088 0077 04       		.uleb128 0x4
+ 1089 0078 89020000 		.4byte	.LASF10
+ 1090 007c 02       		.byte	0x2
+ 1091 007d E501     		.2byte	0x1e5
+ 1092 007f 3A000000 		.4byte	0x3a
+ 1093 0083 04       		.uleb128 0x4
+ 1094 0084 97020000 		.4byte	.LASF11
+ 1095 0088 02       		.byte	0x2
+ 1096 0089 E601     		.2byte	0x1e6
+ 1097 008b 48000000 		.4byte	0x48
+ 1098 008f 04       		.uleb128 0x4
+ 1099 0090 44010000 		.4byte	.LASF12
+ 1100 0094 02       		.byte	0x2
+ 1101 0095 E701     		.2byte	0x1e7
+ 1102 0097 25000000 		.4byte	0x25
+ 1103 009b 04       		.uleb128 0x4
+ 1104 009c 0A010000 		.4byte	.LASF13
+ 1105 00a0 02       		.byte	0x2
+ 1106 00a1 E801     		.2byte	0x1e8
+ 1107 00a3 33000000 		.4byte	0x33
+ 1108 00a7 02       		.uleb128 0x2
+ 1109 00a8 04       		.byte	0x4
+ 1110 00a9 04       		.byte	0x4
+ 1111 00aa 30010000 		.4byte	.LASF14
+ 1112 00ae 02       		.uleb128 0x2
+ 1113 00af 08       		.byte	0x8
+ 1114 00b0 04       		.byte	0x4
+ 1115 00b1 D8020000 		.4byte	.LASF15
+ 1116 00b5 02       		.uleb128 0x2
+ 1117 00b6 01       		.byte	0x1
+ 1118 00b7 08       		.byte	0x8
+ 1119 00b8 61020000 		.4byte	.LASF16
+ 1120 00bc 02       		.uleb128 0x2
+ 1121 00bd 08       		.byte	0x8
+ 1122 00be 04       		.byte	0x4
+ 1123 00bf BC010000 		.4byte	.LASF17
+ 1124 00c3 02       		.uleb128 0x2
+ 1125 00c4 04       		.byte	0x4
+ 1126 00c5 07       		.byte	0x7
+ 1127 00c6 56030000 		.4byte	.LASF18
+ 1128 00ca 05       		.uleb128 0x5
+ 1129 00cb 05030000 		.4byte	.LASF22
+ 1130 00cf 03       		.byte	0x3
+ 1131 00d0 03       		.byte	0x3
+ 1132 00d1 05       		.byte	0x5
+ 1133 00d2 FB000000 		.4byte	0xfb
+ 1134 00d6 06       		.uleb128 0x6
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 25
+
+
+ 1135 00d7 B7010000 		.4byte	.LASF19
+ 1136 00db 03       		.byte	0x3
+ 1137 00dc 06       		.byte	0x6
+ 1138 00dd 6B000000 		.4byte	0x6b
+ 1139 00e1 00       		.byte	0
+ 1140 00e2 06       		.uleb128 0x6
+ 1141 00e3 90020000 		.4byte	.LASF20
+ 1142 00e7 03       		.byte	0x3
+ 1143 00e8 07       		.byte	0x7
+ 1144 00e9 6B000000 		.4byte	0x6b
+ 1145 00ed 01       		.byte	0x1
+ 1146 00ee 06       		.uleb128 0x6
+ 1147 00ef F5010000 		.4byte	.LASF21
+ 1148 00f3 03       		.byte	0x3
+ 1149 00f4 08       		.byte	0x8
+ 1150 00f5 6B000000 		.4byte	0x6b
+ 1151 00f9 02       		.byte	0x2
+ 1152 00fa 00       		.byte	0
+ 1153 00fb 05       		.uleb128 0x5
+ 1154 00fc B2010000 		.4byte	.LASF23
+ 1155 0100 04       		.byte	0x4
+ 1156 0101 03       		.byte	0x3
+ 1157 0102 0B       		.byte	0xb
+ 1158 0103 2C010000 		.4byte	0x12c
+ 1159 0107 07       		.uleb128 0x7
+ 1160 0108 64617900 		.ascii	"day\000"
+ 1161 010c 03       		.byte	0x3
+ 1162 010d 0C       		.byte	0xc
+ 1163 010e 6B000000 		.4byte	0x6b
+ 1164 0112 00       		.byte	0
+ 1165 0113 06       		.uleb128 0x6
+ 1166 0114 73020000 		.4byte	.LASF24
+ 1167 0118 03       		.byte	0x3
+ 1168 0119 0D       		.byte	0xd
+ 1169 011a 6B000000 		.4byte	0x6b
+ 1170 011e 01       		.byte	0x1
+ 1171 011f 06       		.uleb128 0x6
+ 1172 0120 64000000 		.4byte	.LASF25
+ 1173 0124 03       		.byte	0x3
+ 1174 0125 0E       		.byte	0xe
+ 1175 0126 77000000 		.4byte	0x77
+ 1176 012a 02       		.byte	0x2
+ 1177 012b 00       		.byte	0
+ 1178 012c 08       		.uleb128 0x8
+ 1179 012d 81010000 		.4byte	.LASF26
+ 1180 0131 01       		.byte	0x1
+ 1181 0132 11       		.byte	0x11
+ 1182 0133 00000000 		.4byte	.LFB62
+ 1183 0137 54000000 		.4byte	.LFE62-.LFB62
+ 1184 013b 01       		.uleb128 0x1
+ 1185 013c 9C       		.byte	0x9c
+ 1186 013d D0010000 		.4byte	0x1d0
+ 1187 0141 09       		.uleb128 0x9
+ 1188 0142 0C000000 		.4byte	.LBB2
+ 1189 0146 1E000000 		.4byte	.LBE2-.LBB2
+ 1190 014a 89010000 		.4byte	0x189
+ 1191 014e 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 26
+
+
+ 1192 014f 6900     		.ascii	"i\000"
+ 1193 0151 01       		.byte	0x1
+ 1194 0152 19       		.byte	0x19
+ 1195 0153 83000000 		.4byte	0x83
+ 1196 0157 00000000 		.4byte	.LLST0
+ 1197 015b 0B       		.uleb128 0xb
+ 1198 015c 16000000 		.4byte	.LVL3
+ 1199 0160 7F050000 		.4byte	0x57f
+ 1200 0164 6F010000 		.4byte	0x16f
+ 1201 0168 0C       		.uleb128 0xc
+ 1202 0169 01       		.uleb128 0x1
+ 1203 016a 50       		.byte	0x50
+ 1204 016b 02       		.uleb128 0x2
+ 1205 016c 74       		.byte	0x74
+ 1206 016d 00       		.sleb128 0
+ 1207 016e 00       		.byte	0
+ 1208 016f 0D       		.uleb128 0xd
+ 1209 0170 22000000 		.4byte	.LVL4
+ 1210 0174 8B050000 		.4byte	0x58b
+ 1211 0178 0C       		.uleb128 0xc
+ 1212 0179 01       		.uleb128 0x1
+ 1213 017a 50       		.byte	0x50
+ 1214 017b 02       		.uleb128 0x2
+ 1215 017c 74       		.byte	0x74
+ 1216 017d 00       		.sleb128 0
+ 1217 017e 0C       		.uleb128 0xc
+ 1218 017f 01       		.uleb128 0x1
+ 1219 0180 51       		.byte	0x51
+ 1220 0181 05       		.uleb128 0x5
+ 1221 0182 03       		.byte	0x3
+ 1222 0183 00000000 		.4byte	SysTickIsrHandler
+ 1223 0187 00       		.byte	0
+ 1224 0188 00       		.byte	0
+ 1225 0189 0E       		.uleb128 0xe
+ 1226 018a 06000000 		.4byte	.LVL0
+ 1227 018e 97050000 		.4byte	0x597
+ 1228 0192 0B       		.uleb128 0xb
+ 1229 0193 0C000000 		.4byte	.LVL1
+ 1230 0197 A2050000 		.4byte	0x5a2
+ 1231 019b A9010000 		.4byte	0x1a9
+ 1232 019f 0C       		.uleb128 0xc
+ 1233 01a0 01       		.uleb128 0x1
+ 1234 01a1 50       		.byte	0x50
+ 1235 01a2 05       		.uleb128 0x5
+ 1236 01a3 0C       		.byte	0xc
+ 1237 01a4 009F2400 		.4byte	0x249f00
+ 1238 01a8 00       		.byte	0
+ 1239 01a9 0E       		.uleb128 0xe
+ 1240 01aa 2E000000 		.4byte	.LVL6
+ 1241 01ae AD050000 		.4byte	0x5ad
+ 1242 01b2 0E       		.uleb128 0xe
+ 1243 01b3 3A000000 		.4byte	.LVL7
+ 1244 01b7 B9050000 		.4byte	0x5b9
+ 1245 01bb 0D       		.uleb128 0xd
+ 1246 01bc 42000000 		.4byte	.LVL8
+ 1247 01c0 C5050000 		.4byte	0x5c5
+ 1248 01c4 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 27
+
+
+ 1249 01c5 01       		.uleb128 0x1
+ 1250 01c6 50       		.byte	0x50
+ 1251 01c7 01       		.uleb128 0x1
+ 1252 01c8 31       		.byte	0x31
+ 1253 01c9 0C       		.uleb128 0xc
+ 1254 01ca 01       		.uleb128 0x1
+ 1255 01cb 51       		.byte	0x51
+ 1256 01cc 01       		.uleb128 0x1
+ 1257 01cd 3A       		.byte	0x3a
+ 1258 01ce 00       		.byte	0
+ 1259 01cf 00       		.byte	0
+ 1260 01d0 08       		.uleb128 0x8
+ 1261 01d1 0B000000 		.4byte	.LASF27
+ 1262 01d5 01       		.byte	0x1
+ 1263 01d6 33       		.byte	0x33
+ 1264 01d7 00000000 		.4byte	.LFB64
+ 1265 01db 10000000 		.4byte	.LFE64-.LFB64
+ 1266 01df 01       		.uleb128 0x1
+ 1267 01e0 9C       		.byte	0x9c
+ 1268 01e1 07020000 		.4byte	0x207
+ 1269 01e5 0F       		.uleb128 0xf
+ 1270 01e6 4E000000 		.4byte	.LASF28
+ 1271 01ea 01       		.byte	0x1
+ 1272 01eb 34       		.byte	0x34
+ 1273 01ec 6B000000 		.4byte	0x6b
+ 1274 01f0 1F000000 		.4byte	.LLST1
+ 1275 01f4 0E       		.uleb128 0xe
+ 1276 01f5 06000000 		.4byte	.LVL10
+ 1277 01f9 D1050000 		.4byte	0x5d1
+ 1278 01fd 0E       		.uleb128 0xe
+ 1279 01fe 0E000000 		.4byte	.LVL11
+ 1280 0202 DC050000 		.4byte	0x5dc
+ 1281 0206 00       		.byte	0
+ 1282 0207 08       		.uleb128 0x8
+ 1283 0208 F3020000 		.4byte	.LASF29
+ 1284 020c 01       		.byte	0x1
+ 1285 020d 2D       		.byte	0x2d
+ 1286 020e 00000000 		.4byte	.LFB63
+ 1287 0212 0C000000 		.4byte	.LFE63-.LFB63
+ 1288 0216 01       		.uleb128 0x1
+ 1289 0217 9C       		.byte	0x9c
+ 1290 0218 2F020000 		.4byte	0x22f
+ 1291 021c 0E       		.uleb128 0xe
+ 1292 021d 06000000 		.4byte	.LVL12
+ 1293 0221 E7050000 		.4byte	0x5e7
+ 1294 0225 0E       		.uleb128 0xe
+ 1295 0226 0A000000 		.4byte	.LVL13
+ 1296 022a D0010000 		.4byte	0x1d0
+ 1297 022e 00       		.byte	0
+ 1298 022f 08       		.uleb128 0x8
+ 1299 0230 89030000 		.4byte	.LASF30
+ 1300 0234 01       		.byte	0x1
+ 1301 0235 3E       		.byte	0x3e
+ 1302 0236 00000000 		.4byte	.LFB65
+ 1303 023a 38010000 		.4byte	.LFE65-.LFB65
+ 1304 023e 01       		.uleb128 0x1
+ 1305 023f 9C       		.byte	0x9c
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 28
+
+
+ 1306 0240 09030000 		.4byte	0x309
+ 1307 0244 0F       		.uleb128 0xf
+ 1308 0245 6E030000 		.4byte	.LASF31
+ 1309 0249 01       		.byte	0x1
+ 1310 024a 3F       		.byte	0x3f
+ 1311 024b 6B000000 		.4byte	0x6b
+ 1312 024f 32000000 		.4byte	.LLST2
+ 1313 0253 0F       		.uleb128 0xf
+ 1314 0254 7A010000 		.4byte	.LASF32
+ 1315 0258 01       		.byte	0x1
+ 1316 0259 40       		.byte	0x40
+ 1317 025a 6B000000 		.4byte	0x6b
+ 1318 025e 50000000 		.4byte	.LLST3
+ 1319 0262 0E       		.uleb128 0xe
+ 1320 0263 06000000 		.4byte	.LVL14
+ 1321 0267 F3050000 		.4byte	0x5f3
+ 1322 026b 0E       		.uleb128 0xe
+ 1323 026c 0C000000 		.4byte	.LVL16
+ 1324 0270 FE050000 		.4byte	0x5fe
+ 1325 0274 0E       		.uleb128 0xe
+ 1326 0275 34000000 		.4byte	.LVL19
+ 1327 0279 09060000 		.4byte	0x609
+ 1328 027d 0E       		.uleb128 0xe
+ 1329 027e 5C000000 		.4byte	.LVL22
+ 1330 0282 09060000 		.4byte	0x609
+ 1331 0286 0E       		.uleb128 0xe
+ 1332 0287 7E000000 		.4byte	.LVL25
+ 1333 028b 09060000 		.4byte	0x609
+ 1334 028f 0E       		.uleb128 0xe
+ 1335 0290 94000000 		.4byte	.LVL28
+ 1336 0294 FE050000 		.4byte	0x5fe
+ 1337 0298 0B       		.uleb128 0xb
+ 1338 0299 AC000000 		.4byte	.LVL32
+ 1339 029d 09060000 		.4byte	0x609
+ 1340 02a1 AB020000 		.4byte	0x2ab
+ 1341 02a5 0C       		.uleb128 0xc
+ 1342 02a6 01       		.uleb128 0x1
+ 1343 02a7 50       		.byte	0x50
+ 1344 02a8 01       		.uleb128 0x1
+ 1345 02a9 32       		.byte	0x32
+ 1346 02aa 00       		.byte	0
+ 1347 02ab 0B       		.uleb128 0xb
+ 1348 02ac BE000000 		.4byte	.LVL33
+ 1349 02b0 09060000 		.4byte	0x609
+ 1350 02b4 BE020000 		.4byte	0x2be
+ 1351 02b8 0C       		.uleb128 0xc
+ 1352 02b9 01       		.uleb128 0x1
+ 1353 02ba 50       		.byte	0x50
+ 1354 02bb 01       		.uleb128 0x1
+ 1355 02bc 49       		.byte	0x49
+ 1356 02bd 00       		.byte	0
+ 1357 02be 0B       		.uleb128 0xb
+ 1358 02bf DC000000 		.4byte	.LVL37
+ 1359 02c3 09060000 		.4byte	0x609
+ 1360 02c7 D1020000 		.4byte	0x2d1
+ 1361 02cb 0C       		.uleb128 0xc
+ 1362 02cc 01       		.uleb128 0x1
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 29
+
+
+ 1363 02cd 50       		.byte	0x50
+ 1364 02ce 01       		.uleb128 0x1
+ 1365 02cf 32       		.byte	0x32
+ 1366 02d0 00       		.byte	0
+ 1367 02d1 0B       		.uleb128 0xb
+ 1368 02d2 EE000000 		.4byte	.LVL38
+ 1369 02d6 09060000 		.4byte	0x609
+ 1370 02da E5020000 		.4byte	0x2e5
+ 1371 02de 0C       		.uleb128 0xc
+ 1372 02df 01       		.uleb128 0x1
+ 1373 02e0 50       		.byte	0x50
+ 1374 02e1 02       		.uleb128 0x2
+ 1375 02e2 08       		.byte	0x8
+ 1376 02e3 3D       		.byte	0x3d
+ 1377 02e4 00       		.byte	0
+ 1378 02e5 0B       		.uleb128 0xb
+ 1379 02e6 0C010000 		.4byte	.LVL42
+ 1380 02ea 09060000 		.4byte	0x609
+ 1381 02ee F8020000 		.4byte	0x2f8
+ 1382 02f2 0C       		.uleb128 0xc
+ 1383 02f3 01       		.uleb128 0x1
+ 1384 02f4 50       		.byte	0x50
+ 1385 02f5 01       		.uleb128 0x1
+ 1386 02f6 32       		.byte	0x32
+ 1387 02f7 00       		.byte	0
+ 1388 02f8 0D       		.uleb128 0xd
+ 1389 02f9 1E010000 		.4byte	.LVL43
+ 1390 02fd 09060000 		.4byte	0x609
+ 1391 0301 0C       		.uleb128 0xc
+ 1392 0302 01       		.uleb128 0x1
+ 1393 0303 50       		.byte	0x50
+ 1394 0304 02       		.uleb128 0x2
+ 1395 0305 08       		.byte	0x8
+ 1396 0306 3D       		.byte	0x3d
+ 1397 0307 00       		.byte	0
+ 1398 0308 00       		.byte	0
+ 1399 0309 08       		.uleb128 0x8
+ 1400 030a 45020000 		.4byte	.LASF33
+ 1401 030e 01       		.byte	0x1
+ 1402 030f 76       		.byte	0x76
+ 1403 0310 00000000 		.4byte	.LFB66
+ 1404 0314 4C010000 		.4byte	.LFE66-.LFB66
+ 1405 0318 01       		.uleb128 0x1
+ 1406 0319 9C       		.byte	0x9c
+ 1407 031a E6030000 		.4byte	0x3e6
+ 1408 031e 0F       		.uleb128 0xf
+ 1409 031f 6E030000 		.4byte	.LASF31
+ 1410 0323 01       		.byte	0x1
+ 1411 0324 77       		.byte	0x77
+ 1412 0325 6B000000 		.4byte	0x6b
+ 1413 0329 CC000000 		.4byte	.LLST4
+ 1414 032d 0F       		.uleb128 0xf
+ 1415 032e 7A010000 		.4byte	.LASF32
+ 1416 0332 01       		.byte	0x1
+ 1417 0333 78       		.byte	0x78
+ 1418 0334 77000000 		.4byte	0x77
+ 1419 0338 EA000000 		.4byte	.LLST5
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 30
+
+
+ 1420 033c 0E       		.uleb128 0xe
+ 1421 033d 06000000 		.4byte	.LVL45
+ 1422 0341 F3050000 		.4byte	0x5f3
+ 1423 0345 0E       		.uleb128 0xe
+ 1424 0346 0C000000 		.4byte	.LVL47
+ 1425 034a FE050000 		.4byte	0x5fe
+ 1426 034e 0E       		.uleb128 0xe
+ 1427 034f 34000000 		.4byte	.LVL50
+ 1428 0353 09060000 		.4byte	0x609
+ 1429 0357 0E       		.uleb128 0xe
+ 1430 0358 5C000000 		.4byte	.LVL53
+ 1431 035c 09060000 		.4byte	0x609
+ 1432 0360 0E       		.uleb128 0xe
+ 1433 0361 7C000000 		.4byte	.LVL56
+ 1434 0365 09060000 		.4byte	0x609
+ 1435 0369 0E       		.uleb128 0xe
+ 1436 036a 92000000 		.4byte	.LVL59
+ 1437 036e FE050000 		.4byte	0x5fe
+ 1438 0372 0B       		.uleb128 0xb
+ 1439 0373 AA000000 		.4byte	.LVL62
+ 1440 0377 09060000 		.4byte	0x609
+ 1441 037b 85030000 		.4byte	0x385
+ 1442 037f 0C       		.uleb128 0xc
+ 1443 0380 01       		.uleb128 0x1
+ 1444 0381 50       		.byte	0x50
+ 1445 0382 01       		.uleb128 0x1
+ 1446 0383 33       		.byte	0x33
+ 1447 0384 00       		.byte	0
+ 1448 0385 0B       		.uleb128 0xb
+ 1449 0386 BC000000 		.4byte	.LVL63
+ 1450 038a 09060000 		.4byte	0x609
+ 1451 038e 99030000 		.4byte	0x399
+ 1452 0392 0C       		.uleb128 0xc
+ 1453 0393 01       		.uleb128 0x1
+ 1454 0394 50       		.byte	0x50
+ 1455 0395 02       		.uleb128 0x2
+ 1456 0396 08       		.byte	0x8
+ 1457 0397 21       		.byte	0x21
+ 1458 0398 00       		.byte	0
+ 1459 0399 0B       		.uleb128 0xb
+ 1460 039a DA000000 		.4byte	.LVL66
+ 1461 039e 09060000 		.4byte	0x609
+ 1462 03a2 AC030000 		.4byte	0x3ac
+ 1463 03a6 0C       		.uleb128 0xc
+ 1464 03a7 01       		.uleb128 0x1
+ 1465 03a8 50       		.byte	0x50
+ 1466 03a9 01       		.uleb128 0x1
+ 1467 03aa 33       		.byte	0x33
+ 1468 03ab 00       		.byte	0
+ 1469 03ac 0B       		.uleb128 0xb
+ 1470 03ad EC000000 		.4byte	.LVL67
+ 1471 03b1 09060000 		.4byte	0x609
+ 1472 03b5 BF030000 		.4byte	0x3bf
+ 1473 03b9 0C       		.uleb128 0xc
+ 1474 03ba 01       		.uleb128 0x1
+ 1475 03bb 50       		.byte	0x50
+ 1476 03bc 01       		.uleb128 0x1
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 31
+
+
+ 1477 03bd 3E       		.byte	0x3e
+ 1478 03be 00       		.byte	0
+ 1479 03bf 0B       		.uleb128 0xb
+ 1480 03c0 0C010000 		.4byte	.LVL72
+ 1481 03c4 09060000 		.4byte	0x609
+ 1482 03c8 D4030000 		.4byte	0x3d4
+ 1483 03cc 0C       		.uleb128 0xc
+ 1484 03cd 01       		.uleb128 0x1
+ 1485 03ce 50       		.byte	0x50
+ 1486 03cf 03       		.uleb128 0x3
+ 1487 03d0 0A       		.byte	0xa
+ 1488 03d1 E507     		.2byte	0x7e5
+ 1489 03d3 00       		.byte	0
+ 1490 03d4 0D       		.uleb128 0xd
+ 1491 03d5 20010000 		.4byte	.LVL75
+ 1492 03d9 09060000 		.4byte	0x609
+ 1493 03dd 0C       		.uleb128 0xc
+ 1494 03de 01       		.uleb128 0x1
+ 1495 03df 50       		.byte	0x50
+ 1496 03e0 03       		.uleb128 0x3
+ 1497 03e1 0A       		.byte	0xa
+ 1498 03e2 0408     		.2byte	0x804
+ 1499 03e4 00       		.byte	0
+ 1500 03e5 00       		.byte	0
+ 1501 03e6 10       		.uleb128 0x10
+ 1502 03e7 5B000000 		.4byte	.LASF34
+ 1503 03eb 01       		.byte	0x1
+ 1504 03ec AE       		.byte	0xae
+ 1505 03ed 8F000000 		.4byte	0x8f
+ 1506 03f1 00000000 		.4byte	.LFB67
+ 1507 03f5 0C000000 		.4byte	.LFE67-.LFB67
+ 1508 03f9 01       		.uleb128 0x1
+ 1509 03fa 9C       		.byte	0x9c
+ 1510 03fb 10       		.uleb128 0x10
+ 1511 03fc 00000000 		.4byte	.LASF35
+ 1512 0400 01       		.byte	0x1
+ 1513 0401 B2       		.byte	0xb2
+ 1514 0402 8F000000 		.4byte	0x8f
+ 1515 0406 00000000 		.4byte	.LFB68
+ 1516 040a 0C000000 		.4byte	.LFE68-.LFB68
+ 1517 040e 01       		.uleb128 0x1
+ 1518 040f 9C       		.byte	0x9c
+ 1519 0410 10       		.uleb128 0x10
+ 1520 0411 56010000 		.4byte	.LASF36
+ 1521 0415 01       		.byte	0x1
+ 1522 0416 B6       		.byte	0xb6
+ 1523 0417 8F000000 		.4byte	0x8f
+ 1524 041b 00000000 		.4byte	.LFB69
+ 1525 041f 0C000000 		.4byte	.LFE69-.LFB69
+ 1526 0423 01       		.uleb128 0x1
+ 1527 0424 9C       		.byte	0x9c
+ 1528 0425 10       		.uleb128 0x10
+ 1529 0426 1B030000 		.4byte	.LASF37
+ 1530 042a 01       		.byte	0x1
+ 1531 042b BA       		.byte	0xba
+ 1532 042c 8F000000 		.4byte	0x8f
+ 1533 0430 00000000 		.4byte	.LFB70
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 32
+
+
+ 1534 0434 0C000000 		.4byte	.LFE70-.LFB70
+ 1535 0438 01       		.uleb128 0x1
+ 1536 0439 9C       		.byte	0x9c
+ 1537 043a 10       		.uleb128 0x10
+ 1538 043b 92030000 		.4byte	.LASF38
+ 1539 043f 01       		.byte	0x1
+ 1540 0440 BE       		.byte	0xbe
+ 1541 0441 8F000000 		.4byte	0x8f
+ 1542 0445 00000000 		.4byte	.LFB71
+ 1543 0449 0C000000 		.4byte	.LFE71-.LFB71
+ 1544 044d 01       		.uleb128 0x1
+ 1545 044e 9C       		.byte	0x9c
+ 1546 044f 10       		.uleb128 0x10
+ 1547 0450 16010000 		.4byte	.LASF39
+ 1548 0454 01       		.byte	0x1
+ 1549 0455 C2       		.byte	0xc2
+ 1550 0456 9B000000 		.4byte	0x9b
+ 1551 045a 00000000 		.4byte	.LFB72
+ 1552 045e 0C000000 		.4byte	.LFE72-.LFB72
+ 1553 0462 01       		.uleb128 0x1
+ 1554 0463 9C       		.byte	0x9c
+ 1555 0464 08       		.uleb128 0x8
+ 1556 0465 79020000 		.4byte	.LASF40
+ 1557 0469 01       		.byte	0x1
+ 1558 046a C6       		.byte	0xc6
+ 1559 046b 00000000 		.4byte	.LFB73
+ 1560 046f 2C000000 		.4byte	.LFE73-.LFB73
+ 1561 0473 01       		.uleb128 0x1
+ 1562 0474 9C       		.byte	0x9c
+ 1563 0475 83040000 		.4byte	0x483
+ 1564 0479 0E       		.uleb128 0xe
+ 1565 047a 1E000000 		.4byte	.LVL77
+ 1566 047e B9050000 		.4byte	0x5b9
+ 1567 0482 00       		.byte	0
+ 1568 0483 08       		.uleb128 0x8
+ 1569 0484 61010000 		.4byte	.LASF41
+ 1570 0488 01       		.byte	0x1
+ 1571 0489 CD       		.byte	0xcd
+ 1572 048a 00000000 		.4byte	.LFB74
+ 1573 048e 2C000000 		.4byte	.LFE74-.LFB74
+ 1574 0492 01       		.uleb128 0x1
+ 1575 0493 9C       		.byte	0x9c
+ 1576 0494 A2040000 		.4byte	0x4a2
+ 1577 0498 0E       		.uleb128 0xe
+ 1578 0499 1E000000 		.4byte	.LVL78
+ 1579 049d B9050000 		.4byte	0x5b9
+ 1580 04a1 00       		.byte	0
+ 1581 04a2 11       		.uleb128 0x11
+ 1582 04a3 1F010000 		.4byte	.LASF42
+ 1583 04a7 01       		.byte	0x1
+ 1584 04a8 D4       		.byte	0xd4
+ 1585 04a9 00000000 		.4byte	.LFB75
+ 1586 04ad 10000000 		.4byte	.LFE75-.LFB75
+ 1587 04b1 01       		.uleb128 0x1
+ 1588 04b2 9C       		.byte	0x9c
+ 1589 04b3 11       		.uleb128 0x11
+ 1590 04b4 3D000000 		.4byte	.LASF43
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 33
+
+
+ 1591 04b8 01       		.byte	0x1
+ 1592 04b9 DA       		.byte	0xda
+ 1593 04ba 00000000 		.4byte	.LFB76
+ 1594 04be 18000000 		.4byte	.LFE76-.LFB76
+ 1595 04c2 01       		.uleb128 0x1
+ 1596 04c3 9C       		.byte	0x9c
+ 1597 04c4 12       		.uleb128 0x12
+ 1598 04c5 05030000 		.4byte	.LASF22
+ 1599 04c9 01       		.byte	0x1
+ 1600 04ca 03       		.byte	0x3
+ 1601 04cb CA000000 		.4byte	0xca
+ 1602 04cf 05       		.uleb128 0x5
+ 1603 04d0 03       		.byte	0x3
+ 1604 04d1 00000000 		.4byte	Time
+ 1605 04d5 12       		.uleb128 0x12
+ 1606 04d6 B2010000 		.4byte	.LASF23
+ 1607 04da 01       		.byte	0x1
+ 1608 04db 04       		.byte	0x4
+ 1609 04dc FB000000 		.4byte	0xfb
+ 1610 04e0 05       		.uleb128 0x5
+ 1611 04e1 03       		.byte	0x3
+ 1612 04e2 00000000 		.4byte	Date
+ 1613 04e6 12       		.uleb128 0x12
+ 1614 04e7 B7010000 		.4byte	.LASF19
+ 1615 04eb 01       		.byte	0x1
+ 1616 04ec 06       		.byte	0x6
+ 1617 04ed 8F000000 		.4byte	0x8f
+ 1618 04f1 05       		.uleb128 0x5
+ 1619 04f2 03       		.byte	0x3
+ 1620 04f3 00000000 		.4byte	hour
+ 1621 04f7 12       		.uleb128 0x12
+ 1622 04f8 90020000 		.4byte	.LASF20
+ 1623 04fc 01       		.byte	0x1
+ 1624 04fd 07       		.byte	0x7
+ 1625 04fe 8F000000 		.4byte	0x8f
+ 1626 0502 05       		.uleb128 0x5
+ 1627 0503 03       		.byte	0x3
+ 1628 0504 00000000 		.4byte	minute
+ 1629 0508 12       		.uleb128 0x12
+ 1630 0509 F5010000 		.4byte	.LASF21
+ 1631 050d 01       		.byte	0x1
+ 1632 050e 08       		.byte	0x8
+ 1633 050f 8F000000 		.4byte	0x8f
+ 1634 0513 05       		.uleb128 0x5
+ 1635 0514 03       		.byte	0x3
+ 1636 0515 00000000 		.4byte	second
+ 1637 0519 13       		.uleb128 0x13
+ 1638 051a 64617900 		.ascii	"day\000"
+ 1639 051e 01       		.byte	0x1
+ 1640 051f 0A       		.byte	0xa
+ 1641 0520 8F000000 		.4byte	0x8f
+ 1642 0524 05       		.uleb128 0x5
+ 1643 0525 03       		.byte	0x3
+ 1644 0526 00000000 		.4byte	day
+ 1645 052a 12       		.uleb128 0x12
+ 1646 052b 73020000 		.4byte	.LASF24
+ 1647 052f 01       		.byte	0x1
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 34
+
+
+ 1648 0530 0B       		.byte	0xb
+ 1649 0531 8F000000 		.4byte	0x8f
+ 1650 0535 05       		.uleb128 0x5
+ 1651 0536 03       		.byte	0x3
+ 1652 0537 00000000 		.4byte	month
+ 1653 053b 12       		.uleb128 0x12
+ 1654 053c 64000000 		.4byte	.LASF25
+ 1655 0540 01       		.byte	0x1
+ 1656 0541 0C       		.byte	0xc
+ 1657 0542 9B000000 		.4byte	0x9b
+ 1658 0546 05       		.uleb128 0x5
+ 1659 0547 03       		.byte	0x3
+ 1660 0548 00000000 		.4byte	year
+ 1661 054c 12       		.uleb128 0x12
+ 1662 054d 66020000 		.4byte	.LASF44
+ 1663 0551 01       		.byte	0x1
+ 1664 0552 0E       		.byte	0xe
+ 1665 0553 83000000 		.4byte	0x83
+ 1666 0557 05       		.uleb128 0x5
+ 1667 0558 03       		.byte	0x3
+ 1668 0559 00000000 		.4byte	timeHrMinSec
+ 1669 055d 12       		.uleb128 0x12
+ 1670 055e 0A030000 		.4byte	.LASF45
+ 1671 0562 01       		.byte	0x1
+ 1672 0563 0F       		.byte	0xf
+ 1673 0564 83000000 		.4byte	0x83
+ 1674 0568 05       		.uleb128 0x5
+ 1675 0569 03       		.byte	0x3
+ 1676 056a 00000000 		.4byte	dateMonthDayYear
+ 1677 056e 12       		.uleb128 0x12
+ 1678 056f D6010000 		.4byte	.LASF46
+ 1679 0573 01       		.byte	0x1
+ 1680 0574 2B       		.byte	0x2b
+ 1681 0575 6B000000 		.4byte	0x6b
+ 1682 0579 05       		.uleb128 0x5
+ 1683 057a 03       		.byte	0x3
+ 1684 057b 00000000 		.4byte	counter
+ 1685 057f 14       		.uleb128 0x14
+ 1686 0580 20020000 		.4byte	.LASF47
+ 1687 0584 20020000 		.4byte	.LASF47
+ 1688 0588 04       		.byte	0x4
+ 1689 0589 0101     		.2byte	0x101
+ 1690 058b 14       		.uleb128 0x14
+ 1691 058c 8A010000 		.4byte	.LASF48
+ 1692 0590 8A010000 		.4byte	.LASF48
+ 1693 0594 04       		.byte	0x4
+ 1694 0595 0001     		.2byte	0x100
+ 1695 0597 15       		.uleb128 0x15
+ 1696 0598 5F030000 		.4byte	.LASF49
+ 1697 059c 5F030000 		.4byte	.LASF49
+ 1698 05a0 04       		.byte	0x4
+ 1699 05a1 F7       		.byte	0xf7
+ 1700 05a2 15       		.uleb128 0x15
+ 1701 05a3 69000000 		.4byte	.LASF50
+ 1702 05a7 69000000 		.4byte	.LASF50
+ 1703 05ab 04       		.byte	0x4
+ 1704 05ac FD       		.byte	0xfd
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 35
+
+
+ 1705 05ad 14       		.uleb128 0x14
+ 1706 05ae 9C030000 		.4byte	.LASF51
+ 1707 05b2 9C030000 		.4byte	.LASF51
+ 1708 05b6 05       		.byte	0x5
+ 1709 05b7 4E01     		.2byte	0x14e
+ 1710 05b9 14       		.uleb128 0x14
+ 1711 05ba 9F010000 		.4byte	.LASF52
+ 1712 05be 9F010000 		.4byte	.LASF52
+ 1713 05c2 05       		.byte	0x5
+ 1714 05c3 5601     		.2byte	0x156
+ 1715 05c5 14       		.uleb128 0x14
+ 1716 05c6 25000000 		.4byte	.LASF53
+ 1717 05ca 25000000 		.4byte	.LASF53
+ 1718 05ce 05       		.byte	0x5
+ 1719 05cf 5301     		.2byte	0x153
+ 1720 05d1 15       		.uleb128 0x15
+ 1721 05d2 77030000 		.4byte	.LASF54
+ 1722 05d6 77030000 		.4byte	.LASF54
+ 1723 05da 06       		.byte	0x6
+ 1724 05db 11       		.byte	0x11
+ 1725 05dc 15       		.uleb128 0x15
+ 1726 05dd 35020000 		.4byte	.LASF55
+ 1727 05e1 35020000 		.4byte	.LASF55
+ 1728 05e5 06       		.byte	0x6
+ 1729 05e6 08       		.byte	0x8
+ 1730 05e7 14       		.uleb128 0x14
+ 1731 05e8 DE010000 		.4byte	.LASF56
+ 1732 05ec DE010000 		.4byte	.LASF56
+ 1733 05f0 05       		.byte	0x5
+ 1734 05f1 6701     		.2byte	0x167
+ 1735 05f3 15       		.uleb128 0x15
+ 1736 05f4 DF020000 		.4byte	.LASF57
+ 1737 05f8 DF020000 		.4byte	.LASF57
+ 1738 05fc 07       		.byte	0x7
+ 1739 05fd 0F       		.byte	0xf
+ 1740 05fe 15       		.uleb128 0x15
+ 1741 05ff 9E020000 		.4byte	.LASF58
+ 1742 0603 9E020000 		.4byte	.LASF58
+ 1743 0607 07       		.byte	0x7
+ 1744 0608 0E       		.byte	0xe
+ 1745 0609 15       		.uleb128 0x15
+ 1746 060a B2020000 		.4byte	.LASF59
+ 1747 060e B2020000 		.4byte	.LASF59
+ 1748 0612 07       		.byte	0x7
+ 1749 0613 10       		.byte	0x10
+ 1750 0614 00       		.byte	0
+ 1751              		.section	.debug_abbrev,"",%progbits
+ 1752              	.Ldebug_abbrev0:
+ 1753 0000 01       		.uleb128 0x1
+ 1754 0001 11       		.uleb128 0x11
+ 1755 0002 01       		.byte	0x1
+ 1756 0003 25       		.uleb128 0x25
+ 1757 0004 0E       		.uleb128 0xe
+ 1758 0005 13       		.uleb128 0x13
+ 1759 0006 0B       		.uleb128 0xb
+ 1760 0007 03       		.uleb128 0x3
+ 1761 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 36
+
+
+ 1762 0009 1B       		.uleb128 0x1b
+ 1763 000a 0E       		.uleb128 0xe
+ 1764 000b 55       		.uleb128 0x55
+ 1765 000c 17       		.uleb128 0x17
+ 1766 000d 11       		.uleb128 0x11
+ 1767 000e 01       		.uleb128 0x1
+ 1768 000f 10       		.uleb128 0x10
+ 1769 0010 17       		.uleb128 0x17
+ 1770 0011 00       		.byte	0
+ 1771 0012 00       		.byte	0
+ 1772 0013 02       		.uleb128 0x2
+ 1773 0014 24       		.uleb128 0x24
+ 1774 0015 00       		.byte	0
+ 1775 0016 0B       		.uleb128 0xb
+ 1776 0017 0B       		.uleb128 0xb
+ 1777 0018 3E       		.uleb128 0x3e
+ 1778 0019 0B       		.uleb128 0xb
+ 1779 001a 03       		.uleb128 0x3
+ 1780 001b 0E       		.uleb128 0xe
+ 1781 001c 00       		.byte	0
+ 1782 001d 00       		.byte	0
+ 1783 001e 03       		.uleb128 0x3
+ 1784 001f 24       		.uleb128 0x24
+ 1785 0020 00       		.byte	0
+ 1786 0021 0B       		.uleb128 0xb
+ 1787 0022 0B       		.uleb128 0xb
+ 1788 0023 3E       		.uleb128 0x3e
+ 1789 0024 0B       		.uleb128 0xb
+ 1790 0025 03       		.uleb128 0x3
+ 1791 0026 08       		.uleb128 0x8
+ 1792 0027 00       		.byte	0
+ 1793 0028 00       		.byte	0
+ 1794 0029 04       		.uleb128 0x4
+ 1795 002a 16       		.uleb128 0x16
+ 1796 002b 00       		.byte	0
+ 1797 002c 03       		.uleb128 0x3
+ 1798 002d 0E       		.uleb128 0xe
+ 1799 002e 3A       		.uleb128 0x3a
+ 1800 002f 0B       		.uleb128 0xb
+ 1801 0030 3B       		.uleb128 0x3b
+ 1802 0031 05       		.uleb128 0x5
+ 1803 0032 49       		.uleb128 0x49
+ 1804 0033 13       		.uleb128 0x13
+ 1805 0034 00       		.byte	0
+ 1806 0035 00       		.byte	0
+ 1807 0036 05       		.uleb128 0x5
+ 1808 0037 13       		.uleb128 0x13
+ 1809 0038 01       		.byte	0x1
+ 1810 0039 03       		.uleb128 0x3
+ 1811 003a 0E       		.uleb128 0xe
+ 1812 003b 0B       		.uleb128 0xb
+ 1813 003c 0B       		.uleb128 0xb
+ 1814 003d 3A       		.uleb128 0x3a
+ 1815 003e 0B       		.uleb128 0xb
+ 1816 003f 3B       		.uleb128 0x3b
+ 1817 0040 0B       		.uleb128 0xb
+ 1818 0041 01       		.uleb128 0x1
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 37
+
+
+ 1819 0042 13       		.uleb128 0x13
+ 1820 0043 00       		.byte	0
+ 1821 0044 00       		.byte	0
+ 1822 0045 06       		.uleb128 0x6
+ 1823 0046 0D       		.uleb128 0xd
+ 1824 0047 00       		.byte	0
+ 1825 0048 03       		.uleb128 0x3
+ 1826 0049 0E       		.uleb128 0xe
+ 1827 004a 3A       		.uleb128 0x3a
+ 1828 004b 0B       		.uleb128 0xb
+ 1829 004c 3B       		.uleb128 0x3b
+ 1830 004d 0B       		.uleb128 0xb
+ 1831 004e 49       		.uleb128 0x49
+ 1832 004f 13       		.uleb128 0x13
+ 1833 0050 38       		.uleb128 0x38
+ 1834 0051 0B       		.uleb128 0xb
+ 1835 0052 00       		.byte	0
+ 1836 0053 00       		.byte	0
+ 1837 0054 07       		.uleb128 0x7
+ 1838 0055 0D       		.uleb128 0xd
+ 1839 0056 00       		.byte	0
+ 1840 0057 03       		.uleb128 0x3
+ 1841 0058 08       		.uleb128 0x8
+ 1842 0059 3A       		.uleb128 0x3a
+ 1843 005a 0B       		.uleb128 0xb
+ 1844 005b 3B       		.uleb128 0x3b
+ 1845 005c 0B       		.uleb128 0xb
+ 1846 005d 49       		.uleb128 0x49
+ 1847 005e 13       		.uleb128 0x13
+ 1848 005f 38       		.uleb128 0x38
+ 1849 0060 0B       		.uleb128 0xb
+ 1850 0061 00       		.byte	0
+ 1851 0062 00       		.byte	0
+ 1852 0063 08       		.uleb128 0x8
+ 1853 0064 2E       		.uleb128 0x2e
+ 1854 0065 01       		.byte	0x1
+ 1855 0066 3F       		.uleb128 0x3f
+ 1856 0067 19       		.uleb128 0x19
+ 1857 0068 03       		.uleb128 0x3
+ 1858 0069 0E       		.uleb128 0xe
+ 1859 006a 3A       		.uleb128 0x3a
+ 1860 006b 0B       		.uleb128 0xb
+ 1861 006c 3B       		.uleb128 0x3b
+ 1862 006d 0B       		.uleb128 0xb
+ 1863 006e 27       		.uleb128 0x27
+ 1864 006f 19       		.uleb128 0x19
+ 1865 0070 11       		.uleb128 0x11
+ 1866 0071 01       		.uleb128 0x1
+ 1867 0072 12       		.uleb128 0x12
+ 1868 0073 06       		.uleb128 0x6
+ 1869 0074 40       		.uleb128 0x40
+ 1870 0075 18       		.uleb128 0x18
+ 1871 0076 9742     		.uleb128 0x2117
+ 1872 0078 19       		.uleb128 0x19
+ 1873 0079 01       		.uleb128 0x1
+ 1874 007a 13       		.uleb128 0x13
+ 1875 007b 00       		.byte	0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 38
+
+
+ 1876 007c 00       		.byte	0
+ 1877 007d 09       		.uleb128 0x9
+ 1878 007e 0B       		.uleb128 0xb
+ 1879 007f 01       		.byte	0x1
+ 1880 0080 11       		.uleb128 0x11
+ 1881 0081 01       		.uleb128 0x1
+ 1882 0082 12       		.uleb128 0x12
+ 1883 0083 06       		.uleb128 0x6
+ 1884 0084 01       		.uleb128 0x1
+ 1885 0085 13       		.uleb128 0x13
+ 1886 0086 00       		.byte	0
+ 1887 0087 00       		.byte	0
+ 1888 0088 0A       		.uleb128 0xa
+ 1889 0089 34       		.uleb128 0x34
+ 1890 008a 00       		.byte	0
+ 1891 008b 03       		.uleb128 0x3
+ 1892 008c 08       		.uleb128 0x8
+ 1893 008d 3A       		.uleb128 0x3a
+ 1894 008e 0B       		.uleb128 0xb
+ 1895 008f 3B       		.uleb128 0x3b
+ 1896 0090 0B       		.uleb128 0xb
+ 1897 0091 49       		.uleb128 0x49
+ 1898 0092 13       		.uleb128 0x13
+ 1899 0093 02       		.uleb128 0x2
+ 1900 0094 17       		.uleb128 0x17
+ 1901 0095 00       		.byte	0
+ 1902 0096 00       		.byte	0
+ 1903 0097 0B       		.uleb128 0xb
+ 1904 0098 898201   		.uleb128 0x4109
+ 1905 009b 01       		.byte	0x1
+ 1906 009c 11       		.uleb128 0x11
+ 1907 009d 01       		.uleb128 0x1
+ 1908 009e 31       		.uleb128 0x31
+ 1909 009f 13       		.uleb128 0x13
+ 1910 00a0 01       		.uleb128 0x1
+ 1911 00a1 13       		.uleb128 0x13
+ 1912 00a2 00       		.byte	0
+ 1913 00a3 00       		.byte	0
+ 1914 00a4 0C       		.uleb128 0xc
+ 1915 00a5 8A8201   		.uleb128 0x410a
+ 1916 00a8 00       		.byte	0
+ 1917 00a9 02       		.uleb128 0x2
+ 1918 00aa 18       		.uleb128 0x18
+ 1919 00ab 9142     		.uleb128 0x2111
+ 1920 00ad 18       		.uleb128 0x18
+ 1921 00ae 00       		.byte	0
+ 1922 00af 00       		.byte	0
+ 1923 00b0 0D       		.uleb128 0xd
+ 1924 00b1 898201   		.uleb128 0x4109
+ 1925 00b4 01       		.byte	0x1
+ 1926 00b5 11       		.uleb128 0x11
+ 1927 00b6 01       		.uleb128 0x1
+ 1928 00b7 31       		.uleb128 0x31
+ 1929 00b8 13       		.uleb128 0x13
+ 1930 00b9 00       		.byte	0
+ 1931 00ba 00       		.byte	0
+ 1932 00bb 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 39
+
+
+ 1933 00bc 898201   		.uleb128 0x4109
+ 1934 00bf 00       		.byte	0
+ 1935 00c0 11       		.uleb128 0x11
+ 1936 00c1 01       		.uleb128 0x1
+ 1937 00c2 31       		.uleb128 0x31
+ 1938 00c3 13       		.uleb128 0x13
+ 1939 00c4 00       		.byte	0
+ 1940 00c5 00       		.byte	0
+ 1941 00c6 0F       		.uleb128 0xf
+ 1942 00c7 34       		.uleb128 0x34
+ 1943 00c8 00       		.byte	0
+ 1944 00c9 03       		.uleb128 0x3
+ 1945 00ca 0E       		.uleb128 0xe
+ 1946 00cb 3A       		.uleb128 0x3a
+ 1947 00cc 0B       		.uleb128 0xb
+ 1948 00cd 3B       		.uleb128 0x3b
+ 1949 00ce 0B       		.uleb128 0xb
+ 1950 00cf 49       		.uleb128 0x49
+ 1951 00d0 13       		.uleb128 0x13
+ 1952 00d1 02       		.uleb128 0x2
+ 1953 00d2 17       		.uleb128 0x17
+ 1954 00d3 00       		.byte	0
+ 1955 00d4 00       		.byte	0
+ 1956 00d5 10       		.uleb128 0x10
+ 1957 00d6 2E       		.uleb128 0x2e
+ 1958 00d7 00       		.byte	0
+ 1959 00d8 3F       		.uleb128 0x3f
+ 1960 00d9 19       		.uleb128 0x19
+ 1961 00da 03       		.uleb128 0x3
+ 1962 00db 0E       		.uleb128 0xe
+ 1963 00dc 3A       		.uleb128 0x3a
+ 1964 00dd 0B       		.uleb128 0xb
+ 1965 00de 3B       		.uleb128 0x3b
+ 1966 00df 0B       		.uleb128 0xb
+ 1967 00e0 27       		.uleb128 0x27
+ 1968 00e1 19       		.uleb128 0x19
+ 1969 00e2 49       		.uleb128 0x49
+ 1970 00e3 13       		.uleb128 0x13
+ 1971 00e4 11       		.uleb128 0x11
+ 1972 00e5 01       		.uleb128 0x1
+ 1973 00e6 12       		.uleb128 0x12
+ 1974 00e7 06       		.uleb128 0x6
+ 1975 00e8 40       		.uleb128 0x40
+ 1976 00e9 18       		.uleb128 0x18
+ 1977 00ea 9742     		.uleb128 0x2117
+ 1978 00ec 19       		.uleb128 0x19
+ 1979 00ed 00       		.byte	0
+ 1980 00ee 00       		.byte	0
+ 1981 00ef 11       		.uleb128 0x11
+ 1982 00f0 2E       		.uleb128 0x2e
+ 1983 00f1 00       		.byte	0
+ 1984 00f2 3F       		.uleb128 0x3f
+ 1985 00f3 19       		.uleb128 0x19
+ 1986 00f4 03       		.uleb128 0x3
+ 1987 00f5 0E       		.uleb128 0xe
+ 1988 00f6 3A       		.uleb128 0x3a
+ 1989 00f7 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 40
+
+
+ 1990 00f8 3B       		.uleb128 0x3b
+ 1991 00f9 0B       		.uleb128 0xb
+ 1992 00fa 27       		.uleb128 0x27
+ 1993 00fb 19       		.uleb128 0x19
+ 1994 00fc 11       		.uleb128 0x11
+ 1995 00fd 01       		.uleb128 0x1
+ 1996 00fe 12       		.uleb128 0x12
+ 1997 00ff 06       		.uleb128 0x6
+ 1998 0100 40       		.uleb128 0x40
+ 1999 0101 18       		.uleb128 0x18
+ 2000 0102 9742     		.uleb128 0x2117
+ 2001 0104 19       		.uleb128 0x19
+ 2002 0105 00       		.byte	0
+ 2003 0106 00       		.byte	0
+ 2004 0107 12       		.uleb128 0x12
+ 2005 0108 34       		.uleb128 0x34
+ 2006 0109 00       		.byte	0
+ 2007 010a 03       		.uleb128 0x3
+ 2008 010b 0E       		.uleb128 0xe
+ 2009 010c 3A       		.uleb128 0x3a
+ 2010 010d 0B       		.uleb128 0xb
+ 2011 010e 3B       		.uleb128 0x3b
+ 2012 010f 0B       		.uleb128 0xb
+ 2013 0110 49       		.uleb128 0x49
+ 2014 0111 13       		.uleb128 0x13
+ 2015 0112 3F       		.uleb128 0x3f
+ 2016 0113 19       		.uleb128 0x19
+ 2017 0114 02       		.uleb128 0x2
+ 2018 0115 18       		.uleb128 0x18
+ 2019 0116 00       		.byte	0
+ 2020 0117 00       		.byte	0
+ 2021 0118 13       		.uleb128 0x13
+ 2022 0119 34       		.uleb128 0x34
+ 2023 011a 00       		.byte	0
+ 2024 011b 03       		.uleb128 0x3
+ 2025 011c 08       		.uleb128 0x8
+ 2026 011d 3A       		.uleb128 0x3a
+ 2027 011e 0B       		.uleb128 0xb
+ 2028 011f 3B       		.uleb128 0x3b
+ 2029 0120 0B       		.uleb128 0xb
+ 2030 0121 49       		.uleb128 0x49
+ 2031 0122 13       		.uleb128 0x13
+ 2032 0123 3F       		.uleb128 0x3f
+ 2033 0124 19       		.uleb128 0x19
+ 2034 0125 02       		.uleb128 0x2
+ 2035 0126 18       		.uleb128 0x18
+ 2036 0127 00       		.byte	0
+ 2037 0128 00       		.byte	0
+ 2038 0129 14       		.uleb128 0x14
+ 2039 012a 2E       		.uleb128 0x2e
+ 2040 012b 00       		.byte	0
+ 2041 012c 3F       		.uleb128 0x3f
+ 2042 012d 19       		.uleb128 0x19
+ 2043 012e 3C       		.uleb128 0x3c
+ 2044 012f 19       		.uleb128 0x19
+ 2045 0130 6E       		.uleb128 0x6e
+ 2046 0131 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 41
+
+
+ 2047 0132 03       		.uleb128 0x3
+ 2048 0133 0E       		.uleb128 0xe
+ 2049 0134 3A       		.uleb128 0x3a
+ 2050 0135 0B       		.uleb128 0xb
+ 2051 0136 3B       		.uleb128 0x3b
+ 2052 0137 05       		.uleb128 0x5
+ 2053 0138 00       		.byte	0
+ 2054 0139 00       		.byte	0
+ 2055 013a 15       		.uleb128 0x15
+ 2056 013b 2E       		.uleb128 0x2e
+ 2057 013c 00       		.byte	0
+ 2058 013d 3F       		.uleb128 0x3f
+ 2059 013e 19       		.uleb128 0x19
+ 2060 013f 3C       		.uleb128 0x3c
+ 2061 0140 19       		.uleb128 0x19
+ 2062 0141 6E       		.uleb128 0x6e
+ 2063 0142 0E       		.uleb128 0xe
+ 2064 0143 03       		.uleb128 0x3
+ 2065 0144 0E       		.uleb128 0xe
+ 2066 0145 3A       		.uleb128 0x3a
+ 2067 0146 0B       		.uleb128 0xb
+ 2068 0147 3B       		.uleb128 0x3b
+ 2069 0148 0B       		.uleb128 0xb
+ 2070 0149 00       		.byte	0
+ 2071 014a 00       		.byte	0
+ 2072 014b 00       		.byte	0
+ 2073              		.section	.debug_loc,"",%progbits
+ 2074              	.Ldebug_loc0:
+ 2075              	.LLST0:
+ 2076 0000 0C000000 		.4byte	.LVL1
+ 2077 0004 10000000 		.4byte	.LVL2
+ 2078 0008 0200     		.2byte	0x2
+ 2079 000a 30       		.byte	0x30
+ 2080 000b 9F       		.byte	0x9f
+ 2081 000c 10000000 		.4byte	.LVL2
+ 2082 0010 42000000 		.4byte	.LVL9
+ 2083 0014 0100     		.2byte	0x1
+ 2084 0016 54       		.byte	0x54
+ 2085 0017 00000000 		.4byte	0
+ 2086 001b 00000000 		.4byte	0
+ 2087              	.LLST1:
+ 2088 001f 06000000 		.4byte	.LVL10
+ 2089 0023 0D000000 		.4byte	.LVL11-1
+ 2090 0027 0100     		.2byte	0x1
+ 2091 0029 50       		.byte	0x50
+ 2092 002a 00000000 		.4byte	0
+ 2093 002e 00000000 		.4byte	0
+ 2094              	.LLST2:
+ 2095 0032 08000000 		.4byte	.LVL15
+ 2096 0036 0B000000 		.4byte	.LVL16-1
+ 2097 003a 0100     		.2byte	0x1
+ 2098 003c 50       		.byte	0x50
+ 2099 003d 0B000000 		.4byte	.LVL16-1
+ 2100 0041 24010000 		.4byte	.LVL44
+ 2101 0045 0100     		.2byte	0x1
+ 2102 0047 54       		.byte	0x54
+ 2103 0048 00000000 		.4byte	0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 42
+
+
+ 2104 004c 00000000 		.4byte	0
+ 2105              	.LLST3:
+ 2106 0050 0E000000 		.4byte	.LVL17
+ 2107 0054 1A000000 		.4byte	.LVL18
+ 2108 0058 0100     		.2byte	0x1
+ 2109 005a 50       		.byte	0x50
+ 2110 005b 36000000 		.4byte	.LVL20
+ 2111 005f 48000000 		.4byte	.LVL21
+ 2112 0063 0100     		.2byte	0x1
+ 2113 0065 50       		.byte	0x50
+ 2114 0066 5E000000 		.4byte	.LVL23
+ 2115 006a 70000000 		.4byte	.LVL24
+ 2116 006e 0100     		.2byte	0x1
+ 2117 0070 50       		.byte	0x50
+ 2118 0071 80000000 		.4byte	.LVL26
+ 2119 0075 90000000 		.4byte	.LVL27
+ 2120 0079 0100     		.2byte	0x1
+ 2121 007b 50       		.byte	0x50
+ 2122 007c 96000000 		.4byte	.LVL29
+ 2123 0080 9C000000 		.4byte	.LVL30
+ 2124 0084 0100     		.2byte	0x1
+ 2125 0086 50       		.byte	0x50
+ 2126 0087 9C000000 		.4byte	.LVL30
+ 2127 008b 9E000000 		.4byte	.LVL31
+ 2128 008f 0300     		.2byte	0x3
+ 2129 0091 70       		.byte	0x70
+ 2130 0092 02       		.sleb128 2
+ 2131 0093 9F       		.byte	0x9f
+ 2132 0094 C6000000 		.4byte	.LVL34
+ 2133 0098 CC000000 		.4byte	.LVL35
+ 2134 009c 0100     		.2byte	0x1
+ 2135 009e 50       		.byte	0x50
+ 2136 009f CC000000 		.4byte	.LVL35
+ 2137 00a3 CE000000 		.4byte	.LVL36
+ 2138 00a7 0300     		.2byte	0x3
+ 2139 00a9 70       		.byte	0x70
+ 2140 00aa 02       		.sleb128 2
+ 2141 00ab 9F       		.byte	0x9f
+ 2142 00ac F6000000 		.4byte	.LVL39
+ 2143 00b0 FC000000 		.4byte	.LVL40
+ 2144 00b4 0100     		.2byte	0x1
+ 2145 00b6 50       		.byte	0x50
+ 2146 00b7 FC000000 		.4byte	.LVL40
+ 2147 00bb FE000000 		.4byte	.LVL41
+ 2148 00bf 0300     		.2byte	0x3
+ 2149 00c1 70       		.byte	0x70
+ 2150 00c2 02       		.sleb128 2
+ 2151 00c3 9F       		.byte	0x9f
+ 2152 00c4 00000000 		.4byte	0
+ 2153 00c8 00000000 		.4byte	0
+ 2154              	.LLST4:
+ 2155 00cc 08000000 		.4byte	.LVL46
+ 2156 00d0 0B000000 		.4byte	.LVL47-1
+ 2157 00d4 0100     		.2byte	0x1
+ 2158 00d6 50       		.byte	0x50
+ 2159 00d7 0B000000 		.4byte	.LVL47-1
+ 2160 00db 26010000 		.4byte	.LVL76
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 43
+
+
+ 2161 00df 0100     		.2byte	0x1
+ 2162 00e1 54       		.byte	0x54
+ 2163 00e2 00000000 		.4byte	0
+ 2164 00e6 00000000 		.4byte	0
+ 2165              	.LLST5:
+ 2166 00ea 0E000000 		.4byte	.LVL48
+ 2167 00ee 1A000000 		.4byte	.LVL49
+ 2168 00f2 0100     		.2byte	0x1
+ 2169 00f4 50       		.byte	0x50
+ 2170 00f5 36000000 		.4byte	.LVL51
+ 2171 00f9 48000000 		.4byte	.LVL52
+ 2172 00fd 0100     		.2byte	0x1
+ 2173 00ff 50       		.byte	0x50
+ 2174 0100 5E000000 		.4byte	.LVL54
+ 2175 0104 70000000 		.4byte	.LVL55
+ 2176 0108 0100     		.2byte	0x1
+ 2177 010a 50       		.byte	0x50
+ 2178 010b 7E000000 		.4byte	.LVL57
+ 2179 010f 8E000000 		.4byte	.LVL58
+ 2180 0113 0100     		.2byte	0x1
+ 2181 0115 50       		.byte	0x50
+ 2182 0116 94000000 		.4byte	.LVL60
+ 2183 011a 9E000000 		.4byte	.LVL61
+ 2184 011e 0100     		.2byte	0x1
+ 2185 0120 53       		.byte	0x53
+ 2186 0121 C4000000 		.4byte	.LVL64
+ 2187 0125 CE000000 		.4byte	.LVL65
+ 2188 0129 0100     		.2byte	0x1
+ 2189 012b 53       		.byte	0x53
+ 2190 012c F4000000 		.4byte	.LVL68
+ 2191 0130 FA000000 		.4byte	.LVL69
+ 2192 0134 0100     		.2byte	0x1
+ 2193 0136 53       		.byte	0x53
+ 2194 0137 FA000000 		.4byte	.LVL69
+ 2195 013b FC000000 		.4byte	.LVL70
+ 2196 013f 0300     		.2byte	0x3
+ 2197 0141 73       		.byte	0x73
+ 2198 0142 02       		.sleb128 2
+ 2199 0143 9F       		.byte	0x9f
+ 2200 0144 FC000000 		.4byte	.LVL70
+ 2201 0148 08010000 		.4byte	.LVL71
+ 2202 014c 0100     		.2byte	0x1
+ 2203 014e 50       		.byte	0x50
+ 2204 014f 14010000 		.4byte	.LVL73
+ 2205 0153 1C010000 		.4byte	.LVL74
+ 2206 0157 0100     		.2byte	0x1
+ 2207 0159 50       		.byte	0x50
+ 2208 015a 00000000 		.4byte	0
+ 2209 015e 00000000 		.4byte	0
+ 2210              		.section	.debug_aranges,"",%progbits
+ 2211 0000 8C000000 		.4byte	0x8c
+ 2212 0004 0200     		.2byte	0x2
+ 2213 0006 00000000 		.4byte	.Ldebug_info0
+ 2214 000a 04       		.byte	0x4
+ 2215 000b 00       		.byte	0
+ 2216 000c 0000     		.2byte	0
+ 2217 000e 0000     		.2byte	0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 44
+
+
+ 2218 0010 00000000 		.4byte	.LFB62
+ 2219 0014 54000000 		.4byte	.LFE62-.LFB62
+ 2220 0018 00000000 		.4byte	.LFB64
+ 2221 001c 10000000 		.4byte	.LFE64-.LFB64
+ 2222 0020 00000000 		.4byte	.LFB63
+ 2223 0024 0C000000 		.4byte	.LFE63-.LFB63
+ 2224 0028 00000000 		.4byte	.LFB65
+ 2225 002c 38010000 		.4byte	.LFE65-.LFB65
+ 2226 0030 00000000 		.4byte	.LFB66
+ 2227 0034 4C010000 		.4byte	.LFE66-.LFB66
+ 2228 0038 00000000 		.4byte	.LFB67
+ 2229 003c 0C000000 		.4byte	.LFE67-.LFB67
+ 2230 0040 00000000 		.4byte	.LFB68
+ 2231 0044 0C000000 		.4byte	.LFE68-.LFB68
+ 2232 0048 00000000 		.4byte	.LFB69
+ 2233 004c 0C000000 		.4byte	.LFE69-.LFB69
+ 2234 0050 00000000 		.4byte	.LFB70
+ 2235 0054 0C000000 		.4byte	.LFE70-.LFB70
+ 2236 0058 00000000 		.4byte	.LFB71
+ 2237 005c 0C000000 		.4byte	.LFE71-.LFB71
+ 2238 0060 00000000 		.4byte	.LFB72
+ 2239 0064 0C000000 		.4byte	.LFE72-.LFB72
+ 2240 0068 00000000 		.4byte	.LFB73
+ 2241 006c 2C000000 		.4byte	.LFE73-.LFB73
+ 2242 0070 00000000 		.4byte	.LFB74
+ 2243 0074 2C000000 		.4byte	.LFE74-.LFB74
+ 2244 0078 00000000 		.4byte	.LFB75
+ 2245 007c 10000000 		.4byte	.LFE75-.LFB75
+ 2246 0080 00000000 		.4byte	.LFB76
+ 2247 0084 18000000 		.4byte	.LFE76-.LFB76
+ 2248 0088 00000000 		.4byte	0
+ 2249 008c 00000000 		.4byte	0
+ 2250              		.section	.debug_ranges,"",%progbits
+ 2251              	.Ldebug_ranges0:
+ 2252 0000 00000000 		.4byte	.LFB62
+ 2253 0004 54000000 		.4byte	.LFE62
+ 2254 0008 00000000 		.4byte	.LFB64
+ 2255 000c 10000000 		.4byte	.LFE64
+ 2256 0010 00000000 		.4byte	.LFB63
+ 2257 0014 0C000000 		.4byte	.LFE63
+ 2258 0018 00000000 		.4byte	.LFB65
+ 2259 001c 38010000 		.4byte	.LFE65
+ 2260 0020 00000000 		.4byte	.LFB66
+ 2261 0024 4C010000 		.4byte	.LFE66
+ 2262 0028 00000000 		.4byte	.LFB67
+ 2263 002c 0C000000 		.4byte	.LFE67
+ 2264 0030 00000000 		.4byte	.LFB68
+ 2265 0034 0C000000 		.4byte	.LFE68
+ 2266 0038 00000000 		.4byte	.LFB69
+ 2267 003c 0C000000 		.4byte	.LFE69
+ 2268 0040 00000000 		.4byte	.LFB70
+ 2269 0044 0C000000 		.4byte	.LFE70
+ 2270 0048 00000000 		.4byte	.LFB71
+ 2271 004c 0C000000 		.4byte	.LFE71
+ 2272 0050 00000000 		.4byte	.LFB72
+ 2273 0054 0C000000 		.4byte	.LFE72
+ 2274 0058 00000000 		.4byte	.LFB73
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 45
+
+
+ 2275 005c 2C000000 		.4byte	.LFE73
+ 2276 0060 00000000 		.4byte	.LFB74
+ 2277 0064 2C000000 		.4byte	.LFE74
+ 2278 0068 00000000 		.4byte	.LFB75
+ 2279 006c 10000000 		.4byte	.LFE75
+ 2280 0070 00000000 		.4byte	.LFB76
+ 2281 0074 18000000 		.4byte	.LFE76
+ 2282 0078 00000000 		.4byte	0
+ 2283 007c 00000000 		.4byte	0
+ 2284              		.section	.debug_line,"",%progbits
+ 2285              	.Ldebug_line0:
+ 2286 0000 4D020000 		.section	.debug_str,"MS",%progbits,1
+ 2286      02008800 
+ 2286      00000201 
+ 2286      FB0E0D00 
+ 2286      01010101 
+ 2287              	.LASF35:
+ 2288 0000 6765745F 		.ascii	"get_minute\000"
+ 2288      6D696E75 
+ 2288      746500
+ 2289              	.LASF27:
+ 2290 000b 7274635F 		.ascii	"rtc_update_dynamic_screen\000"
+ 2290      75706461 
+ 2290      74655F64 
+ 2290      796E616D 
+ 2290      69635F73 
+ 2291              	.LASF53:
+ 2292 0025 5254435F 		.ascii	"RTC_SetPeriod\000"
+ 2292      53657450 
+ 2292      6572696F 
+ 2292      6400
+ 2293              	.LASF2:
+ 2294 0033 73686F72 		.ascii	"short int\000"
+ 2294      7420696E 
+ 2294      7400
+ 2295              	.LASF43:
+ 2296 003d 7365745F 		.ascii	"set_current_date\000"
+ 2296      63757272 
+ 2296      656E745F 
+ 2296      64617465 
+ 2296      00
+ 2297              	.LASF28:
+ 2298 004e 61637469 		.ascii	"activeScreen\000"
+ 2298      76655363 
+ 2298      7265656E 
+ 2298      00
+ 2299              	.LASF34:
+ 2300 005b 6765745F 		.ascii	"get_hour\000"
+ 2300      686F7572 
+ 2300      00
+ 2301              	.LASF25:
+ 2302 0064 79656172 		.ascii	"year\000"
+ 2302      00
+ 2303              	.LASF50:
+ 2304 0069 43795379 		.ascii	"CySysTickSetReload\000"
+ 2304      73546963 
+ 2304      6B536574 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 46
+
+
+ 2304      52656C6F 
+ 2304      616400
+ 2305              	.LASF60:
+ 2306 007c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2306      43313120 
+ 2306      352E342E 
+ 2306      31203230 
+ 2306      31363036 
+ 2307 00af 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2307      20726576 
+ 2307      6973696F 
+ 2307      6E203233 
+ 2307      37373135 
+ 2308 00e2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2308      66756E63 
+ 2308      74696F6E 
+ 2308      2D736563 
+ 2308      74696F6E 
+ 2309              	.LASF13:
+ 2310 010a 696E7431 		.ascii	"int16\000"
+ 2310      3600
+ 2311              	.LASF9:
+ 2312 0110 75696E74 		.ascii	"uint8\000"
+ 2312      3800
+ 2313              	.LASF39:
+ 2314 0116 6765745F 		.ascii	"get_year\000"
+ 2314      79656172 
+ 2314      00
+ 2315              	.LASF42:
+ 2316 011f 7365745F 		.ascii	"set_current_time\000"
+ 2316      63757272 
+ 2316      656E745F 
+ 2316      74696D65 
+ 2316      00
+ 2317              	.LASF14:
+ 2318 0130 666C6F61 		.ascii	"float\000"
+ 2318      7400
+ 2319              	.LASF6:
+ 2320 0136 6C6F6E67 		.ascii	"long long int\000"
+ 2320      206C6F6E 
+ 2320      6720696E 
+ 2320      7400
+ 2321              	.LASF12:
+ 2322 0144 696E7438 		.ascii	"int8\000"
+ 2322      00
+ 2323              	.LASF61:
+ 2324 0149 7274635F 		.ascii	"rtc_bipboy.c\000"
+ 2324      62697062 
+ 2324      6F792E63 
+ 2324      00
+ 2325              	.LASF36:
+ 2326 0156 6765745F 		.ascii	"get_second\000"
+ 2326      7365636F 
+ 2326      6E6400
+ 2327              	.LASF41:
+ 2328 0161 7274635F 		.ascii	"rtc_update_date\000"
+ 2328      75706461 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 47
+
+
+ 2328      74655F64 
+ 2328      61746500 
+ 2329              	.LASF4:
+ 2330 0171 6C6F6E67 		.ascii	"long int\000"
+ 2330      20696E74 
+ 2330      00
+ 2331              	.LASF32:
+ 2332 017a 6F666673 		.ascii	"offset\000"
+ 2332      657400
+ 2333              	.LASF26:
+ 2334 0181 7274635F 		.ascii	"rtc_init\000"
+ 2334      696E6974 
+ 2334      00
+ 2335              	.LASF48:
+ 2336 018a 43795379 		.ascii	"CySysTickSetCallback\000"
+ 2336      73546963 
+ 2336      6B536574 
+ 2336      43616C6C 
+ 2336      6261636B 
+ 2337              	.LASF52:
+ 2338 019f 5254435F 		.ascii	"RTC_SetDateAndTime\000"
+ 2338      53657444 
+ 2338      61746541 
+ 2338      6E645469 
+ 2338      6D6500
+ 2339              	.LASF23:
+ 2340 01b2 44617465 		.ascii	"Date\000"
+ 2340      00
+ 2341              	.LASF19:
+ 2342 01b7 686F7572 		.ascii	"hour\000"
+ 2342      00
+ 2343              	.LASF17:
+ 2344 01bc 6C6F6E67 		.ascii	"long double\000"
+ 2344      20646F75 
+ 2344      626C6500 
+ 2345              	.LASF1:
+ 2346 01c8 756E7369 		.ascii	"unsigned char\000"
+ 2346      676E6564 
+ 2346      20636861 
+ 2346      7200
+ 2347              	.LASF46:
+ 2348 01d6 636F756E 		.ascii	"counter\000"
+ 2348      74657200 
+ 2349              	.LASF56:
+ 2350 01de 5254435F 		.ascii	"RTC_Update\000"
+ 2350      55706461 
+ 2350      746500
+ 2351              	.LASF0:
+ 2352 01e9 7369676E 		.ascii	"signed char\000"
+ 2352      65642063 
+ 2352      68617200 
+ 2353              	.LASF21:
+ 2354 01f5 7365636F 		.ascii	"second\000"
+ 2354      6E6400
+ 2355              	.LASF7:
+ 2356 01fc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2356      206C6F6E 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 48
+
+
+ 2356      6720756E 
+ 2356      7369676E 
+ 2356      65642069 
+ 2357              	.LASF8:
+ 2358 0213 756E7369 		.ascii	"unsigned int\000"
+ 2358      676E6564 
+ 2358      20696E74 
+ 2358      00
+ 2359              	.LASF47:
+ 2360 0220 43795379 		.ascii	"CySysTickGetCallback\000"
+ 2360      73546963 
+ 2360      6B476574 
+ 2360      43616C6C 
+ 2360      6261636B 
+ 2361              	.LASF55:
+ 2362 0235 6C63645F 		.ascii	"lcd_main_screen\000"
+ 2362      6D61696E 
+ 2362      5F736372 
+ 2362      65656E00 
+ 2363              	.LASF33:
+ 2364 0245 7365745F 		.ascii	"set_date\000"
+ 2364      64617465 
+ 2364      00
+ 2365              	.LASF3:
+ 2366 024e 73686F72 		.ascii	"short unsigned int\000"
+ 2366      7420756E 
+ 2366      7369676E 
+ 2366      65642069 
+ 2366      6E7400
+ 2367              	.LASF16:
+ 2368 0261 63686172 		.ascii	"char\000"
+ 2368      00
+ 2369              	.LASF44:
+ 2370 0266 74696D65 		.ascii	"timeHrMinSec\000"
+ 2370      48724D69 
+ 2370      6E536563 
+ 2370      00
+ 2371              	.LASF24:
+ 2372 0273 6D6F6E74 		.ascii	"month\000"
+ 2372      6800
+ 2373              	.LASF40:
+ 2374 0279 7274635F 		.ascii	"rtc_update_time\000"
+ 2374      75706461 
+ 2374      74655F74 
+ 2374      696D6500 
+ 2375              	.LASF10:
+ 2376 0289 75696E74 		.ascii	"uint16\000"
+ 2376      313600
+ 2377              	.LASF20:
+ 2378 0290 6D696E75 		.ascii	"minute\000"
+ 2378      746500
+ 2379              	.LASF11:
+ 2380 0297 75696E74 		.ascii	"uint32\000"
+ 2380      333200
+ 2381              	.LASF58:
+ 2382 029e 6765745F 		.ascii	"get_counter_up_down\000"
+ 2382      636F756E 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 49
+
+
+ 2382      7465725F 
+ 2382      75705F64 
+ 2382      6F776E00 
+ 2383              	.LASF59:
+ 2384 02b2 7365745F 		.ascii	"set_counter_up_down\000"
+ 2384      636F756E 
+ 2384      7465725F 
+ 2384      75705F64 
+ 2384      6F776E00 
+ 2385              	.LASF5:
+ 2386 02c6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2386      20756E73 
+ 2386      69676E65 
+ 2386      6420696E 
+ 2386      7400
+ 2387              	.LASF15:
+ 2388 02d8 646F7562 		.ascii	"double\000"
+ 2388      6C6500
+ 2389              	.LASF57:
+ 2390 02df 6765745F 		.ascii	"get_counter_ok_back\000"
+ 2390      636F756E 
+ 2390      7465725F 
+ 2390      6F6B5F62 
+ 2390      61636B00 
+ 2391              	.LASF29:
+ 2392 02f3 53797354 		.ascii	"SysTickIsrHandler\000"
+ 2392      69636B49 
+ 2392      73724861 
+ 2392      6E646C65 
+ 2392      7200
+ 2393              	.LASF22:
+ 2394 0305 54696D65 		.ascii	"Time\000"
+ 2394      00
+ 2395              	.LASF45:
+ 2396 030a 64617465 		.ascii	"dateMonthDayYear\000"
+ 2396      4D6F6E74 
+ 2396      68446179 
+ 2396      59656172 
+ 2396      00
+ 2397              	.LASF37:
+ 2398 031b 6765745F 		.ascii	"get_day\000"
+ 2398      64617900 
+ 2399              	.LASF62:
+ 2400 0323 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\SmartBoy.c"
+ 2400      795C4269 
+ 2400      70626F79 
+ 2400      5C626970 
+ 2400      626F795C 
+ 2401 0351 7964736E 		.ascii	"ydsn\000"
+ 2401      00
+ 2402              	.LASF18:
+ 2403 0356 73697A65 		.ascii	"sizetype\000"
+ 2403      74797065 
+ 2403      00
+ 2404              	.LASF49:
+ 2405 035f 43795379 		.ascii	"CySysTickStart\000"
+ 2405      73546963 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccWfzO50.s 			page 50
+
+
+ 2405      6B537461 
+ 2405      727400
+ 2406              	.LASF31:
+ 2407 036e 706F7369 		.ascii	"position\000"
+ 2407      74696F6E 
+ 2407      00
+ 2408              	.LASF54:
+ 2409 0377 6765745F 		.ascii	"get_active_screen\000"
+ 2409      61637469 
+ 2409      76655F73 
+ 2409      63726565 
+ 2409      6E00
+ 2410              	.LASF30:
+ 2411 0389 7365745F 		.ascii	"set_time\000"
+ 2411      74696D65 
+ 2411      00
+ 2412              	.LASF38:
+ 2413 0392 6765745F 		.ascii	"get_month\000"
+ 2413      6D6F6E74 
+ 2413      6800
+ 2414              	.LASF51:
+ 2415 039c 5254435F 		.ascii	"RTC_Start\000"
+ 2415      53746172 
+ 2415      7400
+ 2416              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

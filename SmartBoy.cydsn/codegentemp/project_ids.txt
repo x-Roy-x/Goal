@@ -1,0 +1,6 @@
+C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj|87e848a7-b9ae-472c-9a9d-3ea8c86cf5c6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|28af31b5-c9e9-4dce-a6e8-f068bce79f97
+C:\Users\Kozak\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|f81389fe-1dfd-4fd9-b95f-f5bc439dcb81
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5d71f0b1-3b8c-42d2-ac64-3e0ce54e8ac3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6faaac94-8eea-40d8-bfbe-19152a6a273b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|004cf7c5-8b61-40b1-a7f0-712fbab53560

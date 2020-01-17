@@ -1,0 +1,7 @@
+D:\Programming\PSoC\GitGoalKitchen\Goal\GOAL-EZ-BLE.cydsn\GOAL-EZ-BLE.cyprj|761ccf11-bc46-4684-9650-6aa045727f11
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|18894f29-c547-4dad-9e99-5d6707203962
+C:\Users\ADMIN\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|af779b9b-9b65-4a84-a633-9124186ffc3e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a2bd0761-4365-4f0d-8249-f3c97830e58e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b35f80fa-f576-40a9-90d3-cd605f5b46f8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|70ec9904-f9f0-451d-bc4b-9b1b8523ae10
+D:\Programming\PSoC\GitGoalKitchen\Goal\GOAL-MASTER.cydsn\GOAL-MASTER.cyprj|1dcfe6e8-182a-436c-8754-58e3873ad51c

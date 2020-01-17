@@ -1,0 +1,24 @@
+--------------- Build Started: 03/03/2019 17:40:41 Project: SmartBoy, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/ble_client.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c ble_client.c -o .\CortexM0\ARM_GCC_541\Debug\ble_client.o
+ble_client.c: In function 'BleCallBack':
+ble_client.c:116:18: warning: unused variable 'uuid' [-Wunused-variable]
+     CYBLE_UUID_T uuid;
+                  ^
+ble_client.c:115:33: warning: unused variable 'range' [-Wunused-variable]
+  CYBLE_GATT_ATTR_HANDLE_RANGE_T range;
+                                 ^
+ble_client.c:114:36: warning: unused variable 'readByTypeReqParam' [-Wunused-variable]
+     CYBLE_GATTC_READ_BY_TYPE_REQ_T readByTypeReqParam;
+                                    ^
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\SmartBoy.a .\CortexM0\ARM_GCC_541\Debug\LCD.o .\CortexM0\ARM_GCC_541\Debug\LCD_PM.o .\CortexM0\ARM_GCC_541\Debug\LCD_CustChars.o .\CortexM0\ARM_GCC_541\Debug\MQ_9.o .\CortexM0\ARM_GCC_541\Debug\MQ_9_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC.o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_INT.o .\CortexM0\ARM_GCC_541\Debug\Button_Down_Int.o .\CortexM0\ARM_GCC_541\Debug\Debouncer_Clock.o .\CortexM0\ARM_GCC_541\Debug\Button_Down.o .\CortexM0\ARM_GCC_541\Debug\Button_Down_PM.o .\CortexM0\ARM_GCC_541\Debug\Button_Back.o .\CortexM0\ARM_GCC_541\Debug\Button_Back_PM.o .\CortexM0\ARM_GCC_541\Debug\Button_Back_Int.o .\CortexM0\ARM_GCC_541\Debug\Button_Ok.o .\CortexM0\ARM_GCC_541\Debug\Button_Ok_PM.o .\CortexM0\ARM_GCC_541\Debug\Button_Ok_Int.o .\CortexM0\ARM_GCC_541\Debug\Button_Up.o .\CortexM0\ARM_GCC_541\Debug\Button_Up_PM.o .\CortexM0\ARM_GCC_541\Debug\Button_Up_Int.o .\CortexM0\ARM_GCC_541\Debug\RTC.o .\CortexM0\ARM_GCC_541\Debug\LCD_LCDPort.o .\CortexM0\ARM_GCC_541\Debug\LCD_LCDPort_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_IRQ.o .\CortexM0\ARM_GCC_541\Debug\ADC_intClock.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyDMA.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\BLE.o .\CortexM0\ARM_GCC_541\Debug\BLE_gatt.o .\CortexM0\ARM_GCC_541\Debug\BLE_eventHandler.o .\CortexM0\ARM_GCC_541\Debug\BLE_HAL_INT.o .\CortexM0\ARM_GCC_541\Debug\BLE_HAL_PVT.o .\CortexM0\ARM_GCC_541\Debug\BLE_custom.o .\CortexM0\ARM_GCC_541\Debug\BLE_bless_isr.o .\CortexM0\ARM_GCC_541\Debug\Clock_1.o .\CortexM0\ARM_GCC_541\Debug\Timer_Int.o .\CortexM0\ARM_GCC_541\Debug\Timer.o .\CortexM0\ARM_GCC_541\Debug\Timer_PM.o .\CortexM0\ARM_GCC_541\Debug\Status_LED.o .\CortexM0\ARM_GCC_541\Debug\Status_LED_PM.o .\CortexM0\ARM_GCC_541\Debug\Timer_Update.o .\CortexM0\ARM_GCC_541\Debug\Timer_Update_PM.o .\CortexM0\ARM_GCC_541\Debug\Clock_2.o .\CortexM0\ARM_GCC_541\Debug\Timer_Update_Int.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\SmartBoy.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\CortexM0\ARM_GCC_541\Debug\SmartBoy.elf .\CortexM0\ARM_GCC_541\Debug\lcd_smartboy.o .\CortexM0\ARM_GCC_541\Debug\adc_smartboy.o .\CortexM0\ARM_GCC_541\Debug\protocol.o .\CortexM0\ARM_GCC_541\Debug\buttons.o .\CortexM0\ARM_GCC_541\Debug\rtc_smartboy.o .\CortexM0\ARM_GCC_541\Debug\ble_applications.o .\CortexM0\ARM_GCC_541\Debug\ble_client.o .\CortexM0\ARM_GCC_541\Debug\goal_devices.o .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\SmartBoy.a "C:\Users\Kozak\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\BLE_v3_54\Library\gccCyBLEStack_BLE_SOC_CENTRAL.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/SmartBoy.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\CortexM0\ARM_GCC_541\Debug\SmartBoy.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+No ELF section .cychecksum found, creating one
+Application checksum calculated and stored in ELF section .cychecksum
+Checksum calculated and stored in ELF section .cymeta
+cyelftool.exe -S C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\CortexM0\ARM_GCC_541\Debug\SmartBoy.elf
+Flash used: 99421 of 262144 bytes (37.9%).
+SRAM used: 10672 of 32768 bytes (32.6%). Stack: 1024 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 03/03/2019 17:40:43 ---------------

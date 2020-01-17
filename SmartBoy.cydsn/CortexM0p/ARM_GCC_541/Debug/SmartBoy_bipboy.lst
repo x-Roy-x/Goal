@@ -1,0 +1,716 @@
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"lcd_bipboy.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.lcd_init,"ax",%progbits
+  20              		.align	2
+  21              		.global	lcd_init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	lcd_init, %function
+  25              	lcd_init:
+  26              	.LFB34:
+  27              		.file 1 "lcd_bipboy.c"
+   1:lcd_bipboy.c  **** #include "bipboy.h"
+   2:lcd_bipboy.c  **** 
+   3:lcd_bipboy.c  **** void lcd_init(void) {
+  28              		.loc 1 3 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   4:lcd_bipboy.c  ****     LCD_Start();
+  36              		.loc 1 4 0
+  37 0002 FFF7FEFF 		bl	LCD_Start
+  38              	.LVL0:
+   5:lcd_bipboy.c  ****     LCD_Position(0, 5);
+  39              		.loc 1 5 0
+  40 0006 0521     		movs	r1, #5
+  41 0008 0020     		movs	r0, #0
+  42 000a FFF7FEFF 		bl	LCD_Position
+  43              	.LVL1:
+   6:lcd_bipboy.c  ****     LCD_PrintString("BipBoy");
+  44              		.loc 1 6 0
+  45 000e 0548     		ldr	r0, .L2
+  46 0010 FFF7FEFF 		bl	LCD_PrintString
+  47              	.LVL2:
+   7:lcd_bipboy.c  ****     CyDelay(5000);
+  48              		.loc 1 7 0
+  49 0014 0448     		ldr	r0, .L2+4
+  50 0016 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 2
+
+
+  51              	.LVL3:
+   8:lcd_bipboy.c  ****     LCD_ClearDisplay();
+  52              		.loc 1 8 0
+  53 001a 0120     		movs	r0, #1
+  54 001c FFF7FEFF 		bl	LCD_WriteControl
+  55              	.LVL4:
+   9:lcd_bipboy.c  **** }
+  56              		.loc 1 9 0
+  57              		@ sp needed
+  58 0020 10BD     		pop	{r4, pc}
+  59              	.L3:
+  60 0022 C046     		.align	2
+  61              	.L2:
+  62 0024 00000000 		.word	.LC0
+  63 0028 88130000 		.word	5000
+  64              		.cfi_endproc
+  65              	.LFE34:
+  66              		.size	lcd_init, .-lcd_init
+  67              		.section	.text.lcd_main_screen,"ax",%progbits
+  68              		.align	2
+  69              		.global	lcd_main_screen
+  70              		.code	16
+  71              		.thumb_func
+  72              		.type	lcd_main_screen, %function
+  73              	lcd_main_screen:
+  74              	.LFB35:
+  10:lcd_bipboy.c  **** 
+  11:lcd_bipboy.c  **** uint16 counterX = 1600;
+  12:lcd_bipboy.c  **** 
+  13:lcd_bipboy.c  **** void lcd_main_screen(void) {
+  75              		.loc 1 13 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79 0000 10B5     		push	{r4, lr}
+  80              		.cfi_def_cfa_offset 8
+  81              		.cfi_offset 4, -8
+  82              		.cfi_offset 14, -4
+  14:lcd_bipboy.c  ****     LCD_ClearDisplay();
+  83              		.loc 1 14 0
+  84 0002 0120     		movs	r0, #1
+  85 0004 FFF7FEFF 		bl	LCD_WriteControl
+  86              	.LVL5:
+  15:lcd_bipboy.c  ****     counterX++;
+  87              		.loc 1 15 0
+  88 0008 054C     		ldr	r4, .L5
+  89 000a 2388     		ldrh	r3, [r4]
+  90 000c 0133     		adds	r3, r3, #1
+  91 000e 2380     		strh	r3, [r4]
+  16:lcd_bipboy.c  ****     LCD_Position(0, 0);
+  92              		.loc 1 16 0
+  93 0010 0021     		movs	r1, #0
+  94 0012 0020     		movs	r0, #0
+  95 0014 FFF7FEFF 		bl	LCD_Position
+  96              	.LVL6:
+  17:lcd_bipboy.c  ****     LCD_PrintDecUint16(counterX);
+  97              		.loc 1 17 0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 3
+
+
+  98 0018 2088     		ldrh	r0, [r4]
+  99 001a FFF7FEFF 		bl	LCD_PrintU32Number
+ 100              	.LVL7:
+  18:lcd_bipboy.c  ****     //CyDelayUs(1);
+  19:lcd_bipboy.c  **** }...
+ 101              		.loc 1 19 0
+ 102              		@ sp needed
+ 103 001e 10BD     		pop	{r4, pc}
+ 104              	.L6:
+ 105              		.align	2
+ 106              	.L5:
+ 107 0020 00000000 		.word	.LANCHOR0
+ 108              		.cfi_endproc
+ 109              	.LFE35:
+ 110              		.size	lcd_main_screen, .-lcd_main_screen
+ 111              		.global	counterX
+ 112              		.data
+ 113              		.align	1
+ 114              		.set	.LANCHOR0,. + 0
+ 115              		.type	counterX, %object
+ 116              		.size	counterX, 2
+ 117              	counterX:
+ 118 0000 4006     		.short	1600
+ 119              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 120              		.align	2
+ 121              	.LC0:
+ 122 0000 42697042 		.ascii	"BipBoy\000"
+ 122      6F7900
+ 123              		.text
+ 124              	.Letext0:
+ 125              		.file 2 "Generated_Source\\PSoC4/LCD.h"
+ 126              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 127              		.file 4 "Generated_Source\\PSoC4/cytypes.h"
+ 128              		.section	.debug_info,"",%progbits
+ 129              	.Ldebug_info0:
+ 130 0000 A6010000 		.4byte	0x1a6
+ 131 0004 0400     		.2byte	0x4
+ 132 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 133 000a 04       		.byte	0x4
+ 134 000b 01       		.uleb128 0x1
+ 135 000c A6000000 		.4byte	.LASF22
+ 136 0010 0C       		.byte	0xc
+ 137 0011 99000000 		.4byte	.LASF23
+ 138 0015 6C010000 		.4byte	.LASF24
+ 139 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 140 001d 00000000 		.4byte	0
+ 141 0021 00000000 		.4byte	.Ldebug_line0
+ 142 0025 02       		.uleb128 0x2
+ 143 0026 01       		.byte	0x1
+ 144 0027 06       		.byte	0x6
+ 145 0028 9A010000 		.4byte	.LASF0
+ 146 002c 02       		.uleb128 0x2
+ 147 002d 01       		.byte	0x1
+ 148 002e 08       		.byte	0x8
+ 149 002f 8B000000 		.4byte	.LASF1
+ 150 0033 02       		.uleb128 0x2
+ 151 0034 02       		.byte	0x2
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 4
+
+
+ 152 0035 05       		.byte	0x5
+ 153 0036 C1010000 		.4byte	.LASF2
+ 154 003a 02       		.uleb128 0x2
+ 155 003b 02       		.byte	0x2
+ 156 003c 07       		.byte	0x7
+ 157 003d 0E000000 		.4byte	.LASF3
+ 158 0041 02       		.uleb128 0x2
+ 159 0042 04       		.byte	0x4
+ 160 0043 05       		.byte	0x5
+ 161 0044 3D010000 		.4byte	.LASF4
+ 162 0048 02       		.uleb128 0x2
+ 163 0049 04       		.byte	0x4
+ 164 004a 07       		.byte	0x7
+ 165 004b 46010000 		.4byte	.LASF5
+ 166 004f 02       		.uleb128 0x2
+ 167 0050 08       		.byte	0x8
+ 168 0051 05       		.byte	0x5
+ 169 0052 00000000 		.4byte	.LASF6
+ 170 0056 02       		.uleb128 0x2
+ 171 0057 08       		.byte	0x8
+ 172 0058 07       		.byte	0x7
+ 173 0059 6A000000 		.4byte	.LASF7
+ 174 005d 03       		.uleb128 0x3
+ 175 005e 04       		.byte	0x4
+ 176 005f 05       		.byte	0x5
+ 177 0060 696E7400 		.ascii	"int\000"
+ 178 0064 02       		.uleb128 0x2
+ 179 0065 04       		.byte	0x4
+ 180 0066 07       		.byte	0x7
+ 181 0067 21000000 		.4byte	.LASF8
+ 182 006b 04       		.uleb128 0x4
+ 183 006c CB010000 		.4byte	.LASF25
+ 184 0070 04       		.byte	0x4
+ 185 0071 E501     		.2byte	0x1e5
+ 186 0073 3A000000 		.4byte	0x3a
+ 187 0077 02       		.uleb128 0x2
+ 188 0078 04       		.byte	0x4
+ 189 0079 04       		.byte	0x4
+ 190 007a BB010000 		.4byte	.LASF9
+ 191 007e 02       		.uleb128 0x2
+ 192 007f 08       		.byte	0x8
+ 193 0080 04       		.byte	0x4
+ 194 0081 58010000 		.4byte	.LASF10
+ 195 0085 02       		.uleb128 0x2
+ 196 0086 01       		.byte	0x1
+ 197 0087 08       		.byte	0x8
+ 198 0088 38010000 		.4byte	.LASF11
+ 199 008c 02       		.uleb128 0x2
+ 200 008d 08       		.byte	0x8
+ 201 008e 04       		.byte	0x4
+ 202 008f A6010000 		.4byte	.LASF12
+ 203 0093 02       		.uleb128 0x2
+ 204 0094 04       		.byte	0x4
+ 205 0095 07       		.byte	0x7
+ 206 0096 DB010000 		.4byte	.LASF13
+ 207 009a 05       		.uleb128 0x5
+ 208 009b B2010000 		.4byte	.LASF14
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 5
+
+
+ 209 009f 01       		.byte	0x1
+ 210 00a0 03       		.byte	0x3
+ 211 00a1 00000000 		.4byte	.LFB34
+ 212 00a5 2C000000 		.4byte	.LFE34-.LFB34
+ 213 00a9 01       		.uleb128 0x1
+ 214 00aa 9C       		.byte	0x9c
+ 215 00ab 0C010000 		.4byte	0x10c
+ 216 00af 06       		.uleb128 0x6
+ 217 00b0 06000000 		.4byte	.LVL0
+ 218 00b4 67010000 		.4byte	0x167
+ 219 00b8 07       		.uleb128 0x7
+ 220 00b9 0E000000 		.4byte	.LVL1
+ 221 00bd 72010000 		.4byte	0x172
+ 222 00c1 D0000000 		.4byte	0xd0
+ 223 00c5 08       		.uleb128 0x8
+ 224 00c6 01       		.uleb128 0x1
+ 225 00c7 50       		.byte	0x50
+ 226 00c8 01       		.uleb128 0x1
+ 227 00c9 30       		.byte	0x30
+ 228 00ca 08       		.uleb128 0x8
+ 229 00cb 01       		.uleb128 0x1
+ 230 00cc 51       		.byte	0x51
+ 231 00cd 01       		.uleb128 0x1
+ 232 00ce 35       		.byte	0x35
+ 233 00cf 00       		.byte	0
+ 234 00d0 07       		.uleb128 0x7
+ 235 00d1 14000000 		.4byte	.LVL2
+ 236 00d5 7D010000 		.4byte	0x17d
+ 237 00d9 E7000000 		.4byte	0xe7
+ 238 00dd 08       		.uleb128 0x8
+ 239 00de 01       		.uleb128 0x1
+ 240 00df 50       		.byte	0x50
+ 241 00e0 05       		.uleb128 0x5
+ 242 00e1 03       		.byte	0x3
+ 243 00e2 00000000 		.4byte	.LC0
+ 244 00e6 00       		.byte	0
+ 245 00e7 07       		.uleb128 0x7
+ 246 00e8 1A000000 		.4byte	.LVL3
+ 247 00ec 88010000 		.4byte	0x188
+ 248 00f0 FC000000 		.4byte	0xfc
+ 249 00f4 08       		.uleb128 0x8
+ 250 00f5 01       		.uleb128 0x1
+ 251 00f6 50       		.byte	0x50
+ 252 00f7 03       		.uleb128 0x3
+ 253 00f8 0A       		.byte	0xa
+ 254 00f9 8813     		.2byte	0x1388
+ 255 00fb 00       		.byte	0
+ 256 00fc 09       		.uleb128 0x9
+ 257 00fd 20000000 		.4byte	.LVL4
+ 258 0101 93010000 		.4byte	0x193
+ 259 0105 08       		.uleb128 0x8
+ 260 0106 01       		.uleb128 0x1
+ 261 0107 50       		.byte	0x50
+ 262 0108 01       		.uleb128 0x1
+ 263 0109 31       		.byte	0x31
+ 264 010a 00       		.byte	0
+ 265 010b 00       		.byte	0
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 6
+
+
+ 266 010c 05       		.uleb128 0x5
+ 267 010d 2E000000 		.4byte	.LASF15
+ 268 0111 01       		.byte	0x1
+ 269 0112 0D       		.byte	0xd
+ 270 0113 00000000 		.4byte	.LFB35
+ 271 0117 24000000 		.4byte	.LFE35-.LFB35
+ 272 011b 01       		.uleb128 0x1
+ 273 011c 9C       		.byte	0x9c
+ 274 011d 56010000 		.4byte	0x156
+ 275 0121 07       		.uleb128 0x7
+ 276 0122 08000000 		.4byte	.LVL5
+ 277 0126 93010000 		.4byte	0x193
+ 278 012a 34010000 		.4byte	0x134
+ 279 012e 08       		.uleb128 0x8
+ 280 012f 01       		.uleb128 0x1
+ 281 0130 50       		.byte	0x50
+ 282 0131 01       		.uleb128 0x1
+ 283 0132 31       		.byte	0x31
+ 284 0133 00       		.byte	0
+ 285 0134 07       		.uleb128 0x7
+ 286 0135 18000000 		.4byte	.LVL6
+ 287 0139 72010000 		.4byte	0x172
+ 288 013d 4C010000 		.4byte	0x14c
+ 289 0141 08       		.uleb128 0x8
+ 290 0142 01       		.uleb128 0x1
+ 291 0143 50       		.byte	0x50
+ 292 0144 01       		.uleb128 0x1
+ 293 0145 30       		.byte	0x30
+ 294 0146 08       		.uleb128 0x8
+ 295 0147 01       		.uleb128 0x1
+ 296 0148 51       		.byte	0x51
+ 297 0149 01       		.uleb128 0x1
+ 298 014a 30       		.byte	0x30
+ 299 014b 00       		.byte	0
+ 300 014c 06       		.uleb128 0x6
+ 301 014d 1E000000 		.4byte	.LVL7
+ 302 0151 9E010000 		.4byte	0x19e
+ 303 0155 00       		.byte	0
+ 304 0156 0A       		.uleb128 0xa
+ 305 0157 D2010000 		.4byte	.LASF26
+ 306 015b 01       		.byte	0x1
+ 307 015c 0B       		.byte	0xb
+ 308 015d 6B000000 		.4byte	0x6b
+ 309 0161 05       		.uleb128 0x5
+ 310 0162 03       		.byte	0x3
+ 311 0163 00000000 		.4byte	counterX
+ 312 0167 0B       		.uleb128 0xb
+ 313 0168 81000000 		.4byte	.LASF16
+ 314 016c 81000000 		.4byte	.LASF16
+ 315 0170 02       		.byte	0x2
+ 316 0171 38       		.byte	0x38
+ 317 0172 0B       		.uleb128 0xb
+ 318 0173 5F010000 		.4byte	.LASF17
+ 319 0177 5F010000 		.4byte	.LASF17
+ 320 017b 02       		.byte	0x2
+ 321 017c 3D       		.byte	0x3d
+ 322 017d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 7
+
+
+ 323 017e E4010000 		.4byte	.LASF18
+ 324 0182 E4010000 		.4byte	.LASF18
+ 325 0186 02       		.byte	0x2
+ 326 0187 3C       		.byte	0x3c
+ 327 0188 0B       		.uleb128 0xb
+ 328 0189 4F000000 		.4byte	.LASF19
+ 329 018d 4F000000 		.4byte	.LASF19
+ 330 0191 03       		.byte	0x3
+ 331 0192 D9       		.byte	0xd9
+ 332 0193 0B       		.uleb128 0xb
+ 333 0194 3E000000 		.4byte	.LASF20
+ 334 0198 3E000000 		.4byte	.LASF20
+ 335 019c 02       		.byte	0x2
+ 336 019d 3A       		.byte	0x3a
+ 337 019e 0B       		.uleb128 0xb
+ 338 019f 57000000 		.4byte	.LASF21
+ 339 01a3 57000000 		.4byte	.LASF21
+ 340 01a7 02       		.byte	0x2
+ 341 01a8 61       		.byte	0x61
+ 342 01a9 00       		.byte	0
+ 343              		.section	.debug_abbrev,"",%progbits
+ 344              	.Ldebug_abbrev0:
+ 345 0000 01       		.uleb128 0x1
+ 346 0001 11       		.uleb128 0x11
+ 347 0002 01       		.byte	0x1
+ 348 0003 25       		.uleb128 0x25
+ 349 0004 0E       		.uleb128 0xe
+ 350 0005 13       		.uleb128 0x13
+ 351 0006 0B       		.uleb128 0xb
+ 352 0007 03       		.uleb128 0x3
+ 353 0008 0E       		.uleb128 0xe
+ 354 0009 1B       		.uleb128 0x1b
+ 355 000a 0E       		.uleb128 0xe
+ 356 000b 55       		.uleb128 0x55
+ 357 000c 17       		.uleb128 0x17
+ 358 000d 11       		.uleb128 0x11
+ 359 000e 01       		.uleb128 0x1
+ 360 000f 10       		.uleb128 0x10
+ 361 0010 17       		.uleb128 0x17
+ 362 0011 00       		.byte	0
+ 363 0012 00       		.byte	0
+ 364 0013 02       		.uleb128 0x2
+ 365 0014 24       		.uleb128 0x24
+ 366 0015 00       		.byte	0
+ 367 0016 0B       		.uleb128 0xb
+ 368 0017 0B       		.uleb128 0xb
+ 369 0018 3E       		.uleb128 0x3e
+ 370 0019 0B       		.uleb128 0xb
+ 371 001a 03       		.uleb128 0x3
+ 372 001b 0E       		.uleb128 0xe
+ 373 001c 00       		.byte	0
+ 374 001d 00       		.byte	0
+ 375 001e 03       		.uleb128 0x3
+ 376 001f 24       		.uleb128 0x24
+ 377 0020 00       		.byte	0
+ 378 0021 0B       		.uleb128 0xb
+ 379 0022 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 8
+
+
+ 380 0023 3E       		.uleb128 0x3e
+ 381 0024 0B       		.uleb128 0xb
+ 382 0025 03       		.uleb128 0x3
+ 383 0026 08       		.uleb128 0x8
+ 384 0027 00       		.byte	0
+ 385 0028 00       		.byte	0
+ 386 0029 04       		.uleb128 0x4
+ 387 002a 16       		.uleb128 0x16
+ 388 002b 00       		.byte	0
+ 389 002c 03       		.uleb128 0x3
+ 390 002d 0E       		.uleb128 0xe
+ 391 002e 3A       		.uleb128 0x3a
+ 392 002f 0B       		.uleb128 0xb
+ 393 0030 3B       		.uleb128 0x3b
+ 394 0031 05       		.uleb128 0x5
+ 395 0032 49       		.uleb128 0x49
+ 396 0033 13       		.uleb128 0x13
+ 397 0034 00       		.byte	0
+ 398 0035 00       		.byte	0
+ 399 0036 05       		.uleb128 0x5
+ 400 0037 2E       		.uleb128 0x2e
+ 401 0038 01       		.byte	0x1
+ 402 0039 3F       		.uleb128 0x3f
+ 403 003a 19       		.uleb128 0x19
+ 404 003b 03       		.uleb128 0x3
+ 405 003c 0E       		.uleb128 0xe
+ 406 003d 3A       		.uleb128 0x3a
+ 407 003e 0B       		.uleb128 0xb
+ 408 003f 3B       		.uleb128 0x3b
+ 409 0040 0B       		.uleb128 0xb
+ 410 0041 27       		.uleb128 0x27
+ 411 0042 19       		.uleb128 0x19
+ 412 0043 11       		.uleb128 0x11
+ 413 0044 01       		.uleb128 0x1
+ 414 0045 12       		.uleb128 0x12
+ 415 0046 06       		.uleb128 0x6
+ 416 0047 40       		.uleb128 0x40
+ 417 0048 18       		.uleb128 0x18
+ 418 0049 9742     		.uleb128 0x2117
+ 419 004b 19       		.uleb128 0x19
+ 420 004c 01       		.uleb128 0x1
+ 421 004d 13       		.uleb128 0x13
+ 422 004e 00       		.byte	0
+ 423 004f 00       		.byte	0
+ 424 0050 06       		.uleb128 0x6
+ 425 0051 898201   		.uleb128 0x4109
+ 426 0054 00       		.byte	0
+ 427 0055 11       		.uleb128 0x11
+ 428 0056 01       		.uleb128 0x1
+ 429 0057 31       		.uleb128 0x31
+ 430 0058 13       		.uleb128 0x13
+ 431 0059 00       		.byte	0
+ 432 005a 00       		.byte	0
+ 433 005b 07       		.uleb128 0x7
+ 434 005c 898201   		.uleb128 0x4109
+ 435 005f 01       		.byte	0x1
+ 436 0060 11       		.uleb128 0x11
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 9
+
+
+ 437 0061 01       		.uleb128 0x1
+ 438 0062 31       		.uleb128 0x31
+ 439 0063 13       		.uleb128 0x13
+ 440 0064 01       		.uleb128 0x1
+ 441 0065 13       		.uleb128 0x13
+ 442 0066 00       		.byte	0
+ 443 0067 00       		.byte	0
+ 444 0068 08       		.uleb128 0x8
+ 445 0069 8A8201   		.uleb128 0x410a
+ 446 006c 00       		.byte	0
+ 447 006d 02       		.uleb128 0x2
+ 448 006e 18       		.uleb128 0x18
+ 449 006f 9142     		.uleb128 0x2111
+ 450 0071 18       		.uleb128 0x18
+ 451 0072 00       		.byte	0
+ 452 0073 00       		.byte	0
+ 453 0074 09       		.uleb128 0x9
+ 454 0075 898201   		.uleb128 0x4109
+ 455 0078 01       		.byte	0x1
+ 456 0079 11       		.uleb128 0x11
+ 457 007a 01       		.uleb128 0x1
+ 458 007b 31       		.uleb128 0x31
+ 459 007c 13       		.uleb128 0x13
+ 460 007d 00       		.byte	0
+ 461 007e 00       		.byte	0
+ 462 007f 0A       		.uleb128 0xa
+ 463 0080 34       		.uleb128 0x34
+ 464 0081 00       		.byte	0
+ 465 0082 03       		.uleb128 0x3
+ 466 0083 0E       		.uleb128 0xe
+ 467 0084 3A       		.uleb128 0x3a
+ 468 0085 0B       		.uleb128 0xb
+ 469 0086 3B       		.uleb128 0x3b
+ 470 0087 0B       		.uleb128 0xb
+ 471 0088 49       		.uleb128 0x49
+ 472 0089 13       		.uleb128 0x13
+ 473 008a 3F       		.uleb128 0x3f
+ 474 008b 19       		.uleb128 0x19
+ 475 008c 02       		.uleb128 0x2
+ 476 008d 18       		.uleb128 0x18
+ 477 008e 00       		.byte	0
+ 478 008f 00       		.byte	0
+ 479 0090 0B       		.uleb128 0xb
+ 480 0091 2E       		.uleb128 0x2e
+ 481 0092 00       		.byte	0
+ 482 0093 3F       		.uleb128 0x3f
+ 483 0094 19       		.uleb128 0x19
+ 484 0095 3C       		.uleb128 0x3c
+ 485 0096 19       		.uleb128 0x19
+ 486 0097 6E       		.uleb128 0x6e
+ 487 0098 0E       		.uleb128 0xe
+ 488 0099 03       		.uleb128 0x3
+ 489 009a 0E       		.uleb128 0xe
+ 490 009b 3A       		.uleb128 0x3a
+ 491 009c 0B       		.uleb128 0xb
+ 492 009d 3B       		.uleb128 0x3b
+ 493 009e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 10
+
+
+ 494 009f 00       		.byte	0
+ 495 00a0 00       		.byte	0
+ 496 00a1 00       		.byte	0
+ 497              		.section	.debug_aranges,"",%progbits
+ 498 0000 24000000 		.4byte	0x24
+ 499 0004 0200     		.2byte	0x2
+ 500 0006 00000000 		.4byte	.Ldebug_info0
+ 501 000a 04       		.byte	0x4
+ 502 000b 00       		.byte	0
+ 503 000c 0000     		.2byte	0
+ 504 000e 0000     		.2byte	0
+ 505 0010 00000000 		.4byte	.LFB34
+ 506 0014 2C000000 		.4byte	.LFE34-.LFB34
+ 507 0018 00000000 		.4byte	.LFB35
+ 508 001c 24000000 		.4byte	.LFE35-.LFB35
+ 509 0020 00000000 		.4byte	0
+ 510 0024 00000000 		.4byte	0
+ 511              		.section	.debug_ranges,"",%progbits
+ 512              	.Ldebug_ranges0:
+ 513 0000 00000000 		.4byte	.LFB34
+ 514 0004 2C000000 		.4byte	.LFE34
+ 515 0008 00000000 		.4byte	.LFB35
+ 516 000c 24000000 		.4byte	.LFE35
+ 517 0010 00000000 		.4byte	0
+ 518 0014 00000000 		.4byte	0
+ 519              		.section	.debug_line,"",%progbits
+ 520              	.Ldebug_line0:
+ 521 0000 88000000 		.section	.debug_str,"MS",%progbits,1
+ 521      02005B00 
+ 521      00000201 
+ 521      FB0E0D00 
+ 521      01010101 
+ 522              	.LASF6:
+ 523 0000 6C6F6E67 		.ascii	"long long int\000"
+ 523      206C6F6E 
+ 523      6720696E 
+ 523      7400
+ 524              	.LASF3:
+ 525 000e 73686F72 		.ascii	"short unsigned int\000"
+ 525      7420756E 
+ 525      7369676E 
+ 525      65642069 
+ 525      6E7400
+ 526              	.LASF8:
+ 527 0021 756E7369 		.ascii	"unsigned int\000"
+ 527      676E6564 
+ 527      20696E74 
+ 527      00
+ 528              	.LASF15:
+ 529 002e 6C63645F 		.ascii	"lcd_main_screen\000"
+ 529      6D61696E 
+ 529      5F736372 
+ 529      65656E00 
+ 530              	.LASF20:
+ 531 003e 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 531      57726974 
+ 531      65436F6E 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 11
+
+
+ 531      74726F6C 
+ 531      00
+ 532              	.LASF19:
+ 533 004f 43794465 		.ascii	"CyDelay\000"
+ 533      6C617900 
+ 534              	.LASF21:
+ 535 0057 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 535      5072696E 
+ 535      74553332 
+ 535      4E756D62 
+ 535      657200
+ 536              	.LASF7:
+ 537 006a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 537      206C6F6E 
+ 537      6720756E 
+ 537      7369676E 
+ 537      65642069 
+ 538              	.LASF16:
+ 539 0081 4C43445F 		.ascii	"LCD_Start\000"
+ 539      53746172 
+ 539      7400
+ 540              	.LASF1:
+ 541 008b 756E7369 		.ascii	"unsigned char\000"
+ 541      676E6564 
+ 541      20636861 
+ 541      7200
+ 542              	.LASF23:
+ 543 0099 6C63645F 		.ascii	"lcd_bipboy.c\000"
+ 543      62697062 
+ 543      6F792E63 
+ 543      00
+ 544              	.LASF22:
+ 545 00a6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 545      43313120 
+ 545      352E342E 
+ 545      31203230 
+ 545      31363036 
+ 546 00d9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 546      20726576 
+ 546      6973696F 
+ 546      6E203233 
+ 546      37373135 
+ 547 010c 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 547      67202D66 
+ 547      66756E63 
+ 547      74696F6E 
+ 547      2D736563 
+ 548              	.LASF11:
+ 549 0138 63686172 		.ascii	"char\000"
+ 549      00
+ 550              	.LASF4:
+ 551 013d 6C6F6E67 		.ascii	"long int\000"
+ 551      20696E74 
+ 551      00
+ 552              	.LASF5:
+ 553 0146 6C6F6E67 		.ascii	"long unsigned int\000"
+ 553      20756E73 
+ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccw2QRBU.s 			page 12
+
+
+ 553      69676E65 
+ 553      6420696E 
+ 553      7400
+ 554              	.LASF10:
+ 555 0158 646F7562 		.ascii	"double\000"
+ 555      6C6500
+ 556              	.LASF17:
+ 557 015f 4C43445F 		.ascii	"LCD_Position\000"
+ 557      506F7369 
+ 557      74696F6E 
+ 557      00
+ 558              	.LASF24:
+ 559 016c 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\lcd.cydsn\000"
+ 559      795C4269 
+ 559      70626F79 
+ 559      5C626970 
+ 559      626F795C 
+ 560              	.LASF0:
+ 561 019a 7369676E 		.ascii	"signed char\000"
+ 561      65642063 
+ 561      68617200 
+ 562              	.LASF12:
+ 563 01a6 6C6F6E67 		.ascii	"long double\000"
+ 563      20646F75 
+ 563      626C6500 
+ 564              	.LASF14:
+ 565 01b2 6C63645F 		.ascii	"lcd_init\000"
+ 565      696E6974 
+ 565      00
+ 566              	.LASF9:
+ 567 01bb 666C6F61 		.ascii	"float\000"
+ 567      7400
+ 568              	.LASF2:
+ 569 01c1 73686F72 		.ascii	"short int\000"
+ 569      7420696E 
+ 569      7400
+ 570              	.LASF25:
+ 571 01cb 75696E74 		.ascii	"uint16\000"
+ 571      313600
+ 572              	.LASF26:
+ 573 01d2 636F756E 		.ascii	"counterX\000"
+ 573      74657258 
+ 573      00
+ 574              	.LASF13:
+ 575 01db 73697A65 		.ascii	"sizetype\000"
+ 575      74797065 
+ 575      00
+ 576              	.LASF18:
+ 577 01e4 4C43445F 		.ascii	"LCD_PrintString\000"
+ 577      5072696E 
+ 577      74537472 
+ 577      696E6700 
+ 578              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
