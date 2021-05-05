@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="GOAL-EZ-BLE-000\GOAL-EZ-BLE\TopDesign">
+<ExpandedNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\TopDesign</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Pins</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Analog</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Clocks</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Interrupts</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\System</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Directives</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Flash Security</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\ble_update.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\ez_ble_goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\i2c_goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\protocol.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\cyapicallbacks.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\ble_update.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\ez_ble_goal.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\i2c_goal.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\protocol.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\main.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\TopDesign</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Pins</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Analog</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Clocks</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Interrupts</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\System</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Directives</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.cydwr\Flash Security</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\ble_update.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\ez_ble_goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\i2c_goal.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\Headers\protocol.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Header Files\cyapicallbacks.h</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\ble_update.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\ez_ble_goal.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\i2c_goal.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\Sources\protocol.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Source Files\main.c</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\BLE_bless_isr</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\cy_boot</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\cy_lfclk</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\I2C</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\I2C_SCB_IRQ</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\I2C_SCBCLK</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\Generated_Source\PSoC4\I2C_scl</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_bless_isr.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_custom.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_eventHandler.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_gatt.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_INT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_PVT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\ble_update.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\ez_ble_goal.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C_BOOT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C_INT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_goal.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_SCB_IRQ.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_SCBCLK.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_scl.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_scl_PM.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_sda.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_sda_PM.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\protocol.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\GOAL-EZ-BLE.elf</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\GOAL-EZ-BLE.hex</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\GOAL-EZ-BLE.map</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.gpdsc</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE.rpt</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\GOAL-EZ-BLE_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_bless_isr.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_custom.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_eventHandler.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_gatt.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_INT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_PVT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\ble_update.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\ez_ble_goal.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C_BOOT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_EZI2C_INT.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\i2c_goal.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_SCB_IRQ.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_SCBCLK.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_scl.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_scl_PM.lst</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_sda.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\PSoC 4 Architecture TRM</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\PRoC BLE Family Datasheet</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides\cy_boot_v5_82</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides\cy_lfclk_v1_20</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\BLE_v3_66.pdf</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>GOAL-EZ-BLE-000</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\PSoC 4 Architecture TRM</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\PRoC BLE Family Datasheet</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides\cy_boot_v5_82</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\System Reference Guides\cy_lfclk_v1_20</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\BLE_v3_66.pdf</v>
+<v>GOAL-EZ-BLE-000\GOAL-EZ-BLE\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\ble_update.c" />
+<name v=".\ez_ble_goal.c" />
+<name v=".\protocol.c" />
+<name v=".\main.c" />
+<name v=".\protocol.h" />
+<name v=".\goal.h" />
+<name v=".\ez_ble_goal.h" />
+<name v=".\ble_update.h" />
+<name v=".\i2c_goal.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1016, 515" SelectedTabbedMdiWindow="c19b4049-6142-4384-8867-3d9100b29311"><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\ble_update.c" Guid="ccd2d845-7ac4-4da4-8ecf-da01c199387c" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\ez_ble_goal.c" Guid="c19b4049-6142-4384-8867-3d9100b29311" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\protocol.c" Guid="61d82f9e-d261-4797-847b-4df59688a8da" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\main.c" Guid="1d214fea-9b3a-45d8-921b-2ebfb17d3d83" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\protocol.h" Guid="2ca5414d-09bb-4663-ba56-20004ba21433" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\goal.h" Guid="4a56a77c-ef94-4f5b-b63c-7b618cf600c6" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\ez_ble_goal.h" Guid="87b2d8a7-9d8a-4a49-aae0-a641520c7fa7" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\ble_update.h" Guid="90dacbfd-64b8-4931-97bf-5ac937c6e7de" /><DocumentWindow Key="D:\bachelor_work\program\Goal\GOAL-EZ-BLE.cydsn\i2c_goal.c" Guid="58b13fb9-e13a-460d-93f2-7f33da86fc46" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

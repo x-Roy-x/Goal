@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE.h
-* \version 3.54
+* \version 3.66
 * 
 * \brief
 *  Contains the function prototypes and constants available to the BLE component.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -116,7 +116,7 @@
 /* Align buffer size value to 4 */
 #define CYBLE_ALIGN_TO_4(x)                         ((((x) & 3u) == 0u) ? (x) : (((x) - ((x) & 3u)) + 4u))
     
-#define CYBLE_GAP_ROLE                              (0x02u)
+#define CYBLE_GAP_ROLE                              (0x03u)
 #define CYBLE_GAP_HCI                               (0x00u)
 #define CYBLE_GAP_PERIPHERAL                        (0x01u)
 #define CYBLE_GAP_CENTRAL                           (0x02u)
@@ -132,17 +132,17 @@
 #if(CYBLE_MODE_PROFILE)
     
 #if(CYBLE_GAP_ROLE_PERIPHERAL || CYBLE_GAP_ROLE_BROADCASTER)
-    #define CYBLE_FAST_ADV_INT_MIN                  ()
-    #define CYBLE_FAST_ADV_INT_MAX                  ()
-    #define CYBLE_FAST_ADV_TIMEOUT                  ()
-    #define CYBLE_SLOW_ADV_ENABLED                  ()
-    #define CYBLE_SLOW_ADV_INT_MIN                  ()
-    #define CYBLE_SLOW_ADV_INT_MAX                  ()
-    #define CYBLE_SLOW_ADV_TIMEOUT                  ()
-    #define CYBLE_GAPP_CONNECTION_INTERVAL_MIN      (0x00u)
-    #define CYBLE_GAPP_CONNECTION_INTERVAL_MAX      (0x00u)
-    #define CYBLE_GAPP_CONNECTION_SLAVE_LATENCY     (0x00u)
-    #define CYBLE_GAPP_CONNECTION_TIME_OUT          (0x00u)
+    #define CYBLE_FAST_ADV_INT_MIN                  (0x0020u)
+    #define CYBLE_FAST_ADV_INT_MAX                  (0x0030u)
+    #define CYBLE_FAST_ADV_TIMEOUT                  (0x001Eu)
+    #define CYBLE_SLOW_ADV_ENABLED                  (0x01u)
+    #define CYBLE_SLOW_ADV_INT_MIN                  (0x0640u)
+    #define CYBLE_SLOW_ADV_INT_MAX                  (0x4000u)
+    #define CYBLE_SLOW_ADV_TIMEOUT                  (0x0096u)
+    #define CYBLE_GAPP_CONNECTION_INTERVAL_MIN      (0x0006u)
+    #define CYBLE_GAPP_CONNECTION_INTERVAL_MAX      (0x0C80u)
+    #define CYBLE_GAPP_CONNECTION_SLAVE_LATENCY     (0x0000u)
+    #define CYBLE_GAPP_CONNECTION_TIME_OUT          (0x03E8u)
 #endif /* CYBLE_GAP_ROLE_PERIPHERAL */
 
 #if(CYBLE_GAP_ROLE_CENTRAL || CYBLE_GAP_ROLE_OBSERVER)
@@ -176,6 +176,9 @@
 #define CYBLE_TX_POWER_LEVEL_ADV                    (CYBLE_LL_PWR_LVL_0_DBM)
 #define CYBLE_TX_POWER_LEVEL_CONN                   (CYBLE_LL_PWR_LVL_0_DBM)
 
+#define CYBLE_ADV_PKT_INDEX_FLAGS   (0x00u)
+
+
 
 
 /* Strict pairing option */
@@ -208,7 +211,7 @@
 #define CYBLE_GATT_MTU_PLUS_L2CAP_MEM_EXT   (CYBLE_ALIGN_TO_4(CYBLE_GATT_MTU + CYBLE_MEM_EXT_SZ + CYBLE_L2CAP_HDR_SZ))
 
 /* GATT Maximum attribute length */
-#define CYBLE_GATT_MAX_ATTR_LEN             ((0x0008u == 0u) ? (1u) : (0x0008u))
+#define CYBLE_GATT_MAX_ATTR_LEN             ((0x000Bu == 0u) ? (1u) : (0x000Bu))
 #define CYBLE_GATT_MAX_ATTR_LEN_PLUS_L2CAP_MEM_EXT \
                                     (CYBLE_ALIGN_TO_4(CYBLE_GATT_MAX_ATTR_LEN + CYBLE_MEM_EXT_SZ + CYBLE_L2CAP_HDR_SZ))
 

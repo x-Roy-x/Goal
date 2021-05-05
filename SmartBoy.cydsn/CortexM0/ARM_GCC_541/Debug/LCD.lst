@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
   29:Generated_Source\PSoC4/LCD.c **** uint8 LCD_initVar = 0u;
   30:Generated_Source\PSoC4/LCD.c **** 
   31:Generated_Source\PSoC4/LCD.c **** 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 2
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 2
 
 
   32:Generated_Source\PSoC4/LCD.c **** /*******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
   86:Generated_Source\PSoC4/LCD.c **** *
   87:Generated_Source\PSoC4/LCD.c **** * Summary:
   88:Generated_Source\PSoC4/LCD.c **** *  Turns on the display.
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 3
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 3
 
 
   89:Generated_Source\PSoC4/LCD.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  143:Generated_Source\PSoC4/LCD.c ****         LCD_initVar = 1u;
  144:Generated_Source\PSoC4/LCD.c ****     }
  145:Generated_Source\PSoC4/LCD.c **** 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 4
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 4
 
 
  146:Generated_Source\PSoC4/LCD.c ****     /* Turn on the LCD */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  200:Generated_Source\PSoC4/LCD.c ****         case (uint8)0:
  201:Generated_Source\PSoC4/LCD.c ****             LCD_WriteControl(LCD_ROW_0_START + column);
  202:Generated_Source\PSoC4/LCD.c ****             break;
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 5
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 5
 
 
  203:Generated_Source\PSoC4/LCD.c ****         case (uint8) 1:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  257:Generated_Source\PSoC4/LCD.c **** * Parameters:
  258:Generated_Source\PSoC4/LCD.c **** *  character: Character to be written to LCD
  259:Generated_Source\PSoC4/LCD.c **** *
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 6
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 6
 
 
  260:Generated_Source\PSoC4/LCD.c **** * Return:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  314:Generated_Source\PSoC4/LCD.c **** void LCD_WriteControl(uint8 cByte) 
  315:Generated_Source\PSoC4/LCD.c **** {
  316:Generated_Source\PSoC4/LCD.c ****     uint8 nibble;
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 7
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 7
 
 
  317:Generated_Source\PSoC4/LCD.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  371:Generated_Source\PSoC4/LCD.c ****         /* Mask off data pins to clear old values out */
  372:Generated_Source\PSoC4/LCD.c ****         value = LCD_PORT_DM0_REG & ((uint8)(~LCD_DATA_MASK));
  373:Generated_Source\PSoC4/LCD.c ****         /* Load in high Z values for data pins, others unchanged */
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 8
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 8
 
 
  374:Generated_Source\PSoC4/LCD.c ****         LCD_PORT_DM0_REG = value | (LCD_HIGH_Z_DM0 & LCD_DATA_MASK);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  428:Generated_Source\PSoC4/LCD.c ****         {
  429:Generated_Source\PSoC4/LCD.c ****             CyDelayUs(10u);
  430:Generated_Source\PSoC4/LCD.c ****         }
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 9
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 9
 
 
  431:Generated_Source\PSoC4/LCD.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  485:Generated_Source\PSoC4/LCD.c **** *******************************************************************************/
  486:Generated_Source\PSoC4/LCD.c **** static void LCD_WrDatNib(uint8 nibble) 
  487:Generated_Source\PSoC4/LCD.c **** {
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 10
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 10
 
 
  488:Generated_Source\PSoC4/LCD.c ****     /* RS should be low to select data register */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
   37 0002 0B4C     		ldr	r4, .L2
   38 0004 2268     		ldr	r2, [r4]
   39 0006 6023     		movs	r3, #96
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 11
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 11
 
 
   40 0008 9A43     		bics	r2, r3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
   76              		.code	16
   77              		.thumb_func
   78              		.type	LCD_WrDatNib, %function
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 12
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 12
 
 
   79              	LCD_WrDatNib:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  125              		.loc 1 510 0
  126 0036 2368     		ldr	r3, [r4]
  127 0038 1022     		movs	r2, #16
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 13
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 13
 
 
  128 003a 9343     		bics	r3, r2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  177 0018 0B60     		str	r3, [r1]
  389:Generated_Source\PSoC4/LCD.c **** 
  178              		.loc 1 389 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 14
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 14
 
 
  179 001a 1368     		ldr	r3, [r2]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  223              		.loc 1 418 0
  224 0058 2368     		ldr	r3, [r4]
  225 005a 3343     		orrs	r3, r6
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 15
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 15
 
 
  226 005c 2360     		str	r3, [r4]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  448:Generated_Source\PSoC4/LCD.c **** 
  270              		.loc 1 448 0
  271 0098 0549     		ldr	r1, .L11+16
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 16
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 16
 
 
  272 009a 0B43     		orrs	r3, r1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  320              	.LVL26:
  296:Generated_Source\PSoC4/LCD.c **** }
  321              		.loc 1 296 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 17
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 17
 
 
  322 0012 FFF7FEFF 		bl	LCD_WrDatNib
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  368 0010 0134     		adds	r4, r4, #1
  369              	.LVL35:
  370 0012 E4B2     		uxtb	r4, r4
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 18
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 18
 
 
  371              	.LVL36:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  419              		.cfi_startproc
  420              		@ args = 0, pretend = 0, frame = 0
  421              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 19
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 19
 
 
  422              	.LVL41:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  468 0002 2820     		movs	r0, #40
  469 0004 FFF7FEFF 		bl	CyDelay
  470              	.LVL48:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 20
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 20
 
 
   59:Generated_Source\PSoC4/LCD.c ****     CyDelay(5u);                                                         /* Delay 5 ms */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  514              	.LVL59:
   71:Generated_Source\PSoC4/LCD.c ****     LCD_WriteControl(LCD_CLEAR_DISPLAY);          /* Clear LCD Screen */
  515              		.loc 1 71 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 21
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 21
 
 
  516 004a 0820     		movs	r0, #8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  563              		.cfi_offset 4, -8
  564              		.cfi_offset 14, -4
  106:Generated_Source\PSoC4/LCD.c ****     LCD_enableState = 1u;
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 22
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 22
 
 
  565              		.loc 1 106 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  612              		.loc 1 147 0
  613 0014 FFF7FEFF 		bl	LCD_Enable
  614              	.LVL68:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 23
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 23
 
 
  148:Generated_Source\PSoC4/LCD.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  664              		.type	LCD_Position, %function
  665              	LCD_Position:
  666              	.LFB6:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 24
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 24
 
 
  197:Generated_Source\PSoC4/LCD.c ****     switch (row)
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  714 002c FFF7FEFF 		bl	LCD_WriteControl
  715              	.LVL81:
  208:Generated_Source\PSoC4/LCD.c ****         case (uint8) 3:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 25
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 25
 
 
  716              		.loc 1 208 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  748              		.cfi_def_cfa_offset 16
  749              		.cfi_offset 4, -16
  750              		.cfi_offset 5, -12
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 26
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 26
 
 
  751              		.cfi_offset 6, -8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  590:Generated_Source\PSoC4/LCD.c ****     *******************************************************************************/
  591:Generated_Source\PSoC4/LCD.c ****     void LCD_PrintInt16(uint16 value) 
  592:Generated_Source\PSoC4/LCD.c ****     {
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 27
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 27
 
 
  785              		.loc 1 592 0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  818              		.loc 1 613 0
  819              		.cfi_startproc
  820              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 28
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 28
 
 
  821              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  861              		.global	__aeabi_uidiv
  862              		.section	.text.LCD_PrintU32Number,"ax",%progbits
  863              		.align	2
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 29
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 29
 
 
  864              		.global	LCD_PrintU32Number
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  881              		.cfi_def_cfa_offset 32
  882 0004 0400     		movs	r4, r0
  883              	.LVL103:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 30
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 30
 
 
  664:Generated_Source\PSoC4/LCD.c ****         uint8 tmpDigit;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  687:Generated_Source\PSoC4/LCD.c ****             digIndex--;
  915              		.loc 1 687 0
  916 002a 013D     		subs	r5, r5, #1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 31
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 31
 
 
  917              	.LVL112:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  956      43444546 
  957              		.bss
  958              		.set	.LANCHOR0,. + 0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 32
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 32
 
 
  959              		.type	LCD_enableState, %object
@@ -1881,48 +1881,48 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  976 0006 00000000 		.4byte	.Ldebug_abbrev0
  977 000a 04       		.byte	0x4
  978 000b 01       		.uleb128 0x1
- 979 000c FD010000 		.4byte	.LASF56
+ 979 000c F7010000 		.4byte	.LASF56
  980 0010 0C       		.byte	0xc
- 981 0011 79010000 		.4byte	.LASF57
- 982 0015 00000000 		.4byte	.LASF58
+ 981 0011 73010000 		.4byte	.LASF57
+ 982 0015 BB000000 		.4byte	.LASF58
  983 0019 00000000 		.4byte	.Ldebug_ranges0+0
  984 001d 00000000 		.4byte	0
  985 0021 00000000 		.4byte	.Ldebug_line0
  986 0025 02       		.uleb128 0x2
  987 0026 01       		.byte	0x1
  988 0027 06       		.byte	0x6
- 989 0028 1A030000 		.4byte	.LASF0
+ 989 0028 14030000 		.4byte	.LASF0
  990 002c 02       		.uleb128 0x2
  991 002d 01       		.byte	0x1
  992 002e 08       		.byte	0x8
- 993 002f EE000000 		.4byte	.LASF1
+ 993 002f E8000000 		.4byte	.LASF1
  994 0033 02       		.uleb128 0x2
  995 0034 02       		.byte	0x2
  996 0035 05       		.byte	0x5
- 997 0036 D6020000 		.4byte	.LASF2
+ 997 0036 D0020000 		.4byte	.LASF2
  998 003a 02       		.uleb128 0x2
  999 003b 02       		.byte	0x2
  1000 003c 07       		.byte	0x7
- 1001 003d 95000000 		.4byte	.LASF3
+ 1001 003d 62000000 		.4byte	.LASF3
  1002 0041 02       		.uleb128 0x2
  1003 0042 04       		.byte	0x4
  1004 0043 05       		.byte	0x5
- 1005 0044 EF020000 		.4byte	.LASF4
+ 1005 0044 E9020000 		.4byte	.LASF4
  1006 0048 02       		.uleb128 0x2
  1007 0049 04       		.byte	0x4
  1008 004a 07       		.byte	0x7
- 1009 004b 02010000 		.4byte	.LASF5
+ 1009 004b FC000000 		.4byte	.LASF5
  1010 004f 02       		.uleb128 0x2
  1011 0050 08       		.byte	0x8
  1012 0051 05       		.byte	0x5
- 1013 0052 94020000 		.4byte	.LASF6
+ 1013 0052 8E020000 		.4byte	.LASF6
  1014 0056 02       		.uleb128 0x2
  1015 0057 08       		.byte	0x8
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 33
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 33
 
 
  1016 0058 07       		.byte	0x7
- 1017 0059 AC010000 		.4byte	.LASF7
+ 1017 0059 A6010000 		.4byte	.LASF7
  1018 005d 03       		.uleb128 0x3
  1019 005e 04       		.byte	0x4
  1020 005f 05       		.byte	0x5
@@ -1930,59 +1930,59 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1022 0064 02       		.uleb128 0x2
  1023 0065 04       		.byte	0x4
  1024 0066 07       		.byte	0x7
- 1025 0067 9F010000 		.4byte	.LASF8
+ 1025 0067 99010000 		.4byte	.LASF8
  1026 006b 04       		.uleb128 0x4
- 1027 006c 28010000 		.4byte	.LASF9
+ 1027 006c 22010000 		.4byte	.LASF9
  1028 0070 02       		.byte	0x2
- 1029 0071 E401     		.2byte	0x1e4
+ 1029 0071 E701     		.2byte	0x1e7
  1030 0073 2C000000 		.4byte	0x2c
  1031 0077 04       		.uleb128 0x4
- 1032 0078 5F010000 		.4byte	.LASF10
+ 1032 0078 59010000 		.4byte	.LASF10
  1033 007c 02       		.byte	0x2
- 1034 007d E501     		.2byte	0x1e5
+ 1034 007d E801     		.2byte	0x1e8
  1035 007f 3A000000 		.4byte	0x3a
  1036 0083 04       		.uleb128 0x4
- 1037 0084 72010000 		.4byte	.LASF11
+ 1037 0084 6C010000 		.4byte	.LASF11
  1038 0088 02       		.byte	0x2
- 1039 0089 E601     		.2byte	0x1e6
+ 1039 0089 E901     		.2byte	0x1e9
  1040 008b 48000000 		.4byte	0x48
  1041 008f 02       		.uleb128 0x2
  1042 0090 04       		.byte	0x4
  1043 0091 04       		.byte	0x4
- 1044 0092 DE000000 		.4byte	.LASF12
+ 1044 0092 AB000000 		.4byte	.LASF12
  1045 0096 02       		.uleb128 0x2
  1046 0097 08       		.byte	0x8
  1047 0098 04       		.byte	0x4
- 1048 0099 3D010000 		.4byte	.LASF13
+ 1048 0099 37010000 		.4byte	.LASF13
  1049 009d 04       		.uleb128 0x4
- 1050 009e FC000000 		.4byte	.LASF14
+ 1050 009e F6000000 		.4byte	.LASF14
  1051 00a2 02       		.byte	0x2
- 1052 00a3 F501     		.2byte	0x1f5
+ 1052 00a3 F801     		.2byte	0x1f8
  1053 00a5 A9000000 		.4byte	0xa9
  1054 00a9 02       		.uleb128 0x2
  1055 00aa 01       		.byte	0x1
  1056 00ab 08       		.byte	0x8
- 1057 00ac A8000000 		.4byte	.LASF15
+ 1057 00ac 75000000 		.4byte	.LASF15
  1058 00b0 04       		.uleb128 0x4
- 1059 00b1 F8020000 		.4byte	.LASF16
+ 1059 00b1 F2020000 		.4byte	.LASF16
  1060 00b5 02       		.byte	0x2
- 1061 00b6 9002     		.2byte	0x290
+ 1061 00b6 9302     		.2byte	0x293
  1062 00b8 BC000000 		.4byte	0xbc
  1063 00bc 05       		.uleb128 0x5
  1064 00bd 83000000 		.4byte	0x83
  1065 00c1 02       		.uleb128 0x2
  1066 00c2 08       		.byte	0x8
  1067 00c3 04       		.byte	0x4
- 1068 00c4 0E030000 		.4byte	.LASF17
+ 1068 00c4 08030000 		.4byte	.LASF17
  1069 00c8 02       		.uleb128 0x2
  1070 00c9 04       		.byte	0x4
  1071 00ca 07       		.byte	0x7
- 1072 00cb 8B020000 		.4byte	.LASF18
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 34
+ 1072 00cb 85020000 		.4byte	.LASF18
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 34
 
 
  1073 00cf 06       		.uleb128 0x6
- 1074 00d0 2E010000 		.4byte	.LASF19
+ 1074 00d0 28010000 		.4byte	.LASF19
  1075 00d4 01       		.byte	0x1
  1076 00d5 1002     		.2byte	0x210
  1077 00d7 00000000 		.4byte	.LFB13
@@ -1991,7 +1991,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1080 00e0 9C       		.byte	0x9c
  1081 00e1 05010000 		.4byte	0x105
  1082 00e5 07       		.uleb128 0x7
- 1083 00e6 3A030000 		.4byte	.LASF21
+ 1083 00e6 34030000 		.4byte	.LASF21
  1084 00ea 01       		.byte	0x1
  1085 00eb 1002     		.2byte	0x210
  1086 00ed 6B000000 		.4byte	0x6b
@@ -2007,7 +2007,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1096 0103 00       		.byte	0
  1097 0104 00       		.byte	0
  1098 0105 06       		.uleb128 0x6
- 1099 0106 BC000000 		.4byte	.LASF20
+ 1099 0106 89000000 		.4byte	.LASF20
  1100 010a 01       		.byte	0x1
  1101 010b E601     		.2byte	0x1e6
  1102 010d 00000000 		.4byte	.LFB12
@@ -2016,7 +2016,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1105 0116 9C       		.byte	0x9c
  1106 0117 4E010000 		.4byte	0x14e
  1107 011b 07       		.uleb128 0x7
- 1108 011c 3A030000 		.4byte	.LASF21
+ 1108 011c 34030000 		.4byte	.LASF21
  1109 0120 01       		.byte	0x1
  1110 0121 E601     		.2byte	0x1e6
  1111 0123 6B000000 		.4byte	0x6b
@@ -2038,14 +2038,14 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1127 0148 01       		.uleb128 0x1
  1128 0149 50       		.byte	0x50
  1129 014a 01       		.uleb128 0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 35
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 35
 
 
  1130 014b 31       		.byte	0x31
  1131 014c 00       		.byte	0
  1132 014d 00       		.byte	0
  1133 014e 0B       		.uleb128 0xb
- 1134 014f 66010000 		.4byte	.LASF24
+ 1134 014f 60010000 		.4byte	.LASF24
  1135 0153 01       		.byte	0x1
  1136 0154 5C01     		.2byte	0x15c
  1137 0156 00000000 		.4byte	.LFB11
@@ -2054,13 +2054,13 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1140 015f 9C       		.byte	0x9c
  1141 0160 E0010000 		.4byte	0x1e0
  1142 0164 0C       		.uleb128 0xc
- 1143 0165 7B000000 		.4byte	.LASF22
+ 1143 0165 48000000 		.4byte	.LASF22
  1144 0169 01       		.byte	0x1
  1145 016a 5E01     		.2byte	0x15e
  1146 016c 83000000 		.4byte	0x83
  1147 0170 42000000 		.4byte	.LLST2
  1148 0174 0C       		.uleb128 0xc
- 1149 0175 AC020000 		.4byte	.LASF23
+ 1149 0175 A6020000 		.4byte	.LASF23
  1150 0179 01       		.byte	0x1
  1151 017a 5F01     		.2byte	0x15f
  1152 017c 83000000 		.4byte	0x83
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1184 01bd 0A       		.uleb128 0xa
  1185 01be 64000000 		.4byte	.LVL16
  1186 01c2 3C070000 		.4byte	0x73c
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 36
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 36
 
 
  1187 01c6 D0010000 		.4byte	0x1d0
@@ -2119,7 +2119,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1202 01de 00       		.byte	0
  1203 01df 00       		.byte	0
  1204 01e0 0B       		.uleb128 0xb
- 1205 01e1 D0000000 		.4byte	.LASF25
+ 1205 01e1 9D000000 		.4byte	.LASF25
  1206 01e5 01       		.byte	0x1
  1207 01e6 1C01     		.2byte	0x11c
  1208 01e8 00000000 		.4byte	.LFB9
@@ -2128,13 +2128,13 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1211 01f1 9C       		.byte	0x9c
  1212 01f2 48020000 		.4byte	0x248
  1213 01f6 07       		.uleb128 0x7
- 1214 01f7 26030000 		.4byte	.LASF26
+ 1214 01f7 20030000 		.4byte	.LASF26
  1215 01fb 01       		.byte	0x1
  1216 01fc 1C01     		.2byte	0x11c
  1217 01fe 6B000000 		.4byte	0x6b
  1218 0202 8C000000 		.4byte	.LLST4
  1219 0206 0C       		.uleb128 0xc
- 1220 0207 3A030000 		.4byte	.LASF21
+ 1220 0207 34030000 		.4byte	.LASF21
  1221 020b 01       		.byte	0x1
  1222 020c 1E01     		.2byte	0x11e
  1223 020e 6B000000 		.4byte	0x6b
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1241 0235 08       		.uleb128 0x8
  1242 0236 16000000 		.4byte	.LVL27
  1243 023a 05010000 		.4byte	0x105
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 37
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 37
 
 
  1244 023e 09       		.uleb128 0x9
@@ -2172,7 +2172,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1252 0246 00       		.byte	0
  1253 0247 00       		.byte	0
  1254 0248 0E       		.uleb128 0xe
- 1255 0249 4F010000 		.4byte	.LASF27
+ 1255 0249 49010000 		.4byte	.LASF27
  1256 024d 01       		.byte	0x1
  1257 024e E9       		.byte	0xe9
  1258 024f 00000000 		.4byte	.LFB7
@@ -2181,19 +2181,19 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1261 0258 9C       		.byte	0x9c
  1262 0259 94020000 		.4byte	0x294
  1263 025d 0F       		.uleb128 0xf
- 1264 025e B5000000 		.4byte	.LASF28
+ 1264 025e 82000000 		.4byte	.LASF28
  1265 0262 01       		.byte	0x1
  1266 0263 E9       		.byte	0xe9
  1267 0264 94020000 		.4byte	0x294
  1268 0268 E9000000 		.4byte	.LLST6
  1269 026c 10       		.uleb128 0x10
- 1270 026d AD000000 		.4byte	.LASF29
+ 1270 026d 7A000000 		.4byte	.LASF29
  1271 0271 01       		.byte	0x1
  1272 0272 EB       		.byte	0xeb
  1273 0273 6B000000 		.4byte	0x6b
  1274 0277 15010000 		.4byte	.LLST7
  1275 027b 10       		.uleb128 0x10
- 1276 027c E7020000 		.4byte	.LASF30
+ 1276 027c E1020000 		.4byte	.LASF30
  1277 0280 01       		.byte	0x1
  1278 0281 EC       		.byte	0xec
  1279 0282 9D000000 		.4byte	0x9d
@@ -2208,7 +2208,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1288 029a 12       		.uleb128 0x12
  1289 029b 9D000000 		.4byte	0x9d
  1290 029f 0B       		.uleb128 0xb
- 1291 02a0 F1010000 		.4byte	.LASF31
+ 1291 02a0 EB010000 		.4byte	.LASF31
  1292 02a4 01       		.byte	0x1
  1293 02a5 0801     		.2byte	0x108
  1294 02a7 00000000 		.4byte	.LFB8
@@ -2217,8 +2217,8 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1297 02b0 9C       		.byte	0x9c
  1298 02b1 CF020000 		.4byte	0x2cf
  1299 02b5 07       		.uleb128 0x7
- 1300 02b6 68000000 		.4byte	.LASF32
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 38
+ 1300 02b6 35000000 		.4byte	.LASF32
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 38
 
 
  1301 02ba 01       		.byte	0x1
@@ -2230,7 +2230,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1307 02ca E0010000 		.4byte	0x1e0
  1308 02ce 00       		.byte	0
  1309 02cf 0B       		.uleb128 0xb
- 1310 02d0 48000000 		.4byte	.LASF33
+ 1310 02d0 15000000 		.4byte	.LASF33
  1311 02d4 01       		.byte	0x1
  1312 02d5 3A01     		.2byte	0x13a
  1313 02d7 00000000 		.4byte	.LFB10
@@ -2239,13 +2239,13 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1316 02e0 9C       		.byte	0x9c
  1317 02e1 37030000 		.4byte	0x337
  1318 02e5 07       		.uleb128 0x7
- 1319 02e6 34030000 		.4byte	.LASF34
+ 1319 02e6 2E030000 		.4byte	.LASF34
  1320 02ea 01       		.byte	0x1
  1321 02eb 3A01     		.2byte	0x13a
  1322 02ed 6B000000 		.4byte	0x6b
  1323 02f1 7E010000 		.4byte	.LLST10
  1324 02f5 0C       		.uleb128 0xc
- 1325 02f6 3A030000 		.4byte	.LASF21
+ 1325 02f6 34030000 		.4byte	.LASF21
  1326 02fa 01       		.byte	0x1
  1327 02fb 3C01     		.2byte	0x13c
  1328 02fd 6B000000 		.4byte	0x6b
@@ -2278,12 +2278,12 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1355 0333 3F       		.byte	0x3f
  1356 0334 1A       		.byte	0x1a
  1357 0335 00       		.byte	0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 39
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 39
 
 
  1358 0336 00       		.byte	0
  1359 0337 0E       		.uleb128 0xe
- 1360 0338 C4020000 		.4byte	.LASF35
+ 1360 0338 BE020000 		.4byte	.LASF35
  1361 033c 01       		.byte	0x1
  1362 033d 37       		.byte	0x37
  1363 033e 00000000 		.4byte	.LFB2
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1412 03a2 AC030000 		.4byte	0x3ac
  1413 03a6 09       		.uleb128 0x9
  1414 03a7 01       		.uleb128 0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 40
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 40
 
 
  1415 03a8 50       		.byte	0x50
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1469 040b 0A       		.uleb128 0xa
  1470 040c 44000000 		.4byte	.LVL58
  1471 0410 CF020000 		.4byte	0x2cf
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 41
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 41
 
 
  1472 0414 1E040000 		.4byte	0x41e
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1526 047a 50       		.byte	0x50
  1527 047b 01       		.uleb128 0x1
  1528 047c 33       		.byte	0x33
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 42
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 42
 
 
  1529 047d 00       		.byte	0
@@ -2477,7 +2477,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1542 0496 52070000 		.4byte	0x752
  1543 049a 00       		.byte	0
  1544 049b 0E       		.uleb128 0xe
- 1545 049c 44010000 		.4byte	.LASF36
+ 1545 049c 3E010000 		.4byte	.LASF36
  1546 04a0 01       		.byte	0x1
  1547 04a1 68       		.byte	0x68
  1548 04a2 00000000 		.4byte	.LFB3
@@ -2496,7 +2496,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1561 04be 00       		.byte	0
  1562 04bf 00       		.byte	0
  1563 04c0 0E       		.uleb128 0xe
- 1564 04c1 E4000000 		.4byte	.LASF37
+ 1564 04c1 B1000000 		.4byte	.LASF37
  1565 04c5 01       		.byte	0x1
  1566 04c6 89       		.byte	0x89
  1567 04c7 00000000 		.4byte	.LFB4
@@ -2512,13 +2512,13 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1577 04e3 9B040000 		.4byte	0x49b
  1578 04e7 00       		.byte	0
  1579 04e8 0E       		.uleb128 0xe
- 1580 04e9 72000000 		.4byte	.LASF38
+ 1580 04e9 3F000000 		.4byte	.LASF38
  1581 04ed 01       		.byte	0x1
  1582 04ee A8       		.byte	0xa8
  1583 04ef 00000000 		.4byte	.LFB5
  1584 04f3 14000000 		.4byte	.LFE5-.LFB5
  1585 04f7 01       		.uleb128 0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 43
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 43
 
 
  1586 04f8 9C       		.byte	0x9c
@@ -2534,7 +2534,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1596 050b 00       		.byte	0
  1597 050c 00       		.byte	0
  1598 050d 0E       		.uleb128 0xe
- 1599 050e D1010000 		.4byte	.LASF39
+ 1599 050e CB010000 		.4byte	.LASF39
  1600 0512 01       		.byte	0x1
  1601 0513 C4       		.byte	0xc4
  1602 0514 00000000 		.4byte	.LFB6
@@ -2549,7 +2549,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1611 0529 6B000000 		.4byte	0x6b
  1612 052d DB010000 		.4byte	.LLST12
  1613 0531 0F       		.uleb128 0xf
- 1614 0532 C9000000 		.4byte	.LASF40
+ 1614 0532 96000000 		.4byte	.LASF40
  1615 0536 01       		.byte	0x1
  1616 0537 C4       		.byte	0xc4
  1617 0538 6B000000 		.4byte	0x6b
@@ -2568,7 +2568,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1630 0560 CF020000 		.4byte	0x2cf
  1631 0564 00       		.byte	0
  1632 0565 0B       		.uleb128 0xb
- 1633 0566 C3010000 		.4byte	.LASF41
+ 1633 0566 BD010000 		.4byte	.LASF41
  1634 056a 01       		.byte	0x1
  1635 056b 3802     		.2byte	0x238
  1636 056d 00000000 		.4byte	.LFB14
@@ -2577,8 +2577,8 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1639 0576 9C       		.byte	0x9c
  1640 0577 CE050000 		.4byte	0x5ce
  1641 057b 07       		.uleb128 0x7
- 1642 057c 7B000000 		.4byte	.LASF22
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 44
+ 1642 057c 48000000 		.4byte	.LASF22
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 44
 
 
  1643 0580 01       		.byte	0x1
@@ -2586,7 +2586,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1645 0583 6B000000 		.4byte	0x6b
  1646 0587 B3020000 		.4byte	.LLST14
  1647 058b 14       		.uleb128 0x14
- 1648 058c 8D000000 		.4byte	.LASF42
+ 1648 058c 5A000000 		.4byte	.LASF42
  1649 0590 01       		.byte	0x1
  1650 0591 3A02     		.2byte	0x23a
  1651 0593 DE050000 		.4byte	0x5de
@@ -2637,8 +2637,8 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1696 05de 12       		.uleb128 0x12
  1697 05df CE050000 		.4byte	0x5ce
  1698 05e3 0B       		.uleb128 0xb
- 1699 05e4 39000000 		.4byte	.LASF43
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 45
+ 1699 05e4 06000000 		.4byte	.LASF43
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 45
 
 
  1700 05e8 01       		.byte	0x1
@@ -2649,7 +2649,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1705 05f4 9C       		.byte	0x9c
  1706 05f5 30060000 		.4byte	0x630
  1707 05f9 07       		.uleb128 0x7
- 1708 05fa 7B000000 		.4byte	.LASF22
+ 1708 05fa 48000000 		.4byte	.LASF22
  1709 05fe 01       		.byte	0x1
  1710 05ff 4F02     		.2byte	0x24f
  1711 0601 77000000 		.4byte	0x77
@@ -2679,7 +2679,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1735 062e 00       		.byte	0
  1736 062f 00       		.byte	0
  1737 0630 0B       		.uleb128 0xb
- 1738 0631 59000000 		.4byte	.LASF44
+ 1738 0631 26000000 		.4byte	.LASF44
  1739 0635 01       		.byte	0x1
  1740 0636 6402     		.2byte	0x264
  1741 0638 00000000 		.4byte	.LFB16
@@ -2688,17 +2688,17 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1744 0641 9C       		.byte	0x9c
  1745 0642 7A060000 		.4byte	0x67a
  1746 0646 07       		.uleb128 0x7
- 1747 0647 7B000000 		.4byte	.LASF22
+ 1747 0647 48000000 		.4byte	.LASF22
  1748 064b 01       		.byte	0x1
  1749 064c 6402     		.2byte	0x264
  1750 064e 83000000 		.4byte	0x83
  1751 0652 F5020000 		.4byte	.LLST16
  1752 0656 0C       		.uleb128 0xc
- 1753 0657 33000000 		.4byte	.LASF45
+ 1753 0657 00000000 		.4byte	.LASF45
  1754 065b 01       		.byte	0x1
  1755 065c 6602     		.2byte	0x266
  1756 065e 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 46
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 46
 
 
  1757 0662 21030000 		.4byte	.LLST17
@@ -2717,7 +2717,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1770 0678 00       		.byte	0
  1771 0679 00       		.byte	0
  1772 067a 17       		.uleb128 0x17
- 1773 067b DE010000 		.4byte	.LASF46
+ 1773 067b D8010000 		.4byte	.LASF46
  1774 067f 01       		.byte	0x1
  1775 0680 9602     		.2byte	0x296
  1776 0682 00000000 		.4byte	.LFB17
@@ -2726,19 +2726,19 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1779 068b 9C       		.byte	0x9c
  1780 068c E5060000 		.4byte	0x6e5
  1781 0690 07       		.uleb128 0x7
- 1782 0691 7B000000 		.4byte	.LASF22
+ 1782 0691 48000000 		.4byte	.LASF22
  1783 0695 01       		.byte	0x1
  1784 0696 9602     		.2byte	0x296
  1785 0698 83000000 		.4byte	0x83
  1786 069c 4C030000 		.4byte	.LLST18
  1787 06a0 0C       		.uleb128 0xc
- 1788 06a1 CD020000 		.4byte	.LASF47
+ 1788 06a1 C7020000 		.4byte	.LASF47
  1789 06a5 01       		.byte	0x1
  1790 06a6 9802     		.2byte	0x298
  1791 06a8 6B000000 		.4byte	0x6b
  1792 06ac 80030000 		.4byte	.LLST19
  1793 06b0 14       		.uleb128 0x14
- 1794 06b1 E0020000 		.4byte	.LASF48
+ 1794 06b1 DA020000 		.4byte	.LASF48
  1795 06b5 01       		.byte	0x1
  1796 06b6 9902     		.2byte	0x299
  1797 06b8 E5060000 		.4byte	0x6e5
@@ -2746,7 +2746,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1799 06bd 91       		.byte	0x91
  1800 06be 64       		.sleb128 -28
  1801 06bf 0C       		.uleb128 0xc
- 1802 06c0 96010000 		.4byte	.LASF49
+ 1802 06c0 90010000 		.4byte	.LASF49
  1803 06c4 01       		.byte	0x1
  1804 06c5 9A02     		.2byte	0x29a
  1805 06c7 6B000000 		.4byte	0x6b
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1811 06d9 01       		.uleb128 0x1
  1812 06da 50       		.byte	0x50
  1813 06db 07       		.uleb128 0x7
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 47
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 47
 
 
  1814 06dc 91       		.byte	0x91
@@ -2778,7 +2778,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1828 06f3 0A       		.byte	0xa
  1829 06f4 00       		.byte	0
  1830 06f5 18       		.uleb128 0x18
- 1831 06f6 81000000 		.4byte	.LASF50
+ 1831 06f6 4E000000 		.4byte	.LASF50
  1832 06fa 01       		.byte	0x1
  1833 06fb 1D       		.byte	0x1d
  1834 06fc 6B000000 		.4byte	0x6b
@@ -2786,7 +2786,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1836 0701 03       		.byte	0x3
  1837 0702 00000000 		.4byte	LCD_initVar
  1838 0706 18       		.uleb128 0x18
- 1839 0707 B4020000 		.4byte	.LASF51
+ 1839 0707 AE020000 		.4byte	.LASF51
  1840 070b 01       		.byte	0x1
  1841 070c 1B       		.byte	0x1b
  1842 070d 6B000000 		.4byte	0x6b
@@ -2803,28 +2803,28 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1853 0727 12       		.uleb128 0x12
  1854 0728 6B000000 		.4byte	0x6b
  1855 072c 19       		.uleb128 0x19
- 1856 072d FE020000 		.4byte	.LASF52
+ 1856 072d F8020000 		.4byte	.LASF52
  1857 0731 03       		.byte	0x3
  1858 0732 77       		.byte	0x77
  1859 0733 37070000 		.4byte	0x737
  1860 0737 12       		.uleb128 0x12
  1861 0738 17070000 		.4byte	0x717
  1862 073c 1A       		.uleb128 0x1a
- 1863 073d A2020000 		.4byte	.LASF53
- 1864 0741 A2020000 		.4byte	.LASF53
+ 1863 073d 9C020000 		.4byte	.LASF53
+ 1864 0741 9C020000 		.4byte	.LASF53
  1865 0745 04       		.byte	0x4
  1866 0746 DA       		.byte	0xda
  1867 0747 1A       		.uleb128 0x1a
- 1868 0748 2C030000 		.4byte	.LASF54
- 1869 074c 2C030000 		.4byte	.LASF54
+ 1868 0748 26030000 		.4byte	.LASF54
+ 1869 074c 26030000 		.4byte	.LASF54
  1870 0750 04       		.byte	0x4
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 48
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 48
 
 
  1871 0751 D9       		.byte	0xd9
  1872 0752 1A       		.uleb128 0x1a
- 1873 0753 14010000 		.4byte	.LASF55
- 1874 0757 14010000 		.4byte	.LASF55
+ 1873 0753 0E010000 		.4byte	.LASF55
+ 1874 0757 0E010000 		.4byte	.LASF55
  1875 075b 03       		.byte	0x3
  1876 075c 55       		.byte	0x55
  1877 075d 00       		.byte	0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1925 002d 0E       		.uleb128 0xe
  1926 002e 3A       		.uleb128 0x3a
  1927 002f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 49
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 49
 
 
  1928 0030 3B       		.uleb128 0x3b
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  1982 0069 11       		.uleb128 0x11
  1983 006a 01       		.uleb128 0x1
  1984 006b 31       		.uleb128 0x31
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 50
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 50
 
 
  1985 006c 13       		.uleb128 0x13
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2039 00a8 0B       		.uleb128 0xb
  2040 00a9 3B       		.uleb128 0x3b
  2041 00aa 05       		.uleb128 0x5
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 51
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 51
 
 
  2042 00ab 49       		.uleb128 0x49
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2096 00e4 00       		.byte	0
  2097 00e5 10       		.uleb128 0x10
  2098 00e6 34       		.uleb128 0x34
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 52
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 52
 
 
  2099 00e7 00       		.byte	0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2153 011d 13       		.uleb128 0x13
  2154 011e 02       		.uleb128 0x2
  2155 011f 18       		.uleb128 0x18
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 53
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 53
 
 
  2156 0120 00       		.byte	0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2210 0157 49       		.uleb128 0x49
  2211 0158 13       		.uleb128 0x13
  2212 0159 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 54
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 54
 
 
  2213 015a 19       		.uleb128 0x19
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2267 0019 00000000 		.4byte	0
  2268 001d 00000000 		.4byte	0
  2269              	.LLST1:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 55
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 55
 
 
  2270 0021 00000000 		.4byte	.LVL3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2324 00a9 00000000 		.4byte	0
  2325              	.LLST5:
  2326 00ad 0A000000 		.4byte	.LVL24
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 56
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 56
 
 
  2327 00b1 0D000000 		.4byte	.LVL25-1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2381 0130 18000000 		.4byte	.LVL37
  2382 0134 0100     		.2byte	0x1
  2383 0136 54       		.byte	0x54
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 57
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 57
 
 
  2384 0137 00000000 		.4byte	0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2438 01b9 12000000 		.4byte	.LVL45
  2439 01bd 15000000 		.4byte	.LVL46-1
  2440 01c1 0100     		.2byte	0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 58
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 58
 
 
  2441 01c3 50       		.byte	0x50
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2495 023d 50       		.byte	0x50
  2496 023e 9F       		.byte	0x9f
  2497 023f 00000000 		.4byte	0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 59
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 59
 
 
  2498 0243 00000000 		.4byte	0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2552 02c2 20000000 		.4byte	.LFE14
  2553 02c6 0400     		.2byte	0x4
  2554 02c8 F3       		.byte	0xf3
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 60
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 60
 
 
  2555 02c9 01       		.uleb128 0x1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2609              	.LLST18:
  2610 034c 00000000 		.4byte	.LVL102
  2611 0350 14000000 		.4byte	.LVL106
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 61
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 61
 
 
  2612 0354 0100     		.2byte	0x1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2666 03db 00000000 		.4byte	0
  2667 03df 00000000 		.4byte	0
  2668              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 62
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 62
 
 
  2669 0000 94000000 		.4byte	0x94
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2723 002c 08000000 		.4byte	.LFE8
  2724 0030 00000000 		.4byte	.LFB10
  2725 0034 18000000 		.4byte	.LFE10
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 63
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 63
 
 
  2726 0038 00000000 		.4byte	.LFB2
@@ -3748,277 +3748,272 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 1
  2748      00000201 
  2748      FB0E0D00 
  2748      01010101 
- 2749              	.LASF58:
- 2750 0000 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\SmartBoy.c"
- 2750      795C4269 
- 2750      70626F79 
- 2750      5C626970 
- 2750      626F795C 
- 2751 002e 7964736E 		.ascii	"ydsn\000"
- 2751      00
- 2752              	.LASF45:
- 2753 0033 73686966 		.ascii	"shift\000"
- 2753      7400
- 2754              	.LASF43:
- 2755 0039 4C43445F 		.ascii	"LCD_PrintInt16\000"
- 2755      5072696E 
- 2755      74496E74 
- 2755      313600
- 2756              	.LASF33:
- 2757 0048 4C43445F 		.ascii	"LCD_WriteControl\000"
- 2757      57726974 
- 2757      65436F6E 
- 2757      74726F6C 
- 2757      00
- 2758              	.LASF44:
- 2759 0059 4C43445F 		.ascii	"LCD_PrintInt32\000"
- 2759      5072696E 
- 2759      74496E74 
- 2759      333200
- 2760              	.LASF32:
- 2761 0068 63686172 		.ascii	"character\000"
- 2761      61637465 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 64
+ 2749              	.LASF45:
+ 2750 0000 73686966 		.ascii	"shift\000"
+ 2750      7400
+ 2751              	.LASF43:
+ 2752 0006 4C43445F 		.ascii	"LCD_PrintInt16\000"
+ 2752      5072696E 
+ 2752      74496E74 
+ 2752      313600
+ 2753              	.LASF33:
+ 2754 0015 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 2754      57726974 
+ 2754      65436F6E 
+ 2754      74726F6C 
+ 2754      00
+ 2755              	.LASF44:
+ 2756 0026 4C43445F 		.ascii	"LCD_PrintInt32\000"
+ 2756      5072696E 
+ 2756      74496E74 
+ 2756      333200
+ 2757              	.LASF32:
+ 2758 0035 63686172 		.ascii	"character\000"
+ 2758      61637465 
+ 2758      7200
+ 2759              	.LASF38:
+ 2760 003f 4C43445F 		.ascii	"LCD_Stop\000"
+ 2760      53746F70 
+ 2760      00
+ 2761              	.LASF22:
+ 2762 0048 76616C75 		.ascii	"value\000"
+ 2762      6500
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 64
 
 
- 2761      7200
- 2762              	.LASF38:
- 2763 0072 4C43445F 		.ascii	"LCD_Stop\000"
- 2763      53746F70 
- 2763      00
- 2764              	.LASF22:
- 2765 007b 76616C75 		.ascii	"value\000"
- 2765      6500
- 2766              	.LASF50:
- 2767 0081 4C43445F 		.ascii	"LCD_initVar\000"
- 2767      696E6974 
- 2767      56617200 
- 2768              	.LASF42:
- 2769 008d 4C43445F 		.ascii	"LCD_hex\000"
- 2769      68657800 
- 2770              	.LASF3:
- 2771 0095 73686F72 		.ascii	"short unsigned int\000"
- 2771      7420756E 
- 2771      7369676E 
- 2771      65642069 
- 2771      6E7400
- 2772              	.LASF15:
- 2773 00a8 63686172 		.ascii	"char\000"
- 2773      00
- 2774              	.LASF29:
- 2775 00ad 696E6465 		.ascii	"indexU8\000"
- 2775      78553800 
- 2776              	.LASF28:
- 2777 00b5 73747269 		.ascii	"string\000"
- 2777      6E6700
- 2778              	.LASF20:
- 2779 00bc 4C43445F 		.ascii	"LCD_WrDatNib\000"
- 2779      57724461 
- 2779      744E6962 
- 2779      00
- 2780              	.LASF40:
- 2781 00c9 636F6C75 		.ascii	"column\000"
- 2781      6D6E00
- 2782              	.LASF25:
- 2783 00d0 4C43445F 		.ascii	"LCD_WriteData\000"
- 2783      57726974 
- 2783      65446174 
- 2783      6100
- 2784              	.LASF12:
- 2785 00de 666C6F61 		.ascii	"float\000"
- 2785      7400
- 2786              	.LASF37:
- 2787 00e4 4C43445F 		.ascii	"LCD_Start\000"
- 2787      53746172 
- 2787      7400
- 2788              	.LASF1:
- 2789 00ee 756E7369 		.ascii	"unsigned char\000"
- 2789      676E6564 
- 2789      20636861 
- 2789      7200
- 2790              	.LASF14:
- 2791 00fc 63686172 		.ascii	"char8\000"
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 65
+ 2763              	.LASF50:
+ 2764 004e 4C43445F 		.ascii	"LCD_initVar\000"
+ 2764      696E6974 
+ 2764      56617200 
+ 2765              	.LASF42:
+ 2766 005a 4C43445F 		.ascii	"LCD_hex\000"
+ 2766      68657800 
+ 2767              	.LASF3:
+ 2768 0062 73686F72 		.ascii	"short unsigned int\000"
+ 2768      7420756E 
+ 2768      7369676E 
+ 2768      65642069 
+ 2768      6E7400
+ 2769              	.LASF15:
+ 2770 0075 63686172 		.ascii	"char\000"
+ 2770      00
+ 2771              	.LASF29:
+ 2772 007a 696E6465 		.ascii	"indexU8\000"
+ 2772      78553800 
+ 2773              	.LASF28:
+ 2774 0082 73747269 		.ascii	"string\000"
+ 2774      6E6700
+ 2775              	.LASF20:
+ 2776 0089 4C43445F 		.ascii	"LCD_WrDatNib\000"
+ 2776      57724461 
+ 2776      744E6962 
+ 2776      00
+ 2777              	.LASF40:
+ 2778 0096 636F6C75 		.ascii	"column\000"
+ 2778      6D6E00
+ 2779              	.LASF25:
+ 2780 009d 4C43445F 		.ascii	"LCD_WriteData\000"
+ 2780      57726974 
+ 2780      65446174 
+ 2780      6100
+ 2781              	.LASF12:
+ 2782 00ab 666C6F61 		.ascii	"float\000"
+ 2782      7400
+ 2783              	.LASF37:
+ 2784 00b1 4C43445F 		.ascii	"LCD_Start\000"
+ 2784      53746172 
+ 2784      7400
+ 2785              	.LASF58:
+ 2786 00bb 443A5C62 		.ascii	"D:\\bachelor_work\\program\\Goal\\SmartBoy.cydsn\000"
+ 2786      61636865 
+ 2786      6C6F725F 
+ 2786      776F726B 
+ 2786      5C70726F 
+ 2787              	.LASF1:
+ 2788 00e8 756E7369 		.ascii	"unsigned char\000"
+ 2788      676E6564 
+ 2788      20636861 
+ 2788      7200
+ 2789              	.LASF14:
+ 2790 00f6 63686172 		.ascii	"char8\000"
+ 2790      3800
+ 2791              	.LASF5:
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 65
 
 
- 2791      3800
- 2792              	.LASF5:
- 2793 0102 6C6F6E67 		.ascii	"long unsigned int\000"
- 2793      20756E73 
- 2793      69676E65 
- 2793      6420696E 
- 2793      7400
- 2794              	.LASF55:
- 2795 0114 4C43445F 		.ascii	"LCD_LoadCustomFonts\000"
- 2795      4C6F6164 
- 2795      43757374 
- 2795      6F6D466F 
- 2795      6E747300 
- 2796              	.LASF9:
- 2797 0128 75696E74 		.ascii	"uint8\000"
- 2797      3800
- 2798              	.LASF19:
- 2799 012e 4C43445F 		.ascii	"LCD_WrCntrlNib\000"
- 2799      5772436E 
- 2799      74726C4E 
- 2799      696200
- 2800              	.LASF13:
- 2801 013d 646F7562 		.ascii	"double\000"
- 2801      6C6500
- 2802              	.LASF36:
- 2803 0144 4C43445F 		.ascii	"LCD_Enable\000"
- 2803      456E6162 
- 2803      6C6500
- 2804              	.LASF27:
- 2805 014f 4C43445F 		.ascii	"LCD_PrintString\000"
- 2805      5072696E 
- 2805      74537472 
- 2805      696E6700 
- 2806              	.LASF10:
- 2807 015f 75696E74 		.ascii	"uint16\000"
- 2807      313600
- 2808              	.LASF24:
- 2809 0166 4C43445F 		.ascii	"LCD_IsReady\000"
- 2809      49735265 
- 2809      61647900 
- 2810              	.LASF11:
- 2811 0172 75696E74 		.ascii	"uint32\000"
- 2811      333200
- 2812              	.LASF57:
- 2813 0179 47656E65 		.ascii	"Generated_Source\\PSoC4\\LCD.c\000"
- 2813      72617465 
- 2813      645F536F 
- 2813      75726365 
- 2813      5C50536F 
- 2814              	.LASF49:
- 2815 0196 64696749 		.ascii	"digIndex\000"
- 2815      6E646578 
- 2815      00
- 2816              	.LASF8:
- 2817 019f 756E7369 		.ascii	"unsigned int\000"
- 2817      676E6564 
- 2817      20696E74 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 66
+ 2792 00fc 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2792      20756E73 
+ 2792      69676E65 
+ 2792      6420696E 
+ 2792      7400
+ 2793              	.LASF55:
+ 2794 010e 4C43445F 		.ascii	"LCD_LoadCustomFonts\000"
+ 2794      4C6F6164 
+ 2794      43757374 
+ 2794      6F6D466F 
+ 2794      6E747300 
+ 2795              	.LASF9:
+ 2796 0122 75696E74 		.ascii	"uint8\000"
+ 2796      3800
+ 2797              	.LASF19:
+ 2798 0128 4C43445F 		.ascii	"LCD_WrCntrlNib\000"
+ 2798      5772436E 
+ 2798      74726C4E 
+ 2798      696200
+ 2799              	.LASF13:
+ 2800 0137 646F7562 		.ascii	"double\000"
+ 2800      6C6500
+ 2801              	.LASF36:
+ 2802 013e 4C43445F 		.ascii	"LCD_Enable\000"
+ 2802      456E6162 
+ 2802      6C6500
+ 2803              	.LASF27:
+ 2804 0149 4C43445F 		.ascii	"LCD_PrintString\000"
+ 2804      5072696E 
+ 2804      74537472 
+ 2804      696E6700 
+ 2805              	.LASF10:
+ 2806 0159 75696E74 		.ascii	"uint16\000"
+ 2806      313600
+ 2807              	.LASF24:
+ 2808 0160 4C43445F 		.ascii	"LCD_IsReady\000"
+ 2808      49735265 
+ 2808      61647900 
+ 2809              	.LASF11:
+ 2810 016c 75696E74 		.ascii	"uint32\000"
+ 2810      333200
+ 2811              	.LASF57:
+ 2812 0173 47656E65 		.ascii	"Generated_Source\\PSoC4\\LCD.c\000"
+ 2812      72617465 
+ 2812      645F536F 
+ 2812      75726365 
+ 2812      5C50536F 
+ 2813              	.LASF49:
+ 2814 0190 64696749 		.ascii	"digIndex\000"
+ 2814      6E646578 
+ 2814      00
+ 2815              	.LASF8:
+ 2816 0199 756E7369 		.ascii	"unsigned int\000"
+ 2816      676E6564 
+ 2816      20696E74 
+ 2816      00
+ 2817              	.LASF7:
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 66
 
 
- 2817      00
- 2818              	.LASF7:
- 2819 01ac 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2819      206C6F6E 
- 2819      6720756E 
- 2819      7369676E 
- 2819      65642069 
- 2820              	.LASF41:
- 2821 01c3 4C43445F 		.ascii	"LCD_PrintInt8\000"
- 2821      5072696E 
- 2821      74496E74 
- 2821      3800
- 2822              	.LASF39:
- 2823 01d1 4C43445F 		.ascii	"LCD_Position\000"
- 2823      506F7369 
- 2823      74696F6E 
- 2823      00
- 2824              	.LASF46:
- 2825 01de 4C43445F 		.ascii	"LCD_PrintU32Number\000"
- 2825      5072696E 
- 2825      74553332 
- 2825      4E756D62 
- 2825      657200
- 2826              	.LASF31:
- 2827 01f1 4C43445F 		.ascii	"LCD_PutChar\000"
- 2827      50757443 
- 2827      68617200 
- 2828              	.LASF56:
- 2829 01fd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2829      43313120 
- 2829      352E342E 
- 2829      31203230 
- 2829      31363036 
- 2830 0230 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 2830      20726576 
- 2830      6973696F 
- 2830      6E203233 
- 2830      37373135 
- 2831 0263 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2831      66756E63 
- 2831      74696F6E 
- 2831      2D736563 
- 2831      74696F6E 
- 2832              	.LASF18:
- 2833 028b 73697A65 		.ascii	"sizetype\000"
- 2833      74797065 
- 2833      00
- 2834              	.LASF6:
- 2835 0294 6C6F6E67 		.ascii	"long long int\000"
- 2835      206C6F6E 
- 2835      6720696E 
- 2835      7400
- 2836              	.LASF53:
- 2837 02a2 43794465 		.ascii	"CyDelayUs\000"
- 2837      6C617955 
- 2837      7300
- 2838              	.LASF23:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 67
+ 2818 01a6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2818      206C6F6E 
+ 2818      6720756E 
+ 2818      7369676E 
+ 2818      65642069 
+ 2819              	.LASF41:
+ 2820 01bd 4C43445F 		.ascii	"LCD_PrintInt8\000"
+ 2820      5072696E 
+ 2820      74496E74 
+ 2820      3800
+ 2821              	.LASF39:
+ 2822 01cb 4C43445F 		.ascii	"LCD_Position\000"
+ 2822      506F7369 
+ 2822      74696F6E 
+ 2822      00
+ 2823              	.LASF46:
+ 2824 01d8 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 2824      5072696E 
+ 2824      74553332 
+ 2824      4E756D62 
+ 2824      657200
+ 2825              	.LASF31:
+ 2826 01eb 4C43445F 		.ascii	"LCD_PutChar\000"
+ 2826      50757443 
+ 2826      68617200 
+ 2827              	.LASF56:
+ 2828 01f7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2828      43313120 
+ 2828      352E342E 
+ 2828      31203230 
+ 2828      31363036 
+ 2829 022a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2829      20726576 
+ 2829      6973696F 
+ 2829      6E203233 
+ 2829      37373135 
+ 2830 025d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2830      66756E63 
+ 2830      74696F6E 
+ 2830      2D736563 
+ 2830      74696F6E 
+ 2831              	.LASF18:
+ 2832 0285 73697A65 		.ascii	"sizetype\000"
+ 2832      74797065 
+ 2832      00
+ 2833              	.LASF6:
+ 2834 028e 6C6F6E67 		.ascii	"long long int\000"
+ 2834      206C6F6E 
+ 2834      6720696E 
+ 2834      7400
+ 2835              	.LASF53:
+ 2836 029c 43794465 		.ascii	"CyDelayUs\000"
+ 2836      6C617955 
+ 2836      7300
+ 2837              	.LASF23:
+ 2838 02a6 74696D65 		.ascii	"timeout\000"
+ 2838      6F757400 
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccOh0gUB.s 			page 67
 
 
- 2839 02ac 74696D65 		.ascii	"timeout\000"
- 2839      6F757400 
- 2840              	.LASF51:
- 2841 02b4 4C43445F 		.ascii	"LCD_enableState\000"
- 2841      656E6162 
- 2841      6C655374 
- 2841      61746500 
- 2842              	.LASF35:
- 2843 02c4 4C43445F 		.ascii	"LCD_Init\000"
- 2843      496E6974 
- 2843      00
- 2844              	.LASF47:
- 2845 02cd 746D7044 		.ascii	"tmpDigit\000"
- 2845      69676974 
- 2845      00
- 2846              	.LASF2:
- 2847 02d6 73686F72 		.ascii	"short int\000"
- 2847      7420696E 
- 2847      7400
- 2848              	.LASF48:
- 2849 02e0 6E756D62 		.ascii	"number\000"
- 2849      657200
- 2850              	.LASF30:
- 2851 02e7 63757272 		.ascii	"current\000"
- 2851      656E7400 
- 2852              	.LASF4:
- 2853 02ef 6C6F6E67 		.ascii	"long int\000"
- 2853      20696E74 
- 2853      00
- 2854              	.LASF16:
- 2855 02f8 72656733 		.ascii	"reg32\000"
- 2855      3200
- 2856              	.LASF52:
- 2857 02fe 4C43445F 		.ascii	"LCD_customFonts\000"
- 2857      63757374 
- 2857      6F6D466F 
- 2857      6E747300 
- 2858              	.LASF17:
- 2859 030e 6C6F6E67 		.ascii	"long double\000"
- 2859      20646F75 
- 2859      626C6500 
- 2860              	.LASF0:
- 2861 031a 7369676E 		.ascii	"signed char\000"
- 2861      65642063 
- 2861      68617200 
- 2862              	.LASF26:
- 2863 0326 64427974 		.ascii	"dByte\000"
- 2863      6500
- 2864              	.LASF54:
- 2865 032c 43794465 		.ascii	"CyDelay\000"
- 2865      6C617900 
- 2866              	.LASF34:
- 2867 0334 63427974 		.ascii	"cByte\000"
- 2867      6500
- 2868              	.LASF21:
- 2869 033a 6E696262 		.ascii	"nibble\000"
- 2869      6C6500
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\cccQBlid.s 			page 68
-
-
- 2870              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2839              	.LASF51:
+ 2840 02ae 4C43445F 		.ascii	"LCD_enableState\000"
+ 2840      656E6162 
+ 2840      6C655374 
+ 2840      61746500 
+ 2841              	.LASF35:
+ 2842 02be 4C43445F 		.ascii	"LCD_Init\000"
+ 2842      496E6974 
+ 2842      00
+ 2843              	.LASF47:
+ 2844 02c7 746D7044 		.ascii	"tmpDigit\000"
+ 2844      69676974 
+ 2844      00
+ 2845              	.LASF2:
+ 2846 02d0 73686F72 		.ascii	"short int\000"
+ 2846      7420696E 
+ 2846      7400
+ 2847              	.LASF48:
+ 2848 02da 6E756D62 		.ascii	"number\000"
+ 2848      657200
+ 2849              	.LASF30:
+ 2850 02e1 63757272 		.ascii	"current\000"
+ 2850      656E7400 
+ 2851              	.LASF4:
+ 2852 02e9 6C6F6E67 		.ascii	"long int\000"
+ 2852      20696E74 
+ 2852      00
+ 2853              	.LASF16:
+ 2854 02f2 72656733 		.ascii	"reg32\000"
+ 2854      3200
+ 2855              	.LASF52:
+ 2856 02f8 4C43445F 		.ascii	"LCD_customFonts\000"
+ 2856      63757374 
+ 2856      6F6D466F 
+ 2856      6E747300 
+ 2857              	.LASF17:
+ 2858 0308 6C6F6E67 		.ascii	"long double\000"
+ 2858      20646F75 
+ 2858      626C6500 
+ 2859              	.LASF0:
+ 2860 0314 7369676E 		.ascii	"signed char\000"
+ 2860      65642063 
+ 2860      68617200 
+ 2861              	.LASF26:
+ 2862 0320 64427974 		.ascii	"dByte\000"
+ 2862      6500
+ 2863              	.LASF54:
+ 2864 0326 43794465 		.ascii	"CyDelay\000"
+ 2864      6C617900 
+ 2865              	.LASF34:
+ 2866 032e 63427974 		.ascii	"cByte\000"
+ 2866      6500
+ 2867              	.LASF21:
+ 2868 0334 6E696262 		.ascii	"nibble\000"
+ 2868      6C6500
+ 2869              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

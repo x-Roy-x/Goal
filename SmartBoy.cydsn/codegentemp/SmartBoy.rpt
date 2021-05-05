@@ -1,13 +1,16 @@
-Loading plugins phase: Elapsed time ==> 0s.143ms
+Loading plugins phase: Elapsed time ==> 0s.231ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -d CY8C4248LQI-BL583 -s C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -d CY8C4248LQI-BL583 -s D:\bachelor_work\program\Goal\SmartBoy.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
+ADD: sdb.M0061: information: Info from component: ADC. The actual sample rate (150000 SPS) differs from the desired sample rate (166666 SPS) due to the clock configuration in the DWR.
+ * D:\bachelor_work\program\Goal\SmartBoy.cydsn\TopDesign\TopDesign.cysch (Instance:ADC)
+
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.405ms
+Elaboration phase: Elapsed time ==> 3s.216ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.060ms
+HDL generation phase: Elapsed time ==> 0s.091ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -25,23 +28,23 @@ HDL generation phase: Elapsed time ==> 0s.060ms
 ======================================================================
 Compiling:  SmartBoy.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  SmartBoy.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  SmartBoy.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Wed Feb 20 18:38:12 2019
+Wed May 05 00:45:45 2021
 
 
 ======================================================================
@@ -51,7 +54,7 @@ Options  :    -yv2 -q10 SmartBoy.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Wed Feb 20 18:38:12 2019
+Wed May 05 00:45:45 2021
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
@@ -86,11 +89,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  SmartBoy.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Wed Feb 20 18:38:13 2019
+Wed May 05 00:45:45 2021
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -101,8 +104,8 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\codegentemp\SmartBoy.ctl'.
-Linking 'C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\codegentemp\SmartBoy.v'.
+Linking 'D:\bachelor_work\program\Goal\SmartBoy.cydsn\codegentemp\SmartBoy.ctl'.
+Linking 'D:\bachelor_work\program\Goal\SmartBoy.cydsn\codegentemp\SmartBoy.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
@@ -119,11 +122,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  SmartBoy.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 -verilog SmartBoy.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Wed Feb 20 18:38:13 2019
+Wed May 05 00:45:45 2021
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -134,8 +137,8 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\codegentemp\SmartBoy.ctl'.
-Linking 'C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\codegentemp\SmartBoy.v'.
+Linking 'D:\bachelor_work\program\Goal\SmartBoy.cydsn\codegentemp\SmartBoy.ctl'.
+Linking 'D:\bachelor_work\program\Goal\SmartBoy.cydsn\codegentemp\SmartBoy.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
@@ -153,15 +156,13 @@ Detecting unused logic.
     User names
 	\ADC:Net_3125\
 	\ADC:Net_3126\
-	Net_184
 	Net_195
 	Net_190
-	Net_178
-	Net_281
+	Net_343
 	\BLE:Net_55\
 
 
-Deleted 8 User equations/components.
+Deleted 6 User equations/components.
 Deleted 0 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -174,7 +175,7 @@ Aliasing \LCD:tmpOE__LCDPort_net_2\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \LCD:tmpOE__LCDPort_net_1\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \LCD:tmpOE__LCDPort_net_0\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing one to \LCD:tmpOE__LCDPort_net_6\
-Aliasing tmpOE__MQ_9_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__ADC_SENSOR_1_net_0 to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \ADC:Net_3107\ to zero
 Aliasing \ADC:Net_3106\ to zero
 Aliasing \ADC:Net_3105\ to zero
@@ -183,21 +184,22 @@ Aliasing \ADC:Net_3103\ to zero
 Aliasing \ADC:Net_3207_1\ to zero
 Aliasing \ADC:Net_3207_0\ to zero
 Aliasing \ADC:Net_3235\ to zero
-Aliasing tmpOE__Button_Down_net_0 to \LCD:tmpOE__LCDPort_net_6\
-Aliasing tmpOE__Button_Back_net_0 to \LCD:tmpOE__LCDPort_net_6\
-Aliasing tmpOE__Button_Ok_net_0 to \LCD:tmpOE__LCDPort_net_6\
-Aliasing tmpOE__Button_Up_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__Button_Scan_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__Button_Reset_net_0 to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \Timer:Net_75\ to zero
 Aliasing \Timer:Net_69\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \Timer:Net_66\ to zero
 Aliasing \Timer:Net_82\ to zero
 Aliasing \Timer:Net_72\ to zero
-Aliasing tmpOE__Status_LED_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__Status_LED_Red_net_0 to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \Timer_Update:Net_75\ to zero
 Aliasing \Timer_Update:Net_69\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \Timer_Update:Net_66\ to zero
 Aliasing \Timer_Update:Net_82\ to zero
 Aliasing \Timer_Update:Net_72\ to zero
+Aliasing tmpOE__ADC_SENSOR_2_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__Status_LED_Green_net_0 to \LCD:tmpOE__LCDPort_net_6\
+Aliasing tmpOE__Status_LED_Blue_net_0 to \LCD:tmpOE__LCDPort_net_6\
 Removing Lhs of wire \LCD:tmpOE__LCDPort_net_5\[2] = \LCD:tmpOE__LCDPort_net_6\[1]
 Removing Lhs of wire \LCD:tmpOE__LCDPort_net_4\[3] = \LCD:tmpOE__LCDPort_net_6\[1]
 Removing Lhs of wire \LCD:tmpOE__LCDPort_net_3\[4] = \LCD:tmpOE__LCDPort_net_6\[1]
@@ -205,44 +207,41 @@ Removing Lhs of wire \LCD:tmpOE__LCDPort_net_2\[5] = \LCD:tmpOE__LCDPort_net_6\[
 Removing Lhs of wire \LCD:tmpOE__LCDPort_net_1\[6] = \LCD:tmpOE__LCDPort_net_6\[1]
 Removing Lhs of wire \LCD:tmpOE__LCDPort_net_0\[7] = \LCD:tmpOE__LCDPort_net_6\[1]
 Removing Rhs of wire one[24] = \LCD:tmpOE__LCDPort_net_6\[1]
-Removing Lhs of wire tmpOE__MQ_9_net_0[27] = one[24]
-Removing Lhs of wire \ADC:Net_3107\[104] = zero[8]
-Removing Lhs of wire \ADC:Net_3106\[105] = zero[8]
-Removing Lhs of wire \ADC:Net_3105\[106] = zero[8]
-Removing Lhs of wire \ADC:Net_3104\[107] = zero[8]
-Removing Lhs of wire \ADC:Net_3103\[108] = zero[8]
-Removing Lhs of wire \ADC:Net_17\[150] = \ADC:Net_1845\[35]
-Removing Lhs of wire \ADC:Net_3207_1\[172] = zero[8]
-Removing Lhs of wire \ADC:Net_3207_0\[173] = zero[8]
-Removing Lhs of wire \ADC:Net_3235\[174] = zero[8]
-Removing Lhs of wire tmpOE__Button_Down_net_0[254] = one[24]
-Removing Lhs of wire tmpOE__Button_Back_net_0[259] = one[24]
-Removing Lhs of wire tmpOE__Button_Ok_net_0[274] = one[24]
-Removing Lhs of wire tmpOE__Button_Up_net_0[289] = one[24]
-Removing Lhs of wire \Timer:Net_81\[316] = Net_308[304]
-Removing Lhs of wire \Timer:Net_75\[317] = zero[8]
-Removing Lhs of wire \Timer:Net_69\[318] = one[24]
-Removing Lhs of wire \Timer:Net_66\[319] = zero[8]
-Removing Lhs of wire \Timer:Net_82\[320] = zero[8]
-Removing Lhs of wire \Timer:Net_72\[321] = zero[8]
-Removing Lhs of wire tmpOE__Status_LED_net_0[328] = one[24]
-Removing Lhs of wire \Timer_Update:Net_81\[334] = Net_339[346]
-Removing Lhs of wire \Timer_Update:Net_75\[335] = zero[8]
-Removing Lhs of wire \Timer_Update:Net_69\[336] = one[24]
-Removing Lhs of wire \Timer_Update:Net_66\[337] = zero[8]
-Removing Lhs of wire \Timer_Update:Net_82\[338] = zero[8]
-Removing Lhs of wire \Timer_Update:Net_72\[339] = zero[8]
-Removing Lhs of wire \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\\D\[349] = Net_183[245]
-Removing Lhs of wire \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\\D\[350] = \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\[244]
-Removing Lhs of wire \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\\D\[355] = Net_193[260]
-Removing Lhs of wire \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\\D\[356] = \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\[268]
-Removing Lhs of wire \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\\D\[360] = Net_188[275]
-Removing Lhs of wire \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\\D\[361] = \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\[283]
-Removing Lhs of wire \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\\D\[365] = Net_176[290]
-Removing Lhs of wire \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\\D\[366] = \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\[298]
+Removing Lhs of wire tmpOE__ADC_SENSOR_1_net_0[27] = one[24]
+Removing Lhs of wire \ADC:Net_3107\[107] = zero[8]
+Removing Lhs of wire \ADC:Net_3106\[108] = zero[8]
+Removing Lhs of wire \ADC:Net_3105\[109] = zero[8]
+Removing Lhs of wire \ADC:Net_3104\[110] = zero[8]
+Removing Lhs of wire \ADC:Net_3103\[111] = zero[8]
+Removing Lhs of wire \ADC:Net_17\[156] = \ADC:Net_1845\[35]
+Removing Lhs of wire \ADC:Net_3207_1\[178] = zero[8]
+Removing Lhs of wire \ADC:Net_3207_0\[179] = zero[8]
+Removing Lhs of wire \ADC:Net_3235\[180] = zero[8]
+Removing Lhs of wire tmpOE__Button_Scan_net_0[250] = one[24]
+Removing Lhs of wire tmpOE__Button_Reset_net_0[265] = one[24]
+Removing Lhs of wire \Timer:Net_81\[292] = Net_308[280]
+Removing Lhs of wire \Timer:Net_75\[293] = zero[8]
+Removing Lhs of wire \Timer:Net_69\[294] = one[24]
+Removing Lhs of wire \Timer:Net_66\[295] = zero[8]
+Removing Lhs of wire \Timer:Net_82\[296] = zero[8]
+Removing Lhs of wire \Timer:Net_72\[297] = zero[8]
+Removing Lhs of wire tmpOE__Status_LED_Red_net_0[304] = one[24]
+Removing Lhs of wire \Timer_Update:Net_81\[310] = Net_339[322]
+Removing Lhs of wire \Timer_Update:Net_75\[311] = zero[8]
+Removing Lhs of wire \Timer_Update:Net_69\[312] = one[24]
+Removing Lhs of wire \Timer_Update:Net_66\[313] = zero[8]
+Removing Lhs of wire \Timer_Update:Net_82\[314] = zero[8]
+Removing Lhs of wire \Timer_Update:Net_72\[315] = zero[8]
+Removing Lhs of wire tmpOE__ADC_SENSOR_2_net_0[326] = one[24]
+Removing Lhs of wire tmpOE__Status_LED_Green_net_0[332] = one[24]
+Removing Lhs of wire tmpOE__Status_LED_Blue_net_0[338] = one[24]
+Removing Lhs of wire \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\\D\[344] = Net_193[251]
+Removing Lhs of wire \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\\D\[345] = \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\[259]
+Removing Lhs of wire \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\\D\[349] = Net_188[266]
+Removing Lhs of wire \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\\D\[350] = \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\[274]
 
 ------------------------------------------------------
-Aliased 0 equations, 42 wires.
+Aliased 0 equations, 39 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -264,16 +263,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -dcpsoc3 SmartBoy.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.609ms
+Warp synthesis phase: Elapsed time ==> 0s.864ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Wednesday, 20 February 2019 18:38:13
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\SmartBoy.cyprj -d CY8C4248LQI-BL583 SmartBoy.v -verilog
+cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Wednesday, 05 May 2021 00:45:45
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\bachelor_work\program\Goal\SmartBoy.cydsn\SmartBoy.cyprj -d CY8C4248LQI-BL583 SmartBoy.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.009ms
+Design parsing phase: Elapsed time ==> 0s.011ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -285,21 +284,13 @@ Done removing unused cells.
     Fixed Function Clock 6: Automatic-assigning  clock 'ADC_intClock'. Signal=\ADC:Net_1845_ff6\
     Fixed Function Clock 7: Automatic-assigning  clock 'Clock_2'. Signal=Net_339_ff7
     Fixed Function Clock 8: Automatic-assigning  clock 'Clock_1'. Signal=Net_308_ff8
-    Digital Clock 0: Automatic-assigning  clock 'Debouncer_Clock'. Fanout=4, Signal=Net_99_digital
+    Digital Clock 0: Automatic-assigning  clock 'Debouncer_Clock'. Fanout=2, Signal=Net_99_digital
 <CYPRESSTAG name="UDB Clock/Enable Remapping Results">
-    UDB Clk/Enable \Debouncer_Button_Down:ClkSync\: with output requested to be synchronous
+    UDB Clk/Enable \Debouncer_Button_Scan:ClkSync\: with output requested to be synchronous
         ClockIn: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0 was determined to be a global clock that is synchronous to HFClk
         EnableIn: Constant 1 was determined to be synchronous to ClockIn
         ClockOut: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0, EnableOut: Constant 1
-    UDB Clk/Enable \Debouncer_Button_Back:ClkSync\: with output requested to be synchronous
-        ClockIn: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0 was determined to be a global clock that is synchronous to HFClk
-        EnableIn: Constant 1 was determined to be synchronous to ClockIn
-        ClockOut: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0, EnableOut: Constant 1
-    UDB Clk/Enable \Debouncer_Button_Ok:ClkSync\: with output requested to be synchronous
-        ClockIn: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0 was determined to be a global clock that is synchronous to HFClk
-        EnableIn: Constant 1 was determined to be synchronous to ClockIn
-        ClockOut: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0, EnableOut: Constant 1
-    UDB Clk/Enable \Debouncer_Button_Up:ClkSync\: with output requested to be synchronous
+    UDB Clk/Enable \Debouncer_Button_Reset:ClkSync\: with output requested to be synchronous
         ClockIn: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0 was determined to be a global clock that is synchronous to HFClk
         EnableIn: Constant 1 was determined to be synchronous to ClockIn
         ClockOut: ClockGenBlock:m0s8clockgenblockcell.gen_clk_out_0, EnableOut: Constant 1
@@ -600,14 +591,14 @@ Design Equations
         {
         }
 
-    Pin : Name = MQ_9(0)
+    Pin : Name = ADC_SENSOR_1(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
             Out Sync Option: AUTO
             Interrupt generated: False
             Interrupt mode: NONE
-            Drive mode: HI_Z_ANALOG
+            Drive mode: HI_Z_DIGITAL
             VTrip: EITHER
             Slew: FAST
             Input Sync needed: False
@@ -633,14 +624,14 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => MQ_9(0)__PA ,
-            analog_term => Net_246 ,
-            pad => MQ_9(0)_PAD );
+            pa_out => ADC_SENSOR_1(0)__PA ,
+            analog_term => Net_711 ,
+            pad => ADC_SENSOR_1(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = Button_Down(0)
+    Pin : Name = Button_Scan(0)
         Attributes:
             In Group/Port: True
             In Sync Option: NOSYNC
@@ -673,54 +664,14 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => Button_Down(0)__PA ,
-            fb => Net_183 ,
-            pad => Button_Down(0)_PAD );
-        Properties:
-        {
-        }
-
-    Pin : Name = Button_Back(0)
-        Attributes:
-            In Group/Port: True
-            In Sync Option: NOSYNC
-            Out Sync Option: AUTO
-            Interrupt generated: True
-            Interrupt mode: FALLING
-            Drive mode: RES_PULL_UP
-            VTrip: CMOS
-            Slew: FAST
-            Input Sync needed: False
-            Output Sync needed: False
-            SC shield enabled: False
-            POR State: ANY
-            LCD Mode: COMMON
-            Register Mode: RegComb
-            CaSense Mode: NEITHER
-            Treat as pin: False
-            Is OE Registered: False
-            Uses Analog: False
-            Can contain Digital: True
-            Is SIO: False
-            SIO Output Buf: NONREGULATED
-            SIO Input Buf: SINGLE_ENDED
-            SIO HiFreq: LOW
-            SIO Hyst: DISABLED
-            SIO Vtrip: MULTIPLIER_0_5
-            SIO Multiplier Index: 0
-            SIO RefSel: VCC_IO
-            Required Capabilities: DIGITAL, ROUTABLE
-            Initial Value: 1
-            IO Voltage: 0
-        PORT MAP (
-            pa_out => Button_Back(0)__PA ,
+            pa_out => Button_Scan(0)__PA ,
             fb => Net_193 ,
-            pad => Button_Back(0)_PAD );
+            pad => Button_Scan(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = Button_Ok(0)
+    Pin : Name = Button_Reset(0)
         Attributes:
             In Group/Port: True
             In Sync Option: NOSYNC
@@ -753,54 +704,14 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => Button_Ok(0)__PA ,
+            pa_out => Button_Reset(0)__PA ,
             fb => Net_188 ,
-            pad => Button_Ok(0)_PAD );
+            pad => Button_Reset(0)_PAD );
         Properties:
         {
         }
 
-    Pin : Name = Button_Up(0)
-        Attributes:
-            In Group/Port: True
-            In Sync Option: NOSYNC
-            Out Sync Option: AUTO
-            Interrupt generated: True
-            Interrupt mode: FALLING
-            Drive mode: RES_PULL_UP
-            VTrip: CMOS
-            Slew: FAST
-            Input Sync needed: False
-            Output Sync needed: False
-            SC shield enabled: False
-            POR State: ANY
-            LCD Mode: COMMON
-            Register Mode: RegComb
-            CaSense Mode: NEITHER
-            Treat as pin: False
-            Is OE Registered: False
-            Uses Analog: False
-            Can contain Digital: True
-            Is SIO: False
-            SIO Output Buf: NONREGULATED
-            SIO Input Buf: SINGLE_ENDED
-            SIO HiFreq: LOW
-            SIO Hyst: DISABLED
-            SIO Vtrip: MULTIPLIER_0_5
-            SIO Multiplier Index: 0
-            SIO RefSel: VCC_IO
-            Required Capabilities: DIGITAL, ROUTABLE
-            Initial Value: 1
-            IO Voltage: 0
-        PORT MAP (
-            pa_out => Button_Up(0)__PA ,
-            fb => Net_176 ,
-            pad => Button_Up(0)_PAD );
-        Properties:
-        {
-        }
-
-    Pin : Name = Status_LED(0)
+    Pin : Name = Status_LED_Red(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -833,8 +744,126 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => Status_LED(0)__PA ,
-            pad => Status_LED(0)_PAD );
+            pa_out => Status_LED_Red(0)__PA ,
+            pad => Status_LED_Red(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = ADC_SENSOR_2(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_DIGITAL
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: ANALOG
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => ADC_SENSOR_2(0)__PA ,
+            analog_term => Net_375 ,
+            pad => ADC_SENSOR_2(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Status_LED_Green(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Status_LED_Green(0)__PA ,
+            pad => Status_LED_Green(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Status_LED_Blue(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Status_LED_Blue(0)__PA ,
+            pad => Status_LED_Blue(0)_PAD );
         Properties:
         {
         }
@@ -845,43 +874,6 @@ Design Equations
     Macrocell listing
     ------------------------------------------------------------
 
-    MacroCell: Name=\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_183
-        );
-        Output = \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\ (fanout=2)
-
-    MacroCell: Name=\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\
-        );
-        Output = \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\ (fanout=1)
-
-    MacroCell: Name=Net_187, Mode=(D-Register)
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\
-        );
-        Output = Net_187 (fanout=1)
-
     MacroCell: Name=Net_198, Mode=(D-Register)
         Total # of inputs        : 2
         Total # of product terms : 1
@@ -890,12 +882,12 @@ Design Equations
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\
+              \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\ * 
+              !\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\
         );
         Output = Net_198 (fanout=1)
 
-    MacroCell: Name=\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
+    MacroCell: Name=\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -905,9 +897,9 @@ Design Equations
         (
               Net_193
         );
-        Output = \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+        Output = \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\ (fanout=2)
 
-    MacroCell: Name=\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
+    MacroCell: Name=\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -915,9 +907,9 @@ Design Equations
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\
+              \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\
         );
-        Output = \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+        Output = \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\ (fanout=1)
 
     MacroCell: Name=Net_192, Mode=(D-Register)
         Total # of inputs        : 2
@@ -927,12 +919,12 @@ Design Equations
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\
+              \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\ * 
+              !\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\
         );
         Output = Net_192 (fanout=1)
 
-    MacroCell: Name=\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
+    MacroCell: Name=\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -942,9 +934,9 @@ Design Equations
         (
               Net_188
         );
-        Output = \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+        Output = \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\ (fanout=2)
 
-    MacroCell: Name=\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
+    MacroCell: Name=\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -952,46 +944,9 @@ Design Equations
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\
+              \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\
         );
-        Output = \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\ (fanout=1)
-
-    MacroCell: Name=Net_181, Mode=(D-Register)
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\
-        );
-        Output = Net_181 (fanout=1)
-
-    MacroCell: Name=\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_176
-        );
-        Output = \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\ (fanout=2)
-
-    MacroCell: Name=\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\
-        );
-        Output = \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+        Output = \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\ (fanout=1)
     </CYPRESSTAG>
     <CYPRESSTAG name="Datapath listing">
     </CYPRESSTAG>
@@ -1022,16 +977,7 @@ Design Equations
             is_nmi = 0
         }
 
-    interrupt: Name =Button_Down_Int
-        PORT MAP (
-            interrupt => Net_187 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-
-    interrupt: Name =Button_Back_Int
+    interrupt: Name =Button_Scan_Int
         PORT MAP (
             interrupt => Net_198 );
         Properties:
@@ -1040,18 +986,9 @@ Design Equations
             is_nmi = 0
         }
 
-    interrupt: Name =Button_Ok_Int
+    interrupt: Name =Button_Reset_Int
         PORT MAP (
             interrupt => Net_192 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-
-    interrupt: Name =Button_Up_Int
-        PORT MAP (
-            interrupt => Net_181 );
         Properties:
         {
             int_type = "10"
@@ -1095,8 +1032,8 @@ Technology mapping summary
 Resource Type                 : Used : Free :  Max :  % Used
 ============================================================
 Digital Clocks                :    1 :    3 :    4 : 25.00 %
-Interrupts                    :    8 :   24 :   32 : 25.00 %
-IO                            :   15 :   23 :   38 : 39.47 %
+Interrupts                    :    6 :   26 :   32 : 18.75 %
+IO                            :   16 :   22 :   38 : 42.11 %
 Segment LCD                   :    0 :    1 :    1 :  0.00 %
 CapSense                      :    0 :    1 :    1 :  0.00 %
 Die Temp                      :    0 :    1 :    1 :  0.00 %
@@ -1105,9 +1042,9 @@ BLE                           :    1 :    0 :    1 : 100.00 %
 DMA Channels                  :    0 :    8 :    8 :  0.00 %
 Timer/Counter/PWM             :    2 :    2 :    4 : 50.00 %
 UDB                           :      :      :      :        
-  Macrocells                  :   12 :   20 :   32 : 37.50 %
-  Unique P-terms              :   12 :   52 :   64 : 18.75 %
-  Total P-terms               :   12 :      :      :        
+  Macrocells                  :    6 :   26 :   32 : 18.75 %
+  Unique P-terms              :    6 :   58 :   64 :  9.38 %
+  Total P-terms               :    6 :      :      :        
   Datapath Cells              :    0 :    4 :    4 :  0.00 %
   Status Cells                :    0 :    4 :    4 :  0.00 %
   Control Cells               :    0 :    4 :    4 :  0.00 %
@@ -1118,8 +1055,8 @@ DAC                           :      :      :      :
   7-bit IDAC                  :    0 :    1 :    1 :  0.00 %
   8-bit IDAC                  :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.114ms
-Tech Mapping phase: Elapsed time ==> 0s.145ms
+Technology Mapping: Elapsed time ==> 0s.116ms
+Tech Mapping phase: Elapsed time ==> 0s.199ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -1134,12 +1071,13 @@ Cell                                : Block
 \LCD:LCDPort(4)\                    : [IOP=(1)][IoId=(4)]                
 \LCD:LCDPort(5)\                    : [IOP=(1)][IoId=(5)]                
 \LCD:LCDPort(6)\                    : [IOP=(1)][IoId=(6)]                
-MQ_9(0)                             : [IOP=(3)][IoId=(0)]                
-Button_Down(0)                      : [IOP=(0)][IoId=(2)]                
-Button_Back(0)                      : [IOP=(0)][IoId=(5)]                
-Button_Ok(0)                        : [IOP=(0)][IoId=(4)]                
-Button_Up(0)                        : [IOP=(0)][IoId=(0)]                
-Status_LED(0)                       : [IOP=(3)][IoId=(7)]                
+ADC_SENSOR_1(0)                     : [IOP=(3)][IoId=(0)]                
+Button_Scan(0)                      : [IOP=(0)][IoId=(5)]                
+Button_Reset(0)                     : [IOP=(0)][IoId=(4)]                
+Status_LED_Red(0)                   : [IOP=(2)][IoId=(6)]                
+ADC_SENSOR_2(0)                     : [IOP=(3)][IoId=(1)]                
+Status_LED_Green(0)                 : [IOP=(3)][IoId=(6)]                
+Status_LED_Blue(0)                  : [IOP=(3)][IoId=(7)]                
 ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]           
 \ADC:cy_psoc4_sar\                  : SARADC_[FFB(SARADC,0)]             
 \BLE:cy_m0s8_ble\                   : BLE_[FFB(BLE,0)]                   
@@ -1149,24 +1087,27 @@ ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.1354012s
+Elapsed time ==> 0.1954430s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.328ms
+Analog Placement phase: Elapsed time ==> 0s.469ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0026506 secs
+Route success=True, Iterations=1 Elapsed=0.0189156 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.002ms
+Analog Routing phase: Elapsed time ==> 0s.019ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
 Dump of CyAnalogRoutingResultsDB
 Map of net to items {
-  Net: Net_246 {
+  Net: Net_375 {
+    p3_1
+  }
+  Net: Net_711 {
     p3_0
-    PASS0_SARMUX0_sw0
-    PASS0_sarmux_vplus
+  }
+  Net: \ADC:Net_1851\ {
   }
   Net: \ADC:Net_3113\ {
   }
@@ -1176,21 +1117,84 @@ Map of net to items {
   }
   Net: \ADC:mux_bus_minus_1\ {
   }
-  Net: \ADC:mux_bus_plus_1\ {
+  Net: \ADC:mux_bus_minus_2\ {
+  }
+  Net: \ADC:mux_bus_plus_2\ {
+  }
+  Net: \ADC:muxout_plus\ {
+    PASS0_sarmux_vplus
+  }
+  Net: AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_A {
+    PASS0_SARMUX0_sw0
+    PASS0_SARMUX0_sw1
+  }
+  Net: \ADC:muxout_minus\ {
+    PASS0_sarmux_vminus
+  }
+  Net: AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_B {
   }
 }
 Map of item to net {
-  p3_0                                             -> Net_246
-  PASS0_SARMUX0_sw0                                -> Net_246
-  PASS0_sarmux_vplus                               -> Net_246
+  p3_1                                             -> Net_375
+  p3_0                                             -> Net_711
+  PASS0_sarmux_vplus                               -> \ADC:muxout_plus\
+  PASS0_SARMUX0_sw0                                -> AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_A
+  PASS0_SARMUX0_sw1                                -> AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_A
+  PASS0_sarmux_vminus                              -> \ADC:muxout_minus\
 }
 Mux Info {
+  Mux: \ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_A {
+     Mouth: \ADC:muxout_plus\
+     Guts:  AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_A
+     IsSingleSwitching: False
+     IsStaticSwitching: False
+     IsAtMostOneSwitch: True
+    Arm: 0 {
+      Net:   Net_711
+      Outer: PASS0_SARMUX0_sw0
+      Inner: __open__
+      Path {
+        PASS0_SARMUX0_sw0
+        p3_0
+      }
+    }
+    Arm: 1 {
+      Net:   Net_375
+      Outer: PASS0_SARMUX0_sw1
+      Inner: __open__
+      Path {
+        PASS0_SARMUX0_sw1
+        p3_1
+      }
+    }
+  }
+  Mux: \ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_B {
+     Mouth: \ADC:muxout_minus\
+     Guts:  AMuxNet::\ADC:cy_psoc4_sarmux_8\_CYAMUXSIDE_B
+     IsSingleSwitching: False
+     IsStaticSwitching: False
+     IsAtMostOneSwitch: True
+    Arm: 0 {
+      Net:   \ADC:Net_1851\
+      Outer: __open__
+      Inner: __open__
+      Path {
+      }
+    }
+    Arm: 1 {
+      Net:   \ADC:Net_1851\
+      Outer: __open__
+      Inner: __open__
+      Path {
+      }
+    }
+  }
 }
-Analog Code Generation phase: Elapsed time ==> 0s.016ms
+Analog Code Generation phase: Elapsed time ==> 0s.026ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.5 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1201,7 +1205,7 @@ PLD Packing Summary
 ------------------------------------------------------------
             Resource Type : Used : Free :  Max :  % Used
     ====================================================
-                     PLDs :    4 :    4 :    8 :  50.00%
+                     PLDs :    2 :    6 :    8 :  25.00%
 
 <CYPRESSTAG name="PLD Statistics">
 
@@ -1214,7 +1218,7 @@ PLD Packing Summary
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.000ms
+PLD Packing: Elapsed time ==> 0s.001ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
@@ -1231,7 +1235,7 @@ Final Placement Summary
 
        Resource Type :      Count : Avg Inputs : Avg Outputs
     ========================================================
-                 UDB :          2 :       6.00 :       6.00
+                 UDB :          1 :       6.00 :       6.00
 <CYPRESSTAG name="Final Placement Details">
 <CYPRESSTAG name="Component Details">
 
@@ -1239,108 +1243,7 @@ Final Placement Summary
 Component Placement Details
 ------------------------------------------------------------
 UDB [UDB=(0,0)] is empty.
-UDB [UDB=(0,1)] contents:
-LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
-{
-    [McSlotId=0]:     MacroCell: Name=Net_181, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=0]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\
-        );
-        Output = Net_181 (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=1]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\
-        );
-        Output = \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_1\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]:     MacroCell: Name=\Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=2]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_176
-        );
-        Output = \Debouncer_Button_Up:DEBOUNCER[0]:d_sync_0\ (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=3]:     MacroCell: Name=Net_187, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=3]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\
-        );
-        Output = Net_187 (fanout=1)
-        Properties               : 
-        {
-        }
-}
-
-LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
-{
-    [McSlotId=0]:     MacroCell: Name=\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=0]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\
-        );
-        Output = \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_1\ (fanout=1)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=1]
-        Total # of inputs        : 1
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_99_digital) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_183
-        );
-        Output = \Debouncer_Button_Down:DEBOUNCER[0]:d_sync_0\ (fanout=2)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=2]: (empty)
-    [McSlotId=3]: (empty)
-}
-
+UDB [UDB=(0,1)] is empty.
 UDB [UDB=(1,0)] is empty.
 UDB [UDB=(1,1)] contents:
 LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
@@ -1353,15 +1256,15 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\
+              \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\ * 
+              !\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\
         );
         Output = Net_198 (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=1]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -1369,14 +1272,14 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\
+              \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\
         );
-        Output = \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+        Output = \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_1\ (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=\Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=2]
+    [McSlotId=2]:     MacroCell: Name=\Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=0][MC=2]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -1386,7 +1289,7 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
         (
               Net_193
         );
-        Output = \Debouncer_Button_Back:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+        Output = \Debouncer_Button_Scan:DEBOUNCER[0]:d_sync_0\ (fanout=2)
         Properties               : 
         {
         }
@@ -1399,8 +1302,8 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\ * 
-              !\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\
+              \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\ * 
+              !\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\
         );
         Output = Net_192 (fanout=1)
         Properties               : 
@@ -1410,7 +1313,7 @@ LAB@[UDB=(1,1)][LB=0] #macrocells=4, #inputs=5, #pterms=4
 
 LAB@[UDB=(1,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
 {
-    [McSlotId=0]:     MacroCell: Name=\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=0]
+    [McSlotId=0]:     MacroCell: Name=\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=0]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -1418,14 +1321,14 @@ LAB@[UDB=(1,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
             Clock Enable: True
         Main Equation            : 1 pterm
         (
-              \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\
+              \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\
         );
-        Output = \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+        Output = \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_1\ (fanout=1)
         Properties               : 
         {
         }
 
-    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=1]
+    [McSlotId=1]:     MacroCell: Name=\Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(1,1)][LB=1][MC=1]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
@@ -1435,7 +1338,7 @@ LAB@[UDB=(1,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
         (
               Net_188
         );
-        Output = \Debouncer_Button_Ok:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+        Output = \Debouncer_Button_Reset:DEBOUNCER[0]:d_sync_0\ (fanout=2)
         Properties               : 
         {
         }
@@ -1446,25 +1349,7 @@ LAB@[UDB=(1,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
 
 Intr container @ [IntrContainer=(0)]: 
   Intr@ [IntrContainer=(0)][IntrId=(1)] 
-    interrupt: Name =Button_Back_Int
-        PORT MAP (
-            interrupt => Net_198 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-  Intr@ [IntrContainer=(0)][IntrId=(2)] 
-    interrupt: Name =Button_Down_Int
-        PORT MAP (
-            interrupt => Net_187 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-  Intr@ [IntrContainer=(0)][IntrId=(3)] 
-    interrupt: Name =Button_Ok_Int
+    interrupt: Name =Button_Reset_Int
         PORT MAP (
             interrupt => Net_192 );
         Properties:
@@ -1472,16 +1357,16 @@ Intr container @ [IntrContainer=(0)]:
             int_type = "10"
             is_nmi = 0
         }
-  Intr@ [IntrContainer=(0)][IntrId=(4)] 
-    interrupt: Name =Button_Up_Int
+  Intr@ [IntrContainer=(0)][IntrId=(2)] 
+    interrupt: Name =Button_Scan_Int
         PORT MAP (
-            interrupt => Net_181 );
+            interrupt => Net_198 );
         Properties:
         {
             int_type = "10"
             is_nmi = 0
         }
-  Intr@ [IntrContainer=(0)][IntrId=(5)] 
+  Intr@ [IntrContainer=(0)][IntrId=(3)] 
     interrupt: Name =Timer_Int
         PORT MAP (
             interrupt => Net_303 );
@@ -1490,7 +1375,7 @@ Intr container @ [IntrContainer=(0)]:
             int_type = "10"
             is_nmi = 0
         }
-  Intr@ [IntrContainer=(0)][IntrId=(6)] 
+  Intr@ [IntrContainer=(0)][IntrId=(4)] 
     interrupt: Name =Timer_Update_Int
         PORT MAP (
             interrupt => Net_334 );
@@ -1519,7 +1404,7 @@ Intr container @ [IntrContainer=(0)]:
         }
 Drq container @ [DrqContainer=(0)]: empty
 Port 0 generates interrupt for logical port:
-    logicalport: Name =Button_Up
+    logicalport: Name =Button_Reset
         PORT MAP (
             in_clock_en => one ,
             in_reset => zero ,
@@ -1529,7 +1414,7 @@ Port 0 generates interrupt for logical port:
         {
             drive_mode = "010"
             ibuf_enabled = "1"
-            id = "9b0e6cf7-7197-4553-b4f8-9fd9d58c5929"
+            id = "f5c8c5b8-c05d-40ab-91a8-a51414d3d940"
             init_dr_st = "1"
             input_buffer_sel = "00"
             input_clk_en = 0
@@ -1584,90 +1469,8 @@ Port 0 generates interrupt for logical port:
             width = 1
         }
     and contains the following IO cells:
-[IoId=0]: 
-Pin : Name = Button_Up(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: NOSYNC
-        Out Sync Option: AUTO
-        Interrupt generated: True
-        Interrupt mode: FALLING
-        Drive mode: RES_PULL_UP
-        VTrip: CMOS
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: False
-        Is OE Registered: False
-        Uses Analog: False
-        Can contain Digital: True
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilities: DIGITAL, ROUTABLE
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => Button_Up(0)__PA ,
-        fb => Net_176 ,
-        pad => Button_Up(0)_PAD );
-    Properties:
-    {
-    }
-
-[IoId=2]: 
-Pin : Name = Button_Down(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: NOSYNC
-        Out Sync Option: AUTO
-        Interrupt generated: True
-        Interrupt mode: FALLING
-        Drive mode: RES_PULL_UP
-        VTrip: CMOS
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: False
-        Is OE Registered: False
-        Uses Analog: False
-        Can contain Digital: True
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilities: DIGITAL, ROUTABLE
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => Button_Down(0)__PA ,
-        fb => Net_183 ,
-        pad => Button_Down(0)_PAD );
-    Properties:
-    {
-    }
-
 [IoId=4]: 
-Pin : Name = Button_Ok(0)
+Pin : Name = Button_Reset(0)
     Attributes:
         In Group/Port: True
         In Sync Option: NOSYNC
@@ -1700,15 +1503,15 @@ Pin : Name = Button_Ok(0)
         Initial Value: 1
         IO Voltage: 0
     PORT MAP (
-        pa_out => Button_Ok(0)__PA ,
+        pa_out => Button_Reset(0)__PA ,
         fb => Net_188 ,
-        pad => Button_Ok(0)_PAD );
+        pad => Button_Reset(0)_PAD );
     Properties:
     {
     }
 
 [IoId=5]: 
-Pin : Name = Button_Back(0)
+Pin : Name = Button_Scan(0)
     Attributes:
         In Group/Port: True
         In Sync Option: NOSYNC
@@ -1741,9 +1544,9 @@ Pin : Name = Button_Back(0)
         Initial Value: 1
         IO Voltage: 0
     PORT MAP (
-        pa_out => Button_Back(0)__PA ,
+        pa_out => Button_Scan(0)__PA ,
         fb => Net_193 ,
-        pad => Button_Back(0)_PAD );
+        pad => Button_Scan(0)_PAD );
     Properties:
     {
     }
@@ -2030,50 +1833,8 @@ Pin : Name = \LCD:LCDPort(6)\
     }
 
 Port 2 contains the following IO cells:
-Port 3 contains the following IO cells:
-[IoId=0]: 
-Pin : Name = MQ_9(0)
-    Attributes:
-        In Group/Port: True
-        In Sync Option: AUTO
-        Out Sync Option: AUTO
-        Interrupt generated: False
-        Interrupt mode: NONE
-        Drive mode: HI_Z_ANALOG
-        VTrip: EITHER
-        Slew: FAST
-        Input Sync needed: False
-        Output Sync needed: False
-        SC shield enabled: False
-        POR State: ANY
-        LCD Mode: COMMON
-        Register Mode: RegComb
-        CaSense Mode: NEITHER
-        Treat as pin: True
-        Is OE Registered: False
-        Uses Analog: True
-        Can contain Digital: False
-        Is SIO: False
-        SIO Output Buf: NONREGULATED
-        SIO Input Buf: SINGLE_ENDED
-        SIO HiFreq: LOW
-        SIO Hyst: DISABLED
-        SIO Vtrip: MULTIPLIER_0_5
-        SIO Multiplier Index: 0
-        SIO RefSel: VCC_IO
-        Required Capabilities: ANALOG
-        Initial Value: 1
-        IO Voltage: 0
-    PORT MAP (
-        pa_out => MQ_9(0)__PA ,
-        analog_term => Net_246 ,
-        pad => MQ_9(0)_PAD );
-    Properties:
-    {
-    }
-
-[IoId=7]: 
-Pin : Name = Status_LED(0)
+[IoId=6]: 
+Pin : Name = Status_LED_Red(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -2106,8 +1867,171 @@ Pin : Name = Status_LED(0)
         Initial Value: 1
         IO Voltage: 0
     PORT MAP (
-        pa_out => Status_LED(0)__PA ,
-        pad => Status_LED(0)_PAD );
+        pa_out => Status_LED_Red(0)__PA ,
+        pad => Status_LED_Red(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 3 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = ADC_SENSOR_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_DIGITAL
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: ANALOG
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => ADC_SENSOR_1(0)__PA ,
+        analog_term => Net_711 ,
+        pad => ADC_SENSOR_1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+Pin : Name = ADC_SENSOR_2(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_DIGITAL
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: ANALOG
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => ADC_SENSOR_2(0)__PA ,
+        analog_term => Net_375 ,
+        pad => ADC_SENSOR_2(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=6]: 
+Pin : Name = Status_LED_Green(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Status_LED_Green(0)__PA ,
+        pad => Status_LED_Green(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = Status_LED_Blue(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Status_LED_Blue(0)__PA ,
+        pad => Status_LED_Blue(0)_PAD );
     Properties:
     {
     }
@@ -2153,12 +2077,12 @@ TCPWM group 0:
             reload => zero ,
             stop => zero ,
             start => zero ,
-            tr_underflow => Net_335 ,
+            tr_underflow => Net_351 ,
             tr_overflow => Net_334 ,
-            tr_compare_match => Net_336 ,
-            line => Net_337 ,
-            line_compl => Net_338 ,
-            interrupt => Net_341 );
+            tr_compare_match => Net_352 ,
+            line => Net_353 ,
+            line_compl => Net_354 ,
+            interrupt => Net_350 );
         Properties:
         {
             cy_registers = ""
@@ -2188,12 +2112,12 @@ SARADC group 0:
     SAR ADC @ F(SARADC,0): 
     p4sarcell: Name =\ADC:cy_psoc4_sar\
         PORT MAP (
-            vplus => Net_246 ,
-            vminus => \ADC:mux_bus_minus_0\ ,
+            vplus => \ADC:muxout_plus\ ,
+            vminus => \ADC:muxout_minus\ ,
             vref => \ADC:Net_3113\ ,
             ext_vref => \ADC:Net_3227\ ,
             clock => \ADC:Net_1845_ff6\ ,
-            sample_done => Net_254 ,
+            sample_done => Net_670 ,
             chan_id_valid => \ADC:Net_3108\ ,
             chan_id_3 => \ADC:Net_3109_3\ ,
             chan_id_2 => \ADC:Net_3109_2\ ,
@@ -2212,7 +2136,7 @@ SARADC group 0:
             data_2 => \ADC:Net_3111_2\ ,
             data_1 => \ADC:Net_3111_1\ ,
             data_0 => \ADC:Net_3111_0\ ,
-            tr_sar_out => Net_255 ,
+            tr_sar_out => Net_671 ,
             irq => \ADC:Net_3112\ );
         Properties:
         {
@@ -2234,7 +2158,7 @@ BLE group 0:
     p4blecell: Name =\BLE:cy_m0s8_ble\
         PORT MAP (
             interrupt => \BLE:Net_15\ ,
-            rfctrl_extpa_en => Net_282 );
+            rfctrl_extpa_en => Net_344 );
         Properties:
         {
             cy_registers = ""
@@ -2244,61 +2168,82 @@ SRSS group 0: empty
 CPUSS group 0: empty
 IOSS group 0: empty
 EXCO group 0: empty
+
+Blocks not positioned by the digital component placer:
+    SAR Muxes @ <No Location>: 
+    p4sarmuxcell: Name =\ADC:cy_psoc4_sarmux_8\
+        PORT MAP (
+            muxin_plus_1 => Net_375 ,
+            muxin_plus_0 => Net_711 ,
+            muxin_minus_1 => \ADC:mux_bus_minus_1\ ,
+            muxin_minus_0 => \ADC:mux_bus_minus_0\ ,
+            cmn_neg_0 => \ADC:Net_1851\ ,
+            vout_plus => \ADC:muxout_plus\ ,
+            vout_minus => \ADC:muxout_minus\ );
+        Properties:
+        {
+            cmn_neg_width = 1
+            cy_registers = ""
+            input_mode = "00"
+            muxin_width = 2
+        }
 </CYPRESSTAG>
 <CYPRESSTAG name="Port Configuration Details">
 
 ------------------------------------------------------------
 Port Configuration report
 ------------------------------------------------------------
-     |     |       | Interrupt |                  |                  | 
-Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connections
------+-----+-------+-----------+------------------+------------------+----------------
-   0 |   0 |     * |   FALLING |      RES_PULL_UP |     Button_Up(0) | FB(Net_176)
-     |   2 |     * |   FALLING |      RES_PULL_UP |   Button_Down(0) | FB(Net_183)
-     |   4 |     * |   FALLING |      RES_PULL_UP |     Button_Ok(0) | FB(Net_188)
-     |   5 |     * |   FALLING |      RES_PULL_UP |   Button_Back(0) | FB(Net_193)
------+-----+-------+-----------+------------------+------------------+----------------
-   1 |   0 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(0)\ | 
-     |   1 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(1)\ | 
-     |   2 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(2)\ | 
-     |   3 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(3)\ | 
-     |   4 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(4)\ | 
-     |   5 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(5)\ | 
-     |   6 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(6)\ | 
------+-----+-------+-----------+------------------+------------------+----------------
-   3 |   0 |     * |      NONE |      HI_Z_ANALOG |          MQ_9(0) | Analog(Net_246)
-     |   7 |     * |      NONE |         CMOS_OUT |    Status_LED(0) | 
---------------------------------------------------------------------------------------
+     |     |       | Interrupt |                  |                     | 
+Port | Pin | Fixed |      Type |       Drive Mode |                Name | Connections
+-----+-----+-------+-----------+------------------+---------------------+----------------
+   0 |   4 |     * |   FALLING |      RES_PULL_UP |     Button_Reset(0) | FB(Net_188)
+     |   5 |     * |   FALLING |      RES_PULL_UP |      Button_Scan(0) | FB(Net_193)
+-----+-----+-------+-----------+------------------+---------------------+----------------
+   1 |   0 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(0)\ | 
+     |   1 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(1)\ | 
+     |   2 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(2)\ | 
+     |   3 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(3)\ | 
+     |   4 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(4)\ | 
+     |   5 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(5)\ | 
+     |   6 |     * |      NONE |         CMOS_OUT |    \LCD:LCDPort(6)\ | 
+-----+-----+-------+-----------+------------------+---------------------+----------------
+   2 |   6 |     * |      NONE |         CMOS_OUT |   Status_LED_Red(0) | 
+-----+-----+-------+-----------+------------------+---------------------+----------------
+   3 |   0 |     * |      NONE |     HI_Z_DIGITAL |     ADC_SENSOR_1(0) | Analog(Net_711)
+     |   1 |     * |      NONE |     HI_Z_DIGITAL |     ADC_SENSOR_2(0) | Analog(Net_375)
+     |   6 |     * |      NONE |         CMOS_OUT | Status_LED_Green(0) | 
+     |   7 |     * |      NONE |         CMOS_OUT |  Status_LED_Blue(0) | 
+-----------------------------------------------------------------------------------------
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.062ms
-Digital Placement phase: Elapsed time ==> 0s.846ms
+Digital component placer commit/Report: Elapsed time ==> 0s.044ms
+Digital Placement phase: Elapsed time ==> 0s.750ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc4/3/256dma/route_arch-rrg.cydata" --vh2-path "SmartBoy_r.vh2" --pcf-path "SmartBoy.pco" --des-name "SmartBoy" --dsf-path "SmartBoy.dsf" --sdc-path "SmartBoy.sdc" --lib-path "SmartBoy_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.723ms
+Digital Routing phase: Elapsed time ==> 0s.784ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.197ms
+Bitstream Generation phase: Elapsed time ==> 0s.237ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.017ms
+Bitstream Verification phase: Elapsed time ==> 0s.026ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in SmartBoy_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.270ms
+Static timing analysis phase: Elapsed time ==> 0s.375ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.168ms
+Design database save phase: Elapsed time ==> 0s.204ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 2s.759ms
+cydsfit: Elapsed time ==> 3s.138ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 2s.759ms
-API generation phase: Elapsed time ==> 2s.215ms
-Dependency generation phase: Elapsed time ==> 0s.013ms
-Cleanup phase: Elapsed time ==> 0s.001ms
+Fitter phase: Elapsed time ==> 3s.140ms
+API generation phase: Elapsed time ==> 2s.066ms
+Dependency generation phase: Elapsed time ==> 0s.016ms
+Cleanup phase: Elapsed time ==> 0s.004ms

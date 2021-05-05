@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="SmartBoy" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" Version="5.80" Type="Normal">
+  <Project Name="SmartBoy" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn" Version="5.82" Type="Normal">
     <CMSIS_SVD_File>SmartBoy.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,32 +34,34 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="STRICT" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
+      <Folder BuildType="STRICT" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">lcd_smartboy.c</File>
-          <File BuildType="BUILD" Toolchain="">adc_smartboy.c</File>
+          <File BuildType="BUILD" Toolchain="">adc_read.c</File>
           <File BuildType="BUILD" Toolchain="">protocol.c</File>
           <File BuildType="BUILD" Toolchain="">buttons.c</File>
-          <File BuildType="BUILD" Toolchain="">rtc_smartboy.c</File>
           <File BuildType="BUILD" Toolchain="">ble_applications.c</File>
           <File BuildType="BUILD" Toolchain="">ble_client.c</File>
-          <File BuildType="BUILD" Toolchain="">goal_devices.c</File>
+          <File BuildType="BUILD" Toolchain="">verify_value.c</File>
+          <File BuildType="BUILD" Toolchain="">ble_update.c</File>
+          <File BuildType="BUILD" Toolchain="">ez_ble_goal.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">smartboy.h</File>
           <File BuildType="BUILD" Toolchain="">lcd_smartboy.h</File>
-          <File BuildType="BUILD" Toolchain="">adc_smartboy.h</File>
+          <File BuildType="BUILD" Toolchain="">adc_read.h</File>
           <File BuildType="BUILD" Toolchain="">protocol.h</File>
           <File BuildType="BUILD" Toolchain="">buttons.h</File>
           <File BuildType="BUILD" Toolchain="">defaults.h</File>
-          <File BuildType="BUILD" Toolchain="">rtc_smartboy.h</File>
           <File BuildType="BUILD" Toolchain="">ble_applications.h</File>
           <File BuildType="BUILD" Toolchain="">ble_client.h</File>
-          <File BuildType="BUILD" Toolchain="">goal_devices.h</File>
+          <File BuildType="BUILD" Toolchain="">verify_value.h</File>
+          <File BuildType="BUILD" Toolchain="">ble_update.h</File>
+          <File BuildType="BUILD" Toolchain="">ez_ble_goal.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\Generated_Source\PSoC4">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
+      <Folder BuildType="STRICT" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn\Generated_Source\PSoC4">
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cymetadata.c</File>
@@ -76,42 +78,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_CustChars.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MQ_9.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MQ_9.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MQ_9_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MQ_9_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down_Int.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down_Int.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debouncer_Clock.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Debouncer_Clock.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Down_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back_Int.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Back_Int.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok_Int.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Ok_Int.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up_Int.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Up_Int.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RTC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_LCDPort.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_LCDPort.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_LCDPort_aliases.h</File>
@@ -182,10 +154,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_Update.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_Update.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_Update_PM.c</File>
@@ -193,52 +161,84 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_Update_Int.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Timer_Update_Int.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SENSOR_2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset_Int.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Reset_Int.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan_Int.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Button_Scan_Int.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Red.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Red.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Red_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Red_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Green.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Green.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Green_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Green_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Blue.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Blue.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Blue_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Status_LED_Blue_PM.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\Export\ARM_GCC_Generic\BLE_v3_54">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
-          <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\BLE_v3_54\gccCyBLEStack_BLE_SOC_CENTRAL.a</File>
+      <Folder BuildType="STRICT" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn\Export\ARM_GCC_Generic\BLE_v3_66">
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
+          <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\BLE_v3_66\gccCyBLEStack_BLE_SOC_CENTRAL_PERIPHERAL.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\Export\ARM_MDK_Generic\BLE_v3_54">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
-          <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\BLE_v3_54\mdkCyBLEStack_BLE_SOC_CENTRAL.a</File>
+      <Folder BuildType="STRICT" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn\Export\ARM_MDK_Generic\BLE_v3_66">
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
+          <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\BLE_v3_66\mdkCyBLEStack_BLE_SOC_CENTRAL_PERIPHERAL.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn\Export\ARM_IAR_Generic\BLE_v3_54">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn">
-          <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\BLE_v3_54\gccCyBLEStack_BLE_SOC_CENTRAL.a</File>
+      <Folder BuildType="STRICT" Path="D:\bachelor_work\program\Goal\SmartBoy.cydsn\Export\ARM_IAR_Generic\BLE_v3_66">
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn">
+          <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\BLE_v3_66\gccCyBLEStack_BLE_SOC_CENTRAL_PERIPHERAL.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="C:\My\Bipboy\bipboy\BipBoyWorkspace\SmartBoy.cydsn" />
+        <Files Root="D:\bachelor_work\program\Goal\SmartBoy.cydsn" />
       </Folder>
     </Folders>
   </Project>

@@ -1,6 +1,9 @@
 /***************************************************************************//**
 * \file CyBle.h
 *
+* \file CYBLE_Stack.h
+* \version 3.66
+*
 * \brief
 *  This file contains declaration of public BLE APIs other than those covered by
 *  GAP, GATT and L2CAP specific APIs. Also specified are the defines, constants
@@ -11,7 +14,7 @@
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -1419,17 +1422,17 @@ typedef struct
  */
 typedef enum
 {
-	/** PRBS9 sequence '11111111100000111101�� 
+	/** PRBS9 sequence '11111111100000111101…’ 
 	    (in transmission order) as described 
 	    in [Vol 6] Part F, Section 4.1.5 */
 	CYBLE_PAYLOAD_VAL_ZERO,
 
-	/** Repeated �11110000� (in transmission order) 
+	/** Repeated ‘11110000’ (in transmission order) 
 		sequence as described
 		in [Vol 6] Part F, Section 4.1.5 */
 	CYBLE_PAYLOAD_VAL_ONE,
 
-	/** Repeated �10101010� (in transmission order) 
+	/** Repeated ‘10101010’ (in transmission order) 
 		sequence as described
 		in [Vol 6] Part F, Section 4.1.5 */
 	CYBLE_PAYLOAD_VAL_TWO,
@@ -1438,16 +1441,16 @@ typedef enum
 		[Vol 6] Part F, Section 4.1.5 */
 	CYBLE_PAYLOAD_VAL_THREE,
 
-	/** Repeated �11111111� (in transmission order) sequence */
+	/** Repeated ‘11111111’ (in transmission order) sequence */
 	CYBLE_PAYLOAD_VAL_FOUR,
 
-	/** Repeated �00000000� (in transmission order) sequence */
+	/** Repeated ‘00000000’ (in transmission order) sequence */
 	CYBLE_PAYLOAD_VAL_FIVE,
 
-	/** Repeated �00001111� (in transmission order) sequence */
+	/** Repeated ‘00001111’ (in transmission order) sequence */
 	CYBLE_PAYLOAD_VAL_SIX,
 
-	/** Repeated �01010101� (in transmission order) sequence */
+	/** Repeated ‘01010101’ (in transmission order) sequence */
 	CYBLE_PAYLOAD_VAL_SEVEN,
 	
 }CYBLE_PKT_PAYLOAD_T;
@@ -1457,7 +1460,7 @@ typedef enum
  */
 typedef struct
 {
-	/** "N = (F � 2402) / 2 Range: 0x00 � 0x27. 
+	/** "N = (F – 2402) / 2 Range: 0x00 – 0x27. 
 		Frequency Range : 2402 MHz to 2480 MHz" */
 	uint8 tx_frequency;
 
@@ -2983,7 +2986,7 @@ CYBLE_API_RESULT_T CyBle_StartTransmitterTest
 *  This API function Programs direct test mode RX test command parameters.
 *  
 *  \param RxFreq: Frequency for reception.
-*                 N = (F � 2402)/2  Range: 0x00 � 0x27. 
+*                 N = (F – 2402)/2  Range: 0x00 – 0x27. 
                   Frequency Range : 2402 MHz to 2480 MHz.
 * 
 * \return

@@ -2,11 +2,11 @@
 <DesignWideResources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cydwr">
   <Group key="Component">
     <Group key="v1">
-      <Data key="cy_boot" value="cy_boot_v5_80" />
+      <Data key="cy_boot" value="cy_boot_v5_82" />
       <Data key="cy_dmac" value="cy_dmac_v1_10" />
       <Data key="cy_lfclk" value="cy_lfclk_v1_20" />
       <Data key="Em_EEPROM_Dynamic" value="Em_EEPROM_Dynamic_v2_20" />
-      <Data key="LIN_Dynamic" value="LIN_Dynamic_v4_0" />
+      <Data key="LIN_Dynamic" value="LIN_Dynamic_v5_0" />
     </Group>
   </Group>
   <Data key="DataVersionKey" value="2" />
@@ -15,16 +15,20 @@
       <Data key="1b469454-da0b-4c0f-b917-2f804e725181/30182841-2754-4aee-9532-9ff02059dfef" value="ADC_AdcInput" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Button_Back" />
       <Data key="9b0e6cf7-7197-4553-b4f8-9fd9d58c5929" value="Button_Up" />
+      <Data key="15f06ac5-a3ea-49d8-9234-58c8da7d971b" value="Status_LED_Blue" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc" value="UART_tx" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/78e33e5d-45ea-4b75-88d5-73274e8a7ce4" value="UART_rx" />
       <Data key="49f44b98-02cd-42ab-b615-753dda1f693b" value="Button_Up" />
       <Data key="068b6196-7794-4f09-87c2-a638e9b010c0/ed092b9b-d398-4703-be89-cebf998501f6" value="LCD_LCDPort" />
       <Data key="130afd92-87da-41e1-b3fb-27d4e3726846" value="Button_Down" />
+      <Data key="207bf163-179e-4266-a637-1b2966549a9e" value="Status_LED_Green" />
       <Data key="8359adfe-8b75-43ad-82fd-3108e6e309b8" value="Button_Ok" />
-      <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="MQ_9" />
-      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Status_LED" />
-      <Data key="e2033129-eb35-4e0a-bb5b-a214e8f7fd64" value="Button_Back" />
-      <Data key="f5c8c5b8-c05d-40ab-91a8-a51414d3d940" value="Button_Ok" />
+      <Data key="6186384b-41d3-4e5f-a55d-7597824a7b40" value="ADC_SENSOR_2" />
+      <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="ADC_SENSOR_1" />
+      <Data key="d9d1f132-8c50-4cbc-b8ca-0e03d2f723f4" value="ADC_SENSOR_2" />
+      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Status_LED_Red" />
+      <Data key="e2033129-eb35-4e0a-bb5b-a214e8f7fd64" value="Button_Scan" />
+      <Data key="f5c8c5b8-c05d-40ab-91a8-a51414d3d940" value="Button_Reset" />
     </Group>
   </Group>
   <Group key="FlashSecurity">
@@ -1015,6 +1019,11 @@
         <Data key="Port Format" value="0,0" />
       </Group>
     </Group>
+    <Group key="15f06ac5-a3ea-49d8-9234-58c8da7d971b">
+      <Group key="0">
+        <Data key="Port Format" value="3,7" />
+      </Group>
+    </Group>
     <Group key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc">
       <Group key="0">
         <Data key="Port Format" value="0,5" />
@@ -1058,9 +1067,19 @@
         <Data key="Port Format" value="0,2" />
       </Group>
     </Group>
+    <Group key="207bf163-179e-4266-a637-1b2966549a9e">
+      <Group key="0">
+        <Data key="Port Format" value="3,6" />
+      </Group>
+    </Group>
     <Group key="8359adfe-8b75-43ad-82fd-3108e6e309b8">
       <Group key="0">
         <Data key="Port Format" value="3,0" />
+      </Group>
+    </Group>
+    <Group key="6186384b-41d3-4e5f-a55d-7597824a7b40">
+      <Group key="0">
+        <Data key="Port Format" value="3,1" />
       </Group>
     </Group>
     <Group key="77715107-f8d5-47e5-a629-0fb83101ac6b">
@@ -1068,9 +1087,14 @@
         <Data key="Port Format" value="3,0" />
       </Group>
     </Group>
+    <Group key="d9d1f132-8c50-4cbc-b8ca-0e03d2f723f4">
+      <Group key="0">
+        <Data key="Port Format" value="3,1" />
+      </Group>
+    </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="3,7" />
+        <Data key="Port Format" value="2,6" />
       </Group>
     </Group>
     <Group key="e2033129-eb35-4e0a-bb5b-a214e8f7fd64">

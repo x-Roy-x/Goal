@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Timer_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_Update_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ADC_SENSOR_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Timer" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -15,17 +17,21 @@
     <register name="PERIOD" address="0x40200154" bitWidth="32" desc="Period value" hidden="false" />
     <register name="PERIOD_BUF" address="0x40200158" bitWidth="32" desc="Period buffer value" hidden="false" />
   </block>
-  <block name="Status_LED" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="BLE" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
-    <block name="or_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="LFCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_m0s8_ble" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="bless_isr" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Status_LED_Red" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_Update" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200108" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020010C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200110" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200114" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200118" bitWidth="32" desc="Period buffer value" hidden="false" />
   </block>
-  <block name="Debouncer_Button_Up" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="RTC" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="DMAC" BASE="0x0" SIZE="0x0" desc="DMAC Registers" visible="true" hidden="false">
     <register name="DMAC_CH_CTL17" address="0x40000000" bitWidth="32" desc="DMA channel 17 control register" hidden="true">
@@ -1407,129 +1413,115 @@
     </register>
   </block>
   <block name="cy_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Status_LED_Green" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Status_LED_Blue" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Timer_Update" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
-    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="COUNTER" address="0x40200108" bitWidth="32" desc="Current counter value" hidden="false" />
-    <register name="CC" address="0x4020010C" bitWidth="32" desc="Compare / capture value" hidden="false" />
-    <register name="CC_BUF" address="0x40200110" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
-    <register name="PERIOD" address="0x40200114" bitWidth="32" desc="Period value" hidden="false" />
-    <register name="PERIOD_BUF" address="0x40200118" bitWidth="32" desc="Period buffer value" hidden="false" />
-  </block>
-  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Timer_Update_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Up_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Down_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Timer_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Debouncer_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Down" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Debouncer_Button_Down" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Button_Scan" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Button_Scan_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   </block>
-  <block name="MQ_9" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ADC_SENSOR_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ADC" BASE="0x0" SIZE="0x0" desc="Sequencing SAR ADC" visible="true" hidden="false">
     <block name="cy_analog_noconnect_30" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_31" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_28" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_29" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_32" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_27" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_28" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_35" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="Connect_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_33" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_34" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_27" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_32" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_33" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="clk_src_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="int_vref_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_22" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_psoc4_sar" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="clk_src_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_25" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_26" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_23" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_24" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="ext_vref_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_22" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_23" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_11" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_9" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_16" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_14" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_14" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ext_vref_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_36" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="ZeroTerminal_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_37" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_psoc4_sar" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus_inj" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus14" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="intClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus_inj" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vminus10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus9" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vminus10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vminus11" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus15" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="VMux_soc" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_psoc4_sarmux_8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ext_vneg_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_soc" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus11" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus12" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus14" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus13" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus10" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_vplus7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_vplus7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus9" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_vplus8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_39" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_40" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_43" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_38" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_39" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_virtualmux_42" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_41" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_38" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_40" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="ZeroTerminal_8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_17" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_16" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="or_internal" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_44" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_41" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_21" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_37" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_20" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_noconnect_18" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_21" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_19" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_17" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_18" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_37" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="adc_plus_in_sel" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_43" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="Connect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -1820,11 +1812,16 @@
       <field name="WOUND_RESOLUTION" from="1" to="0" access="R" resetVal="" desc="Maximum SAR resolution allowed" hidden="false" />
     </register>
   </block>
-  <block name="Button_Ok_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Debouncer_Button_Ok" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Up" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Ok" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Back" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Button_Back_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Debouncer_Button_Back" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Debouncer_Button_Reset" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="BLE" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="or_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="LFCLK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_ble" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="bless_isr" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  </block>
+  <block name="Debouncer_Button_Scan" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Button_Reset" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Button_Reset_Int" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

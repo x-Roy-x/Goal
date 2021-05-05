@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: Button_Down_Int.c  
-* Version 1.70
+* Version 1.71
 *
 *  Description:
 *   API for controlling the state of an interrupt.
@@ -252,7 +252,7 @@ void Button_Down_Int_SetPriority(uint8 priority)
     uint32 priorityOffset = ((Button_Down_Int__INTC_NUMBER % 4u) * 8u) + 6u;
     
 	interruptState = CyEnterCriticalSection();
-    *Button_Down_Int_INTC_PRIOR = (*Button_Down_Int_INTC_PRIOR & (uint32)(~Button_Down_Int__INTC_PRIOR_MASK)) |
+    *Button_Down_Int_INTC_PRIOR = (*Button_Down_Int_INTC_PRIOR & (uint32)(~(uint32)Button_Down_Int__INTC_PRIOR_MASK)) |
                                     ((uint32)priority << priorityOffset);
 	CyExitCriticalSection(interruptState);
 }

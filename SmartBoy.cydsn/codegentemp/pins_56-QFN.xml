@@ -373,7 +373,7 @@
       </pad>
     </pin>
     <pin number="38" name="P2[1]">
-      <pad name="P2[1]" number="63" type="GPIO" portId="2" pinId="1" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000817">
+      <pad name="P2[1]" number="63" type="GPIO" portId="2" pinId="1" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000813">
         <ffbterm ffbtype="LCD" ffbid="0" term="com" wire="17" />
         <ffbterm ffbtype="LCD" ffbid="0" term="seg" wire="17" />
         <ffbterm ffbtype="SCB" ffbid="0" term="spi_select" wire="2" />

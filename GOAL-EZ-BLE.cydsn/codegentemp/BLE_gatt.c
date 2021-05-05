@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE_gatt.c
-* \version 3.50
+* \version 3.66
 * 
 * \brief
 *  This file contains the source code for the GATT API of the BLE Component.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -108,9 +108,9 @@ CYBLE_STATE_T cyBle_state;
     0x000Fu,    /* Handle of the Client Characteristic Configuration descriptor */
 };
     
-    static uint8 cyBle_attValues[0x23u] = {
+    static uint8 cyBle_attValues[0x22u] = {
     /* Device Name */
-    (uint8)'K', (uint8)'i', (uint8)'t', (uint8)'c', (uint8)'h', (uint8)'e', (uint8)'n',
+    (uint8)'S', (uint8)'w', (uint8)'i', (uint8)'t', (uint8)'c', (uint8)'h',
 
     /* Appearance */
     0xC2u, 0x03u,
@@ -127,7 +127,7 @@ CYBLE_STATE_T cyBle_state;
     /* Service Changed */
     0x00u, 0x00u, 0x00u, 0x00u,
 
-    /* Led_1 */
+    /* Faucet */
     0x00u,
 
     /* Characteristic User Description */
@@ -140,27 +140,27 @@ uint8 cyBle_attValuesCCCD[CYBLE_GATT_DB_CCCD_COUNT];
 #endif /* CYBLE_GATT_DB_CCCD_COUNT != 0u */
 
 const uint8 cyBle_attUuid128[][16u] = {
-    /* Room */
+    /* Switch */
     { 0x10u, 0x0Au, 0x0Du, 0x9Du, 0x7Cu, 0x09u, 0x54u, 0x8Cu, 0xCDu, 0x4Bu, 0x90u, 0xA7u, 0xC6u, 0x83u, 0xE2u, 0xA2u },
 };
 
 CYBLE_GATTS_ATT_GEN_VAL_LEN_T cyBle_attValuesLen[CYBLE_GATT_DB_ATT_VAL_COUNT] = {
-    { 0x0007u, (void *)&cyBle_attValues[0] }, /* Device Name */
-    { 0x0002u, (void *)&cyBle_attValues[7] }, /* Appearance */
-    { 0x0008u, (void *)&cyBle_attValues[9] }, /* Peripheral Preferred Connection Parameters */
-    { 0x0001u, (void *)&cyBle_attValues[17] }, /* Central Address Resolution */
-    { 0x0001u, (void *)&cyBle_attValues[18] }, /* Resolvable Private Address Only */
-    { 0x0004u, (void *)&cyBle_attValues[19] }, /* Service Changed */
+    { 0x0006u, (void *)&cyBle_attValues[0] }, /* Device Name */
+    { 0x0002u, (void *)&cyBle_attValues[6] }, /* Appearance */
+    { 0x0008u, (void *)&cyBle_attValues[8] }, /* Peripheral Preferred Connection Parameters */
+    { 0x0001u, (void *)&cyBle_attValues[16] }, /* Central Address Resolution */
+    { 0x0001u, (void *)&cyBle_attValues[17] }, /* Resolvable Private Address Only */
+    { 0x0004u, (void *)&cyBle_attValues[18] }, /* Service Changed */
     { 0x0002u, (void *)&cyBle_attValuesCCCD[0] }, /* Client Characteristic Configuration */
-    { 0x0010u, (void *)&cyBle_attUuid128[0] }, /* Room UUID */
-    { 0x0001u, (void *)&cyBle_attValues[23] }, /* Led_1 */
-    { 0x000Bu, (void *)&cyBle_attValues[24] }, /* Characteristic User Description */
+    { 0x0010u, (void *)&cyBle_attUuid128[0] }, /* Switch UUID */
+    { 0x0001u, (void *)&cyBle_attValues[22] }, /* Faucet */
+    { 0x000Bu, (void *)&cyBle_attValues[23] }, /* Characteristic User Description */
 };
 
 const CYBLE_GATTS_DB_T cyBle_gattDB[0x13u] = {
     { 0x0001u, 0x2800u /* Primary service                     */, 0x00000001u /*       */, 0x000Bu, {{0x1800u, NULL}}                           },
     { 0x0002u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0003u, {{0x2A00u, NULL}}                           },
-    { 0x0003u, 0x2A00u /* Device Name                         */, 0x01020001u /* rd    */, 0x0003u, {{0x0007u, (void *)&cyBle_attValuesLen[0]}} },
+    { 0x0003u, 0x2A00u /* Device Name                         */, 0x01020001u /* rd    */, 0x0003u, {{0x0006u, (void *)&cyBle_attValuesLen[0]}} },
     { 0x0004u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0005u, {{0x2A01u, NULL}}                           },
     { 0x0005u, 0x2A01u /* Appearance                          */, 0x01020001u /* rd    */, 0x0005u, {{0x0002u, (void *)&cyBle_attValuesLen[1]}} },
     { 0x0006u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0007u, {{0x2A04u, NULL}}                           },
@@ -175,7 +175,7 @@ const CYBLE_GATTS_DB_T cyBle_gattDB[0x13u] = {
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x010A0101u /* rd,wr */, 0x000Fu, {{0x0002u, (void *)&cyBle_attValuesLen[6]}} },
     { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*       */, 0x0013u, {{0x0010u, (void *)&cyBle_attValuesLen[7]}} },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x000A0001u /* rd,wr */, 0x0013u, {{0xB1B1u, NULL}}                           },
-    { 0x0012u, 0xB1B1u /* Led_1                               */, 0x010A0101u /* rd,wr */, 0x0013u, {{0x0001u, (void *)&cyBle_attValuesLen[8]}} },
+    { 0x0012u, 0xB1B1u /* Faucet                              */, 0x010A0101u /* rd,wr */, 0x0013u, {{0x0001u, (void *)&cyBle_attValuesLen[8]}} },
     { 0x0013u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0013u, {{0x000Bu, (void *)&cyBle_attValuesLen[9]}} },
 };
 

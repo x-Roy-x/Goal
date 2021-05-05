@@ -7,12 +7,15 @@ int main(void)
     protocol_init();
     
     for(;;) {
-        /* Handle BLE Status LED */
-		HandleLEDs(ble_state);
-        
-        handle_connection();
-        
         CyBle_ProcessEvents();
+        //start_advertisement();
+        /* Handle BLE Status LED */
+        bool ble_mode = get_ble_mode();
+        //change_mode();
+        if(ble_mode){
+		    //HandleLEDs(ble_mode);
+            sensor_signalization();
+        }
     }
 }
 

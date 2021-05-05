@@ -2,7 +2,7 @@
 * \file CyBle_Gap.h
 * 
 * \file CYBLE_StackGap.h
-* \version 3.50
+* \version 3.66
 *
 * \brief
 *  This file contains the GAP APIs of the BLE Host Stack IP
@@ -12,7 +12,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -111,7 +111,7 @@
   */
 #define CYBLE_GAPC_ADV_ACCEPT_ALL_PKT 						0x00u
 
-/* Accept only advertisement packets from devices where the advertiser�s address
+/* Accept only advertisement packets from devices where the advertiser’s address
   * is in the White list.  Directed advertising packets which are not addressed for
   * this device shall be ignored.
   */
@@ -123,7 +123,7 @@
   */
 #define CYBLE_GAPC_ADV_ACCEPT_DIRECTED_RPA_PKT 				0x02u
 
-/* Accept all advertisement packets from devices where the advertiser�s address
+/* Accept all advertisement packets from devices where the advertiser’s address
   * is in the White list, and directed advertising packets where the initiator address
   * is a resolvable private address, and directed advertising packets addressed
   * to this device.
@@ -2689,10 +2689,17 @@ CYBLE_API_RESULT_T CyBle_GapSetSecureConnectionsOnlyMode(uint8 state);
 * Function Name: CyBle_GapGenerateLocalP256Keys
 ***************************************************************************//**
 *
-* This API function is used to generate P-256 Public-Private key pair to be used during LE Secure connection 
-* pairing procedure. Application may choose to generate P-256 public-private key pair before pairing 
-* process starts. If this API function is not called before pairing process starts, BLE Stack will use default
-* public-private key pair.
+* This API function is used to generate P-256 Public-Private key pair to be used 
+* during LE Secure connection pairing procedure. Application may choose to generate 
+* P-256 public-private key pair before pairing process starts. If this API function 
+* is not called before pairing process starts, BLE Stack will use default public-private
+* key pair.
+*
+* For robust security Cypress recommends that, the application may change the local 
+* public-private key pair after every pairing (successful or failed) attempt.
+*
+* For details, refer to Bluetooth core specification 4.2, Volume 3, part H, section 2.3.6.
+*
 * On the Completion of key generation, new keys will be set in the BLE Stack for SC pairing procedure 
 * and application receives CYBLE_EVT_GAP_SMP_LOC_P256_KEYS_GEN_AND_SET_COMPLETE event.
 *
@@ -2720,6 +2727,11 @@ CYBLE_API_RESULT_T CyBle_GapGenerateLocalP256Keys(void);
 * public-private key pair. This API function is not expected to be called when pairing procedure is in progress.
 * Application can generate P-256 Public-Private key pair using API function CyBle_GapGenerateLocalP256Keys()
 * and can set the generated key pair using this API function.
+*
+* For robust security Cypress recommends that, the application may change the local 
+* public-private key pair after every pairing (successful or failed) attempt.
+*
+* For details, refer to Bluetooth core specification 4.2, Volume 3, part H, section 2.3.6.
 *
 * \param localP256Keys: Pointer to structure CYBLE_GAP_SMP_LOCAL_P256_KEYS, that has
 *                       fields for local P-256 public-private key pair.
@@ -3125,7 +3137,7 @@ CYBLE_API_RESULT_T CyBle_GapClearResolvingList
 ***************************************************************************//**
 *
 * This API function is used to get the current peer Resolvable Private Address being used for the corresponding 
-* peer Public and Random (static) Identity Address. The peer�s resolvable address being used may 
+* peer Public and Random (static) Identity Address. The peer’s resolvable address being used may 
 * change after the command is called.  
 *
 *  \param peerIdentityAddr: Buffer which contains the information of peer bd address and address type
@@ -3153,7 +3165,7 @@ CYBLE_API_RESULT_T CyBle_GapReadPeerResolvableAddress
 ***************************************************************************//**
 *
 * This API function is used to get the current local Resolvable Private Address being used for the corresponding peer
-* Identity Address. The local�s resolvable address being used may change after the command is called.
+* Identity Address. The local’s resolvable address being used may change after the command is called.
 *
 *  \param peerIdentityAddr: Buffer which contains the information of peer bd address and address type
 *  \param localResolvableAddress: Buffer to which local resolvable private address will be stored.
@@ -3184,7 +3196,7 @@ CYBLE_API_RESULT_T CyBle_GapReadLocalResolvableAddress
 * generated by the BLE Stack.
 *
 *  \param rpaTimeOut: RPA_Timeout measured in seconds.
-*			Range for N: 0x0001 � 0xA1B8 (1 sec � approximately 11.5 hours)
+*			Range for N: 0x0001 – 0xA1B8 (1 sec – approximately 11.5 hours)
 *			Default: N= 0x0384 (900 secs or 15 minutes)
 *
 * \return
@@ -3235,7 +3247,7 @@ CYBLE_API_RESULT_T CyBle_GapReadResolvingList
 *
 *  \param enableDisable: 0x00 - Address Resolution in controller disabled (default) \n
 *			             0x01 - Address Resolution in controller enabled \n
-*			             0x02 � 0xFF Reserved for Future Use
+*			             0x02 – 0xFF Reserved for Future Use
 *
 * \return
 *  CYBLE_API_RESULT_T : Return value indicates if the function succeeded or

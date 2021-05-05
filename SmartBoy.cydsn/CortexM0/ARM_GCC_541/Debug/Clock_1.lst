@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
   28:Generated_Source\PSoC4/Clock_1.c **** * Summary:
   29:Generated_Source\PSoC4/Clock_1.c **** *  Starts the clock, aligned to the specified running clock.
   30:Generated_Source\PSoC4/Clock_1.c **** *
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 2
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 2
 
 
   31:Generated_Source\PSoC4/Clock_1.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
   60              		.align	2
   61              		.global	Clock_1_Stop
   62              		.code	16
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 3
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 3
 
 
   63              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
   72              	.L6:
   97:Generated_Source\PSoC4/Clock_1.c **** #if defined CYREG_PERI_DIV_CMD
   98:Generated_Source\PSoC4/Clock_1.c **** 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 4
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 4
 
 
   99:Generated_Source\PSoC4/Clock_1.c ****     /* Make sure any previous start command has finished. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  125:Generated_Source\PSoC4/Clock_1.c **** * Parameters:
  126:Generated_Source\PSoC4/Clock_1.c **** *  clkDivider:  Divider register value (0-65535). This value is NOT the
  127:Generated_Source\PSoC4/Clock_1.c **** *    divider; the clock hardware divides by clkDivider plus one. For example,
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 5
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 5
 
 
  128:Generated_Source\PSoC4/Clock_1.c **** *    to divide the clock by 2, this parameter should be set to 1.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  151:Generated_Source\PSoC4/Clock_1.c ****     maskVal = Clock_1_DIV_REG & (uint32)(~(uint32)Clock_1__DIVIDER_MASK);
  152:Generated_Source\PSoC4/Clock_1.c ****     /* combine mask and new divider val into 32-bit value */
  153:Generated_Source\PSoC4/Clock_1.c ****     regVal = clkDivider | maskVal;
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 6
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 6
 
 
  154:Generated_Source\PSoC4/Clock_1.c ****     
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  159 0006 80B2     		uxth	r0, r0
  179:Generated_Source\PSoC4/Clock_1.c ****         >> Clock_1_DIV_INT_SHIFT);
  180:Generated_Source\PSoC4/Clock_1.c **** }
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 7
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 7
 
 
  160              		.loc 1 180 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  187              		.cfi_endproc
  188              	.LFE4:
  189              		.size	Clock_1_GetFractionalDividerRegister, .-Clock_1_GetFractionalDividerRegister
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 8
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 8
 
 
  190              		.text
@@ -431,45 +431,45 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  197 0006 00000000 		.4byte	.Ldebug_abbrev0
  198 000a 04       		.byte	0x4
  199 000b 01       		.uleb128 0x1
- 200 000c FC000000 		.4byte	.LASF25
+ 200 000c D7000000 		.4byte	.LASF25
  201 0010 0C       		.byte	0xc
- 202 0011 00020000 		.4byte	.LASF26
- 203 0015 00000000 		.4byte	.LASF27
+ 202 0011 FA010000 		.4byte	.LASF26
+ 203 0015 8A010000 		.4byte	.LASF27
  204 0019 00000000 		.4byte	.Ldebug_ranges0+0
  205 001d 00000000 		.4byte	0
  206 0021 00000000 		.4byte	.Ldebug_line0
  207 0025 02       		.uleb128 0x2
  208 0026 01       		.byte	0x1
  209 0027 06       		.byte	0x6
- 210 0028 21020000 		.4byte	.LASF0
+ 210 0028 1B020000 		.4byte	.LASF0
  211 002c 02       		.uleb128 0x2
  212 002d 01       		.byte	0x1
  213 002e 08       		.byte	0x8
- 214 002f 64000000 		.4byte	.LASF1
+ 214 002f 3F000000 		.4byte	.LASF1
  215 0033 02       		.uleb128 0x2
  216 0034 02       		.byte	0x2
  217 0035 05       		.byte	0x5
- 218 0036 C2010000 		.4byte	.LASF2
+ 218 0036 BC010000 		.4byte	.LASF2
  219 003a 02       		.uleb128 0x2
  220 003b 02       		.byte	0x2
  221 003c 07       		.byte	0x7
- 222 003d 84000000 		.4byte	.LASF3
+ 222 003d 5F000000 		.4byte	.LASF3
  223 0041 02       		.uleb128 0x2
  224 0042 04       		.byte	0x4
  225 0043 05       		.byte	0x5
- 226 0044 F7010000 		.4byte	.LASF4
+ 226 0044 F1010000 		.4byte	.LASF4
  227 0048 02       		.uleb128 0x2
  228 0049 04       		.byte	0x4
  229 004a 07       		.byte	0x7
- 230 004b 72000000 		.4byte	.LASF5
+ 230 004b 4D000000 		.4byte	.LASF5
  231 004f 02       		.uleb128 0x2
  232 0050 08       		.byte	0x8
  233 0051 05       		.byte	0x5
- 234 0052 AF010000 		.4byte	.LASF6
+ 234 0052 00000000 		.4byte	.LASF6
  235 0056 02       		.uleb128 0x2
  236 0057 08       		.byte	0x8
  237 0058 07       		.byte	0x7
- 238 0059 E5000000 		.4byte	.LASF7
+ 238 0059 C0000000 		.4byte	.LASF7
  239 005d 03       		.uleb128 0x3
  240 005e 04       		.byte	0x4
  241 005f 05       		.byte	0x5
@@ -477,46 +477,46 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  243 0064 02       		.uleb128 0x2
  244 0065 04       		.byte	0x4
  245 0066 07       		.byte	0x7
- 246 0067 D8000000 		.4byte	.LASF8
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 9
+ 246 0067 B3000000 		.4byte	.LASF8
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 9
 
 
  247 006b 04       		.uleb128 0x4
- 248 006c CC010000 		.4byte	.LASF9
+ 248 006c C6010000 		.4byte	.LASF9
  249 0070 02       		.byte	0x2
- 250 0071 E401     		.2byte	0x1e4
+ 250 0071 E701     		.2byte	0x1e7
  251 0073 2C000000 		.4byte	0x2c
  252 0077 04       		.uleb128 0x4
- 253 0078 CA000000 		.4byte	.LASF10
+ 253 0078 A5000000 		.4byte	.LASF10
  254 007c 02       		.byte	0x2
- 255 007d E501     		.2byte	0x1e5
+ 255 007d E801     		.2byte	0x1e8
  256 007f 3A000000 		.4byte	0x3a
  257 0083 04       		.uleb128 0x4
- 258 0084 D1000000 		.4byte	.LASF11
+ 258 0084 AC000000 		.4byte	.LASF11
  259 0088 02       		.byte	0x2
- 260 0089 E601     		.2byte	0x1e6
+ 260 0089 E901     		.2byte	0x1e9
  261 008b 48000000 		.4byte	0x48
  262 008f 02       		.uleb128 0x2
  263 0090 04       		.byte	0x4
  264 0091 04       		.byte	0x4
- 265 0092 41000000 		.4byte	.LASF12
+ 265 0092 1C000000 		.4byte	.LASF12
  266 0096 02       		.uleb128 0x2
  267 0097 08       		.byte	0x8
  268 0098 04       		.byte	0x4
- 269 0099 A2000000 		.4byte	.LASF13
+ 269 0099 7D000000 		.4byte	.LASF13
  270 009d 02       		.uleb128 0x2
  271 009e 01       		.byte	0x1
  272 009f 08       		.byte	0x8
- 273 00a0 BD010000 		.4byte	.LASF14
+ 273 00a0 B7010000 		.4byte	.LASF14
  274 00a4 04       		.uleb128 0x4
- 275 00a5 33000000 		.4byte	.LASF15
+ 275 00a5 0E000000 		.4byte	.LASF15
  276 00a9 02       		.byte	0x2
- 277 00aa 9002     		.2byte	0x290
+ 277 00aa 9302     		.2byte	0x293
  278 00ac B0000000 		.4byte	0xb0
  279 00b0 05       		.uleb128 0x5
  280 00b1 83000000 		.4byte	0x83
  281 00b5 06       		.uleb128 0x6
- 282 00b6 47000000 		.4byte	.LASF16
+ 282 00b6 22000000 		.4byte	.LASF16
  283 00ba 01       		.byte	0x1
  284 00bb 27       		.byte	0x27
  285 00bc 00000000 		.4byte	.LFB0
@@ -525,25 +525,25 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  288 00c5 9C       		.byte	0x9c
  289 00c6 DA000000 		.4byte	0xda
  290 00ca 07       		.uleb128 0x7
- 291 00cb B0000000 		.4byte	.LASF18
+ 291 00cb 8B000000 		.4byte	.LASF18
  292 00cf 01       		.byte	0x1
  293 00d0 27       		.byte	0x27
  294 00d1 83000000 		.4byte	0x83
  295 00d5 00000000 		.4byte	.LLST0
  296 00d9 00       		.byte	0
  297 00da 08       		.uleb128 0x8
- 298 00db 57000000 		.4byte	.LASF28
+ 298 00db 32000000 		.4byte	.LASF28
  299 00df 01       		.byte	0x1
  300 00e0 5F       		.byte	0x5f
  301 00e1 00000000 		.4byte	.LFB1
  302 00e5 18000000 		.4byte	.LFE1-.LFB1
  303 00e9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 10
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 10
 
 
  304 00ea 9C       		.byte	0x9c
  305 00eb 06       		.uleb128 0x6
- 306 00ec D2010000 		.4byte	.LASF17
+ 306 00ec CC010000 		.4byte	.LASF17
  307 00f0 01       		.byte	0x1
  308 00f1 86       		.byte	0x86
  309 00f2 00000000 		.4byte	.LFB2
@@ -552,25 +552,25 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  312 00fb 9C       		.byte	0x9c
  313 00fc 3B010000 		.4byte	0x13b
  314 0100 07       		.uleb128 0x7
- 315 0101 97000000 		.4byte	.LASF19
+ 315 0101 72000000 		.4byte	.LASF19
  316 0105 01       		.byte	0x1
  317 0106 86       		.byte	0x86
  318 0107 77000000 		.4byte	0x77
  319 010b 21000000 		.4byte	.LLST1
  320 010f 07       		.uleb128 0x7
- 321 0110 BC000000 		.4byte	.LASF20
+ 321 0110 97000000 		.4byte	.LASF20
  322 0114 01       		.byte	0x1
  323 0115 86       		.byte	0x86
  324 0116 6B000000 		.4byte	0x6b
  325 011a 42000000 		.4byte	.LLST2
  326 011e 09       		.uleb128 0x9
- 327 011f 39000000 		.4byte	.LASF21
+ 327 011f 14000000 		.4byte	.LASF21
  328 0123 01       		.byte	0x1
  329 0124 88       		.byte	0x88
  330 0125 83000000 		.4byte	0x83
  331 0129 63000000 		.4byte	.LLST3
  332 012d 0A       		.uleb128 0xa
- 333 012e A9000000 		.4byte	.LASF22
+ 333 012e 84000000 		.4byte	.LASF22
  334 0132 01       		.byte	0x1
  335 0133 89       		.byte	0x89
  336 0134 83000000 		.4byte	0x83
@@ -578,7 +578,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  338 0139 51       		.byte	0x51
  339 013a 00       		.byte	0
  340 013b 0B       		.uleb128 0xb
- 341 013c 2D020000 		.4byte	.LASF23
+ 341 013c 27020000 		.4byte	.LASF23
  342 0140 01       		.byte	0x1
  343 0141 B0       		.byte	0xb0
  344 0142 77000000 		.4byte	0x77
@@ -587,7 +587,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  347 014e 01       		.uleb128 0x1
  348 014f 9C       		.byte	0x9c
  349 0150 0B       		.uleb128 0xb
- 350 0151 8A010000 		.4byte	.LASF24
+ 350 0151 65010000 		.4byte	.LASF24
  351 0155 01       		.byte	0x1
  352 0156 C6       		.byte	0xc6
  353 0157 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  358 0165 00       		.byte	0
  359              		.section	.debug_abbrev,"",%progbits
  360              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 11
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 11
 
 
  361 0000 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  415 0036 05       		.uleb128 0x5
  416 0037 35       		.uleb128 0x35
  417 0038 00       		.byte	0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 12
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 12
 
 
  418 0039 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  472 0070 0B       		.uleb128 0xb
  473 0071 27       		.uleb128 0x27
  474 0072 19       		.uleb128 0x19
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 13
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 13
 
 
  475 0073 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  529 00aa 13       		.uleb128 0x13
  530 00ab 11       		.uleb128 0x11
  531 00ac 01       		.uleb128 0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 14
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 14
 
 
  532 00ad 12       		.uleb128 0x12
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  586 0063 0A000000 		.4byte	.LVL3
  587 0067 10000000 		.4byte	.LVL5
  588 006b 0100     		.2byte	0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 15
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 15
 
 
  589 006d 53       		.byte	0x53
@@ -885,156 +885,154 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 1
  628      00000201 
  628      FB0E0D00 
  628      01010101 
- 629              	.LASF27:
- 630 0000 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\SmartBoy.c"
- 630      795C4269 
- 630      70626F79 
- 630      5C626970 
- 630      626F795C 
- 631 002e 7964736E 		.ascii	"ydsn\000"
- 631      00
- 632              	.LASF15:
- 633 0033 72656733 		.ascii	"reg32\000"
- 633      3200
- 634              	.LASF21:
- 635 0039 6D61736B 		.ascii	"maskVal\000"
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 16
+ 629              	.LASF6:
+ 630 0000 6C6F6E67 		.ascii	"long long int\000"
+ 630      206C6F6E 
+ 630      6720696E 
+ 630      7400
+ 631              	.LASF15:
+ 632 000e 72656733 		.ascii	"reg32\000"
+ 632      3200
+ 633              	.LASF21:
+ 634 0014 6D61736B 		.ascii	"maskVal\000"
+ 634      56616C00 
+ 635              	.LASF12:
+ 636 001c 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 16
 
 
- 635      56616C00 
- 636              	.LASF12:
- 637 0041 666C6F61 		.ascii	"float\000"
- 637      7400
- 638              	.LASF16:
- 639 0047 436C6F63 		.ascii	"Clock_1_StartEx\000"
- 639      6B5F315F 
- 639      53746172 
- 639      74457800 
- 640              	.LASF28:
- 641 0057 436C6F63 		.ascii	"Clock_1_Stop\000"
- 641      6B5F315F 
- 641      53746F70 
- 641      00
- 642              	.LASF1:
- 643 0064 756E7369 		.ascii	"unsigned char\000"
- 643      676E6564 
- 643      20636861 
- 643      7200
- 644              	.LASF5:
- 645 0072 6C6F6E67 		.ascii	"long unsigned int\000"
- 645      20756E73 
- 645      69676E65 
- 645      6420696E 
- 645      7400
- 646              	.LASF3:
- 647 0084 73686F72 		.ascii	"short unsigned int\000"
- 647      7420756E 
- 647      7369676E 
- 647      65642069 
- 647      6E7400
- 648              	.LASF19:
- 649 0097 636C6B44 		.ascii	"clkDivider\000"
- 649      69766964 
- 649      657200
- 650              	.LASF13:
- 651 00a2 646F7562 		.ascii	"double\000"
- 651      6C6500
- 652              	.LASF22:
- 653 00a9 72656756 		.ascii	"regVal\000"
- 653      616C00
- 654              	.LASF18:
- 655 00b0 616C6967 		.ascii	"alignClkDiv\000"
- 655      6E436C6B 
- 655      44697600 
- 656              	.LASF20:
- 657 00bc 636C6B46 		.ascii	"clkFractional\000"
- 657      72616374 
- 657      696F6E61 
- 657      6C00
- 658              	.LASF10:
- 659 00ca 75696E74 		.ascii	"uint16\000"
- 659      313600
- 660              	.LASF11:
- 661 00d1 75696E74 		.ascii	"uint32\000"
- 661      333200
- 662              	.LASF8:
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 17
+ 636      7400
+ 637              	.LASF16:
+ 638 0022 436C6F63 		.ascii	"Clock_1_StartEx\000"
+ 638      6B5F315F 
+ 638      53746172 
+ 638      74457800 
+ 639              	.LASF28:
+ 640 0032 436C6F63 		.ascii	"Clock_1_Stop\000"
+ 640      6B5F315F 
+ 640      53746F70 
+ 640      00
+ 641              	.LASF1:
+ 642 003f 756E7369 		.ascii	"unsigned char\000"
+ 642      676E6564 
+ 642      20636861 
+ 642      7200
+ 643              	.LASF5:
+ 644 004d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 644      20756E73 
+ 644      69676E65 
+ 644      6420696E 
+ 644      7400
+ 645              	.LASF3:
+ 646 005f 73686F72 		.ascii	"short unsigned int\000"
+ 646      7420756E 
+ 646      7369676E 
+ 646      65642069 
+ 646      6E7400
+ 647              	.LASF19:
+ 648 0072 636C6B44 		.ascii	"clkDivider\000"
+ 648      69766964 
+ 648      657200
+ 649              	.LASF13:
+ 650 007d 646F7562 		.ascii	"double\000"
+ 650      6C6500
+ 651              	.LASF22:
+ 652 0084 72656756 		.ascii	"regVal\000"
+ 652      616C00
+ 653              	.LASF18:
+ 654 008b 616C6967 		.ascii	"alignClkDiv\000"
+ 654      6E436C6B 
+ 654      44697600 
+ 655              	.LASF20:
+ 656 0097 636C6B46 		.ascii	"clkFractional\000"
+ 656      72616374 
+ 656      696F6E61 
+ 656      6C00
+ 657              	.LASF10:
+ 658 00a5 75696E74 		.ascii	"uint16\000"
+ 658      313600
+ 659              	.LASF11:
+ 660 00ac 75696E74 		.ascii	"uint32\000"
+ 660      333200
+ 661              	.LASF8:
+ 662 00b3 756E7369 		.ascii	"unsigned int\000"
+ 662      676E6564 
+ 662      20696E74 
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 17
 
 
- 663 00d8 756E7369 		.ascii	"unsigned int\000"
- 663      676E6564 
- 663      20696E74 
- 663      00
- 664              	.LASF7:
- 665 00e5 6C6F6E67 		.ascii	"long long unsigned int\000"
- 665      206C6F6E 
- 665      6720756E 
- 665      7369676E 
- 665      65642069 
- 666              	.LASF25:
- 667 00fc 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 667      43313120 
- 667      352E342E 
- 667      31203230 
- 667      31363036 
- 668 012f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 668      20726576 
- 668      6973696F 
- 668      6E203233 
- 668      37373135 
- 669 0162 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 669      66756E63 
- 669      74696F6E 
- 669      2D736563 
- 669      74696F6E 
- 670              	.LASF24:
- 671 018a 436C6F63 		.ascii	"Clock_1_GetFractionalDividerRegister\000"
- 671      6B5F315F 
- 671      47657446 
- 671      72616374 
- 671      696F6E61 
- 672              	.LASF6:
- 673 01af 6C6F6E67 		.ascii	"long long int\000"
- 673      206C6F6E 
- 673      6720696E 
- 673      7400
- 674              	.LASF14:
- 675 01bd 63686172 		.ascii	"char\000"
- 675      00
- 676              	.LASF2:
- 677 01c2 73686F72 		.ascii	"short int\000"
- 677      7420696E 
- 677      7400
- 678              	.LASF9:
- 679 01cc 75696E74 		.ascii	"uint8\000"
- 679      3800
- 680              	.LASF17:
- 681 01d2 436C6F63 		.ascii	"Clock_1_SetFractionalDividerRegister\000"
- 681      6B5F315F 
- 681      53657446 
- 681      72616374 
- 681      696F6E61 
- 682              	.LASF4:
- 683 01f7 6C6F6E67 		.ascii	"long int\000"
- 683      20696E74 
- 683      00
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccsTHXVP.s 			page 18
+ 662      00
+ 663              	.LASF7:
+ 664 00c0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 664      206C6F6E 
+ 664      6720756E 
+ 664      7369676E 
+ 664      65642069 
+ 665              	.LASF25:
+ 666 00d7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 666      43313120 
+ 666      352E342E 
+ 666      31203230 
+ 666      31363036 
+ 667 010a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 667      20726576 
+ 667      6973696F 
+ 667      6E203233 
+ 667      37373135 
+ 668 013d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 668      66756E63 
+ 668      74696F6E 
+ 668      2D736563 
+ 668      74696F6E 
+ 669              	.LASF24:
+ 670 0165 436C6F63 		.ascii	"Clock_1_GetFractionalDividerRegister\000"
+ 670      6B5F315F 
+ 670      47657446 
+ 670      72616374 
+ 670      696F6E61 
+ 671              	.LASF27:
+ 672 018a 443A5C62 		.ascii	"D:\\bachelor_work\\program\\Goal\\SmartBoy.cydsn\000"
+ 672      61636865 
+ 672      6C6F725F 
+ 672      776F726B 
+ 672      5C70726F 
+ 673              	.LASF14:
+ 674 01b7 63686172 		.ascii	"char\000"
+ 674      00
+ 675              	.LASF2:
+ 676 01bc 73686F72 		.ascii	"short int\000"
+ 676      7420696E 
+ 676      7400
+ 677              	.LASF9:
+ 678 01c6 75696E74 		.ascii	"uint8\000"
+ 678      3800
+ 679              	.LASF17:
+ 680 01cc 436C6F63 		.ascii	"Clock_1_SetFractionalDividerRegister\000"
+ 680      6B5F315F 
+ 680      53657446 
+ 680      72616374 
+ 680      696F6E61 
+ 681              	.LASF4:
+ 682 01f1 6C6F6E67 		.ascii	"long int\000"
+ 682      20696E74 
+ 682      00
+ 683              	.LASF26:
+ 684 01fa 47656E65 		.ascii	"Generated_Source\\PSoC4\\Clock_1.c\000"
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccmXPLRk.s 			page 18
 
 
- 684              	.LASF26:
- 685 0200 47656E65 		.ascii	"Generated_Source\\PSoC4\\Clock_1.c\000"
- 685      72617465 
- 685      645F536F 
- 685      75726365 
- 685      5C50536F 
- 686              	.LASF0:
- 687 0221 7369676E 		.ascii	"signed char\000"
- 687      65642063 
- 687      68617200 
- 688              	.LASF23:
- 689 022d 436C6F63 		.ascii	"Clock_1_GetDividerRegister\000"
- 689      6B5F315F 
- 689      47657444 
- 689      69766964 
- 689      65725265 
- 690              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 684      72617465 
+ 684      645F536F 
+ 684      75726365 
+ 684      5C50536F 
+ 685              	.LASF0:
+ 686 021b 7369676E 		.ascii	"signed char\000"
+ 686      65642063 
+ 686      68617200 
+ 687              	.LASF23:
+ 688 0227 436C6F63 		.ascii	"Clock_1_GetDividerRegister\000"
+ 688      6B5F315F 
+ 688      47657444 
+ 688      69766964 
+ 688      65725265 
+ 689              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

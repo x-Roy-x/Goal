@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE_custom.c
-* \version 3.54
+* \version 3.66
 * 
 * \brief
 *  Contains the source code for the Custom Service.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -23,6 +23,25 @@
 */
 /* This array contains attribute handles for the defined Custom Services and their characteristics and descriptors.
    The array index definitions are located in the CYBLE_custom.h file. */
+const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
+
+    /* Switch service */
+    {
+        0x0010u, /* Handle of the Switch service */ 
+        {
+
+            /* Faucet characteristic */
+            {
+                0x0012u, /* Handle of the Faucet characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x0013u, /* Handle of the Characteristic User Description descriptor */ 
+                }, 
+            },
+        }, 
+    },
+};
 
 
 #endif /* (CYBLE_CUSTOM_SERVER) */
@@ -31,11 +50,11 @@
     
 static const CYBLE_UUID128_T cyBle_customUuid128[] = {
     /* Custom Service */
-    { {0xB9u, 0x5Fu, 0xB8u, 0xFBu, 0x02u, 0xCCu, 0xF2u, 0xBDu, 0xECu, 0x4Bu, 0xBCu, 0xDAu, 0x5Eu, 0x13u, 0x23u, 0xCFu} },
+    { {0x58u, 0xA5u, 0x38u, 0xF2u, 0xD8u, 0x64u, 0xCDu, 0xBDu, 0x15u, 0x42u, 0xA3u, 0xB0u, 0xFEu, 0x0Au, 0xA3u, 0xCFu} },
     /* Custom Characteristic */
-    { {0xF9u, 0xABu, 0x34u, 0xEEu, 0xBFu, 0x67u, 0x37u, 0xA5u, 0x4Au, 0x40u, 0xC8u, 0x8Eu, 0x0Fu, 0x06u, 0x51u, 0x86u} },
+    { {0xC8u, 0xC9u, 0x89u, 0x90u, 0x0Eu, 0xDFu, 0x60u, 0x83u, 0xD0u, 0x4Eu, 0x5Eu, 0xEAu, 0x96u, 0x91u, 0x2Du, 0xC1u} },
     /* Custom Descriptor */
-    { {0x66u, 0x1Bu, 0xC7u, 0xF3u, 0x77u, 0xE4u, 0xB8u, 0x92u, 0x99u, 0x4Fu, 0x0Cu, 0x7Du, 0x66u, 0xB1u, 0x49u, 0xD7u} },
+    { {0xCCu, 0xA2u, 0x50u, 0x1Cu, 0x10u, 0x03u, 0x4Du, 0xB8u, 0xC7u, 0x4Cu, 0x33u, 0xF5u, 0x11u, 0xF7u, 0x93u, 0x89u} },
 };
 
 static CYBLE_CUSTOMC_DESC_T cyBle_customCDesc[0x01u] = {

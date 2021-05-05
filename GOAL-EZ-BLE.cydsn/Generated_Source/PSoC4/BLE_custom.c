@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE_custom.c
-* \version 3.50
+* \version 3.66
 * 
 * \brief
 *  Contains the source code for the Custom Service.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -25,14 +25,14 @@
    The array index definitions are located in the CYBLE_custom.h file. */
 const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
 
-    /* Room service */
+    /* Switch service */
     {
-        0x0010u, /* Handle of the Room service */ 
+        0x0010u, /* Handle of the Switch service */ 
         {
 
-            /* Led_1 characteristic */
+            /* Faucet characteristic */
             {
-                0x0012u, /* Handle of the Led_1 characteristic */ 
+                0x0012u, /* Handle of the Faucet characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {

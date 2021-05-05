@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE.h
-* \version 3.50
+* \version 3.66
 * 
 * \brief
 *  Contains the function prototypes and constants available to the BLE component.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -178,7 +178,7 @@
 
 #define CYBLE_ADV_PKT_INDEX_FLAGS   (0x00u)
 #define CYBLE_ADV_PKT_INDEX_LOCAL_NAME   (0x03u)
-#define CYBLE_ADV_PKT_INDEX_SERVICE_UUID_128   (0x0Cu)
+#define CYBLE_ADV_PKT_INDEX_SERVICE_UUID_128   (0x0Bu)
 
 
 

@@ -10,6 +10,6 @@ int main (void)
     {
         main_loop();
         
-        update_data_read();
+        read();
     }
 }

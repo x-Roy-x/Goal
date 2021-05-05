@@ -1,43 +1,3 @@
-/******************************************************************************
-* Project Name		: PSoC_4_BLE_Central_IAS
-* File Name			: BLEclient.c
-* Version 			: 1.0
-* Device Used		: CY8C4247LQI-BL483
-* Software Used		: PSoC Creator 3.1
-* Compiler    		: ARM GCC 4.8.4, ARM RVDS Generic, ARM MDK Generic
-* Related Hardware	: CY8CKIT-042-BLE Bluetooth Low Energy Pioneer Kit 
-* Owner				: ROIT
-*
-********************************************************************************
-* Copyright (2014-15), Cypress Semiconductor Corporation. All Rights Reserved.
-********************************************************************************
-* This software is owned by Cypress Semiconductor Corporation (Cypress)
-* and is protected by and subject to worldwide patent protection (United
-* States and foreign), United States copyright laws and international treaty
-* provisions. Cypress hereby grants to licensee a personal, non-exclusive,
-* non-transferable license to copy, use, modify, create derivative works of,
-* and compile the Cypress Source Code and derivative works for the sole
-* purpose of creating custom software in support of licensee product to be
-* used only in conjunction with a Cypress integrated circuit as specified in
-* the applicable agreement. Any reproduction, modification, translation,
-* compilation, or representation of this software except as specified above 
-* is prohibited without the express written permission of Cypress.
-*
-* Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH 
-* REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-* Cypress reserves the right to make changes without further notice to the 
-* materials described herein. Cypress does not assume any liability arising out 
-* of the application or use of any product or circuit described herein. Cypress 
-* does not authorize its products for use as critical components in life-support 
-* systems where a malfunction or failure may reasonably be expected to result in 
-* significant injury to the user. The inclusion of Cypress' product in a life-
-* support systems application implies that the manufacturer assumes all risk of 
-* such use and in doing so indemnifies Cypress against all charges. 
-*
-* Use of this Software may be limited by and subject to the applicable Cypress
-* software license agreement. 
-*******************************************************************************/
 #include "smartboy.h"
 
 /* 'list_of_devices' is an array of type 'CYBLE_GAPC_ADV_REPORT_T' (defined in 
@@ -54,8 +14,6 @@ CYBLE_GAP_BD_ADDR_T 		connectPeriphDevice;
 * connecting with the peripheral device. */
 extern CYBLE_CONN_HANDLE_T connHandle;
 
-/* 'deviceConnected' flag tells the status of connection with BLE peripheral Device */
-uint8 deviceConnected = FALSE;
 
 /* 'ble_state' stores the state of connection which is used for updating LEDs */
 uint8 ble_state = BLE_DISCONNECTED;
@@ -72,22 +30,12 @@ uint8 goalCompareAddress[6] = {
     0x00, 0x34, 0x12, 0x50, 0xA0, 0x00
 };
 
-// stores the addresses returned by Scannig results 
-uint8 scannedGoalAddresses[10][6];
-
-// Stores amount of goal devices about  
-uint8 goalDevices;
-
 /* 'peripheralFound' flag tells whether the peripheral device with the required Address
  * has been found during scanning or not. */
 uint8 peripheralFound = FALSE;
 
 /* 'addedDevices' tells the number of devices that has been added to the list till now. */
 uint8 addedDevices = FALSE;
-
-/* 'restartScanning' flag indicates to application whether starting scan API has to be
-* called or not */
-uint8 restartScanning = FALSE;
 
 uint8 savedData;
 
@@ -96,8 +44,7 @@ bool isDataRead = false;
 bool isConnecting;
 CY_ISR(Timer_Int_Handler) {
     Timer_Stop();
-    restartScanning = TRUE;
-    CyBle_GapcStopScan();
+    stop_scan();
     handle_scan_results();
 }
 
@@ -111,17 +58,23 @@ void BleCallBack(uint32 event, void *eventparam) {
 	* BLE_StackGap.h) and is used to store report retuned from Scan results. */
 	CYBLE_GAPC_ADV_REPORT_T		scan_report;
     
-    CYBLE_GATTC_READ_BY_TYPE_REQ_T readByTypeReqParam;
-	CYBLE_GATT_ATTR_HANDLE_RANGE_T range;
-    CYBLE_UUID_T uuid;
+    //CYBLE_GATTC_READ_BY_TYPE_REQ_T readByTypeReqParam;
+	//CYBLE_GATT_ATTR_HANDLE_RANGE_T range;
+    //CYBLE_UUID_T uuid;
     CYBLE_GATTC_READ_BY_GRP_RSP_PARAM_T readResponse;
-	
+	CYBLE_GATTS_WRITE_CMD_REQ_PARAM_T *wrReqParam;
+    
+    bool ble_mode = get_ble_mode();
+    
 	switch(event) {
 		case CYBLE_EVT_STACK_ON:
 			/* Set start scanning flag to allow calling the API in main loop */
-			restartScanning = TRUE;
-		break;
-			
+            if(!ble_mode){
+                start_advertisement();
+                //break;
+            }
+		    break;
+
 		case CYBLE_EVT_GAPC_SCAN_START_STOP:
 			/* Add relevant code here pertaining to Starting/Stopping of Scan*/
 			if(CyBle_GetState() == CYBLE_STATE_DISCONNECTED) {
@@ -129,8 +82,7 @@ void BleCallBack(uint32 event, void *eventparam) {
 				
 				if(!peripheralFound) {
 					/* Restart Scanning */
-					Status_LED_Write(1);
-					//restartScanning = TRUE;
+					Status_LED_Red_Write(1);
 				}
 			} else {
 				ble_state = BLE_SCANNING;
@@ -177,31 +129,36 @@ void BleCallBack(uint32 event, void *eventparam) {
             break;
 			
 		case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
-			/* Reset all saved peripheral Addresses */
-			for(int i = 0; i < addedDevices; i++) {
-				list_of_devices[i].peerBdAddr[0] = FALSE;
-				list_of_devices[i].peerBdAddr[1] = FALSE;
-				list_of_devices[i].peerBdAddr[2] = FALSE;
-				list_of_devices[i].peerBdAddr[3] = FALSE;
-				list_of_devices[i].peerBdAddr[4] = FALSE;
-				list_of_devices[i].peerBdAddr[5] = FALSE;
-			}
-			
-			/* Reset application Flags on BLE Disconnect */
-			addedDevices = FALSE;
-			peripheralFound = FALSE;
-			deviceConnected = FALSE;
-			ble_state = BLE_DISCONNECTED;
-			
-			/* Set the flag for rescanning after wakeup */
-			//restartScanning = TRUE;
-			
-			/* Update LED Status for Disconnection */
-			HandleLEDs(ble_state);
-			if(apiResult != CYBLE_ERROR_OK)
-			{
-			}
-			break;
+            //
+            //
+            if(ble_mode){
+    			/* Reset all saved peripheral Addresses */
+    			for(int i = 0; i < addedDevices; i++) {
+    				list_of_devices[i].peerBdAddr[0] = FALSE;
+    				list_of_devices[i].peerBdAddr[1] = FALSE;
+    				list_of_devices[i].peerBdAddr[2] = FALSE;
+    				list_of_devices[i].peerBdAddr[3] = FALSE;
+    				list_of_devices[i].peerBdAddr[4] = FALSE;
+    				list_of_devices[i].peerBdAddr[5] = FALSE;
+    			}
+    			
+    			/* Reset application Flags on BLE Disconnect */
+    			addedDevices = FALSE;
+    			peripheralFound = FALSE;
+    			ble_state = BLE_DISCONNECTED;
+    			
+    			
+    			/* Update LED Status for Disconnection */
+    			HandleLEDs(ble_state);
+    			if(apiResult != CYBLE_ERROR_OK)
+    			{
+    			}
+                //break;
+            }else{
+                start_advertisement();
+                break;
+            }
+        break;
 			
 	
 		case CYBLE_EVT_GATTC_DISCOVERY_COMPLETE:
@@ -218,9 +175,7 @@ void BleCallBack(uint32 event, void *eventparam) {
 
             if ( apiResult != CYBLE_ERROR_OK ) {
             }*/
-			
-            /*Set the Device connected flag*/
-			deviceConnected = TRUE;
+
 			
 			/* Update the LED status for BLE discovery mode*/
 			ble_state = BLE_CONNECTED;
@@ -229,11 +184,7 @@ void BleCallBack(uint32 event, void *eventparam) {
         case CYBLE_EVT_GATTC_READ_BY_TYPE_RSP:
             readResponse = *(CYBLE_GATTC_READ_BY_TYPE_RSP_PARAM_T *) eventparam;
             save_data(readResponse.attrData.attrValue[2]);
-            uint8 deviceID = get_connected_device_id();
-            uint8 position = get_counter_up_down();
-            uint16 uuid = get_current_uuid(deviceID, position);
-            char * characteristicName = get_characteristic_name(uuid);
-            lcd_connected_device_screen(characteristicName, readResponse.attrData.attrValue[2]);
+
             isDataRead = true;
             /*uint8 result[3];
             result[2] = readResponse.attrData.attrValue[2];
@@ -241,6 +192,23 @@ void BleCallBack(uint32 event, void *eventparam) {
             char8 buffer[3];
             sprintf(buffer, "%u", result[2]);
             LCD_PrintString(buffer);*/
+            break;
+           
+        case CYBLE_EVT_GATTS_WRITE_REQ:
+            wrReqParam =(CYBLE_GATTS_WRITE_REQ_PARAM_T*) eventparam;
+                                      
+            /*write request is for custom characteristic*/
+                
+            
+            //ClientCommand= wrReqParam->handleValPair.value.val[0];
+            //ExecuteClientCommand(ClientCommand);
+        
+                
+            /*Write request is for CCCD*/
+            Status_LED_Red_Write(wrReqParam->handleValPair.value.val[0]);
+     
+            CyBle_GattsWriteRsp(wrReqParam->connHandle);/* response to write characterisitc from client*/
+               
             break;
 			
 		default:
@@ -331,49 +299,85 @@ void set_initial_peripheral_address(void) {
 		peripheralAddress[3] = 0x50;
 		peripheralAddress[2] = 0x12;
 		peripheralAddress[1] = 0x34;
-		peripheralAddress[0] = 0xAA;
-}
-
-void set_peripheral_address_to_connect(uint8 deviceIndex) {
-    /* 2nd to 6th address bytes had set by set_initial_peripheral_address(),
-    so we need to change only 1st byte address*/
-    peripheralAddress[0] = deviceIndex;
+		peripheralAddress[0] = 0x00;
 }
 
 void handle_scan(void) {
-        /* If rescanning flag is TRUE, the restart the scan */
-    if(restartScanning && ble_state == BLE_DISCONNECTED)
+    /* If rescanning flag is TRUE, the restart the scan */
+    if(ble_state == BLE_DISCONNECTED)
 	{
         /* Reset flag to prevent calling multiple Start Scan commands */
-    	restartScanning = FALSE;
-		Timer_Start();	
-    	/* Start Fast BLE Scanning. This API will only take effect after calling
-    	* CyBle_ProcessEvents()*/
-    	CyBle_GapcStartScan(CYBLE_SCANNING_FAST);
+		Timer_Start();
+    	start_scan();
     } 
 }
 
-void handle_disconnection(void) {
-    if(ble_state == BLE_CONNECTED) {
-        CyBle_GapDisconnect(connHandle.bdHandle);
-        restartScanning = TRUE;
-    }
+void start_scan(void){
+    Status_LED_Red_Write(0);
+    CyDelay(1);
+    CyBle_GapcStartScan(CYBLE_SCANNING_FAST);
 }
 
-void handle_connection(void) {
+void stop_scan(void){
+    Status_LED_Red_Write(1);
+    CyDelay(1);
+    CyBle_GapcStopScan();
+}
+
+void connect(void) {
+    Status_LED_Green_Write(0);
     if(peripheralFound) {
+        //stop_scan();
         /* If the desired peripheral is found, then connect to that peripheral */
+        CyDelay(1);
 		CyBle_GapcConnectDevice(&connectPeriphDevice);
 			
-		/* Call CyBle_ProcessEvents() once to process the Connect request sent above. */
-		CyBle_ProcessEvents();
+		//CyBle_ProcessEvents();
 		
 		/* Reset flag to prevent resending the Connect command */
 		peripheralFound = FALSE;
 	}
 }
 
+void disconnect(void){
+    Status_LED_Green_Write(1);
+    CyDelay(1);
+    CyBle_GapDisconnect(connHandle.bdHandle);
+}
+
+void start_advertisement(void){
+    Status_LED_Blue_Write(0);
+    CyDelay(1);
+    CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+}
+
+void stop_advertisement(void){
+    Status_LED_Blue_Write(1);
+    CyDelay(1);
+    CyBle_GappStopAdvertisement();
+}
+
+void change_mode(void){
+    bool status = get_ble_mode();
+    if(status){
+        disconnect();
+        stop_advertisement();
+        //sensor_signalization();
+        start_scan();
+    }else{
+        stop_scan();
+        disconnect();
+        start_advertisement();
+    }
+}
+
 void handle_scan_results(void) {
+    // stores the addresses returned by Scannig results 
+    uint8 scannedGoalAddresses[10][6];
+    
+    // Stores amount of goal devices about  
+    uint8 goalDevices;
+    
     uint8 emptyAddress[6];
     // Clear previous scanned goal addresses
     for(uint8 i = 0; i < goalDevices; i++) {
@@ -404,36 +408,12 @@ void handle_scan_results(void) {
         }
     }
     
-    lcd_init_devices_list_screen();
-    
     // Clear previous scanned address_store
     for(uint8 i = 0; i < 10; i++) {
         for(uint8 j = 0; j < 6; j++) {
             address_store[i][j] = 0;     
         }
     }
-}
-
-void check_device_availability_and_connect(uint8 deviceIndex) {
-    set_peripheral_address_to_connect(deviceIndex);
-    handle_scan();
-}
-
-char * get_device_name(uint8 deviceIndex) {
-    char * deviceName;
-    uint8 value = scannedGoalAddresses[deviceIndex][0];
-    switch(value) {
-        case GOAL_KITCHEN:
-            deviceName = "Goal Canary";
-            break;
-        default:
-		    break;
-    }
-    return deviceName;
-}
-
-uint8 get_connected_device_id(void) {
-    return peripheralAddress[0];
 }
 
 void save_data(uint8 data) {

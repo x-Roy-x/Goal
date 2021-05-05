@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: ADC.h
-* Version 2.50
+* Version 2.60
 *
 * Description:
 *  This file contains the function prototypes and constants used in
@@ -133,10 +133,10 @@ typedef struct
 #define ADC_DEFAULT_BCLKS_NUM              (2u)
 #define ADC_DEFAULT_CCLKS_NUM              (2u)
 #define ADC_DEFAULT_DCLKS_NUM              (2u)
-#define ADC_TOTAL_CHANNELS_NUM             (1u)
-#define ADC_SEQUENCED_CHANNELS_NUM         (1u)
-#define ADC_DEFAULT_EN_CHANNELS            (1u)
-#define ADC_NOMINAL_CLOCK_FREQ             (2666667)
+#define ADC_TOTAL_CHANNELS_NUM             (2u)
+#define ADC_SEQUENCED_CHANNELS_NUM         (2u)
+#define ADC_DEFAULT_EN_CHANNELS            (3u)
+#define ADC_NOMINAL_CLOCK_FREQ             (4800000)
 #define ADC_INJ_CHANNEL_ENABLED            (0u)
 #define ADC_IRQ_REMOVE                     (0u)
 

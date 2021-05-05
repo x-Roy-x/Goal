@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE_custom.h
-* \version 3.54
+* \version 3.66
 * 
 * \brief
 *  Contains the function prototypes and constants for the Custom Service.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -24,16 +24,25 @@
 ***************************************/
 
 /* Maximum supported Custom Services */
-#define CYBLE_CUSTOMS_SERVICE_COUNT                  (0x00u)
+#define CYBLE_CUSTOMS_SERVICE_COUNT                  (0x01u)
 #define CYBLE_CUSTOMC_SERVICE_COUNT                  (0x01u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x00u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x00u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x01u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
 
 /* Below are the indexes and handles of the defined Custom Services and their characteristics */
-#define CYBLE_CUSTOMC_CUSTOM_SERVICE_SERVICE_INDEX   (0x00u) /* Index of Custom Service service in the cyBle_customCServ array */
+#define CYBLE_SWITCH_SERVICE_INDEX   (0x00u) /* Index of Switch service in the cyBle_customs array */
+#define CYBLE_SWITCH_FAUCET_CHAR_INDEX   (0x00u) /* Index of Faucet characteristic */
+#define CYBLE_SWITCH_FAUCET_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+
+#define CYBLE_CUSTOMC_CUSTOM_SERVICE_SERVICE_INDEX   (0x01u) /* Index of Custom Service service in the cyBle_customCServ array */
 #define CYBLE_CUSTOMC_CUSTOM_SERVICE_CUSTOM_CHARACTERISTIC_CHAR_INDEX   (0x00u) /* Index of Custom Characteristic characteristic */
 #define CYBLE_CUSTOMC_CUSTOM_SERVICE_CUSTOM_CHARACTERISTIC_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
 
+
+#define CYBLE_SWITCH_SERVICE_HANDLE   (0x0010u) /* Handle of Switch service */
+#define CYBLE_SWITCH_FAUCET_DECL_HANDLE   (0x0011u) /* Handle of Faucet characteristic declaration */
+#define CYBLE_SWITCH_FAUCET_CHAR_HANDLE   (0x0012u) /* Handle of Faucet characteristic */
+#define CYBLE_SWITCH_FAUCET_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0013u) /* Handle of Characteristic User Description descriptor */
 
 
 

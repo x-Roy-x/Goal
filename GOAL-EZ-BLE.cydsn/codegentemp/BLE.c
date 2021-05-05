@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE.c
-* \version 3.50
+* \version 3.66
 * 
 * \brief
 *  This file contains the source code for the Common APIs of the BLE Component.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -71,11 +71,11 @@ CYBLE_GAPP_DISC_PARAM_T cyBle_discoveryParam =
 
 CYBLE_GAPP_DISC_DATA_T cyBle_discoveryData =
 {
-    { 0x02u, 0x01u, 0x06u, 0x08u, 0x09u, 0x4Bu, 0x69u,
-    0x74u, 0x63u, 0x68u, 0x65u, 0x6Eu, 0x11u, 0x07u, 0x10u,
-    0x0Au, 0x0Du, 0x9Du, 0x7Cu, 0x09u, 0x54u, 0x8Cu, 0xCDu,
-    0x4Bu, 0x90u, 0xA7u, 0xC6u, 0x83u, 0xE2u, 0xA2u, 0x00u }, /* uint8 advertising_data[CYBLE_MAX_ADV_DATA_LEN] */
-    0x1Eu,      /* uint8 adv_data_length */
+    { 0x02u, 0x01u, 0x06u, 0x07u, 0x09u, 0x53u, 0x77u,
+    0x69u, 0x74u, 0x63u, 0x68u, 0x11u, 0x07u, 0x10u, 0x0Au,
+    0x0Du, 0x9Du, 0x7Cu, 0x09u, 0x54u, 0x8Cu, 0xCDu, 0x4Bu,
+    0x90u, 0xA7u, 0xC6u, 0x83u, 0xE2u, 0xA2u, 0x00u, 0x00u }, /* uint8 advertising_data[CYBLE_MAX_ADV_DATA_LEN] */
+    0x1Du,      /* uint8 adv_data_length */
 };
 
 CYBLE_GAPP_SCAN_RSP_DATA_T cyBle_scanRspData =
@@ -308,6 +308,10 @@ void CyBle_ServiceInit(void)
         CyBle_NdcsInit();
     #endif /* CYBLE_NDCS */
     
+    #ifdef CYBLE_OTS
+        CyBle_OtsInit();
+    #endif /* CYBLE_OTS */
+        
     #ifdef CYBLE_PASS
         CyBle_PassInit();
     #endif /* CYBLE_PASS */

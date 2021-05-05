@@ -2,7 +2,7 @@
 --	Conversion of GOAL-EZ-BLE.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Feb 19 22:59:37 2019
+--	Mon Apr 12 05:11:28 2021
 --
 
 USE cypress.cypress.all;

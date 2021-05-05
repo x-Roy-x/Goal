@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 1
 
 
    1              		.syntax unified
@@ -30,7 +30,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
   27              		.file 1 "Generated_Source\\PSoC4\\ADC_PM.c"
    1:Generated_Source\PSoC4/ADC_PM.c **** /*******************************************************************************
    2:Generated_Source\PSoC4/ADC_PM.c **** * File Name: ADC_PM.c
-   3:Generated_Source\PSoC4/ADC_PM.c **** * Version 2.50
+   3:Generated_Source\PSoC4/ADC_PM.c **** * Version 2.60
    4:Generated_Source\PSoC4/ADC_PM.c **** *
    5:Generated_Source\PSoC4/ADC_PM.c **** * Description:
    6:Generated_Source\PSoC4/ADC_PM.c **** *  This file provides Sleep/WakeUp APIs functionality.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
   28:Generated_Source\PSoC4/ADC_PM.c **** };
   29:Generated_Source\PSoC4/ADC_PM.c **** 
   30:Generated_Source\PSoC4/ADC_PM.c **** 
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 2
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 2
 
 
   31:Generated_Source\PSoC4/ADC_PM.c **** /*******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
   66:Generated_Source\PSoC4/ADC_PM.c **** {
   47              		.loc 1 66 0
   48              		.cfi_startproc
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 3
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 3
 
 
   49              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
   75 0002 184A     		ldr	r2, .L8
   76 0004 1368     		ldr	r3, [r2]
   77 0006 5B00     		lsls	r3, r3, #1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 4
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 4
 
 
   78 0008 5B08     		lsrs	r3, r3, #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  116 0040 1B68     		ldr	r3, [r3]
  117 0042 DB02     		lsls	r3, r3, #11
  118 0044 0DD5     		bpl	.L3
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 5
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 5
 
 
  111:Generated_Source\PSoC4/ADC_PM.c ****         {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  124:Generated_Source\PSoC4/ADC_PM.c **** * Function Name: ADC_Wakeup
  125:Generated_Source\PSoC4/ADC_PM.c **** ********************************************************************************
  126:Generated_Source\PSoC4/ADC_PM.c **** *
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 6
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 6
 
 
  127:Generated_Source\PSoC4/ADC_PM.c **** * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  189 0020 FFF7FEFF 		bl	ADC_Enable
  190              	.LVL2:
  152:Generated_Source\PSoC4/ADC_PM.c ****         if((ADC_backup.enableState & ADC_STARTED) != 0u)
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 7
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 7
 
 
  191              		.loc 1 152 0
@@ -406,19 +406,19 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  227 0006 00000000 		.4byte	.Ldebug_abbrev0
  228 000a 04       		.byte	0x4
  229 000b 01       		.uleb128 0x1
- 230 000c D3000000 		.4byte	.LASF28
+ 230 000c 00010000 		.4byte	.LASF28
  231 0010 0C       		.byte	0xc
  232 0011 14000000 		.4byte	.LASF29
- 233 0015 BE010000 		.4byte	.LASF30
+ 233 0015 9D000000 		.4byte	.LASF30
  234 0019 00000000 		.4byte	.Ldebug_ranges0+0
  235 001d 00000000 		.4byte	0
  236 0021 00000000 		.4byte	.Ldebug_line0
  237 0025 02       		.uleb128 0x2
  238 0026 01       		.byte	0x1
  239 0027 06       		.byte	0x6
- 240 0028 12020000 		.4byte	.LASF0
+ 240 0028 0C020000 		.4byte	.LASF0
  241 002c 02       		.uleb128 0x2
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 8
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 8
 
 
  242 002d 01       		.byte	0x1
@@ -435,7 +435,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  253 0041 02       		.uleb128 0x2
  254 0042 04       		.byte	0x4
  255 0043 05       		.byte	0x5
- 256 0044 F1010000 		.4byte	.LASF4
+ 256 0044 EB010000 		.4byte	.LASF4
  257 0048 02       		.uleb128 0x2
  258 0049 04       		.byte	0x4
  259 004a 07       		.byte	0x7
@@ -447,7 +447,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  265 0056 02       		.uleb128 0x2
  266 0057 08       		.byte	0x8
  267 0058 07       		.byte	0x7
- 268 0059 BC000000 		.4byte	.LASF7
+ 268 0059 E9000000 		.4byte	.LASF7
  269 005d 03       		.uleb128 0x3
  270 005e 04       		.byte	0x4
  271 005f 05       		.byte	0x5
@@ -455,16 +455,16 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  273 0064 02       		.uleb128 0x2
  274 0065 04       		.byte	0x4
  275 0066 07       		.byte	0x7
- 276 0067 A4000000 		.4byte	.LASF8
+ 276 0067 D1000000 		.4byte	.LASF8
  277 006b 04       		.uleb128 0x4
  278 006c 7C000000 		.4byte	.LASF9
  279 0070 02       		.byte	0x2
- 280 0071 E401     		.2byte	0x1e4
+ 280 0071 E701     		.2byte	0x1e7
  281 0073 2C000000 		.4byte	0x2c
  282 0077 04       		.uleb128 0x4
- 283 0078 9D000000 		.4byte	.LASF10
+ 283 0078 CA000000 		.4byte	.LASF10
  284 007c 02       		.byte	0x2
- 285 007d E601     		.2byte	0x1e6
+ 285 007d E901     		.2byte	0x1e9
  286 007f 48000000 		.4byte	0x48
  287 0083 02       		.uleb128 0x2
  288 0084 04       		.byte	0x4
@@ -477,45 +477,45 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  295 0091 02       		.uleb128 0x2
  296 0092 01       		.byte	0x1
  297 0093 08       		.byte	0x8
- 298 0094 97010000 		.4byte	.LASF13
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 9
+ 298 0094 C4010000 		.4byte	.LASF13
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 9
 
 
  299 0098 04       		.uleb128 0x4
  300 0099 0E000000 		.4byte	.LASF14
  301 009d 02       		.byte	0x2
- 302 009e 9002     		.2byte	0x290
+ 302 009e 9302     		.2byte	0x293
  303 00a0 A4000000 		.4byte	0xa4
  304 00a4 05       		.uleb128 0x5
  305 00a5 77000000 		.4byte	0x77
  306 00a9 02       		.uleb128 0x2
  307 00aa 08       		.byte	0x8
  308 00ab 04       		.byte	0x4
- 309 00ac 06020000 		.4byte	.LASF15
+ 309 00ac 00020000 		.4byte	.LASF15
  310 00b0 02       		.uleb128 0x2
  311 00b1 04       		.byte	0x4
  312 00b2 07       		.byte	0x7
- 313 00b3 6B010000 		.4byte	.LASF16
+ 313 00b3 98010000 		.4byte	.LASF16
  314 00b7 06       		.uleb128 0x6
  315 00b8 08       		.byte	0x8
  316 00b9 03       		.byte	0x3
  317 00ba 1E       		.byte	0x1e
  318 00bb D8000000 		.4byte	0xd8
  319 00bf 07       		.uleb128 0x7
- 320 00c0 FA010000 		.4byte	.LASF17
+ 320 00c0 F4010000 		.4byte	.LASF17
  321 00c4 03       		.byte	0x3
  322 00c5 20       		.byte	0x20
  323 00c6 6B000000 		.4byte	0x6b
  324 00ca 00       		.byte	0
  325 00cb 07       		.uleb128 0x7
- 326 00cc 61010000 		.4byte	.LASF18
+ 326 00cc 8E010000 		.4byte	.LASF18
  327 00d0 03       		.byte	0x3
  328 00d1 21       		.byte	0x21
  329 00d2 77000000 		.4byte	0x77
  330 00d6 04       		.byte	0x4
  331 00d7 00       		.byte	0
  332 00d8 08       		.uleb128 0x8
- 333 00d9 85010000 		.4byte	.LASF19
+ 333 00d9 B2010000 		.4byte	.LASF19
  334 00dd 03       		.byte	0x3
  335 00de 22       		.byte	0x22
  336 00df B7000000 		.4byte	0xb7
@@ -528,7 +528,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  343 00f2 01       		.uleb128 0x1
  344 00f3 9C       		.byte	0x9c
  345 00f4 09       		.uleb128 0x9
- 346 00f5 9C010000 		.4byte	.LASF21
+ 346 00f5 C9010000 		.4byte	.LASF21
  347 00f9 01       		.byte	0x1
  348 00fa 41       		.byte	0x41
  349 00fb 00000000 		.4byte	.LFB3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  353 0105 0A       		.uleb128 0xa
  354 0106 82000000 		.4byte	.LASF22
  355 010a 01       		.byte	0x1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 10
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 10
 
 
  356 010b 59       		.byte	0x59
@@ -555,7 +555,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  367 0128 71010000 		.4byte	0x171
  368 012c 00       		.byte	0
  369 012d 0A       		.uleb128 0xa
- 370 012e 29020000 		.4byte	.LASF23
+ 370 012e 23020000 		.4byte	.LASF23
  371 0132 01       		.byte	0x1
  372 0133 8D       		.byte	0x8d
  373 0134 00000000 		.4byte	.LFB5
@@ -571,7 +571,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  383 0150 87010000 		.4byte	0x187
  384 0154 00       		.byte	0
  385 0155 0C       		.uleb128 0xc
- 386 0156 1E020000 		.4byte	.LASF31
+ 386 0156 18020000 		.4byte	.LASF31
  387 015a 01       		.byte	0x1
  388 015b 18       		.byte	0x18
  389 015c D8000000 		.4byte	0xd8
@@ -579,26 +579,26 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  391 0161 03       		.byte	0x3
  392 0162 00000000 		.4byte	ADC_backup
  393 0166 0D       		.uleb128 0xd
- 394 0167 AE010000 		.4byte	.LASF24
- 395 016b AE010000 		.4byte	.LASF24
+ 394 0167 DB010000 		.4byte	.LASF24
+ 395 016b DB010000 		.4byte	.LASF24
  396 016f 03       		.byte	0x3
  397 0170 9E       		.byte	0x9e
  398 0171 0D       		.uleb128 0xd
- 399 0172 34020000 		.4byte	.LASF25
- 400 0176 34020000 		.4byte	.LASF25
+ 399 0172 2E020000 		.4byte	.LASF25
+ 400 0176 2E020000 		.4byte	.LASF25
  401 017a 03       		.byte	0x3
  402 017b 9A       		.byte	0x9a
  403 017c 0D       		.uleb128 0xd
- 404 017d B1000000 		.4byte	.LASF26
- 405 0181 B1000000 		.4byte	.LASF26
+ 404 017d DE000000 		.4byte	.LASF26
+ 405 0181 DE000000 		.4byte	.LASF26
  406 0185 03       		.byte	0x3
  407 0186 9C       		.byte	0x9c
  408 0187 0D       		.uleb128 0xd
- 409 0188 74010000 		.4byte	.LASF27
- 410 018c 74010000 		.4byte	.LASF27
+ 409 0188 A1010000 		.4byte	.LASF27
+ 410 018c A1010000 		.4byte	.LASF27
  411 0190 03       		.byte	0x3
  412 0191 9D       		.byte	0x9d
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 11
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 11
 
 
  413 0192 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  467 0033 13       		.uleb128 0x13
  468 0034 00       		.byte	0
  469 0035 00       		.byte	0
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 12
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 12
 
 
  470 0036 05       		.uleb128 0x5
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  524 006c 0E       		.uleb128 0xe
  525 006d 3A       		.uleb128 0x3a
  526 006e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 13
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 13
 
 
  527 006f 3B       		.uleb128 0x3b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  581 00a9 0B       		.uleb128 0xb
  582 00aa 3B       		.uleb128 0x3b
  583 00ab 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 14
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 14
 
 
  584 00ac 49       		.uleb128 0x49
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  638              		.section	.debug_line,"",%progbits
  639              	.Ldebug_line0:
  640 0000 A8000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 15
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 15
 
 
  640      02004C00 
@@ -898,114 +898,112 @@ ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 1
  664 0093 73686F72 		.ascii	"short int\000"
  664      7420696E 
  664      7400
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 16
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 16
 
 
- 665              	.LASF10:
- 666 009d 75696E74 		.ascii	"uint32\000"
- 666      333200
- 667              	.LASF8:
- 668 00a4 756E7369 		.ascii	"unsigned int\000"
- 668      676E6564 
- 668      20696E74 
- 668      00
- 669              	.LASF26:
- 670 00b1 4144435F 		.ascii	"ADC_Enable\000"
- 670      456E6162 
- 670      6C6500
- 671              	.LASF7:
- 672 00bc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 672      206C6F6E 
- 672      6720756E 
- 672      7369676E 
- 672      65642069 
- 673              	.LASF28:
- 674 00d3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 674      43313120 
- 674      352E342E 
- 674      31203230 
- 674      31363036 
- 675 0106 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 675      20726576 
- 675      6973696F 
- 675      6E203233 
- 675      37373135 
- 676 0139 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 676      66756E63 
- 676      74696F6E 
- 676      2D736563 
- 676      74696F6E 
- 677              	.LASF18:
- 678 0161 64667452 		.ascii	"dftRegVal\000"
- 678      65675661 
- 678      6C00
- 679              	.LASF16:
- 680 016b 73697A65 		.ascii	"sizetype\000"
- 680      74797065 
- 680      00
- 681              	.LASF27:
- 682 0174 4144435F 		.ascii	"ADC_StartConvert\000"
- 682      53746172 
- 682      74436F6E 
- 682      76657274 
+ 665              	.LASF30:
+ 666 009d 443A5C62 		.ascii	"D:\\bachelor_work\\program\\Goal\\SmartBoy.cydsn\000"
+ 666      61636865 
+ 666      6C6F725F 
+ 666      776F726B 
+ 666      5C70726F 
+ 667              	.LASF10:
+ 668 00ca 75696E74 		.ascii	"uint32\000"
+ 668      333200
+ 669              	.LASF8:
+ 670 00d1 756E7369 		.ascii	"unsigned int\000"
+ 670      676E6564 
+ 670      20696E74 
+ 670      00
+ 671              	.LASF26:
+ 672 00de 4144435F 		.ascii	"ADC_Enable\000"
+ 672      456E6162 
+ 672      6C6500
+ 673              	.LASF7:
+ 674 00e9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 674      206C6F6E 
+ 674      6720756E 
+ 674      7369676E 
+ 674      65642069 
+ 675              	.LASF28:
+ 676 0100 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 676      43313120 
+ 676      352E342E 
+ 676      31203230 
+ 676      31363036 
+ 677 0133 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 677      20726576 
+ 677      6973696F 
+ 677      6E203233 
+ 677      37373135 
+ 678 0166 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 678      66756E63 
+ 678      74696F6E 
+ 678      2D736563 
+ 678      74696F6E 
+ 679              	.LASF18:
+ 680 018e 64667452 		.ascii	"dftRegVal\000"
+ 680      65675661 
+ 680      6C00
+ 681              	.LASF16:
+ 682 0198 73697A65 		.ascii	"sizetype\000"
+ 682      74797065 
  682      00
- 683              	.LASF19:
- 684 0185 4144435F 		.ascii	"ADC_BACKUP_STRUCT\000"
- 684      4241434B 
- 684      55505F53 
- 684      54525543 
- 684      5400
- 685              	.LASF13:
- 686 0197 63686172 		.ascii	"char\000"
- 686      00
-ARM GAS  C:\Users\Kozak\AppData\Local\Temp\ccfvbdQ9.s 			page 17
+ 683              	.LASF27:
+ 684 01a1 4144435F 		.ascii	"ADC_StartConvert\000"
+ 684      53746172 
+ 684      74436F6E 
+ 684      76657274 
+ 684      00
+ 685              	.LASF19:
+ 686 01b2 4144435F 		.ascii	"ADC_BACKUP_STRUCT\000"
+ 686      4241434B 
+ARM GAS  C:\Users\Roi\AppData\Local\Temp\ccFE0cdk.s 			page 17
 
 
- 687              	.LASF21:
- 688 019c 4144435F 		.ascii	"ADC_RestoreConfig\000"
- 688      52657374 
- 688      6F726543 
- 688      6F6E6669 
- 688      6700
- 689              	.LASF24:
- 690 01ae 4144435F 		.ascii	"ADC_StopConvert\000"
- 690      53746F70 
- 690      436F6E76 
- 690      65727400 
- 691              	.LASF30:
- 692 01be 433A5C4D 		.ascii	"C:\\My\\Bipboy\\bipboy\\BipBoyWorkspace\\SmartBoy.c"
- 692      795C4269 
- 692      70626F79 
- 692      5C626970 
- 692      626F795C 
- 693 01ec 7964736E 		.ascii	"ydsn\000"
- 693      00
- 694              	.LASF4:
- 695 01f1 6C6F6E67 		.ascii	"long int\000"
- 695      20696E74 
- 695      00
- 696              	.LASF17:
- 697 01fa 656E6162 		.ascii	"enableState\000"
- 697      6C655374 
- 697      61746500 
- 698              	.LASF15:
- 699 0206 6C6F6E67 		.ascii	"long double\000"
- 699      20646F75 
- 699      626C6500 
- 700              	.LASF0:
- 701 0212 7369676E 		.ascii	"signed char\000"
- 701      65642063 
- 701      68617200 
- 702              	.LASF31:
- 703 021e 4144435F 		.ascii	"ADC_backup\000"
- 703      6261636B 
- 703      757000
- 704              	.LASF23:
- 705 0229 4144435F 		.ascii	"ADC_Wakeup\000"
- 705      57616B65 
- 705      757000
- 706              	.LASF25:
- 707 0234 4144435F 		.ascii	"ADC_Stop\000"
- 707      53746F70 
- 707      00
- 708              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 686      55505F53 
+ 686      54525543 
+ 686      5400
+ 687              	.LASF13:
+ 688 01c4 63686172 		.ascii	"char\000"
+ 688      00
+ 689              	.LASF21:
+ 690 01c9 4144435F 		.ascii	"ADC_RestoreConfig\000"
+ 690      52657374 
+ 690      6F726543 
+ 690      6F6E6669 
+ 690      6700
+ 691              	.LASF24:
+ 692 01db 4144435F 		.ascii	"ADC_StopConvert\000"
+ 692      53746F70 
+ 692      436F6E76 
+ 692      65727400 
+ 693              	.LASF4:
+ 694 01eb 6C6F6E67 		.ascii	"long int\000"
+ 694      20696E74 
+ 694      00
+ 695              	.LASF17:
+ 696 01f4 656E6162 		.ascii	"enableState\000"
+ 696      6C655374 
+ 696      61746500 
+ 697              	.LASF15:
+ 698 0200 6C6F6E67 		.ascii	"long double\000"
+ 698      20646F75 
+ 698      626C6500 
+ 699              	.LASF0:
+ 700 020c 7369676E 		.ascii	"signed char\000"
+ 700      65642063 
+ 700      68617200 
+ 701              	.LASF31:
+ 702 0218 4144435F 		.ascii	"ADC_backup\000"
+ 702      6261636B 
+ 702      757000
+ 703              	.LASF23:
+ 704 0223 4144435F 		.ascii	"ADC_Wakeup\000"
+ 704      57616B65 
+ 704      757000
+ 705              	.LASF25:
+ 706 022e 4144435F 		.ascii	"ADC_Stop\000"
+ 706      53746F70 
+ 706      00
+ 707              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
